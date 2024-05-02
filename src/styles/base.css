@@ -1,0 +1,90 @@
+/* @font-face {
+  font-family: TayBasal;
+  src: url('assets/fonts/TayBasal.otf') format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TAYJukeboxJohnny;
+  src: url('assets/fonts/TAYJukeboxJohnny.otf') format("opentype");
+  font-display: swap;
+} */
+
+:root {
+  --color-primary: #D9E77D;
+  --color-secondary: #572A0D;
+  --color-tertiary: #9D4121;
+  --color-quaternary: #FABB00;
+  --color-text: #434505;
+  --color-bg: #EEE3CC;
+  --font-heading-family: sans-serif;
+  --font-secondary-heading: sans-serif;
+  --font-body-family: serif;
+}
+
+/* Basic Typography */
+h1, .h1 {
+  @apply md:text-[90px] font-header text-6xl;
+}
+
+h2, .h2 {
+  @apply md:text-7xl font-header text-[46px];
+  line-height: 100%; /* 46px */
+}
+
+h3, .h3 {
+  @apply md:text-[38px] font-secHeader text-3xl;
+}
+
+h4, .h4 {
+  @apply md:text-4xl font-header text-[28px];
+}
+
+h5, .h5 {
+  @apply md:text-[26px] font-header text-xl;
+}
+
+h6, .h6 {
+  @apply text-xs md:text-base font-secHeader;
+}
+
+.p1 {
+  @apply text-xl;
+}
+
+.p2 {
+  @apply text-base;
+}
+
+.p3 {
+  @apply text-sm;
+}
+
+body {
+  @apply font-body;
+}
+
+/* Buttons */
+.button {
+  @apply inline-flex items-center justify-center min-h-0 px-4 py-3 text-sm font-bold tracking-widest text-center text-white uppercase transition-colors rounded-sm cursor-pointer hover:text-black focus:text-black focus:bg-white hover:bg-white font-secHeader;
+}
+
+.button[aria-disabled="true"] {
+  @apply cursor-not-allowed opacity-50
+}
+
+.button--primary {
+  @apply bg-primary text-text hover:bg-text hover:text-primary;
+}
+
+.button--secondary {
+  @apply bg-text text-primary hover:bg-quaternary hover:text-text;
+}
+
+.button--tertiary {
+  @apply bg-bg text-text hover:bg-primary hover:text-text;
+}
+
+.button--text {
+  @apply underline uppercase text-tertiary underline-offset-2 font-secHeader;
+}
