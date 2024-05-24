@@ -6,16 +6,22 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Header() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to("nav", {
-      scrollTrigger: {
-        trigger: "#intro",
-        start: "bottom 50px",
-        toggleActions: "play none none reset",
+    gsap.fromTo(
+      "nav",
+      {
+        color: "rgba(254, 253, 249, .8)",
       },
-      color: "#0061fe",
-      duration: 1,
-      ease: "none",
-    });
+      {
+        color: "rgba(0, 97, 254, 1)",
+        duration: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#intro",
+          start: "bottom 50px",
+          toggleActions: "play none none reset",
+        },
+      }
+    );
 
     gsap.to("#header__border", {
       scrollTrigger: {

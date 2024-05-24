@@ -519,6 +519,78 @@ video {
 .top-0 {
   top: 0px;
 }
+.top-1\/2 {
+  top: 50%;
+}
+.top-1\/4 {
+  top: 25%;
+}
+.left-1\/4 {
+  left: 25%;
+}
+.left-\[50px\] {
+  left: 50px;
+}
+.left-\[100px\] {
+  left: 100px;
+}
+.left-\[18rem\] {
+  left: 18rem;
+}
+.left-\[19rem\] {
+  left: 19rem;
+}
+.left-\[2rem\] {
+  left: 2rem;
+}
+.left-\[4rem\] {
+  left: 4rem;
+}
+.left-\[6rem\] {
+  left: 6rem;
+}
+.left-\[7rem\] {
+  left: 7rem;
+}
+.left-\[9rem\] {
+  left: 9rem;
+}
+.left-\[10\%\] {
+  left: 10%;
+}
+.left-\[15\%\] {
+  left: 15%;
+}
+.left-\[26\%\] {
+  left: 26%;
+}
+.top-\[15\%\] {
+  top: 15%;
+}
+.top-full {
+  top: 100%;
+}
+.top-8 {
+  top: 2rem;
+}
+.top-16 {
+  top: 4rem;
+}
+.top-24 {
+  top: 6rem;
+}
+.top-\[40\%\] {
+  top: 40%;
+}
+.top-\[30\%\] {
+  top: 30%;
+}
+.top-\[35\%\] {
+  top: 35%;
+}
+.z-20 {
+  z-index: 20;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -538,11 +610,12 @@ video {
 .h-\[1px\] {
   height: 1px;
 }
-.min-h-\[80vh\] {
-  min-height: 80vh;
+.h-\[1em\] {
+  height: 1em;
 }
-.min-h-\[90vh\] {
-  min-height: 90vh;
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .min-h-\[100vh\] {
   min-height: 100vh;
@@ -559,20 +632,11 @@ video {
 .w-full {
   width: 100%;
 }
-.max-w-xs {
-  max-width: 20rem;
+.max-w-screen-xl {
+  max-width: 1280px;
 }
 .max-w-sm {
   max-width: 24rem;
-}
-.max-w-screen-md {
-  max-width: 768px;
-}
-.max-w-screen-lg {
-  max-width: 1024px;
-}
-.max-w-screen-xl {
-  max-width: 1280px;
 }
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -604,6 +668,13 @@ video {
 .bg-text {
   background-color: var(--color-text);
 }
+.bg-bg {
+  background-color: var(--color-bg);
+}
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -611,14 +682,6 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 .text-center {
   text-align: center;
@@ -629,14 +692,20 @@ video {
 .text-\[18rem\] {
   font-size: 18rem;
 }
-.uppercase {
-  text-transform: uppercase;
-}
 .italic {
   font-style: italic;
 }
+.leading-\[12rem\] {
+  line-height: 12rem;
+}
 .text-bg {
   color: var(--color-bg);
+}
+.text-\[\'rgba\(0\2c 97\2c 254\2c \.5\)\'\] {
+  color: 'rgba(0,97,254,.5)';
+}
+.text-\[rgba\(0\2c 97\2c 254\2c \.5\)\] {
+  color: rgba(0,97,254,.5);
 }
 /* @font-face {
   font-family: TayBasal;
