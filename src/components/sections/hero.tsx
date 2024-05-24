@@ -34,12 +34,12 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="hero text-center flex flex-col gap-2 justify-center items-center min-h-[80vh]"
+      className="hero text-center flex flex-col gap-2 justify-center items-center min-h-[100vh]"
     >
       <div className="overflow-hidden relative block">
-        <div className="hero__subtext relative">&#123; Welcome &#125;</div>
+        <div className="hero__subtext relative h6">&#123; Welcome &#125;</div>
       </div>
-      <h1>
+      <h1 className="text-[10rem]">
         Hi THERE
         <br />
         <span className="hero__italic italic">NICE</span> to

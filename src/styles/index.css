@@ -510,23 +510,18 @@ video {
 .relative {
   position: relative;
 }
-.top-0 {
-  top: 0px;
+.bottom-0 {
+  bottom: 0px;
 }
 .left-0 {
   left: 0px;
 }
-.left-1\/2 {
-  left: 50%;
+.top-0 {
+  top: 0px;
 }
-.bottom-0 {
-  bottom: 0px;
-}
-.z-10 {
-  z-index: 10;
-}
-.mb-8 {
-  margin-bottom: 2rem;
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 .block {
   display: block;
@@ -537,8 +532,8 @@ video {
 .flex {
   display: flex;
 }
-.h-4 {
-  height: 1rem;
+.grid {
+  display: grid;
 }
 .h-\[1px\] {
   height: 1px;
@@ -549,14 +544,38 @@ video {
 .min-h-\[90vh\] {
   min-height: 90vh;
 }
+.min-h-\[100vh\] {
+  min-height: 100vh;
+}
+.min-h-\[95vh\] {
+  min-height: 95vh;
+}
+.w-0 {
+  width: 0px;
+}
 .w-12 {
   width: 3rem;
 }
 .w-full {
   width: 100%;
 }
-.w-0 {
-  width: 0px;
+.max-w-xs {
+  max-width: 20rem;
+}
+.max-w-sm {
+  max-width: 24rem;
+}
+.max-w-screen-md {
+  max-width: 768px;
+}
+.max-w-screen-lg {
+  max-width: 1024px;
+}
+.max-w-screen-xl {
+  max-width: 1280px;
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -576,17 +595,11 @@ video {
 .gap-4 {
   gap: 1rem;
 }
+.gap-8 {
+  gap: 2rem;
+}
 .overflow-hidden {
   overflow: hidden;
-}
-.border {
-  border-width: 1px;
-}
-.border-b {
-  border-bottom-width: 1px;
-}
-.border-text {
-  border-color: var(--color-text);
 }
 .bg-text {
   background-color: var(--color-text);
@@ -599,26 +612,31 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .text-center {
   text-align: center;
 }
-.text-\[20rem\] {
-  font-size: 20rem;
-}
-.text-\[19rem\] {
-  font-size: 19rem;
+.text-\[10rem\] {
+  font-size: 10rem;
 }
 .text-\[18rem\] {
   font-size: 18rem;
+}
+.uppercase {
+  text-transform: uppercase;
 }
 .italic {
   font-style: italic;
 }
 .text-bg {
   color: var(--color-bg);
-}
-.text-text {
-  color: var(--color-text);
 }
 /* @font-face {
   font-family: TayBasal;
@@ -716,13 +734,14 @@ h6,
 .h6 {
   font-size: 0.75rem;
   line-height: 1rem;
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
 
   h6,
 .h6 {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 .p1 {
@@ -810,40 +829,4 @@ body {
   color: var(--color-tertiary);
   text-decoration-line: underline;
   text-underline-offset: 2px;
-}
-.after\:absolute::after {
-  content: var(--tw-content);
-  position: absolute;
-}
-.after\:bottom-0::after {
-  content: var(--tw-content);
-  bottom: 0px;
-}
-.after\:left-0::after {
-  content: var(--tw-content);
-  left: 0px;
-}
-.after\:inline-block::after {
-  content: var(--tw-content);
-  display: inline-block;
-}
-.after\:h-\[1px\]::after {
-  content: var(--tw-content);
-  height: 1px;
-}
-.after\:w-full::after {
-  content: var(--tw-content);
-  width: 100%;
-}
-.after\:w-0::after {
-  content: var(--tw-content);
-  width: 0px;
-}
-.after\:bg-text::after {
-  content: var(--tw-content);
-  background-color: var(--color-text);
-}
-.after\:content-\[\'\'\]::after {
-  --tw-content: '';
-  content: var(--tw-content);
 }

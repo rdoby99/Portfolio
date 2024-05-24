@@ -55,7 +55,7 @@ h5,
 
 h6,
 .h6 {
-  @apply text-xs md:text-base;
+  @apply text-xs md:text-xl uppercase;
 }
 
 .p1 {

@@ -33,7 +33,7 @@ export default function Header() {
     <header className="header fixed text-bg top-0 flex justify-between items-center w-full px-8 py-4">
       <img src={logo} alt="Ramona Doby Logo" className="w-12" />
       <nav>
-        <ul className="flex gap-4">
+        <ul className="flex gap-4 h6">
           <li>About</li>
           <li>Work</li>
           <li>Contact</li>

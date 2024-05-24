@@ -15,11 +15,11 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="flex flex-col min-h-[90vh] items-center justify-center bg-text text-bg"
+      className="flex flex-col min-h-[95vh] items-center justify-center bg-text text-bg"
     >
       <div className="text-[18rem]">Ramona</div>
       <div className="overflow-hidden relative block">
-        <div className="intro__subtext relative">
+        <div className="intro__subtext relative h6">
           &#123; Web Developer &#125;
         </div>
       </div>
