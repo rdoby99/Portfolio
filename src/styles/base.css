@@ -11,41 +11,51 @@
 } */
 
 :root {
-  --color-primary: #D9E77D;
-  --color-secondary: #572A0D;
-  --color-tertiary: #9D4121;
-  --color-quaternary: #FABB00;
-  --color-text: #434505;
-  --color-bg: #EEE3CC;
+  --color-primary: #0061fe;
+  --color-secondary: #572a0d;
+  --color-tertiary: #9d4121;
+  --color-quaternary: #fabb00;
+  --color-text: #0061fe;
+  --color-bg: #fefdf9;
   --font-heading-family: sans-serif;
   --font-secondary-heading: sans-serif;
   --font-body-family: serif;
 }
 
-/* Basic Typography */
-h1, .h1 {
-  @apply md:text-[90px] font-header text-6xl;
+#root {
+  @apply bg-bg text-text;
 }
 
-h2, .h2 {
-  @apply md:text-7xl font-header text-[46px];
+/* Basic Typography */
+h1,
+.h1 {
+  @apply md:text-9xl text-6xl;
+}
+
+h2,
+.h2 {
+  @apply md:text-7xl text-[46px];
   line-height: 100%; /* 46px */
 }
 
-h3, .h3 {
-  @apply md:text-[38px] font-secHeader text-3xl;
+h3,
+.h3 {
+  @apply md:text-[38px] text-3xl;
 }
 
-h4, .h4 {
-  @apply md:text-4xl font-header text-[28px];
+h4,
+.h4 {
+  @apply md:text-4xl text-[28px];
 }
 
-h5, .h5 {
-  @apply md:text-[26px] font-header text-xl;
+h5,
+.h5 {
+  @apply md:text-[26px] text-xl;
 }
 
-h6, .h6 {
-  @apply text-xs md:text-base font-secHeader;
+h6,
+.h6 {
+  @apply text-xs md:text-base;
 }
 
 .p1 {
@@ -70,7 +80,7 @@ body {
 }
 
 .button[aria-disabled="true"] {
-  @apply cursor-not-allowed opacity-50
+  @apply cursor-not-allowed opacity-50;
 }
 
 .button--primary {
@@ -86,5 +96,5 @@ body {
 }
 
 .button--text {
-  @apply underline uppercase text-tertiary underline-offset-2 font-secHeader;
+  @apply underline uppercase text-tertiary underline-offset-2;
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "style": "postcss .src/styles/main.css --output .src/index.css --watch",
+    "style": "postcss src/styles/main.css --output src/styles/index.css --watch",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
