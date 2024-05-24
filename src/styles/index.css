@@ -611,6 +611,9 @@ video {
 .text-\[18rem\] {
   font-size: 18rem;
 }
+.italic {
+  font-style: italic;
+}
 .text-bg {
   color: var(--color-bg);
 }

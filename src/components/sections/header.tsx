@@ -10,7 +10,6 @@ export default function Header() {
       scrollTrigger: {
         trigger: "#intro",
         start: "bottom 50px",
-        end: "bottom top",
         toggleActions: "play none none reset",
       },
       color: "#0061fe",
@@ -22,7 +21,6 @@ export default function Header() {
       scrollTrigger: {
         trigger: "#intro",
         start: "bottom 50px",
-        end: "bottom top",
         toggleActions: "play none none reset",
       },
       width: "100%",

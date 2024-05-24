@@ -5,7 +5,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Intro() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from(".intro__subtext", { duration: 1, top: 50, ease: "power1" });
+    gsap.fromTo(
+      ".intro__subtext",
+      { top: 50 },
+      { top: 0, duration: 1.5, ease: "power3" }
+    );
   }, []);
 
   return (
