@@ -1,21 +1,41 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default function Intro() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(
+    gsap.registerPlugin(ScrollToPlugin);
+    var introTL = gsap.timeline();
+
+    introTL.fromTo(
       ".intro__subtext",
       { top: 50 },
       { top: 0, duration: 1.5, ease: "power3" }
+    );
+
+    introTL.to(window, { duration: 1, scrollTo: "#hero" });
+
+    gsap.fromTo(
+      ".intro__subtext",
+      { top: 0 },
+      {
+        top: 50,
+        duration: 1.5,
+        ease: "power3",
+        scrollTrigger: {
+          trigger: "#intro",
+          start: "center 45%",
+          toggleActions: "play none reverse none",
+        },
+      }
     );
 
     gsap.to(".floatingR", {
       scrollTrigger: {
         trigger: "#intro",
         start: "center 45%",
-        markers: true,
         scrub: true,
       },
       top: "1rem",
@@ -42,6 +62,7 @@ export default function Intro() {
           trigger: "#intro",
           start: "center 45%",
           duration: 10,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -52,9 +73,11 @@ export default function Intro() {
       id="intro"
       className="inline-block w-full h-[95vh] bg-text text-bg"
     >
-      <div className="text-[18rem] leading-[12rem]">
-        <span className="floatingR fixed top-[35%] left-[10%]">R</span>
-        <span className="overflow-hidden absolute inline-block h-fit top-[35%] left-[26%]">
+      <div className="leading-[12rem]">
+        <span className="floatingR fixed top-[35%] left-[12%] font-header text-[16rem]">
+          R
+        </span>
+        <span className="overflow-hidden absolute text-[15rem] inline-block h-fit top-[35%] left-[26%]">
           <span className="amona relative">amona</span>
         </span>
       </div>

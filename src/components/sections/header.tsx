@@ -9,10 +9,10 @@ export default function Header() {
     gsap.fromTo(
       "nav",
       {
-        color: "rgba(254, 253, 249, .8)",
+        opacity: 0,
       },
       {
-        color: "rgba(0, 97, 254, 1)",
+        opacity: 1,
         duration: 1,
         ease: "none",
         scrollTrigger: {
@@ -36,7 +36,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="header fixed text-bg top-0 flex justify-end items-center w-full px-8 py-8">
+    <header className="header fixed text-text top-0 flex justify-end items-center w-full px-8 py-8">
       <nav>
         <ul className="flex gap-4 h6">
           <li>About</li>

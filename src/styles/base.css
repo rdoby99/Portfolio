@@ -17,9 +17,9 @@
   --color-quaternary: #fabb00;
   --color-text: #0061fe;
   --color-bg: #fefdf9;
-  --font-heading-family: sans-serif;
+  --font-heading-family: serif;
   --font-secondary-heading: sans-serif;
-  --font-body-family: serif;
+  --font-body-family: sans-serif;
 }
 
 #root {
@@ -29,12 +29,12 @@
 /* Basic Typography */
 h1,
 .h1 {
-  @apply md:text-9xl text-6xl;
+  @apply md:text-9xl text-6xl font-header;
 }
 
 h2,
 .h2 {
-  @apply md:text-7xl text-[46px];
+  @apply md:text-7xl text-[46px] font-header;
   line-height: 100%; /* 46px */
 }
 
@@ -55,7 +55,7 @@ h5,
 
 h6,
 .h6 {
-  @apply text-xs md:text-xl uppercase;
+  @apply text-xs md:text-xl uppercase font-body;
 }
 
 .p1 {

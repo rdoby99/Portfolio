@@ -516,95 +516,26 @@ video {
 .left-0 {
   left: 0px;
 }
-.top-0 {
-  top: 0px;
-}
-.top-1\/2 {
-  top: 50%;
-}
-.top-1\/4 {
-  top: 25%;
-}
-.left-1\/4 {
-  left: 25%;
-}
-.left-\[50px\] {
-  left: 50px;
-}
-.left-\[100px\] {
-  left: 100px;
-}
-.left-\[18rem\] {
-  left: 18rem;
-}
-.left-\[19rem\] {
-  left: 19rem;
-}
-.left-\[2rem\] {
-  left: 2rem;
-}
-.left-\[4rem\] {
-  left: 4rem;
-}
-.left-\[6rem\] {
-  left: 6rem;
-}
-.left-\[7rem\] {
-  left: 7rem;
-}
-.left-\[9rem\] {
-  left: 9rem;
-}
 .left-\[10\%\] {
   left: 10%;
-}
-.left-\[15\%\] {
-  left: 15%;
 }
 .left-\[26\%\] {
   left: 26%;
 }
-.top-\[15\%\] {
-  top: 15%;
+.left-\[40\%\] {
+  left: 40%;
 }
-.top-full {
-  top: 100%;
-}
-.top-8 {
-  top: 2rem;
-}
-.top-16 {
-  top: 4rem;
-}
-.top-24 {
-  top: 6rem;
-}
-.top-\[40\%\] {
-  top: 40%;
-}
-.top-\[30\%\] {
-  top: 30%;
+.top-0 {
+  top: 0px;
 }
 .top-\[35\%\] {
   top: 35%;
 }
-.left-\[50\%\] {
-  left: 50%;
-}
-.top-\[37\%\] {
-  top: 37%;
-}
-.top-\[50\%\] {
-  top: 50%;
-}
-.left-\[40\%\] {
-  left: 40%;
-}
 .top-\[60\%\] {
   top: 60%;
 }
-.z-20 {
-  z-index: 20;
+.left-\[12\%\] {
+  left: 12%;
 }
 .mx-auto {
   margin-left: auto;
@@ -625,27 +556,18 @@ video {
 .h-\[1px\] {
   height: 1px;
 }
-.h-\[1em\] {
-  height: 1em;
+.h-\[95vh\] {
+  height: 95vh;
 }
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
 }
-.h-\[95vh\] {
-  height: 95vh;
-}
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
-.min-h-\[95vh\] {
-  min-height: 95vh;
-}
 .w-0 {
   width: 0px;
-}
-.w-12 {
-  width: 3rem;
 }
 .w-full {
   width: 100%;
@@ -671,9 +593,6 @@ video {
 .justify-center {
   justify-content: center;
 }
-.justify-between {
-  justify-content: space-between;
-}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -689,9 +608,6 @@ video {
 .bg-text {
   background-color: var(--color-text);
 }
-.bg-bg {
-  background-color: var(--color-bg);
-}
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -700,10 +616,6 @@ video {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -711,11 +623,20 @@ video {
 .text-center {
   text-align: center;
 }
+.font-header {
+  font-family: var(--font-heading-family);
+}
 .text-\[10rem\] {
   font-size: 10rem;
 }
 .text-\[18rem\] {
   font-size: 18rem;
+}
+.text-\[15rem\] {
+  font-size: 15rem;
+}
+.text-\[16rem\] {
+  font-size: 16rem;
 }
 .italic {
   font-style: italic;
@@ -726,11 +647,8 @@ video {
 .text-bg {
   color: var(--color-bg);
 }
-.text-\[\'rgba\(0\2c 97\2c 254\2c \.5\)\'\] {
-  color: 'rgba(0,97,254,.5)';
-}
-.text-\[rgba\(0\2c 97\2c 254\2c \.5\)\] {
-  color: rgba(0,97,254,.5);
+.text-text {
+  color: var(--color-text);
 }
 /* @font-face {
   font-family: TayBasal;
@@ -750,9 +668,9 @@ video {
   --color-quaternary: #fabb00;
   --color-text: #0061fe;
   --color-bg: #fefdf9;
-  --font-heading-family: sans-serif;
+  --font-heading-family: serif;
   --font-secondary-heading: sans-serif;
-  --font-body-family: serif;
+  --font-body-family: sans-serif;
 }
 #root {
   background-color: var(--color-bg);
@@ -761,6 +679,7 @@ video {
 /* Basic Typography */
 h1,
 .h1 {
+  font-family: var(--font-heading-family);
   font-size: 3.75rem;
   line-height: 1;
 }
@@ -774,6 +693,7 @@ h1,
 }
 h2,
 .h2 {
+  font-family: var(--font-heading-family);
   font-size: 46px;
 }
 @media (min-width: 768px) {
@@ -826,6 +746,7 @@ h5,
 }
 h6,
 .h6 {
+  font-family: var(--font-body-family);
   font-size: 0.75rem;
   line-height: 1rem;
   text-transform: uppercase;
