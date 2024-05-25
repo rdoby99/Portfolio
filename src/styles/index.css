@@ -537,6 +537,12 @@ video {
 .left-\[12\%\] {
   left: 12%;
 }
+.left-1\/4 {
+  left: 25%;
+}
+.top-1\/4 {
+  top: 25%;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
