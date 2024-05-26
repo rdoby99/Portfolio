@@ -98,3 +98,20 @@ body {
 .button--text {
   @apply underline uppercase text-tertiary underline-offset-2;
 }
+
+/* .noise {
+  background: url("/noise.svg"), url("/noise.svg");
+  background-size: cover;
+  filter: contrast(170%) brightness(1000%);
+  background-color: #294dae;
+  opacity: 20%;
+  mix-blend-mode: multiply;
+  animation: b 0.1s infinite alternate;
+  background-position: 50% 0%, 60% 60%;
+}
+
+@keyframes b {
+  100% {
+    background-position: 50% 0%, 60% 50%;
+  }
+} */

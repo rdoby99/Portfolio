@@ -15,7 +15,7 @@ export default function Intro() {
       { top: 0, duration: 1.5, ease: "power3" }
     );
 
-    introTL.to(window, { duration: 1, scrollTo: "#hero" });
+    // introTL.to(window, { duration: 1, scrollTo: "#hero" });
 
     gsap.fromTo(
       ".intro__subtext",
@@ -71,8 +71,10 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="inline-block w-full h-[95vh] bg-text text-bg"
+      className="inline-block bg-waves bg-cover w-full h-[95vh] text-bg"
     >
+      {/* <div className="noiseBg w-full h-[95vh] bg-waves bg-cover absolute top-0 left-0"></div>
+      <div className="noise w-full h-[95vh] absolute top-0 left-0"></div> */}
       <div className="leading-[12rem]">
         <span className="floatingR fixed top-[35%] left-[12%] font-header text-[16rem]">
           R
@@ -81,7 +83,7 @@ export default function Intro() {
           <span className="amona relative">amona</span>
         </span>
       </div>
-      <div className="overflow-hidden relative block top-[60%] left-[40%]">
+      <div className="overflow-hidden relative top-[60%] left-[40%] inline-block">
         <div className="intro__subtext relative h6">
           &#123; Web Developer &#125;
         </div>

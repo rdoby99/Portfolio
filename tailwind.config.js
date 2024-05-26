@@ -16,6 +16,9 @@ export default {
         secHeader: "var(--font-secondary-heading)",
         body: "var(--font-body-family)",
       },
+      backgroundImage: {
+        waves: "url('/background.png')",
+      },
     },
   },
   plugins: [],
