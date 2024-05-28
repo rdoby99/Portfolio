@@ -554,6 +554,9 @@ video {
   height: -moz-fit-content;
   height: fit-content;
 }
+.h-\[100vh\] {
+  height: 100vh;
+}
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
