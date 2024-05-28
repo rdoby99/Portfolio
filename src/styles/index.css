@@ -513,23 +513,17 @@ video {
 .bottom-0 {
   bottom: 0px;
 }
+.bottom-1\/2 {
+  bottom: 50%;
+}
 .left-0 {
   left: 0px;
 }
-.left-\[12\%\] {
-  left: 12%;
-}
-.left-\[26\%\] {
-  left: 26%;
-}
-.left-\[40\%\] {
-  left: 40%;
+.left-1\/2 {
+  left: 50%;
 }
 .top-0 {
   top: 0px;
-}
-.top-\[35\%\] {
-  top: 35%;
 }
 .top-\[60\%\] {
   top: 60%;
@@ -560,6 +554,9 @@ video {
   height: -moz-fit-content;
   height: fit-content;
 }
+.h-\[100vh\] {
+  height: 100vh;
+}
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
@@ -575,11 +572,21 @@ video {
 .max-w-sm {
   max-width: 24rem;
 }
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
+}
+.items-end {
+  align-items: flex-end;
 }
 .items-center {
   align-items: center;
@@ -595,6 +602,9 @@ video {
 }
 .gap-4 {
   gap: 1rem;
+}
+.gap-5 {
+  gap: 1.25rem;
 }
 .gap-8 {
   gap: 2rem;
@@ -623,26 +633,17 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.pt-12 {
+  padding-top: 3rem;
+}
 .text-center {
   text-align: center;
-}
-.font-header {
-  font-family: var(--font-heading-family);
 }
 .text-\[10rem\] {
   font-size: 10rem;
 }
-.text-\[15rem\] {
-  font-size: 15rem;
-}
-.text-\[16rem\] {
-  font-size: 16rem;
-}
 .italic {
   font-style: italic;
-}
-.leading-\[12rem\] {
-  line-height: 12rem;
 }
 .text-bg {
   color: var(--color-bg);
@@ -861,3 +862,23 @@ body {
     background-position: 50% 0%, 60% 50%;
   }
 } */
+/* .amona {
+  left: calc(50%);
+  transform: translateX(-50%);
+}
+
+.floatingR {
+  left: calc(50% - 292px);
+  transform: translateX(-50%);
+} */
+.amona {
+  left: calc(50% + 146px);
+  transform: translateX(calc(-50% - 73px));
+}
+/* .floatingR {
+  left: calc(50% - 292px);
+  transform: translateX(-50%);
+} */
+.amona__letter {
+  position: relative;
+}

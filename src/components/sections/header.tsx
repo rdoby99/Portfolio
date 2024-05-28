@@ -18,7 +18,6 @@ export default function Header() {
         scrollTrigger: {
           trigger: "#intro",
           start: "bottom 50px",
-          toggleActions: "play none none reset",
         },
       }
     );
@@ -27,7 +26,6 @@ export default function Header() {
       scrollTrigger: {
         trigger: "#intro",
         start: "bottom 50px",
-        toggleActions: "play none none reset",
       },
       width: "100%",
       duration: 0.75,
