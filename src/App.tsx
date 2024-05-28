@@ -7,6 +7,10 @@ import Footer from "./components/sections/footer";
 import Intro from "./components/sections/intro";
 
 function App() {
+  window.onbeforeunload = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <Header />

@@ -58,6 +58,16 @@ export default function Intro() {
       stagger: 0.1,
     });
 
+    introTL.to(
+      ".intro__subtext",
+      {
+        top: -50,
+        duration: 0.75,
+        ease: "expo",
+      },
+      "<+=0"
+    );
+
     introTL.to(window, { duration: 1, scrollTo: "#hero" }, "<+=0.1");
 
     //Exit animation
@@ -71,8 +81,11 @@ export default function Intro() {
       scrollTrigger: {
         trigger: "#intro",
         start: "center 45%",
-        scrub: true,
       },
+    });
+
+    introTL.to("#intro", {
+      height: "0",
     });
 
     // gsap.to(".floatingR", {
