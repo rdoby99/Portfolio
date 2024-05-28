@@ -4,32 +4,52 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default function Intro() {
+  // const mystyle = {
+  //   left: calc(50% - 292px);
+  //   transform: translateX(-50%);
+  // };
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
     var introTL = gsap.timeline();
 
     introTL.fromTo(
-      ".intro__subtext",
-      { top: 50 },
-      { top: 0, duration: 1.5, ease: "power3" }
+      ".floatingR",
+      {
+        left: "50%",
+        x: "-50%",
+      },
+      {
+        left: "calc(50% - 292px)",
+        ease: "expo.out",
+        delay: 1,
+        duration: 1,
+      }
+    );
+
+    introTL.fromTo(
+      ".amona__letter",
+      { top: 150 },
+      { top: 0, duration: 0.75, ease: "back", stagger: 0.15 },
+      ">-0.85"
     );
 
     // introTL.to(window, { duration: 1, scrollTo: "#hero" });
 
-    gsap.fromTo(
+    introTL.fromTo(
       ".intro__subtext",
-      { top: 0 },
+      { top: 50 },
       {
-        top: 50,
+        top: 0,
         duration: 1.5,
         ease: "power3",
-        scrollTrigger: {
-          trigger: "#intro",
-          start: "center 45%",
-          toggleActions: "play none reverse none",
-        },
-      }
+        // scrollTrigger: {
+        //   trigger: "#intro",
+        //   toggleActions: "play none reverse none",
+        // },
+      },
+      ">-0.75"
     );
 
     // gsap.to(".floatingR", {
@@ -73,9 +93,7 @@ export default function Intro() {
       id="intro"
       className="inline-block bg-waves bg-cover w-full h-[95vh] text-bg"
     >
-      {/* <div className="noiseBg w-full h-[95vh] bg-waves bg-cover absolute top-0 left-0"></div>
-      <div className="noise w-full h-[95vh] absolute top-0 left-0"></div> */}
-      <div className="leading-[12rem]">
+      <div>
         <svg
           width="126"
           height="158"
@@ -83,6 +101,7 @@ export default function Intro() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="floatingR fixed bottom-1/2"
+          // style={mystyle}
         >
           <path
             d="M125.021 157.139C125.021 157.139 124.989 156.239 125.084 156.224L125.021 157.139Z"
@@ -105,7 +124,7 @@ export default function Intro() {
             fill="white"
           />
         </svg>
-        <span className="amona overflow-hidden absolute inline-block h-fit bottom-1/2">
+        <span className="amona overflow-hidden absolute inline-block h-fit bottom-1/2 pt-12">
           <span className="amona__inner relative flex gap-5 items-end">
             {/* a */}
             <svg
@@ -114,6 +133,7 @@ export default function Intro() {
               viewBox="0 0 84 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="amona__letter"
             >
               <path
                 d="M65.2243 39.618V37.299C65.2243 19.8041 55.397 13.9199 43.4211 13.9199C30.0231 13.9199 22.155 21.2397 21.4283 33.0081H4.63347C6.24501 12.3108 24.4775 0.700165 43.2473 0.700165C69.6955 0.700165 81.6715 13.3678 81.4977 40.3121L81.3239 62.445C81.1501 78.5043 82.0349 89.5786 83.8202 98.681H67.373C66.8358 95.1158 66.2986 91.1877 66.1248 85.477C60.2317 95.2893 50.2148 101 33.2304 101C15.1717 101 0.162231 90.9984 0.162231 73.33C0.162231 50.6608 25.7257 44.0667 65.2243 39.6022V39.618ZM18.221 72.9829C18.221 82.0853 25.1885 88.1588 36.8169 88.1588C52.0159 88.1588 66.4882 81.2019 66.4882 58.5327V52.4592C36.9907 55.488 18.2368 59.7789 18.2368 72.9829H18.221Z"
@@ -127,6 +147,7 @@ export default function Intro() {
               viewBox="0 0 138 98"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="amona__letter"
             >
               <path
                 d="M0.797241 97.681V1.67209H17.0549V16.1223C22.6005 7.01994 31.5271 0.0629997 46.0152 0.0629997C60.5033 0.0629997 69.43 6.48358 73.7274 17.0215C81.4059 5.23732 92.6709 0.0629997 106.085 0.0629997C128.425 0.0629997 137.178 15.0496 137.178 37.0089V97.681H120.92V41.8204C120.92 27.0073 118.061 14.1504 100.365 14.1504C86.4302 14.1504 77.1243 25.0354 77.1243 45.5592V97.6652H60.8667V41.8046C60.8667 26.9916 58.007 14.1346 40.3116 14.1346C26.3765 14.1346 17.0707 25.0196 17.0707 45.5434V97.6495H0.813056L0.797241 97.681Z"
@@ -140,6 +161,7 @@ export default function Intro() {
               viewBox="0 0 100 94"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="amona__letter"
             >
               <path
                 d="M99.6652 83.0642C99.6652 86.7083 99.2544 90.2578 98.5118 93.681H84.2923C85.3351 90.3209 85.9039 86.7556 85.9039 83.0642C85.9039 63.4081 69.9465 47.4592 50.2446 47.4592C30.5427 47.4592 14.5853 63.3923 14.5853 83.0642C14.5853 86.7556 15.154 90.3209 16.1968 93.681H1.97733C1.21895 90.2578 0.823975 86.7083 0.823975 83.0642C0.823975 55.8043 22.9432 33.7188 50.2446 33.7188C77.546 33.7188 99.6652 55.8043 99.6652 83.0642ZM6.59076 -0.00893021H23.1486C29.6895 7.62635 39.4062 12.4852 50.2604 12.4852C61.1146 12.4852 70.8312 7.62635 77.3722 -0.00893021H93.93C85.6353 15.5929 69.1881 26.2255 50.2604 26.2255C31.3327 26.2255 14.9013 15.5929 6.59076 -0.00893021Z"
@@ -153,6 +175,7 @@ export default function Intro() {
               viewBox="0 0 80 98"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="amona__letter"
             >
               <path
                 d="M48.1157 0.0629987C71.3566 0.0629987 79.7461 15.0496 79.7461 37.0089V97.681H63.4885V41.8204C63.4885 27.0073 60.9922 14.1504 42.3963 14.1504C26.66 14.1504 17.0224 25.0354 17.0224 45.5592V97.6652H0.764771V1.65631H17.0224V16.1066C22.568 7.00417 31.858 0.047226 48.1157 0.047226V0.0629987Z"
@@ -166,6 +189,7 @@ export default function Intro() {
               viewBox="0 0 84 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="amona__letter"
             >
               <path
                 d="M65.2243 39.618V37.299C65.2243 19.8041 55.397 13.9199 43.4211 13.9199C30.0231 13.9199 22.155 21.2397 21.4283 33.0081H4.63347C6.24501 12.3108 24.4775 0.700165 43.2473 0.700165C69.6955 0.700165 81.6715 13.3678 81.4977 40.3121L81.3239 62.445C81.1501 78.5043 82.0349 89.5786 83.8202 98.681H67.373C66.8358 95.1158 66.2986 91.1877 66.1248 85.477C60.2317 95.2893 50.2148 101 33.2304 101C15.1717 101 0.162231 90.9984 0.162231 73.33C0.162231 50.6608 25.7257 44.0667 65.2243 39.6022V39.618ZM18.221 72.9829C18.221 82.0853 25.1885 88.1588 36.8169 88.1588C52.0159 88.1588 66.4882 81.2019 66.4882 58.5327V52.4592C36.9907 55.488 18.2368 59.7789 18.2368 72.9829H18.221Z"

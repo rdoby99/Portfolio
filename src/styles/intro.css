@@ -13,7 +13,11 @@
   transform: translateX(calc(-50% - 73px));
 }
 
-.floatingR {
+/* .floatingR {
   left: calc(50% - 292px);
   transform: translateX(-50%);
+} */
+
+.amona__letter {
+  @apply relative;
 }
