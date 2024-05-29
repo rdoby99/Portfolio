@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Screw from "./spiral";
+import Spiral from "./spiral";
 
 export default function Hero() {
   useEffect(() => {
@@ -46,6 +48,7 @@ export default function Hero() {
         <br />
         MEET you
       </h1>
+      <Spiral />
     </section>
   );
 }

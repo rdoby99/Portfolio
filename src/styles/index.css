@@ -528,6 +528,24 @@ video {
 .top-\[60\%\] {
   top: 60%;
 }
+.right-0 {
+  right: 0px;
+}
+.top-1\/2 {
+  top: 50%;
+}
+.top-1\/4 {
+  top: 25%;
+}
+.-right-1\/2 {
+  right: -50%;
+}
+.-right-1\/4 {
+  right: -25%;
+}
+.top-\[15\%\] {
+  top: 15%;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -544,18 +562,15 @@ video {
 .grid {
   display: grid;
 }
+.h-\[100vh\] {
+  height: 100vh;
+}
 .h-\[1px\] {
   height: 1px;
-}
-.h-\[95vh\] {
-  height: 95vh;
 }
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
-}
-.h-\[100vh\] {
-  height: 100vh;
 }
 .min-h-\[100vh\] {
   min-height: 100vh;
