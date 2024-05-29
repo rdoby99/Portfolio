@@ -6,44 +6,59 @@ export default function Spiral() {
   const mountRef = useRef(null);
 
   useEffect(() => {
-    // Scene setup
     const scene = new THREE.Scene();
-
-    //Camera
     const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
+    // const axesHelper = new THREE.AxesHelper(5);
+    // scene.add(axesHelper);
 
-    // Adding axes helper
-    const axesHelper = new THREE.AxesHelper(5);
-    scene.add(axesHelper);
-
-    //Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor(0x000000, 0);
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 2);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(0, 1, 0);
-    scene.add(ambientLight);
-    scene.add(directionalLight);
+    // Additional light
+    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+    pointLight.position.set(0, 2, 5);
+    scene.add(pointLight);
 
-    // GLTF Loader
     let spiral;
     const loader = new GLTFLoader();
     loader.load(
       "/spiral.gltf",
       (gltf) => {
+        const blueGlassMaterial = new THREE.MeshPhysicalMaterial({
+          color: 0x0000ff,
+          metalness: 0,
+          roughness: 0,
+          transmission: 1,
+          // opacity: 0.6,
+          transparent: true,
+          reflectivity: 0.5,
+        });
+
+        gltf.scene.traverse((child) => {
+          if (child.isMesh) {
+            child.material = blueGlassMaterial;
+          }
+        });
+
         spiral = gltf.scene;
-        spiral.rotation.z += -0.25;
         scene.add(spiral);
-        camera.position.set(0, -0.5, 5); // x, y, z
+
+        // Set light position close to the model's position
+        // if (spiral) {
+        //   const box = new THREE.Box3().setFromObject(spiral);
+        //   const center = new THREE.Vector3();
+        //   box.getCenter(center);
+        //   pointLight.position.set(center.x, center.y + 1, center.z + 5); // Slightly above and in front of the model
+        // }
+
+        camera.position.set(0, -0.5, 5);
       },
       undefined,
       function (error) {
@@ -51,21 +66,18 @@ export default function Spiral() {
       }
     );
 
-    // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
 
       if (spiral) {
         // Rotate the model
-        // spiral.rotation.y += 0.01;
-        // spiral.rotation.x += 0.01;
+        spiral.rotation.y += 0.01;
+        spiral.rotation.x += 0.01;
       }
-
       renderer.render(scene, camera);
     };
     animate();
 
-    // Clean up on component unmount
     return () => {
       mountRef.current.removeChild(renderer.domElement);
       scene.clear();
