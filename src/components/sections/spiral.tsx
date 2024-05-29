@@ -17,6 +17,10 @@ export default function Spiral() {
       1000
     );
 
+    // Adding axes helper
+    const axesHelper = new THREE.AxesHelper(5);
+    scene.add(axesHelper);
+
     //Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor(0x000000, 0);
@@ -30,10 +34,6 @@ export default function Spiral() {
     scene.add(ambientLight);
     scene.add(directionalLight);
 
-    // Adding axes helper
-    const axesHelper = new THREE.AxesHelper(5);
-    scene.add(axesHelper);
-
     // GLTF Loader
     let spiral;
     const loader = new GLTFLoader();
@@ -41,6 +41,7 @@ export default function Spiral() {
       "/spiral.gltf",
       (gltf) => {
         spiral = gltf.scene;
+        spiral.rotation.z += -0.25;
         scene.add(spiral);
         camera.position.set(0, -0.5, 5); // x, y, z
       },
@@ -53,11 +54,11 @@ export default function Spiral() {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      // Check if the model is loaded before trying to animate it
+
       if (spiral) {
         // Rotate the model
+        // spiral.rotation.y += 0.01;
         // spiral.rotation.x += 0.01;
-        spiral.rotation.y += 0.01;
       }
 
       renderer.render(scene, camera);
@@ -72,5 +73,5 @@ export default function Spiral() {
     };
   }, []);
 
-  return <div ref={mountRef} className="absolute -right-1/4 top-[15%]" />;
+  return <div ref={mountRef} className="absolute left-0 -top-1/4" />;
 }

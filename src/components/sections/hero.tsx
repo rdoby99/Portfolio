@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Screw from "./spiral";
 import Spiral from "./spiral";
 
 export default function Hero() {
@@ -38,17 +37,19 @@ export default function Hero() {
       id="hero"
       className="hero text-center flex flex-col gap-2 justify-center items-center min-h-[100vh]"
     >
-      <div className="overflow-hidden relative block">
-        <div className="hero__subtext relative h6">&#123; Welcome &#125;</div>
+      <div className="relative">
+        <div className="overflow-hidden relative block">
+          <div className="hero__subtext relative h6">&#123; Welcome &#125;</div>
+        </div>
+        <h1 className="text-[10rem]">
+          Hi THERE
+          <br />
+          <span className="hero__italic italic">NICE</span> to
+          <br />
+          MEET you
+        </h1>
+        <Spiral />
       </div>
-      <h1 className="text-[10rem]">
-        Hi THERE
-        <br />
-        <span className="hero__italic italic">NICE</span> to
-        <br />
-        MEET you
-      </h1>
-      <Spiral />
     </section>
   );
 }
