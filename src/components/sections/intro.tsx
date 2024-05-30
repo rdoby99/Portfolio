@@ -210,7 +210,7 @@ export default function Intro() {
       </div>
       <div className="overflow-hidden relative top-[60%] left-1/2 -translate-x-1/2 inline-block">
         <div className="intro__subtext relative h6">
-          &#123; Web Developer &#125;
+          &#123; Front-End Web Developer &#125;
         </div>
       </div>
     </section>
