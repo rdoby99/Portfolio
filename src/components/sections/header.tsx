@@ -44,7 +44,7 @@ export default function Header() {
       </nav>
       <div
         id="header__border"
-        className="absolute bottom-0 left-0 inline-block w-0 h-[1px] bg-text"
+        className="absolute bottom-0 left-0 inline-block w-0 h-[2px] bg-text"
       ></div>
     </header>
   );

@@ -22,9 +22,11 @@ export default function Spiral() {
     mountRef.current.appendChild(renderer.domElement);
 
     // Additional light
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-    pointLight.position.set(0, 2, 5);
-    scene.add(pointLight);
+    const ambientLight = new THREE.AmbientLight(0x404040, 2);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(0, 1, 0);
+    scene.add(ambientLight);
+    scene.add(directionalLight);
 
     let spiral;
     const loader = new GLTFLoader();
@@ -32,7 +34,7 @@ export default function Spiral() {
       "/spiral.gltf",
       (gltf) => {
         const blueGlassMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0x0000ff,
+          color: 0x0061fe,
           metalness: 0,
           roughness: 0,
           transmission: 1,
