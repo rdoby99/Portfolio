@@ -534,6 +534,9 @@ video {
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -545,6 +548,9 @@ video {
 }
 .row-span-1 {
   grid-row: span 1 / span 1;
+}
+.row-span-7 {
+  grid-row: span 7 / span 7;
 }
 .row-start-2 {
   grid-row-start: 2;
@@ -581,7 +587,13 @@ video {
   height: -moz-fit-content;
   height: fit-content;
 }
+.h-full {
+  height: 100%;
+}
 .min-h-\[100vh\] {
+  min-height: 100vh;
+}
+.min-h-screen {
   min-height: 100vh;
 }
 .w-0 {
@@ -609,8 +621,17 @@ video {
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.grid-cols-\[4fr_2fr_2fr_3fr_1fr\] {
+  grid-template-columns: 4fr 2fr 2fr 3fr 1fr;
+}
+.grid-cols-\[2fr_3fr_2fr_2fr_3fr_1fr\] {
+  grid-template-columns: 2fr 3fr 2fr 2fr 3fr 1fr;
+}
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+.grid-rows-\[repeat\(16\2c _minmax\(0\2c _1fr\)\)\] {
+  grid-template-rows: repeat(16, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -645,6 +666,20 @@ video {
 .gap-8 {
   gap: 2rem;
 }
+.divide-x > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(1px * var(--tw-divide-x-reverse));
+  border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+}
+.divide-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(2px * var(--tw-divide-x-reverse));
+  border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
+}
+.divide-white > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-divide-opacity));
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -675,6 +710,10 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 .pt-12 {
   padding-top: 3rem;
 }
@@ -683,6 +722,15 @@ video {
 }
 .pr-8 {
   padding-right: 2rem;
+}
+.pb-16 {
+  padding-bottom: 4rem;
+}
+.pb-24 {
+  padding-bottom: 6rem;
+}
+.pb-28 {
+  padding-bottom: 7rem;
 }
 .text-center {
   text-align: center;
@@ -698,6 +746,10 @@ video {
 }
 .text-text {
   color: var(--color-text);
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 /* @font-face {
   font-family: TayBasal;
