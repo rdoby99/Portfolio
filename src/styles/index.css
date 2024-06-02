@@ -528,14 +528,41 @@ video {
 .top-\[60\%\] {
   top: 60%;
 }
+.right-0 {
+  right: 0px;
+}
+.top-1\/2 {
+  top: 50%;
+}
+.top-1\/4 {
+  top: 25%;
+}
+.-right-1\/4 {
+  right: -25%;
+}
+.-right-1\/2 {
+  right: -50%;
+}
+.-right-\[4rem\] {
+  right: -4rem;
+}
+.right-\[-8rem\] {
+  right: -8rem;
+}
+.right-\[-14rem\] {
+  right: -14rem;
+}
+.z-10 {
+  z-index: 10;
+}
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
 .col-span-2 {
   grid-column: span 2 / span 2;
+}
+.col-span-3 {
+  grid-column: span 3 / span 3;
 }
 .col-start-1 {
   grid-column-start: 1;
@@ -562,9 +589,6 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
-.mb-auto {
-  margin-bottom: auto;
-}
 .block {
   display: block;
 }
@@ -587,11 +611,11 @@ video {
   height: -moz-fit-content;
   height: fit-content;
 }
-.h-full {
-  height: 100%;
-}
 .min-h-\[100vh\] {
   min-height: 100vh;
+}
+.min-h-\[90vh\] {
+  min-height: 90vh;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -602,11 +626,17 @@ video {
 .w-full {
   width: 100%;
 }
+.max-w-lg {
+  max-width: 32rem;
+}
 .max-w-screen-xl {
   max-width: 1280px;
 }
 .max-w-sm {
   max-width: 24rem;
+}
+.max-w-md {
+  max-width: 28rem;
 }
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
@@ -620,9 +650,6 @@ video {
 }
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-.grid-cols-\[4fr_2fr_2fr_3fr_1fr\] {
-  grid-template-columns: 4fr 2fr 2fr 3fr 1fr;
 }
 .grid-cols-\[2fr_3fr_2fr_2fr_3fr_1fr\] {
   grid-template-columns: 2fr 3fr 2fr 2fr 3fr 1fr;
@@ -666,11 +693,6 @@ video {
 .gap-8 {
   gap: 2rem;
 }
-.divide-x > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-x-reverse: 0;
-  border-right-width: calc(1px * var(--tw-divide-x-reverse));
-  border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
-}
 .divide-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(2px * var(--tw-divide-x-reverse));
@@ -692,11 +714,11 @@ video {
 .bg-cover {
   background-size: cover;
 }
-.p-8 {
-  padding: 2rem;
-}
 .p-12 {
   padding: 3rem;
+}
+.p-8 {
+  padding: 2rem;
 }
 .px-12 {
   padding-left: 3rem;
@@ -710,27 +732,14 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-.pt-12 {
-  padding-top: 3rem;
-}
-.pr-4 {
-  padding-right: 1rem;
+.pb-28 {
+  padding-bottom: 7rem;
 }
 .pr-8 {
   padding-right: 2rem;
 }
-.pb-16 {
-  padding-bottom: 4rem;
-}
-.pb-24 {
-  padding-bottom: 6rem;
-}
-.pb-28 {
-  padding-bottom: 7rem;
+.pt-12 {
+  padding-top: 3rem;
 }
 .text-center {
   text-align: center;
