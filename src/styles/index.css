@@ -510,6 +510,9 @@ video {
 .relative {
   position: relative;
 }
+.-left-\[16rem\] {
+  left: -16rem;
+}
 .bottom-0 {
   bottom: 0px;
 }
@@ -522,6 +525,9 @@ video {
 .left-1\/2 {
   left: 50%;
 }
+.right-0 {
+  right: 0px;
+}
 .right-\[-14rem\] {
   right: -14rem;
 }
@@ -533,6 +539,9 @@ video {
 }
 .top-\[60\%\] {
   top: 60%;
+}
+.top-\[9rem\] {
+  top: 9rem;
 }
 .z-10 {
   z-index: 10;
@@ -653,6 +662,9 @@ video {
 .w-full {
   width: 100%;
 }
+.max-w-\[350px\] {
+  max-width: 350px;
+}
 .max-w-screen-xl {
   max-width: 1280px;
 }
@@ -711,8 +723,8 @@ video {
 .justify-items-start {
   justify-items: start;
 }
-.gap-2 {
-  gap: 0.5rem;
+.gap-16 {
+  gap: 4rem;
 }
 .gap-4 {
   gap: 1rem;
@@ -776,6 +788,9 @@ video {
 .text-center {
   text-align: center;
 }
+.font-secHeader {
+  font-family: var(--font-secondary-heading);
+}
 .text-\[10rem\] {
   font-size: 10rem;
 }
@@ -784,9 +799,6 @@ video {
 }
 .uppercase {
   text-transform: uppercase;
-}
-.italic {
-  font-style: italic;
 }
 .text-bg {
   color: var(--color-bg);
@@ -816,9 +828,9 @@ video {
   --color-tertiary: #a8b6f5;
   --color-quaternary: #fabb00;
   --color-text: #0061fe;
-  --color-bg: #fefdf9;
+  --color-bg: #fdf5ed;
   --font-heading-family: "TheSilverEditorialRegular", serif;
-  --font-secondary-heading: sans-serif;
+  --font-secondary-heading: "TheSilverEditorialItalic", serif;
   --font-body-family: sans-serif;
 }
 #root {
@@ -830,7 +842,7 @@ h1,
 .h1 {
   font-family: var(--font-heading-family);
   font-size: 3.75rem;
-  line-height: 1;
+  line-height: 1.375 !important;
 }
 @media (min-width: 768px) {
 
@@ -844,6 +856,7 @@ h2,
 .h2 {
   font-family: var(--font-heading-family);
   font-size: 46px;
+  line-height: 1.375 !important;
 }
 @media (min-width: 768px) {
 
@@ -853,15 +866,12 @@ h2,
     line-height: 1;
   }
 }
-h2,
-.h2 {
-  line-height: 100%; /* 46px */
-}
 h3,
 .h3 {
   font-family: var(--font-heading-family);
   font-size: 1.875rem;
   line-height: 2.25rem;
+  line-height: 1.375 !important;
 }
 @media (min-width: 768px) {
 
@@ -995,6 +1005,12 @@ body {
   text-decoration-line: underline;
   text-underline-offset: 2px;
 }
+.threedShape {
+  --tw-brightness: brightness(1.5);
+  --tw-hue-rotate: hue-rotate(315deg);
+  --tw-saturate: saturate(1.5);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 /* .noise {
   background: url("/noise.svg"), url("/noise.svg");
   background-size: cover;
@@ -1048,6 +1064,7 @@ body {
   font-family: var(--font-heading-family);
   font-size: 1.875rem;
   line-height: 2.25rem;
+  line-height: 1.375 !important;
 }
 @media (min-width: 768px) {
 
@@ -1077,4 +1094,36 @@ body {
   padding-bottom: 1.5rem;
   padding-left: 4rem;
   padding-right: 4rem;
+}
+.after\:absolute::after {
+  content: var(--tw-content);
+  position: absolute;
+}
+.after\:bottom-0::after {
+  content: var(--tw-content);
+  bottom: 0px;
+}
+.after\:left-0::after {
+  content: var(--tw-content);
+  left: 0px;
+}
+.after\:inline-block::after {
+  content: var(--tw-content);
+  display: inline-block;
+}
+.after\:h-4::after {
+  content: var(--tw-content);
+  height: 1rem;
+}
+.after\:w-full::after {
+  content: var(--tw-content);
+  width: 100%;
+}
+.after\:bg-\[url\(\'\.\.\/\.\.\/assets\/underline\.svg\'\)\]::after {
+  content: var(--tw-content);
+  background-image: url('../../assets/underline.svg');
+}
+.after\:content-\[\'\'\]::after {
+  --tw-content: '';
+  content: var(--tw-content);
 }

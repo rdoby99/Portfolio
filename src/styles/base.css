@@ -18,9 +18,9 @@
   --color-tertiary: #a8b6f5;
   --color-quaternary: #fabb00;
   --color-text: #0061fe;
-  --color-bg: #fefdf9;
+  --color-bg: #fdf5ed;
   --font-heading-family: "TheSilverEditorialRegular", serif;
-  --font-secondary-heading: sans-serif;
+  --font-secondary-heading: "TheSilverEditorialItalic", serif;
   --font-body-family: sans-serif;
 }
 
@@ -31,18 +31,17 @@
 /* Basic Typography */
 h1,
 .h1 {
-  @apply md:text-9xl text-6xl font-header;
+  @apply md:text-9xl text-6xl font-header !leading-snug;
 }
 
 h2,
 .h2 {
-  @apply md:text-7xl text-[46px] font-header;
-  line-height: 100%; /* 46px */
+  @apply md:text-7xl text-[46px] font-header !leading-snug;
 }
 
 h3,
 .h3 {
-  @apply md:text-[38px] text-3xl font-header;
+  @apply md:text-[38px] text-3xl font-header !leading-snug;
 }
 
 h4,
@@ -99,6 +98,10 @@ body {
 
 .button--text {
   @apply underline uppercase text-tertiary underline-offset-2;
+}
+
+.threedShape {
+  @apply hue-rotate-[315deg] brightness-150 saturate-150;
 }
 
 /* .noise {

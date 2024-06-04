@@ -11,7 +11,8 @@ export default function About() {
       <div className="flex flex-col gap-8">
         <p className="h6">&#123; I’m Ramona &#125;</p>
         <h2 className="h2">
-          Front-End <br /> Web Developer
+          <span className="font-secHeader uppercase">Front-End</span> <br /> Web
+          Developer
         </h2>
         <p className="max-w-sm">
           For the past 3 years, I've specialized in crafting engaging web
