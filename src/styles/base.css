@@ -1,14 +1,16 @@
-/* @font-face {
-  font-family: TayBasal;
-  src: url('assets/fonts/TayBasal.otf') format("opentype");
+@font-face {
+  font-family: "TheSilverEditorialRegular";
+  src: url("../assets/fonts/thesilvereditorial-regular.woff2") format("woff2"),
+    url("../assets/fonts/thesilvereditorial-regular.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: TAYJukeboxJohnny;
-  src: url('assets/fonts/TAYJukeboxJohnny.otf') format("opentype");
+  font-family: "TheSilverEditorialItalic";
+  src: url("../assets/fonts/thesilvereditorial-italic.woff2") format("woff2"),
+    url("../assets/fonts/thesilvereditorial-italic.woff") format("woff");
   font-display: swap;
-} */
+}
 
 :root {
   --color-primary: #0061fe;
@@ -17,7 +19,7 @@
   --color-quaternary: #fabb00;
   --color-text: #0061fe;
   --color-bg: #fefdf9;
-  --font-heading-family: serif;
+  --font-heading-family: "TheSilverEditorialRegular", serif;
   --font-secondary-heading: sans-serif;
   --font-body-family: sans-serif;
 }
