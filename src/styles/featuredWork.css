@@ -1,0 +1,11 @@
+.workCard {
+  @apply border-[0.5px] border-white;
+}
+
+.workCard__project {
+  @apply bg-text text-white h3 uppercase cursor-pointer hover:bg-waves hover:bg-cover flex items-end p-6;
+}
+
+.workCard__accent {
+  @apply bg-secondary;
+}

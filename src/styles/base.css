@@ -12,7 +12,7 @@
 
 :root {
   --color-primary: #0061fe;
-  --color-secondary: #572a0d;
+  --color-secondary: #aed8ff;
   --color-tertiary: #9d4121;
   --color-quaternary: #fabb00;
   --color-text: #0061fe;
@@ -40,7 +40,7 @@ h2,
 
 h3,
 .h3 {
-  @apply md:text-[38px] text-3xl;
+  @apply md:text-[38px] text-3xl font-header;
 }
 
 h4,

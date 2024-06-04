@@ -522,35 +522,17 @@ video {
 .left-1\/2 {
   left: 50%;
 }
+.right-\[-14rem\] {
+  right: -14rem;
+}
 .top-0 {
   top: 0px;
-}
-.top-\[60\%\] {
-  top: 60%;
-}
-.right-0 {
-  right: 0px;
-}
-.top-1\/2 {
-  top: 50%;
 }
 .top-1\/4 {
   top: 25%;
 }
-.-right-1\/4 {
-  right: -25%;
-}
-.-right-1\/2 {
-  right: -50%;
-}
-.-right-\[4rem\] {
-  right: -4rem;
-}
-.right-\[-8rem\] {
-  right: -8rem;
-}
-.right-\[-14rem\] {
-  right: -14rem;
+.top-\[60\%\] {
+  top: 60%;
 }
 .z-10 {
   z-index: 10;
@@ -573,17 +555,59 @@ video {
 .col-start-3 {
   grid-column-start: 3;
 }
+.col-start-4 {
+  grid-column-start: 4;
+}
+.col-start-5 {
+  grid-column-start: 5;
+}
+.col-start-6 {
+  grid-column-start: 6;
+}
 .row-span-1 {
   grid-row: span 1 / span 1;
 }
+.row-span-2 {
+  grid-row: span 2 / span 2;
+}
+.row-span-3 {
+  grid-row: span 3 / span 3;
+}
+.row-span-4 {
+  grid-row: span 4 / span 4;
+}
+.row-span-5 {
+  grid-row: span 5 / span 5;
+}
+.row-span-6 {
+  grid-row: span 6 / span 6;
+}
 .row-span-7 {
   grid-row: span 7 / span 7;
+}
+.row-start-1 {
+  grid-row-start: 1;
+}
+.row-start-12 {
+  grid-row-start: 12;
+}
+.row-start-13 {
+  grid-row-start: 13;
 }
 .row-start-2 {
   grid-row-start: 2;
 }
 .row-start-3 {
   grid-row-start: 3;
+}
+.row-start-5 {
+  grid-row-start: 5;
+}
+.row-start-7 {
+  grid-row-start: 7;
+}
+.row-start-8 {
+  grid-row-start: 8;
 }
 .mx-auto {
   margin-left: auto;
@@ -611,9 +635,6 @@ video {
   height: -moz-fit-content;
   height: fit-content;
 }
-.h-full {
-  height: 100%;
-}
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
@@ -629,17 +650,11 @@ video {
 .w-full {
   width: 100%;
 }
-.max-w-lg {
-  max-width: 32rem;
-}
 .max-w-screen-xl {
   max-width: 1280px;
 }
 .max-w-sm {
   max-width: 24rem;
-}
-.max-w-md {
-  max-width: 28rem;
 }
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
@@ -720,6 +735,9 @@ video {
 .p-12 {
   padding: 3rem;
 }
+.p-4 {
+  padding: 1rem;
+}
 .p-8 {
   padding: 2rem;
 }
@@ -744,11 +762,20 @@ video {
 .pt-12 {
   padding-top: 3rem;
 }
+.pl-12 {
+  padding-left: 3rem;
+}
+.pl-16 {
+  padding-left: 4rem;
+}
 .text-center {
   text-align: center;
 }
 .text-\[10rem\] {
   font-size: 10rem;
+}
+.uppercase {
+  text-transform: uppercase;
 }
 .italic {
   font-style: italic;
@@ -776,7 +803,7 @@ video {
 } */
 :root {
   --color-primary: #0061fe;
-  --color-secondary: #572a0d;
+  --color-secondary: #aed8ff;
   --color-tertiary: #9d4121;
   --color-quaternary: #fabb00;
   --color-text: #0061fe;
@@ -823,6 +850,7 @@ h2,
 }
 h3,
 .h3 {
+  font-family: var(--font-heading-family);
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
@@ -993,4 +1021,35 @@ body {
 } */
 .amona__letter {
   position: relative;
+}
+.workCard {
+  border-width: 0.5px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.workCard__project {
+  display: flex;
+  cursor: pointer;
+  align-items: flex-end;
+  background-color: var(--color-text);
+  padding: 1.5rem;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  font-family: var(--font-heading-family);
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+@media (min-width: 768px) {
+
+  .workCard__project {
+    font-size: 38px;
+  }
+}
+.workCard__project:hover {
+  background-image: url('/background.png');
+  background-size: cover;
+}
+.workCard__accent {
+  background-color: var(--color-secondary);
 }
