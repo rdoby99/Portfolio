@@ -7,5 +7,5 @@
 }
 
 .workCard__accent {
-  @apply bg-secondary;
+  @apply bg-tertiary;
 }

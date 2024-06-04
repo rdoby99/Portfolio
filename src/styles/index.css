@@ -696,6 +696,9 @@ video {
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .justify-items-start {
   justify-items: start;
 }
@@ -710,15 +713,6 @@ video {
 }
 .gap-8 {
   gap: 2rem;
-}
-.divide-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-x-reverse: 0;
-  border-right-width: calc(2px * var(--tw-divide-x-reverse));
-  border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
-}
-.divide-white > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-divide-opacity));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -735,12 +729,6 @@ video {
 .p-12 {
   padding: 3rem;
 }
-.p-4 {
-  padding: 1rem;
-}
-.p-8 {
-  padding: 2rem;
-}
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -753,20 +741,25 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 .pb-28 {
   padding-bottom: 7rem;
+}
+.pl-16 {
+  padding-left: 4rem;
 }
 .pr-8 {
   padding-right: 2rem;
 }
 .pt-12 {
   padding-top: 3rem;
-}
-.pl-12 {
-  padding-left: 3rem;
-}
-.pl-16 {
-  padding-left: 4rem;
 }
 .text-center {
   text-align: center;
@@ -804,7 +797,7 @@ video {
 :root {
   --color-primary: #0061fe;
   --color-secondary: #aed8ff;
-  --color-tertiary: #9d4121;
+  --color-tertiary: #a8b6f5;
   --color-quaternary: #fabb00;
   --color-text: #0061fe;
   --color-bg: #fefdf9;
@@ -1051,5 +1044,12 @@ body {
   background-size: cover;
 }
 .workCard__accent {
-  background-color: var(--color-secondary);
+  background-color: var(--color-tertiary);
+}
+.workRow {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-color: var(--color-text);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }

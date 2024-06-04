@@ -3,11 +3,18 @@ import React from "react";
 export default function Work() {
   return (
     <section id="work">
-      <div className="grid grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[repeat(16,_minmax(0,_1fr))]  divide-x-2 divide-white bg-waves bg-cover text-white">
-        <div className="col-span-2 col-start-1 row-span-7 p-8">
-          <p className="h6">&#123; Featured &#125;</p>
-          <h2 className="h2">Work</h2>
-        </div>
+      <div className="px-16 py-16 flex flex-col gap-8">
+        <h2 className="h6">&#123; More Select Work &#125;</h2>
+        <ul>
+          <li className="workRow flex justify-between">
+            <h3>Spare Food</h3>
+            <ul>
+              <li>Squarespace</li>
+              <li>CSS</li>
+            </ul>
+            <button>Learn More</button>
+          </li>
+        </ul>
       </div>
     </section>
   );

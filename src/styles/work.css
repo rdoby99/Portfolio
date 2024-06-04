@@ -1,0 +1,3 @@
+.workRow {
+  @apply border-y border-text py-8;
+}
