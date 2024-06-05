@@ -8,6 +8,7 @@ import arrow from "../../assets/arrow.svg";
 export default function Hero() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     gsap.fromTo(
       ".hero__subtext",
       { top: 50 },
