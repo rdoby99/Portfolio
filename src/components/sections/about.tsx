@@ -9,7 +9,7 @@ export default function About() {
       className="grid grid-cols-2 px-12 max-w-screen-xl mx-auto pb-28 min-h-screen items-center"
     >
       <div className="flex flex-col gap-8">
-        <p className="h6">&#123; I’m Ramona &#125;</p>
+        <p className="h5">&#123; I’m Ramona &#125;</p>
         <h2 className="h2">
           <span className="font-secHeader uppercase">Front-End</span> <br /> Web
           Developer

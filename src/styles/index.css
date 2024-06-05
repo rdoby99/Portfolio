@@ -625,6 +625,18 @@ video {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.mb-20 {
+  margin-bottom: 5rem;
+}
+.mb-16 {
+  margin-bottom: 4rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
 .block {
   display: block;
 }
@@ -640,15 +652,15 @@ video {
 .h-\[100vh\] {
   height: 100vh;
 }
+.h-\[150\%\] {
+  height: 150%;
+}
 .h-\[1px\] {
   height: 1px;
 }
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
-}
-.h-\[150\%\] {
-  height: 150%;
 }
 .h-full {
   height: 100%;
@@ -683,6 +695,9 @@ video {
 }
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -726,8 +741,14 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.justify-around {
+  justify-content: space-around;
+}
 .justify-items-start {
   justify-items: start;
+}
+.gap-1 {
+  gap: 0.25rem;
 }
 .gap-16 {
   gap: 4rem;
@@ -743,6 +764,9 @@ video {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.\!rounded-full {
+  border-radius: 9999px !important;
 }
 .bg-text {
   background-color: var(--color-text);
@@ -800,9 +824,6 @@ video {
 .text-\[10rem\] {
   font-size: 10rem;
 }
-.font-bold {
-  font-weight: 700;
-}
 .uppercase {
   text-transform: uppercase;
 }
@@ -815,6 +836,14 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-150 {
+  transition-duration: 150ms;
 }
 @font-face {
   font-family: "TheSilverEditorialRegular";
@@ -861,79 +890,92 @@ h1,
 h2,
 .h2 {
   font-family: var(--font-heading-family);
-  font-size: 46px;
+  font-size: 40px;
   line-height: 1.375 !important;
 }
 @media (min-width: 768px) {
 
   h2,
 .h2 {
-    font-size: 4.5rem;
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+.h2__italic {
+  font-family: var(--font-secondary-heading);
+  font-size: 40px;
+  text-transform: uppercase;
+  line-height: 1.375 !important;
+}
+@media (min-width: 768px) {
+
+  .h2__italic {
+    font-size: 3.75rem;
     line-height: 1;
   }
 }
 h3,
 .h3 {
   font-family: var(--font-heading-family);
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 32px;
   line-height: 1.375 !important;
 }
 @media (min-width: 768px) {
 
   h3,
 .h3 {
-    font-size: 38px;
+    font-size: 50px;
   }
 }
 h4,
 .h4 {
-  font-size: 28px;
+  font-family: var(--font-heading-family);
+  font-size: 26px;
 }
 @media (min-width: 768px) {
 
   h4,
 .h4 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+    font-size: 40px;
   }
 }
 h5,
 .h5 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
 
   h5,
 .h5 {
-    font-size: 26px;
+    font-size: 25px;
   }
 }
 h6,
 .h6 {
   font-family: var(--font-body-family);
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
 
   h6,
 .h6 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 15px;
   }
 }
 .p1 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 18px;
+}
+.p1__medium {
+  font-family: var(--font-body-family);
+  font-size: 18px;
+  font-weight: 500;
 }
 .p2 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-.p3 {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
@@ -1068,14 +1110,13 @@ body {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   font-family: var(--font-heading-family);
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 32px;
   line-height: 1.375 !important;
 }
 @media (min-width: 768px) {
 
   .workCard__project {
-    font-size: 38px;
+    font-size: 50px;
   }
 }
 .workCard__project:hover {
@@ -1100,6 +1141,12 @@ body {
   padding-bottom: 1.5rem;
   padding-left: 4rem;
   padding-right: 4rem;
+}
+@media (min-width: 768px) {
+
+  .footerGrid__item {
+    border-radius: 0.75rem;
+  }
 }
 .after\:absolute::after {
   content: var(--tw-content);
@@ -1132,4 +1179,17 @@ body {
 .after\:content-\[\'\'\]::after {
   --tw-content: '';
   content: var(--tw-content);
+}
+.hover\:bg-text:hover {
+  background-color: var(--color-text);
+}
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+@media (min-width: 768px) {
+
+  .md\:max-w-\[60\%\] {
+    max-width: 60%;
+  }
 }

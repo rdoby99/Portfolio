@@ -36,38 +36,42 @@ h1,
 
 h2,
 .h2 {
-  @apply md:text-7xl text-[46px] font-header !leading-snug;
+  @apply md:text-6xl text-[40px] font-header !leading-snug;
+}
+
+.h2__italic {
+  @apply md:text-6xl text-[40px] font-secHeader !leading-snug uppercase;
 }
 
 h3,
 .h3 {
-  @apply md:text-[38px] text-3xl font-header !leading-snug;
+  @apply md:text-[50px] text-[32px] font-header !leading-snug;
 }
 
 h4,
 .h4 {
-  @apply md:text-4xl text-[28px];
+  @apply md:text-[40px] text-[26px] font-header;
 }
 
 h5,
 .h5 {
-  @apply md:text-[26px] text-xl;
+  @apply md:text-[25px] text-base font-body uppercase;
 }
 
 h6,
 .h6 {
-  @apply text-xs md:text-xl uppercase font-body;
+  @apply text-sm md:text-[15px] uppercase font-body;
 }
 
 .p1 {
-  @apply text-xl;
+  @apply text-[18px];
+}
+
+.p1__medium {
+  @apply text-[18px] font-medium font-body;
 }
 
 .p2 {
-  @apply text-base;
-}
-
-.p3 {
   @apply text-sm;
 }
 

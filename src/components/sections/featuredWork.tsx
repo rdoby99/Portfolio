@@ -12,7 +12,7 @@ export default function FeaturedWork() {
           <div className="grid grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[repeat(16,_minmax(0,_1fr))] min-h-[90vh] text-white relative h-full bg-waves bg-cover">
             {/* Col 1 */}
             <div className="workCard col-start-1 row-start-1 col-span-2 row-span-7 pl-16 flex flex-col justify-center">
-              <p className="h6">&#123; Featured &#125;</p>
+              <p className="h5">&#123; Featured &#125;</p>
               <h2 className="h1 uppercase">Work</h2>
             </div>
             <div className="workCard row-start-8 col-start-1 row-span-4"></div>

@@ -42,7 +42,7 @@ export default function Hero() {
     >
       <div className="relative">
         <div className="overflow-hidden relative block">
-          <div className="hero__subtext relative h6">&#123; Welcome &#125;</div>
+          <div className="hero__subtext relative h5">&#123; Welcome &#125;</div>
         </div>
         <h1 className="text-[10rem] relative z-10">
           Hi THERE
