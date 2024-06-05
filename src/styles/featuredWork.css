@@ -7,5 +7,9 @@
 }
 
 .workCard__accent {
-  @apply bg-tertiary;
+  @apply hidden md:inline-block bg-tertiary;
+}
+
+.workCard__empty {
+  @apply hidden md:inline-block;
 }

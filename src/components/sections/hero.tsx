@@ -38,13 +38,13 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="hero text-center flex flex-col gap-16 justify-center items-center min-h-[100vh]"
+      className="hero text-center flex flex-col gap-16 justify-center items-center min-h-[80vh] md:min-h-full overflow-hidden"
     >
       <div className="relative">
         <div className="overflow-hidden relative block">
           <div className="hero__subtext relative h5">&#123; Welcome &#125;</div>
         </div>
-        <h1 className="text-[10rem] relative z-10">
+        <h1 className="h1 relative z-10">
           Hi THERE
           <br />
           <span className="hero__italic font-secHeader">NICE</span> to
@@ -57,12 +57,12 @@ export default function Hero() {
         <img
           src={spiral}
           alt=""
-          className="threedShape max-w-sm absolute right-[-14rem] top-1/4"
+          className="threedShape max-w-[150px] md:max-w-sm absolute right-0 md:right-[-14rem] top-1/4"
         />
         <img
           src={curve}
           alt=""
-          className="threedShape max-w-[350px] absolute -left-[16rem] top-[9rem]"
+          className="threedShape max-w-[150px] md:max-w-[350px] absolute left-0 md:-left-[16rem] top-[9rem]"
         />
         <svg
           width="224"

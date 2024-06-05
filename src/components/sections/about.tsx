@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="grid grid-cols-2 px-12 max-w-screen-xl mx-auto pb-28 min-h-screen items-center"
+      className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-12 max-w-screen-xl mx-auto pb-28 md:min-h-screen items-center"
     >
       <div className="flex flex-col gap-8">
         <p className="h5">&#123; I’m Ramona &#125;</p>
@@ -24,7 +24,7 @@ export default function About() {
           exceed expectations and enhance user engagement.
         </p>
       </div>
-      <ShapeCollage />
+      <ShapeCollage className="hidden md:block" />
     </section>
   );
 }
