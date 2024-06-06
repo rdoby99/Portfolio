@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-12 max-w-screen-xl mx-auto pb-28 md:min-h-full items-center"
+      className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-12 max-w-screen-xl mx-auto pb-28 md:min-h-[80vh] items-center"
     >
       <div className="flex flex-col gap-8">
         <p className="h5">&#123; I’m Ramona &#125;</p>

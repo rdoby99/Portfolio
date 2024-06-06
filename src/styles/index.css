@@ -1548,6 +1548,18 @@ body {
     min-height: 100%;
   }
 
+  .md\:min-h-screen {
+    min-height: 100vh;
+  }
+
+  .md\:min-h-\[90vh\] {
+    min-height: 90vh;
+  }
+
+  .md\:min-h-\[80vh\] {
+    min-height: 80vh;
+  }
+
   .md\:w-4 {
     width: 1rem;
   }

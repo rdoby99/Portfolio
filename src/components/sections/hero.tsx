@@ -38,7 +38,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="hero text-center flex flex-col gap-16 justify-center items-center min-h-[80vh] md:min-h-full overflow-hidden"
+      className="hero text-center flex flex-col gap-16 justify-center items-center min-h-[80vh] md:min-h-screen overflow-hidden"
     >
       <div className="relative">
         <div className="overflow-hidden relative block">
