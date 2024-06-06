@@ -592,6 +592,9 @@ video {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .ml-8 {
   margin-left: 2rem;
 }
@@ -672,9 +675,6 @@ video {
 .grid-rows-\[3fr_2fr_3fr_3fr_2fr_3fr\] {
   grid-template-rows: 3fr 2fr 3fr 3fr 2fr 3fr;
 }
-.grid-rows-\[4fr_2fr_1fr\] {
-  grid-template-rows: 4fr 2fr 1fr;
-}
 .flex-row {
   flex-direction: row;
 }
@@ -722,9 +722,6 @@ video {
 }
 .gap-8 {
   gap: 2rem;
-}
-.gap-12 {
-  gap: 3rem;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -776,6 +773,15 @@ video {
 }
 .font-secHeader {
   font-family: var(--font-secondary-heading);
+}
+.\!text-\[5vw\] {
+  font-size: 5vw !important;
+}
+.\!text-\[10vw\] {
+  font-size: 10vw !important;
+}
+.\!text-\[9\.5vw\] {
+  font-size: 9.5vw !important;
 }
 .uppercase {
   text-transform: uppercase;
@@ -921,6 +927,7 @@ h6,
   }
 }
 .p1 {
+  font-family: var(--font-body-family);
   font-size: 18px;
 }
 .p1__medium {
@@ -929,6 +936,7 @@ h6,
   font-weight: 500;
 }
 .p2 {
+  font-family: var(--font-body-family);
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
@@ -1059,6 +1067,7 @@ body {
   align-items: flex-end;
   background-color: var(--color-text);
   padding: 1.5rem;
+  font-size: 2.75vw !important;
   text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1157,6 +1166,12 @@ body {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.group:hover .group-hover\:block {
+  display: block;
+}
+.group:hover .group-hover\:hidden {
+  display: none;
 }
 @media (min-width: 768px) {
 
@@ -1268,20 +1283,8 @@ body {
     min-height: 100%;
   }
 
-  .md\:min-h-screen {
-    min-height: 100vh;
-  }
-
-  .md\:min-h-\[90\%\] {
-    min-height: 90%;
-  }
-
   .md\:w-4 {
     width: 1rem;
-  }
-
-  .md\:min-w-\[50\%\] {
-    min-width: 50%;
   }
 
   .md\:min-w-\[60\%\] {
@@ -1332,10 +1335,6 @@ body {
     justify-content: center;
   }
 
-  .md\:justify-between {
-    justify-content: space-between;
-  }
-
   .md\:gap-12 {
     gap: 3rem;
   }
@@ -1353,5 +1352,12 @@ body {
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+
+  .xl\:\!text-9xl {
+    font-size: 8rem !important;
+    line-height: 1 !important;
   }
 }

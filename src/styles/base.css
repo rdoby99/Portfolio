@@ -64,7 +64,7 @@ h6,
 }
 
 .p1 {
-  @apply text-[18px];
+  @apply text-[18px] font-body;
 }
 
 .p1__medium {
@@ -72,7 +72,7 @@ h6,
 }
 
 .p2 {
-  @apply text-sm;
+  @apply text-sm font-body;
 }
 
 body {

@@ -115,7 +115,7 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="inline-block bg-waves bg-cover w-full h-[100vh] text-bg overflow-hidden"
+      className="inline-block bg-waves bg-cover w-full h-[100vh] text-bg"
     >
       <div>
         <svg
