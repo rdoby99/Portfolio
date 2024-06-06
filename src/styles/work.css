@@ -1,3 +1,7 @@
-.workRow {
+.workRow button[aria-haspopup="dialog"] {
+  @apply w-full;
+}
+
+.workRow__inner {
   @apply border-y border-text py-8;
 }

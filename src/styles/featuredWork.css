@@ -1,9 +1,13 @@
+.workCard__project button[aria-haspopup="dialog"] {
+  @apply w-full h-full p-6 flex items-end;
+}
+
 .workCard {
   @apply border-[0.5px] border-white;
 }
 
 .workCard__project {
-  @apply bg-text text-white h3 uppercase cursor-pointer hover:bg-waves hover:bg-cover flex items-end p-6 md:!text-[2.75vw];
+  @apply bg-text text-white h3 uppercase cursor-pointer hover:bg-waves hover:bg-cover md:!text-[2.75vw];
 }
 
 .workCard__accent {
@@ -12,4 +16,8 @@
 
 .workCard__empty {
   @apply hidden md:inline-block;
+}
+
+.dialog-content {
+  @apply grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 md:gap-x-12 gap-y-4 md:gap-y-8 px-4 md:px-12 py-4 md:py-8;
 }

@@ -1,31 +1,5 @@
-@font-face {
-  font-family: "TheSilverEditorialRegular";
-  src: url("../assets/fonts/thesilvereditorial-regular.woff2") format("woff2"),
-    url("../assets/fonts/thesilvereditorial-regular.woff") format("woff");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "TheSilverEditorialItalic";
-  src: url("../assets/fonts/thesilvereditorial-italic.woff2") format("woff2"),
-    url("../assets/fonts/thesilvereditorial-italic.woff") format("woff");
-  font-display: swap;
-}
-
-:root {
-  --color-primary: #0061fe;
-  --color-secondary: #aed8ff;
-  --color-tertiary: #a8b6f5;
-  --color-quaternary: #fabb00;
-  --color-text: #0061fe;
-  --color-bg: #fdf5ed;
-  --font-heading-family: "TheSilverEditorialRegular", serif;
-  --font-secondary-heading: "TheSilverEditorialItalic", serif;
-  --font-body-family: sans-serif;
-}
-
 #root {
-  @apply bg-bg text-text;
+  @apply bg-background text-text;
 }
 
 /* Basic Typography */
@@ -97,7 +71,7 @@ body {
 }
 
 .button--tertiary {
-  @apply bg-bg text-text hover:bg-primary hover:text-text;
+  @apply bg-background text-text hover:bg-primary hover:text-text;
 }
 
 .button--text {
@@ -107,20 +81,3 @@ body {
 .threedShape {
   @apply hue-rotate-[315deg] brightness-150 saturate-150;
 }
-
-/* .noise {
-  background: url("/noise.svg"), url("/noise.svg");
-  background-size: cover;
-  filter: contrast(170%) brightness(1000%);
-  background-color: #294dae;
-  opacity: 20%;
-  mix-blend-mode: multiply;
-  animation: b 0.1s infinite alternate;
-  background-position: 50% 0%, 60% 60%;
-}
-
-@keyframes b {
-  100% {
-    background-position: 50% 0%, 60% 50%;
-  }
-} */

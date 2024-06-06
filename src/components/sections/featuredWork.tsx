@@ -1,5 +1,6 @@
 import React from "react";
 import diagonalArrow from "../../assets/diagonalArrow.svg";
+import FeaturedWorkDialog from "./featuredWorkDialog";
 
 export default function FeaturedWork() {
   return (
@@ -19,19 +20,8 @@ export default function FeaturedWork() {
               </h2>
             </div>
             <div className="workCard md:row-start-8 col-start-1 md:row-span-4 workCard__empty"></div>
-            <div className="group workCard md:row-start-12 col-start-1 col-span-2 md:col-span-1 md:row-span-5 workCard workCard__project">
-              <div className="hidden group-hover:block p1">
-                <ul className="mb-8">
-                  <li>React</li>
-                  <li>Python</li>
-                  <li>PostgreSQL</li>
-                </ul>
-                <button className="flex gap-2 items-center">
-                  <span className="uppercase">Learn More</span>
-                  <img src={diagonalArrow} alt="" className="md:w-4" />
-                </button>
-              </div>
-              <span className="group-hover:hidden">Japanese Reader</span>
+            <div className="group workCard md:row-start-12 col-start-1 col-span-2 md:col-span-1 md:row-span-5 workCard__project">
+              <FeaturedWorkDialog />
             </div>
 
             {/* Col 2 */}
