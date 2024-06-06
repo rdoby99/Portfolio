@@ -14,7 +14,9 @@ export default function FeaturedWork() {
             {/* Col 1 */}
             <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-16 flex flex-col justify-center">
               <p className="h5">&#123; Featured &#125;</p>
-              <h2 className="h1 uppercase !text-[9.5vw] xl:!text-9xl">Work</h2>
+              <h2 className="h1 uppercase md:!text-[9.5vw] xl:!text-9xl">
+                Work
+              </h2>
             </div>
             <div className="workCard md:row-start-8 col-start-1 md:row-span-4 workCard__empty"></div>
             <div className="group workCard md:row-start-12 col-start-1 col-span-2 md:col-span-1 md:row-span-5 workCard workCard__project">
@@ -25,9 +27,7 @@ export default function FeaturedWork() {
                   <li>PostgreSQL</li>
                 </ul>
                 <button className="flex gap-2 items-center">
-                  <span className="hidden md:inline-block uppercase">
-                    Learn More
-                  </span>
+                  <span className="uppercase">Learn More</span>
                   <img src={diagonalArrow} alt="" className="md:w-4" />
                 </button>
               </div>

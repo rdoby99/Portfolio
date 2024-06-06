@@ -774,12 +774,6 @@ video {
 .font-secHeader {
   font-family: var(--font-secondary-heading);
 }
-.\!text-\[5vw\] {
-  font-size: 5vw !important;
-}
-.\!text-\[10vw\] {
-  font-size: 10vw !important;
-}
 .\!text-\[9\.5vw\] {
   font-size: 9.5vw !important;
 }
@@ -1067,7 +1061,6 @@ body {
   align-items: flex-end;
   background-color: var(--color-text);
   padding: 1.5rem;
-  font-size: 2.75vw !important;
   text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1084,6 +1077,12 @@ body {
 .workCard__project:hover {
   background-image: url('/background.png');
   background-size: cover;
+}
+@media (min-width: 768px) {
+
+  .workCard__project {
+    font-size: 2.75vw !important;
+  }
 }
 .workCard__accent {
   display: none;
@@ -1352,6 +1351,10 @@ body {
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .md\:\!text-\[9\.5vw\] {
+    font-size: 9.5vw !important;
   }
 }
 @media (min-width: 1280px) {
