@@ -26,7 +26,7 @@ export default function WorkDialog() {
       </DialogTrigger>
       <DialogContent>
         <h4 className="h5">&#123; The Work &#125;</h4>
-        <div className="grid grid-cols-2 grid-rows-2 gap-x-12 gap-y-8 px-12 py-8">
+        <div className="dialog-content">
           {/* Description */}
           <div>
             <h5 className="h2">Spare Food</h5>

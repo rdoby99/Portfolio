@@ -20,7 +20,7 @@ export default function FeaturedWork() {
               </h2>
             </div>
             <div className="workCard md:row-start-8 col-start-1 md:row-span-4 workCard__empty"></div>
-            <div className="group workCard md:row-start-12 col-start-1 col-span-2 md:col-span-1 md:row-span-5 workCard workCard__project">
+            <div className="group workCard md:row-start-12 col-start-1 col-span-2 md:col-span-1 md:row-span-5 workCard__project">
               <FeaturedWorkDialog />
             </div>
 
