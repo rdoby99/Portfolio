@@ -18,7 +18,7 @@ export default function Footer() {
         </p>
 
         {/* Col 2 */}
-        <div className="row-start-1 md:col-start-2 md:row-span-2 footerGrid__item w-full">
+        <div className="md:col-start-2 md:row-span-2 footerGrid__item w-full">
           <div className="h5 mb-16">&#123; Contact &#125;</div>
           <h3 className="h2 mb-4">
             <span className="h2__italic">Let's</span> Connect!
@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
 
         {/* Mobile Social */}
-        <div className="md:hidden footerGrid__item flex flex-col gap-4 row-start-2">
+        <div className="md:hidden footerGrid__item flex flex-col gap-4">
           <h3 className="h5">&#123; Follow &#125;</h3>
           <ul className="h4 flex justify-between">
             <li>LinkedIn</li>
