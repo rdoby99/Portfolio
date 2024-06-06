@@ -3,15 +3,19 @@ import diagonalArrow from "../../assets/diagonalArrow.svg";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import sitePic from "/src/assets/site.png";
 
-export default function WorkDialog() {
+export default function WorkDialog({ project, loopIndex }) {
+  // console.log(project);
+
+  project = project.attributes;
+
   return (
     <Dialog>
       <DialogTrigger>
         <div className="workRow__inner flex md:items-center flex-row gap-4 items-start justify-between">
           <div className="flex flex-col md:flex-row justify-between md:min-w-[60%] gap-4 md:gap-12">
             <div className="flex gap-1">
-              <div className="p1__medium">01.</div>
-              <h3 className="h2">Spare Food</h3>
+              <div className="p1__medium">0{loopIndex + 1}.</div>
+              <h3 className="h2">{project.title}</h3>
             </div>
             <ul className="ml-8 md:ml-0 flex md:flex-col gap-4">
               <li>Squarespace</li>
@@ -29,14 +33,8 @@ export default function WorkDialog() {
         <div className="dialog-content">
           {/* Description */}
           <div>
-            <h5 className="h2">Spare Food</h5>
-            <p className="p1">
-              Delightly specializes in curating personalized and meaningful
-              corporate gifting experiences. As the lead developer, I was in
-              charge of the brand's migration to Shopify. In addition to
-              development, I led weekly meetings to corrdinate migration efforts
-              with the client.
-            </p>
+            <h5 className="h2">{project.title}</h5>
+            <p className="p1">{project.description}</p>
             <button className="flex gap-2 items-center">
               <span className="hidden md:inline-block uppercase">
                 sparefood.com
