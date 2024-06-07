@@ -10,15 +10,15 @@ export default function FeaturedWorkDialog({ project }) {
   return (
     <Dialog>
       <DialogTrigger>
-        <div className="hidden group-hover:block p1">
-          <ul className="mb-8">
+        <div className="hidden group-hover:flex p1 w-full h-full items-start flex-col justify-between">
+          <ul className="mb-8 text-left flex flex-col gap-2">
             {tech_stack.map((tool, index) => (
               <li key={index}>{tool}</li>
             ))}
           </ul>
           <button className="flex gap-2 items-center">
             <span className="uppercase">Learn More</span>
-            <img src={diagonalArrow} alt="" className="md:w-4" />
+            <img src={diagonalArrow} alt="" className="md:w-4 brightness-200" />
           </button>
         </div>
         <span className="group-hover:hidden">{project.title}</span>
