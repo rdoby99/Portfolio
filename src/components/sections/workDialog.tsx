@@ -13,12 +13,12 @@ export default function WorkDialog({ project, loopIndex }) {
     <Dialog>
       <DialogTrigger>
         <div className="workRow__inner group flex md:items-center flex-row gap-4 items-start justify-between">
-          <div className="flex flex-col md:flex-row justify-between md:min-w-[60%] gap-4 md:gap-12">
-            <div className="flex gap-1">
+          <div className="flex flex-col md:flex-row items-start md:items-center md:justify-start gap-4 md:gap-12">
+            <div className="flex gap-1 md:w-96">
               <div className="p1__medium">0{loopIndex + 1}.</div>
               <h3 className="h2">{project.title}</h3>
             </div>
-            <ul className="ml-8 md:ml-0 flex md:flex-col gap-4 items-start">
+            <ul className="ml-8 md:ml-0 flex gap-4">
               {tech_stack.map((tool, index) => (
                 <li key={index}>{tool}</li>
               ))}
@@ -45,7 +45,7 @@ export default function WorkDialog({ project, loopIndex }) {
               <h6 className="text-xs mb-4">Agency: Smakk Studios</h6>
               <p className="p1 mb-4">{project.description}</p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-[1fr_2fr] gap-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_2fr] mb-6 gap-y-4">
               <h6>Tech Stack:</h6>
               <ul className="flex gap-x-4 gap-y-2 p2 flex-wrap">
                 {tech_stack.map((tool, index) => (
@@ -53,7 +53,7 @@ export default function WorkDialog({ project, loopIndex }) {
                 ))}
               </ul>
               {/* Contributions */}
-              <h6 className="mb-4">My&nbsp;Contributions:</h6>
+              <h6>My&nbsp;Contributions:</h6>
               <ul className="p2 flex gap-x-4 gap-y-2 flex-wrap">
                 {project.contributions.map((cont, index) => (
                   <li key={index}>{cont}</li>
