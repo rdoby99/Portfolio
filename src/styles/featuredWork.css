@@ -19,5 +19,5 @@
 }
 
 .dialog-content {
-  @apply grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 md:gap-x-12 gap-y-4 md:gap-y-8 px-4 md:px-12 py-4 md:py-8;
+  @apply flex flex-col w-full md:gap-x-12 gap-y-4 md:gap-y-8 px-4 md:px-12 py-4 md:py-8;
 }

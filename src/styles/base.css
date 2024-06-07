@@ -55,7 +55,7 @@ body {
 
 /* Buttons */
 .button {
-  @apply inline-flex items-center justify-center min-h-0 px-4 py-3 text-sm font-bold tracking-widest text-center text-white uppercase transition-colors rounded-sm cursor-pointer hover:text-black focus:text-black focus:bg-white hover:bg-white font-secHeader;
+  @apply inline-flex items-center justify-center min-h-0 w-fit px-8 py-3 text-[18px] font-medium font-body text-center text-white uppercase transition-colors rounded-sm cursor-pointer;
 }
 
 .button[aria-disabled="true"] {
@@ -63,11 +63,11 @@ body {
 }
 
 .button--primary {
-  @apply bg-primary text-text hover:bg-text hover:text-primary;
+  @apply bg-background text-text rounded-full;
 }
 
 .button--secondary {
-  @apply bg-text text-primary hover:bg-quaternary hover:text-text;
+  @apply bg-text text-white border border-white rounded-full;
 }
 
 .button--tertiary {
