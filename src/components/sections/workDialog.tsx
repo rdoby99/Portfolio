@@ -15,7 +15,7 @@ export default function WorkDialog({ project, loopIndex }) {
           <div className="flex flex-col md:flex-row items-start md:items-center md:justify-start gap-4 md:gap-12">
             <div className="flex gap-1 md:w-96">
               <div className="p1__medium">0{loopIndex + 1}.</div>
-              <h3 className="h2">{project.title}</h3>
+              <h3 className="h3 text-left">{project.title}</h3>
             </div>
             <ul className="ml-8 md:ml-0 flex gap-4">
               {tech_stack.map((tool, index) => (

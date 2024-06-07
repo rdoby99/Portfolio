@@ -11,7 +11,9 @@ export default function WorkDialogContent({ project, tech }) {
         <img src={sitePic} alt="" />
         <div>
           <h5 className="h2 mb-2">{project.title}</h5>
-          <h6 className="text-xs mb-4">Agency: Smakk Studios</h6>
+          {project.agency && (
+            <h6 className="text-xs mb-4">Agency: {project.agency}</h6>
+          )}
           <p className="p1 mb-4">{project.description}</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_2fr] mb-6 gap-y-4">
@@ -31,6 +33,7 @@ export default function WorkDialogContent({ project, tech }) {
         </div>
         <a
           href={project.url}
+          target="_blank"
           className="flex gap-2 p1__medium items-center button button--primary group"
         >
           <span className="uppercase">Visit Site</span>

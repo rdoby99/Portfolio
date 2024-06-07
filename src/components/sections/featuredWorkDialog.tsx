@@ -21,7 +21,7 @@ export default function FeaturedWorkDialog({ project }) {
             <img src={diagonalArrow} alt="" className="md:w-4 brightness-200" />
           </button>
         </div>
-        <span className="group-hover:hidden">{project.title}</span>
+        <span className="group-hover:hidden text-left">{project.title}</span>
       </DialogTrigger>
       <DialogContent>
         <WorkDialogContent project={project} tech={tech_stack} />

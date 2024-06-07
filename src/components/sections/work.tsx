@@ -16,7 +16,7 @@ export default function Work() {
         <h2 className="h5">&#123; More Select Work &#125;</h2>
         <ul>
           {data
-            .filter((project) => !project.featured_order)
+            .filter((project) => !project.attributes.featured_order)
             .map((project, index) => (
               <li key={project.id} className="workRow">
                 <WorkDialog project={project} loopIndex={index} />
