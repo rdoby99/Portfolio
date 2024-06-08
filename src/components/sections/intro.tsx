@@ -87,29 +87,6 @@ export default function Intro() {
     introTL.to("#intro", {
       height: "0",
     });
-
-    // gsap.to(".floatingR", {
-    //   scrollTrigger: {
-    //     trigger: "#intro",
-    //     start: "bottom 50px",
-    //     toggleActions: "play none none reset",
-    //   },
-    //   color: "#0061FE",
-    // });
-
-    // gsap.fromTo(
-    //   ".amona",
-    //   { top: 0 },
-    //   {
-    //     top: 200,
-    //     scrollTrigger: {
-    //       trigger: "#intro",
-    //       start: "center 45%",
-    //       duration: 10,
-    //       toggleActions: "play none none reverse",
-    //     },
-    //   }
-    // );
   }, []);
 
   return (

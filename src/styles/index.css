@@ -670,14 +670,14 @@ video {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .mb-8 {
   margin-bottom: 2rem;
 }
 .ml-8 {
   margin-left: 2rem;
-}
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 .block {
   display: block;
@@ -727,18 +727,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.w-96 {
-  width: 24rem;
-}
-.w-\[50\%\] {
-  width: 50%;
-}
-.w-\[60\%\] {
-  width: 60%;
-}
-.w-\[70\%\] {
-  width: 70%;
 }
 .max-w-\[150px\] {
   max-width: 150px;
@@ -805,9 +793,6 @@ video {
 }
 .items-center {
   align-items: center;
-}
-.justify-start {
-  justify-content: flex-start;
 }
 .justify-end {
   justify-content: flex-end;
@@ -975,10 +960,6 @@ video {
 }
 .ring-offset-background {
   --tw-ring-offset-color: hsl(var(--background));
-}
-.brightness-100 {
-  --tw-brightness: brightness(1);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .brightness-200 {
   --tw-brightness: brightness(2);
@@ -1405,9 +1386,6 @@ body {
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;
 }
-.group:hover .group-hover\:block {
-  display: block;
-}
 .group:hover .group-hover\:flex {
   display: flex;
 }
@@ -1614,10 +1592,6 @@ body {
 
   .md\:w-96 {
     width: 24rem;
-  }
-
-  .md\:min-w-\[60\%\] {
-    min-width: 60%;
   }
 
   .md\:max-w-2xl {

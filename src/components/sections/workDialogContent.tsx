@@ -8,7 +8,12 @@ export default function WorkDialogContent({ project, tech }) {
       {/* Description */}
       <div className="flex flex-col gap-6 pb-8">
         {/* Image */}
-        <img src={sitePic} alt="" />
+        {project.featured_media && (
+          <video width="320" height="240" controls>
+            <source src={project.featured_media} type="video/mp4"></source>
+            Your browser does not support the video tag.
+          </video>
+        )}
         <div>
           <h5 className="h2 mb-2">{project.title}</h5>
           {project.agency && (
