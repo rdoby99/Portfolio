@@ -1,13 +1,3 @@
-/* .amona {
-  left: calc(50%);
-  transform: translateX(-50%);
-}
-
-.floatingR {
-  left: calc(50% - 292px);
-  transform: translateX(-50%);
-} */
-
 .amona {
   left: calc(50% + 73px);
   transform: translateX(calc(-50% - 36.5px));
@@ -19,11 +9,6 @@
     transform: translateX(calc(-50% - 73px));
   }
 }
-
-/* .floatingR {
-  left: calc(50% - 292px);
-  transform: translateX(-50%);
-} */
 
 .amona__letter {
   @apply relative;

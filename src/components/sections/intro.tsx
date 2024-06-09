@@ -4,11 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default function Intro() {
-  // const mystyle = {
-  //   left: calc(50% - 292px);
-  //   transform: translateX(-50%);
-  // };
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
@@ -17,7 +12,6 @@ export default function Intro() {
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
-      //Intro Animation
       introTL.fromTo(
         ".floatingR",
         {
@@ -34,7 +28,6 @@ export default function Intro() {
     });
 
     mm.add("(max-width: 768px)", () => {
-      //Intro Animation
       introTL.fromTo(
         ".floatingR",
         {
@@ -64,10 +57,6 @@ export default function Intro() {
         top: 0,
         duration: 1.5,
         ease: "power3",
-        // scrollTrigger: {
-        //   trigger: "#intro",
-        //   toggleActions: "play none reverse none",
-        // },
       },
       ">-0.75"
     );
@@ -89,9 +78,8 @@ export default function Intro() {
       "<+=0"
     );
 
-    introTL.to(window, { duration: 1, scrollTo: "#hero" }, "<+=0.1");
+    introTL.to(window, { duration: 1.25, scrollTo: "#hero" }, "<+=0.1");
 
-    //Exit animation
     gsap.to(".floatingR", {
       bottom: "auto",
       top: "0.75rem",
@@ -105,8 +93,12 @@ export default function Intro() {
       },
     });
 
-    introTL.to("#intro", {
+    gsap.to("#intro", {
       height: "0",
+      scrollTrigger: {
+        trigger: "#intro",
+        start: "bottom top",
+      },
     });
   }, []);
 
