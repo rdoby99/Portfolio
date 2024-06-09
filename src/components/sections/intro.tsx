@@ -51,6 +51,17 @@ export default function Intro() {
     );
 
     introTL.fromTo(
+      ".amona__o",
+      { backgroundPosition: "50% -200%" },
+      {
+        backgroundPosition: "50% 33%",
+        duration: 3,
+        ease: "expo.out",
+      },
+      ">-0.90"
+    );
+
+    introTL.fromTo(
       ".intro__subtext",
       { top: 50 },
       {
@@ -58,7 +69,7 @@ export default function Intro() {
         duration: 1.5,
         ease: "power3",
       },
-      ">-0.75"
+      "<0.25"
     );
 
     introTL.to(".amona__letter", {
@@ -154,19 +165,7 @@ export default function Intro() {
               />
             </svg>
             {/* o */}
-            <svg
-              width="100"
-              height="94"
-              viewBox="0 0 100 94"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="amona__letter w-[50px] md:w-[100px] h-[47px] md:h-[94px]"
-            >
-              <path
-                d="M99.6652 83.0642C99.6652 86.7083 99.2544 90.2578 98.5118 93.681H84.2923C85.3351 90.3209 85.9039 86.7556 85.9039 83.0642C85.9039 63.4081 69.9465 47.4592 50.2446 47.4592C30.5427 47.4592 14.5853 63.3923 14.5853 83.0642C14.5853 86.7556 15.154 90.3209 16.1968 93.681H1.97733C1.21895 90.2578 0.823975 86.7083 0.823975 83.0642C0.823975 55.8043 22.9432 33.7188 50.2446 33.7188C77.546 33.7188 99.6652 55.8043 99.6652 83.0642ZM6.59076 -0.00893021H23.1486C29.6895 7.62635 39.4062 12.4852 50.2604 12.4852C61.1146 12.4852 70.8312 7.62635 77.3722 -0.00893021H93.93C85.6353 15.5929 69.1881 26.2255 50.2604 26.2255C31.3327 26.2255 14.9013 15.5929 6.59076 -0.00893021Z"
-                fill="white"
-              />
-            </svg>
+            <div className="amona__letter amona__o w-[50px] md:w-[100px] h-[47px] md:h-[94px] bg-o bg-repeat-y bg-cover bg-[50%_33%]"></div>
             {/* n */}
             <svg
               width="80"

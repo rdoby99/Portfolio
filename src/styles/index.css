@@ -886,11 +886,32 @@ video {
 .bg-text {
   background-color: var(--color-text);
 }
+.bg-o {
+  background-image: url('/o.svg');
+}
 .bg-waves {
   background-image: url('/background.png');
 }
 .bg-cover {
   background-size: cover;
+}
+.bg-\[50\%_50\%\] {
+  background-position: 50% 50%;
+}
+.bg-\[50\%_40\%\] {
+  background-position: 50% 40%;
+}
+.bg-\[50\%_30\%\] {
+  background-position: 50% 30%;
+}
+.bg-\[50\%_35\%\] {
+  background-position: 50% 35%;
+}
+.bg-\[50\%_33\%\] {
+  background-position: 50% 33%;
+}
+.bg-repeat-y {
+  background-repeat: repeat-y;
 }
 .p-12 {
   padding: 3rem;

@@ -67,6 +67,7 @@ module.exports = {
       },
       backgroundImage: {
         waves: "url('/background.png')",
+        o: "url('/o.svg')",
       },
       keyframes: {
         "accordion-down": {
