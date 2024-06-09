@@ -13,6 +13,7 @@ function App() {
 
   return (
     <>
+      {/* <div class="circle"></div> */}
       <Header />
       <Intro />
       <Hero />

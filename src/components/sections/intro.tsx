@@ -8,7 +8,6 @@ export default function Intro() {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
     var introTL = gsap.timeline();
-
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {

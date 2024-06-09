@@ -37,9 +37,15 @@ export default function Header() {
     <header className="header fixed text-text top-0 flex justify-end items-center w-full px-4 md:px-8 py-8">
       <nav>
         <ul className="flex gap-4 h6">
-          <li>About</li>
-          <li>Work</li>
-          <li>Contact</li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#work">Work</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
       <div
