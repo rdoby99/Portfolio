@@ -25,6 +25,9 @@ export default function About() {
         toggleActions: "play none none none",
       },
     });
+    const statement = document.querySelector("#statement");
+    let statementWidth = statement.offsetWidth;
+    let amountToScroll = statementWidth - window.innerWidth;
 
     aboutTL.fromTo(
       "#aboutSubhead",
@@ -57,34 +60,59 @@ export default function About() {
       },
       "<0.25"
     );
+
+    gsap.fromTo(
+      "#about",
+      { x: 0 },
+      {
+        x: -amountToScroll,
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top top",
+          end: "+=" + amountToScroll,
+          scrub: 1,
+          pin: true,
+          pinSpacing: "margin",
+        },
+      }
+    );
   });
 
   return (
-    <section
-      id="about"
-      className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-12 max-w-screen-xl mx-auto pb-28 md:min-h-[80vh] items-center"
-    >
-      <div className="flex flex-col gap-8">
-        <p className="h5 overflow-hidden">
-          <span id="aboutSubhead" className="inline-block relative">
-            &#123; I’m Ramona &#125;
-          </span>
-        </p>
-        <h2 id="aboutHeading" className="h2">
-          <span className="font-secHeader uppercase">Front-End</span> <br /> Web
-          Developer
-        </h2>
-        <p id="aboutDesc" className="max-w-sm">
-          For the past 3 years, I've specialized in crafting engaging web
-          experiences using platforms such as Shopify, Shopify Plus, WordPress,
-          and React. My expertise covers every part of the process—from solution
-          planning through development to deployment. To ensure the highest
-          quality outcomes, I lead my projects with a commitment to delivering
-          organized, reliable, and user-focused solutions, always aiming to
-          exceed expectations and enhance user engagement.
-        </p>
+    <section id="about" className="md:min-h-screen flex items-center">
+      <div className="relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 max-w-screen-xl mx-auto pb-28">
+          <div className="flex flex-col gap-8">
+            <p className="h5 overflow-hidden">
+              <span id="aboutSubhead" className="inline-block relative">
+                &#123; I’m Ramona &#125;
+              </span>
+            </p>
+            <h2 id="aboutHeading" className="h2">
+              <span className="font-secHeader uppercase">Front-End</span> <br />{" "}
+              Web Developer
+            </h2>
+            <p id="aboutDesc" className="max-w-sm">
+              For the past 3 years, I've specialized in crafting engaging web
+              experiences using platforms such as Shopify, Shopify Plus,
+              WordPress, and React. My expertise covers every part of the
+              process—from solution planning through development to deployment.
+              To ensure the highest quality outcomes, I lead my projects with a
+              commitment to delivering organized, reliable, and user-focused
+              solutions, always aiming to exceed expectations and enhance user
+              engagement.
+            </p>
+          </div>
+          <ShapeCollage className="hidden md:block" />
+        </div>
+        <div
+          id="statement"
+          className="h1 whitespace-nowrap absolute pl-32 left-full top-1/2 -translate-y-1/2"
+        >
+          Let's build impactful web experiences that connect, empower, and
+          inspire, our users.
+        </div>
       </div>
-      <ShapeCollage className="hidden md:block" />
     </section>
   );
 }

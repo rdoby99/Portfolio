@@ -50,7 +50,7 @@ h6,
 }
 
 body {
-  @apply font-body;
+  @apply font-body overflow-x-hidden;
 }
 
 /* Buttons */
