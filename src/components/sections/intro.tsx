@@ -54,7 +54,7 @@ export default function Intro() {
       { backgroundPosition: "50% -200%" },
       {
         backgroundPosition: "50% 33%",
-        duration: 3,
+        duration: 2.75,
         ease: "expo.out",
       },
       ">-0.90"

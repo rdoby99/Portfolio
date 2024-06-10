@@ -37,6 +37,18 @@ export default function Hero() {
     );
 
     heroTL.fromTo(
+      ".heroShape",
+      { scale: 0 },
+      {
+        scale: 1,
+        duration: 1.5,
+        stagger: 0.25,
+        ease: "back",
+      },
+      "<"
+    );
+
+    heroTL.fromTo(
       "#curve",
       { drawSVG: "0%" },
       { duration: 3, drawSVG: "100%" },
@@ -45,15 +57,25 @@ export default function Hero() {
 
     heroTL.fromTo(
       "#hero-arrow",
-      { opacity: 0 },
-      { opacity: 1, duration: 1 },
-      "<"
+      { top: 0, opacity: 0 },
+      {
+        top: 25,
+        opacity: 1,
+        duration: 1,
+      },
+      "<0.5"
     );
 
     heroTL.fromTo(
       "#hero-arrow",
-      { top: 0 },
-      { top: 25, duration: 1.5, repeat: -1, ease: "power1.inOut", yoyo: true }
+      { top: 25 },
+      {
+        top: 0,
+        duration: 1.5,
+        repeat: -1,
+        ease: "power1.inOut",
+        yoyo: true,
+      }
     );
   }, []);
 
@@ -87,12 +109,12 @@ export default function Hero() {
         <img
           src={spiral}
           alt=""
-          className="threedShape max-w-[150px] md:max-w-sm absolute right-0 md:right-[-14rem] top-1/4"
+          className="threedShape heroShape max-w-[150px] md:max-w-sm absolute right-0 md:right-[-14rem] top-1/4"
         />
         <img
           src={curve}
           alt=""
-          className="threedShape max-w-[150px] md:max-w-[350px] absolute left-0 md:-left-[16rem] top-[9rem]"
+          className="threedShape heroShape max-w-[150px] md:max-w-[350px] absolute left-0 md:-left-[16rem] top-[9rem]"
         />
 
         <svg
