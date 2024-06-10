@@ -109,6 +109,9 @@ export default function Intro() {
         trigger: "#intro",
         start: "bottom top",
       },
+      onComplete: () => {
+        ScrollTrigger.refresh();
+      },
     });
   }, []);
 
