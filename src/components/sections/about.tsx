@@ -27,7 +27,6 @@ export default function About() {
     });
     const statement = document.querySelector("#statement");
     let statementWidth = statement.offsetWidth;
-    let amountToScroll = statementWidth - window.innerWidth;
 
     aboutTL.fromTo(
       "#aboutSubhead",
@@ -65,14 +64,14 @@ export default function About() {
       "#about",
       { x: 0 },
       {
-        x: -amountToScroll,
+        x: -statementWidth,
         scrollTrigger: {
           trigger: "#about",
           start: "top top",
-          end: "+=" + amountToScroll,
+          end: "+=" + statementWidth,
           scrub: 1,
           pin: true,
-          pinSpacing: "margin",
+          pinSpacing: "padding",
         },
       }
     );
