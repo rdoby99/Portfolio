@@ -8,7 +8,6 @@ import Work from "./components/sections/work";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
 import ScrollSmoother from "gsap/src/ScrollSmoother";
-import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 
 function App() {
@@ -30,7 +29,7 @@ function App() {
   return (
     <div id="scroll-wrapper">
       <div id="scroll-content">
-        {/* <div class="circle"></div> */}
+        <div className="circle"></div>
         <Header />
         <Intro />
         <Hero />

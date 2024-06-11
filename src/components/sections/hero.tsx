@@ -25,7 +25,7 @@ export default function Hero() {
         scrollTrigger: {
           trigger: "#hero",
           start: "top center",
-          toggleActions: "play reset play none",
+          toggleActions: "play reverse play none",
         },
       }
     );
@@ -33,7 +33,17 @@ export default function Hero() {
     heroTL.fromTo(
       ".hi-there",
       { top: 200 },
-      { top: 0, duration: 1.75, ease: "power3", stagger: 0.2 },
+      {
+        top: 0,
+        duration: 1.75,
+        ease: "power3",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top center",
+          toggleActions: "play reverse play none",
+        },
+      },
       ">-0.85"
     );
 
@@ -83,7 +93,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="snap-section hero text-center flex flex-col gap-16 justify-center items-center min-h-[80vh] md:min-h-screen overflow-hidden"
+      className="snap-section hero text-center flex flex-col gap-16 justify-center items-center min-h-[80vh] md:min-h-screen"
     >
       <div className="relative">
         <div className="overflow-hidden relative block mb-8">

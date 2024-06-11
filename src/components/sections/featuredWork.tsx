@@ -38,9 +38,9 @@ export default function FeaturedWork() {
       <div
         id="featuredWork__bg"
         data-speed="auto"
-        className="absolute inline-block h-[140%] w-full bg-waves bg-cover bottom-0 object-cover"
+        className="absolute inline-block h-[115%] w-full bg-waves bg-cover bottom-0 object-cover"
       ></div>
-      <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] min-h-[90vh] text-white relative h-full">
+      <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] text-white relative h-[90vh]">
         {/* Col 1 */}
         <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-16 flex flex-col justify-center">
           <p className="h5">&#123; Featured &#125;</p>

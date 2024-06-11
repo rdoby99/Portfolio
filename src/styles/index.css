@@ -797,6 +797,9 @@ video {
 .h-\[140\%\] {
   height: 140%;
 }
+.h-\[115\%\] {
+  height: 115%;
+}
 .min-h-\[80vh\] {
   min-height: 80vh;
 }
@@ -958,6 +961,9 @@ video {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 .whitespace-nowrap {
   white-space: nowrap;

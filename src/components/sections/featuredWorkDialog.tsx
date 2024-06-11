@@ -16,10 +16,10 @@ export default function FeaturedWorkDialog({ project }) {
               <li key={index}>{tool}</li>
             ))}
           </ul>
-          <button className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center">
             <span className="uppercase">Learn More</span>
             <img src={diagonalArrow} alt="" className="md:w-4 brightness-200" />
-          </button>
+          </div>
         </div>
         <span className="group-hover:hidden text-left">{project.title}</span>
       </DialogTrigger>
