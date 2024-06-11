@@ -1270,8 +1270,8 @@ body {
 }
 .threedShape {
   --tw-brightness: brightness(1.5);
-  --tw-hue-rotate: hue-rotate(315deg);
-  --tw-saturate: saturate(1.5);
+  --tw-hue-rotate: hue-rotate(345deg);
+  --tw-saturate: saturate(1.10);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .circle {
@@ -1289,6 +1289,16 @@ body {
   transition-duration: 500ms;
   z-index: 9999;
 }
+/* .scroll-container {
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  height: 100vh;
+} */
 .amona {
   left: calc(50% + 73px);
   transform: translateX(calc(-50% - 36.5px));

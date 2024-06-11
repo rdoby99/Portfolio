@@ -79,7 +79,7 @@ body {
 }
 
 .threedShape {
-  @apply hue-rotate-[315deg] brightness-150 saturate-150;
+  @apply hue-rotate-[345deg] brightness-150 saturate-[1.10];
 }
 
 .circle {
@@ -97,3 +97,14 @@ body {
   transition-duration: 500ms;
   z-index: 9999;
 }
+
+/* .scroll-container {
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  height: 100vh;
+} */

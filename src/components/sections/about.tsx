@@ -21,7 +21,7 @@ export default function About() {
     const aboutTL = gsap.timeline({
       scrollTrigger: {
         trigger: "#about",
-        start: "top center",
+        start: "top 75%",
         toggleActions: "play none none none",
       },
     });
@@ -78,7 +78,10 @@ export default function About() {
   });
 
   return (
-    <section id="about" className="md:min-h-screen flex items-center">
+    <section
+      id="about"
+      className="snap-section md:min-h-screen flex items-center"
+    >
       <div className="relative">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 max-w-screen-xl mx-auto pb-28">
           <div className="flex flex-col gap-8">

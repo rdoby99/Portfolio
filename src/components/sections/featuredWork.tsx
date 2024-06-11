@@ -28,7 +28,7 @@ export default function FeaturedWork() {
   );
 
   return (
-    <section id="featuredWork" className="overflow-hidden">
+    <section id="featuredWork" className="snap-section overflow-hidden">
       <div className="smoothWrapper">
         <div className="smoothContent">
           {/* <div
