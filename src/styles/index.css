@@ -1644,16 +1644,8 @@ body {
     height: 98px;
   }
 
-  .md\:min-h-\[90vh\] {
-    min-height: 90vh;
-  }
-
   .md\:min-h-screen {
     min-height: 100vh;
-  }
-
-  .md\:min-h-full {
-    min-height: 100%;
   }
 
   .md\:w-4 {

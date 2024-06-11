@@ -3,7 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import spiral from "../../assets/3DShapes/spiral.png";
-import curve from "../../assets/3DShapes/curve.png";
+import curve from "../../assets/3DShapes/curve.webm";
+import curveImg from "../../assets/3DShapes/curve.png";
 import arrow from "../../assets/arrow.svg";
 
 export default function Hero() {
@@ -111,11 +112,18 @@ export default function Hero() {
           alt=""
           className="threedShape heroShape max-w-[150px] md:max-w-sm absolute right-0 md:right-[-14rem] top-1/4"
         />
-        <img
-          src={curve}
-          alt=""
+        <video
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          playsInline={true}
           className="threedShape heroShape max-w-[150px] md:max-w-[350px] absolute left-0 md:-left-[16rem] top-[9rem]"
-        />
+          title="Curve Shape"
+        >
+          <source src={curve} type="video/webm" />
+          <img src={curveImg} alt="No video support" />
+          Your browser does not support the video tag.
+        </video>
 
         <svg
           width="224"
