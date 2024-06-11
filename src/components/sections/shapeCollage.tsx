@@ -88,8 +88,8 @@ export default function ShapeCollage(props) {
               y2="221"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#0061FE" />
-              <stop offset="1" stop-color="#A8B6F5" />
+              <stop stopColor="#0061FE" />
+              <stop offset="1" stopColor="#A8B6F5" />
             </linearGradient>
           </defs>
         </svg>
@@ -115,8 +115,8 @@ export default function ShapeCollage(props) {
               y2="110.5"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#0061FE" />
-              <stop offset="1" stop-color="#B3DBFF" />
+              <stop stopColor="#0061FE" />
+              <stop offset="1" stopColor="#B3DBFF" />
             </linearGradient>
           </defs>
         </svg>

@@ -621,6 +621,48 @@ video {
 .top-\[9rem\] {
   top: 9rem;
 }
+.top-\[8rem\] {
+  top: 8rem;
+}
+.top-\[5rem\] {
+  top: 5rem;
+}
+.top-\[5\.5rem\] {
+  top: 5.5rem;
+}
+.top-\[13rem\] {
+  top: 13rem;
+}
+.top-\[12rem\] {
+  top: 12rem;
+}
+.right-\[-5rem\] {
+  right: -5rem;
+}
+.left-\[8rem\] {
+  left: 8rem;
+}
+.left-\[-8rem\] {
+  left: -8rem;
+}
+.left-\[-10rem\] {
+  left: -10rem;
+}
+.left-\[-2rem\] {
+  left: -2rem;
+}
+.left-\[-5rem\] {
+  left: -5rem;
+}
+.left-\[-4rem\] {
+  left: -4rem;
+}
+.right-\[-4rem\] {
+  right: -4rem;
+}
+.top-\[7rem\] {
+  top: 7rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -740,6 +782,21 @@ video {
 .h-full {
   height: 100%;
 }
+.h-\[110vh\] {
+  height: 110vh;
+}
+.h-\[90vh\] {
+  height: 90vh;
+}
+.h-\[120\%\] {
+  height: 120%;
+}
+.h-\[160\%\] {
+  height: 160%;
+}
+.h-\[140\%\] {
+  height: 140%;
+}
 .min-h-\[80vh\] {
   min-height: 80vh;
 }
@@ -784,6 +841,9 @@ video {
 }
 .max-w-sm {
   max-width: 24rem;
+}
+.max-w-\[125px\] {
+  max-width: 125px;
 }
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
@@ -932,6 +992,10 @@ video {
 .bg-repeat-y {
   background-repeat: repeat-y;
 }
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .p-12 {
   padding: 3rem;
 }
@@ -973,6 +1037,15 @@ video {
 }
 .pt-12 {
   padding-top: 3rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.pl-64 {
+  padding-left: 16rem;
+}
+.pb-48 {
+  padding-bottom: 12rem;
 }
 .text-left {
   text-align: left;
@@ -1546,6 +1619,50 @@ body {
     top: 54%;
   }
 
+  .md\:right-\[-10rem\] {
+    right: -10rem;
+  }
+
+  .md\:right-\[-11rem\] {
+    right: -11rem;
+  }
+
+  .md\:top-\[12rem\] {
+    top: 12rem;
+  }
+
+  .md\:top-\[5\.5rem\] {
+    top: 5.5rem;
+  }
+
+  .md\:right-0 {
+    right: 0px;
+  }
+
+  .md\:top-8 {
+    top: 2rem;
+  }
+
+  .md\:top-0 {
+    top: 0px;
+  }
+
+  .md\:right-8 {
+    right: 2rem;
+  }
+
+  .md\:right-16 {
+    right: 4rem;
+  }
+
+  .md\:right-24 {
+    right: 6rem;
+  }
+
+  .md\:-top-4 {
+    top: -1rem;
+  }
+
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -1704,6 +1821,14 @@ body {
 
   .md\:max-w-sm {
     max-width: 24rem;
+  }
+
+  .md\:max-w-\[325px\] {
+    max-width: 325px;
+  }
+
+  .md\:max-w-\[335px\] {
+    max-width: 335px;
   }
 
   .md\:grid-cols-2 {

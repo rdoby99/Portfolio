@@ -90,6 +90,13 @@ export default function Intro() {
 
     introTL.to(window, { duration: 1.25, scrollTo: "#hero" }, "<+=0.1");
 
+    // introTL.to("#intro", {
+    //   height: "0",
+    //   onComplete: () => {
+    //     ScrollTrigger.refresh();
+    //   },
+    // });
+
     gsap.to(".floatingR", {
       bottom: "auto",
       top: "0.75rem",
@@ -100,17 +107,6 @@ export default function Intro() {
       scrollTrigger: {
         trigger: "#intro",
         start: "center 45%",
-      },
-    });
-
-    gsap.to("#intro", {
-      height: "0",
-      scrollTrigger: {
-        trigger: "#intro",
-        start: "bottom top",
-      },
-      onComplete: () => {
-        ScrollTrigger.refresh();
       },
     });
   }, []);

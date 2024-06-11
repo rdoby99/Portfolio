@@ -60,21 +60,21 @@ export default function About() {
       "<0.25"
     );
 
-    gsap.fromTo(
-      "#about",
-      { x: 0 },
-      {
-        x: -statementWidth,
-        scrollTrigger: {
-          trigger: "#about",
-          start: "top top",
-          end: "+=" + statementWidth,
-          scrub: 1,
-          pin: true,
-          pinSpacing: "padding",
-        },
-      }
-    );
+    // gsap.fromTo(
+    //   "#about",
+    //   { x: 0 },
+    //   {
+    //     x: -statementWidth,
+    //     scrollTrigger: {
+    //       trigger: "#about",
+    //       start: "top top",
+    //       end: "+=" + statementWidth,
+    //       scrub: 1,
+    //       pin: true,
+    //       pinSpacing: "padding",
+    //     },
+    //   }
+    // );
   });
 
   return (
@@ -109,7 +109,7 @@ export default function About() {
         </div>
         <div
           id="statement"
-          className="h1 whitespace-nowrap absolute pl-32 left-full top-1/2 -translate-y-1/2"
+          className="h1 whitespace-nowrap absolute pl-64 left-full top-1/2 -translate-y-1/2"
         >
           Let's build impactful web experiences that connect, empower, and
           inspire, our users.

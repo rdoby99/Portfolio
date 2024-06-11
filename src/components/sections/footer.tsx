@@ -1,8 +1,13 @@
 import React from "react";
+import x from "../../assets/3DShapes/x.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 
 export default function Footer() {
+  gsap.registerPlugin(ScrollTrigger);
+
   return (
-    <footer id="contact" className="snap-section pb-24">
+    <footer id="contact" className="snap-section relative pb-48">
       <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-16">
         {/* Col 1 */}
         <div className="row-start-1 col-start-1 footerGrid__item h5 text-center hidden md:flex md:items-center md:justify-center">
@@ -45,6 +50,12 @@ export default function Footer() {
           &#123; Back to Top &#125;
         </button>
       </div>
+      <img
+        src={x}
+        alt=""
+        data-speed="0.65"
+        className="threedShape heroShape max-w-[125px] md:max-w-[335px] absolute right-[-4rem] md:right-24 top-[8rem] md:-top-4"
+      />
     </footer>
   );
 }

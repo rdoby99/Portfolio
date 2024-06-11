@@ -5,23 +5,41 @@ import FeaturedWork from "./components/sections/featuredWork";
 import Footer from "./components/sections/footer";
 import Intro from "./components/sections/intro";
 import Work from "./components/sections/work";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/src/ScrollTrigger";
+import ScrollSmoother from "gsap/src/ScrollSmoother";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 
 function App() {
   window.onbeforeunload = () => {
     window.scrollTo(0, 0);
   };
 
+  gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+
+  useGSAP(() => {
+    let smoother = ScrollSmoother.create({
+      wrapper: "#scroll-wrapper",
+      content: "#scroll-content",
+      smooth: 2,
+      effects: true,
+    });
+  });
+
   return (
-    <>
-      {/* <div class="circle"></div> */}
-      <Header />
-      <Intro />
-      <Hero />
-      <About />
-      <FeaturedWork />
-      <Work />
-      <Footer />
-    </>
+    <div id="scroll-wrapper">
+      <div id="scroll-content">
+        {/* <div class="circle"></div> */}
+        <Header />
+        <Intro />
+        <Hero />
+        <About />
+        <FeaturedWork />
+        <Work />
+        <Footer />
+      </div>
+    </div>
   );
 }
 
