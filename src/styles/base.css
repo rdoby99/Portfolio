@@ -79,7 +79,7 @@ body {
 }
 
 .threedShape {
-  @apply hue-rotate-[345deg] brightness-150 saturate-[1.10];
+  @apply hue-rotate-[345deg] brightness-100 saturate-[1.10];
 }
 
 .circle {

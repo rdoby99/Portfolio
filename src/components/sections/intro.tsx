@@ -88,7 +88,7 @@ export default function Intro() {
       "<+=0"
     );
 
-    introTL.to(window, { duration: 1.25, scrollTo: "#hero" }, "<+=0.1");
+    introTL.to(window, { duration: 1.25, scrollTo: "#header" }, "<+=0.1");
 
     // introTL.to("#intro", {
     //   height: "0",
@@ -99,7 +99,8 @@ export default function Intro() {
 
     gsap.to(".floatingR", {
       bottom: "auto",
-      top: "0.75rem",
+      top: "100%",
+      y: "1rem",
       left: "2rem",
       width: "3rem",
       fill: "#0061FE",
@@ -114,7 +115,7 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="inline-block bg-waves bg-cover w-full h-[100vh] text-bg"
+      className="relative inline-block bg-waves bg-cover w-full h-[100vh] text-bg"
     >
       <div>
         <svg
@@ -123,7 +124,7 @@ export default function Intro() {
           viewBox="0 0 126 158"
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
-          className="floatingR fixed bottom-1/2 h-fit w-[63px] md:w-[126px]"
+          className="floatingR absolute bottom-1/2 h-fit w-[63px] md:w-[126px]"
           // style={mystyle}
         >
           <path d="M125.021 157.139C125.021 157.139 124.989 156.239 125.084 156.224L125.021 157.139Z" />

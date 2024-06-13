@@ -34,7 +34,10 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="header fixed text-text top-0 flex justify-end items-center w-full px-4 md:px-8 py-8">
+    <header
+      id="header"
+      className="header relative text-text top-0 flex justify-end items-center w-full px-4 md:px-8 py-8"
+    >
       <nav>
         <ul className="flex gap-4 h6">
           <li>

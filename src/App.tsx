@@ -30,8 +30,8 @@ function App() {
     <div id="scroll-wrapper">
       <div id="scroll-content">
         <div className="circle"></div>
-        <Header />
         <Intro />
+        <Header />
         <Hero />
         <About />
         <FeaturedWork />

@@ -27,6 +27,7 @@ export default function About() {
     });
     const statement = document.querySelector("#statement");
     let statementWidth = statement.offsetWidth;
+    console.log(statementWidth);
 
     aboutTL.fromTo(
       "#aboutSubhead",
@@ -60,30 +61,28 @@ export default function About() {
       "<0.25"
     );
 
-    // gsap.fromTo(
-    //   "#about",
-    //   { x: 0 },
-    //   {
-    //     x: -statementWidth,
-    //     scrollTrigger: {
-    //       trigger: "#about",
-    //       start: "top top",
-    //       end: "+=" + statementWidth,
-    //       scrub: 1,
-    //       pin: true,
-    //       pinSpacing: "padding",
-    //     },
-    //   }
-    // );
+    gsap.to("#about", {
+      xPercent: -100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 25%",
+        end: "+=5106",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
   });
 
   return (
     <section
       id="about"
-      className="snap-section md:min-h-screen flex items-center"
+      className="snap-section relative md:h-screen md:my-auto"
+      style={{ transform: "translateX(0%)" }}
     >
       <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 max-w-screen-xl mx-auto pb-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 pb-28">
           <div className="flex flex-col gap-8">
             <p className="h5 overflow-hidden">
               <span id="aboutSubhead" className="inline-block relative">

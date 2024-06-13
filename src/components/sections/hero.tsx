@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import spiral from "../../assets/3DShapes/spiral.png";
+import spiral from "../../assets/3DShapes/spiral.webm";
+import spiralImg from "../../assets/3DShapes/spiral.png";
 import curve from "../../assets/3DShapes/curve.webm";
 import curveImg from "../../assets/3DShapes/curve.png";
 import arrow from "../../assets/arrow.svg";
@@ -86,6 +87,11 @@ export default function Hero() {
         repeat: -1,
         ease: "power1.inOut",
         yoyo: true,
+        scrollTrigger: {
+          trigger: "#hero",
+          end: "bottom top",
+          toggleActions: "play pause resume pause",
+        },
       }
     );
   }, []);
@@ -117,12 +123,25 @@ export default function Hero() {
             </span>
           </span>
         </h1>
-        <img
+        {/* <img
           src={spiral}
           alt=""
           data-speed="1.15"
           className="threedShape heroShape max-w-[125px] md:max-w-[335px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
-        />
+        /> */}
+        <video
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          playsInline={true}
+          data-speed="1.25"
+          className="threedShape heroShape max-w-[125px] md:max-w-[335px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
+          title="Curve Shape"
+        >
+          <source src={spiral} type="video/webm" />
+          <img src={spiralImg} alt="No video support" />
+          Your browser does not support the video tag.
+        </video>
         <video
           autoPlay={true}
           loop={true}
