@@ -25,9 +25,12 @@ export default function About() {
         toggleActions: "play none none none",
       },
     });
+
     const statement = document.querySelector("#statement");
+    const about = document.querySelector("#about-container");
     let statementWidth = statement.offsetWidth;
-    console.log(statementWidth);
+    let aboutWidth = about.offsetWidth;
+    // console.log(statementWidth);
 
     aboutTL.fromTo(
       "#aboutSubhead",
@@ -61,28 +64,30 @@ export default function About() {
       "<0.25"
     );
 
-    gsap.to("#about", {
-      xPercent: -100,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 25%",
-        end: "+=5106",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
+    gsap.fromTo(
+      "#about-container",
+      {
+        xPercent: 0,
       },
-    });
+      {
+        xPercent: -100,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#about",
+          end: () => `+=${aboutWidth}`,
+          scrub: true,
+          pin: true,
+          pinType: "transform",
+          anticipatePin: 1,
+        },
+      }
+    );
   });
 
   return (
-    <section
-      id="about"
-      className="snap-section relative md:h-screen md:my-auto"
-      style={{ transform: "translateX(0%)" }}
-    >
-      <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 pb-28">
+    <section id="about" className="h-screen">
+      <div id="about-container" className="relative flex w-fit">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 pb-28 min-w-[100vw]">
           <div className="flex flex-col gap-8">
             <p className="h5 overflow-hidden">
               <span id="aboutSubhead" className="inline-block relative">
@@ -106,10 +111,7 @@ export default function About() {
           </div>
           <ShapeCollage className="hidden md:block" />
         </div>
-        <div
-          id="statement"
-          className="h1 whitespace-nowrap absolute pl-64 left-full top-1/2 -translate-y-1/2"
-        >
+        <div id="statement" className="h1 whitespace-nowrap pl-64">
           Let's build impactful web experiences that connect, empower, and
           inspire, our users.
         </div>
