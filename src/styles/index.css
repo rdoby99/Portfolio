@@ -594,9 +594,6 @@ video {
 .left-\[50\%\] {
   left: 50%;
 }
-.left-full {
-  left: 100%;
-}
 .right-4 {
   right: 1rem;
 }
@@ -605,9 +602,6 @@ video {
 }
 .top-0 {
   top: 0px;
-}
-.top-1\/2 {
-  top: 50%;
 }
 .top-4 {
   top: 1rem;
@@ -708,9 +702,6 @@ video {
 .grid {
   display: grid;
 }
-.inline-grid {
-  display: inline-grid;
-}
 .hidden {
   display: none;
 }
@@ -719,9 +710,6 @@ video {
 }
 .h-\[100vh\] {
   height: 100vh;
-}
-.h-\[115\%\] {
-  height: 115%;
 }
 .h-\[1px\] {
   height: 1px;
@@ -775,15 +763,12 @@ video {
 .w-\[69px\] {
   width: 69px;
 }
-.w-full {
-  width: 100%;
-}
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
 }
-.w-screen {
-  width: 100vw;
+.w-full {
+  width: 100%;
 }
 .min-w-\[100vw\] {
   min-width: 100vw;
@@ -799,10 +784,6 @@ video {
 }
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-y-1\/2 {
-  --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .translate-x-\[-50\%\] {
@@ -845,9 +826,6 @@ video {
 }
 .flex-wrap {
   flex-wrap: wrap;
-}
-.flex-nowrap {
-  flex-wrap: nowrap;
 }
 .items-start {
   align-items: flex-start;
@@ -946,10 +924,6 @@ video {
 }
 .bg-repeat-y {
   background-repeat: repeat-y;
-}
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .p-12 {
   padding: 3rem;
@@ -1336,7 +1310,6 @@ body {
   height: 100%;
   width: 100%;
   align-items: flex-end;
-  padding: 1.5rem;
 }
 .workCard {
   border-width: 0.5px;
@@ -1345,29 +1318,18 @@ body {
 }
 .workCard__project {
   cursor: pointer;
-  background-color: var(--color-text);
   text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-  font-family: var(--font-heading-family);
-  font-size: 32px;
-  line-height: 1.375 !important;
-}
-@media (min-width: 768px) {
-
-  .workCard__project {
-    font-size: 50px;
-  }
-}
-.workCard__project:hover {
-  background-image: url('/background.png');
-  background-size: cover;
 }
 @media (min-width: 768px) {
 
   .workCard__project {
     font-size: 2.75vw !important;
   }
+}
+.workCard__project {
+  perspective: 1000px;
 }
 .workCard__accent {
   display: none;
@@ -1409,6 +1371,48 @@ body {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+}
+.workCard__project__inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+.workCard__project:hover .workCard__project__inner {
+  transform: rotateY(180deg);
+}
+/* Position the front and back side */
+.workCard__project__front,
+.workCard__project__back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+/* Style the front side (fallback if image is missing) */
+.workCard__project__front {
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--color-text);
+  padding: 1.5rem;
+  font-family: var(--font-heading-family);
+}
+@media (min-width: 768px) {
+
+  .workCard__project__front {
+    font-size: 2.75vw !important;
+  }
+}
+/* Style the back side */
+.workCard__project__back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('/background.png');
+  background-size: cover;
+  padding: 1rem;
+  transform: rotateY(180deg);
 }
 .workRow button[aria-haspopup="dialog"] {
   width: 100%;
@@ -1464,12 +1468,6 @@ body {
 }
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;
-}
-.group:hover .group-hover\:flex {
-  display: flex;
-}
-.group:hover .group-hover\:hidden {
-  display: none;
 }
 .group:hover .group-hover\:rotate-45 {
   --tw-rotate: 45deg;
@@ -1653,11 +1651,6 @@ body {
     grid-row-start: 8;
   }
 
-  .md\:my-auto {
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
   .md\:ml-0 {
     margin-left: 0px;
   }
@@ -1692,10 +1685,6 @@ body {
 
   .md\:h-\[98px\] {
     height: 98px;
-  }
-
-  .md\:h-screen {
-    height: 100vh;
   }
 
   .md\:min-h-screen {

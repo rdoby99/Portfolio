@@ -1,5 +1,5 @@
 .workCard__project button[aria-haspopup="dialog"] {
-  @apply w-full h-full p-6 flex items-end;
+  @apply w-full h-full flex items-end;
 }
 
 .workCard {
@@ -7,7 +7,8 @@
 }
 
 .workCard__project {
-  @apply bg-text text-white h3 uppercase cursor-pointer hover:bg-waves hover:bg-cover md:!text-[2.75vw];
+  @apply text-white uppercase cursor-pointer md:!text-[2.75vw];
+  perspective: 1000px;
 }
 
 .workCard__accent {
@@ -20,4 +21,33 @@
 
 .dialog-content {
   @apply flex flex-col w-full md:gap-x-12 gap-y-4 md:gap-y-8 px-4 md:px-12 py-4 md:py-8;
+}
+
+.workCard__project__inner {
+  @apply relative w-full h-full;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.workCard__project:hover .workCard__project__inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.workCard__project__front,
+.workCard__project__back {
+  @apply w-full h-full absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.workCard__project__front {
+  @apply bg-text md:!text-[2.75vw] font-header p-6 flex items-end;
+}
+
+/* Style the back side */
+.workCard__project__back {
+  @apply bg-waves bg-cover p-4 flex flex-col justify-between;
+  transform: rotateY(180deg);
 }
