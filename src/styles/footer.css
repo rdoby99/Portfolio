@@ -1,3 +1,7 @@
 .footerGrid__item {
   @apply border border-text md:rounded-xl rounded-lg py-6 md:px-16 px-4;
 }
+
+.connect {
+  @apply relative;
+}

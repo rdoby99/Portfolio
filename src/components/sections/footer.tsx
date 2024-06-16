@@ -1,10 +1,35 @@
 import React from "react";
 import x from "../../assets/3DShapes/x.png";
+import torus from "../../assets/3DShapes/torus.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 export default function Footer() {
   gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    var footerTL = gsap.timeline();
+
+    footerTL.fromTo(
+      ".connect",
+      { top: 200 },
+      {
+        top: 0,
+        duration: 10,
+        ease: "power3",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top center",
+          toggleActions: "play reverse play none",
+        },
+        onComplete: () => {
+          console.log("Animation complete!");
+        },
+      }
+    );
+  }, []);
 
   return (
     <footer id="contact" className="snap-section relative pb-48">
@@ -24,17 +49,26 @@ export default function Footer() {
 
         {/* Col 2 */}
         <div className="md:col-start-2 md:row-span-2 footerGrid__item w-full">
-          <div className="h5 mb-16">&#123; Contact &#125;</div>
-          <h3 className="h2 mb-4">
-            <span className="h2__italic">Let's</span> Connect!
-          </h3>
-          <p className="mb-12 p1 md:max-w-[60%]">
-            Interested in working together? Reach out to discuss how we can turn
-            your vision into a digital reality.
-          </p>
-
-          <h4 className="p1__medium">Email</h4>
-          <p className="p1 mb-16">ramonadoby@gmail.com</p>
+          <div className="overflow-hidden">
+            <div className="h5 mb-16 connect">&#123; Contact &#125;</div>
+          </div>
+          <div className="overflow-hidden">
+            <h3 className="h2 mb-4 connect">
+              <span className="h2__italic">Let's</span> Connect!
+            </h3>
+          </div>
+          <div>
+            <p className="mb-12 p1 md:max-w-[60%] overflow-hidden connect">
+              Interested in working together? Reach out to discuss how we can
+              turn your vision into a digital reality.
+            </p>
+          </div>
+          <div className="overflow-hidden">
+            <h4 className="p1__medium connect">Email</h4>
+          </div>
+          <div className="overflow-hidden">
+            <p className="p1 mb-16 connect">ramonadoby@gmail.com</p>
+          </div>
         </div>
 
         {/* Mobile Social */}
@@ -53,8 +87,14 @@ export default function Footer() {
       <img
         src={x}
         alt=""
-        data-speed="0.65"
-        className="threedShape heroShape max-w-[125px] md:max-w-[335px] absolute right-[-4rem] md:right-24 top-[8rem] md:-top-4"
+        data-speed="0.75"
+        className="threedShape heroShape max-w-[125px] md:max-w-[235px] absolute right-[-4rem] md:right-48 top-32 md:top-16 z-10"
+      />
+      <img
+        src={torus}
+        alt=""
+        data-speed="0.55"
+        className="threedShape heroShape max-w-[125px] md:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%]"
       />
     </footer>
   );

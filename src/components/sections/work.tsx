@@ -1,11 +1,39 @@
 import React from "react";
 import WorkDialog from "./workDialog";
 import useFetchProjects from "../../hooks/useFetchProjects";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Work() {
   const { loading, error, data } = useFetchProjects(
     "http://localhost:1337/api/projects"
   );
+
+  useGSAP(() => {
+    var featuredWorkTL = gsap.timeline();
+
+    featuredWorkTL.fromTo(
+      ".workRow",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 2,
+        ease: "power3",
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: "#work",
+          start: "top center",
+          toggleActions: "play reverse play none",
+        },
+        onComplete: () => {
+          console.log("Work Animation Complete");
+        },
+      }
+    );
+  }, [data]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -18,7 +46,7 @@ export default function Work() {
           {data
             .filter((project) => !project.attributes.featured_order)
             .map((project, index) => (
-              <li key={project.id} className="workRow">
+              <li key={project.id} className="workRow relative">
                 <WorkDialog project={project} loopIndex={index} />
               </li>
             ))}

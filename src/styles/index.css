@@ -597,14 +597,23 @@ video {
 .right-4 {
   right: 1rem;
 }
+.right-\[-2rem\] {
+  right: -2rem;
+}
 .right-\[-4rem\] {
   right: -4rem;
 }
 .top-0 {
   top: 0px;
 }
+.top-32 {
+  top: 8rem;
+}
 .top-4 {
   top: 1rem;
+}
+.top-\[35\%\] {
+  top: 35%;
 }
 .top-\[50\%\] {
   top: 50%;
@@ -1419,7 +1428,6 @@ body {
 }
 .workRow__inner {
   border-top-width: 1px;
-  border-bottom-width: 1px;
   border-color: var(--color-text);
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1440,6 +1448,9 @@ body {
     padding-left: 4rem;
     padding-right: 4rem;
   }
+}
+.connect {
+  position: relative;
 }
 .hover\:bg-text:hover {
   background-color: var(--color-text);
@@ -1555,16 +1566,20 @@ body {
     left: -16rem;
   }
 
-  .md\:-top-4 {
-    top: -1rem;
-  }
-
   .md\:right-24 {
     right: 6rem;
   }
 
+  .md\:right-48 {
+    right: 12rem;
+  }
+
   .md\:right-\[-11rem\] {
     right: -11rem;
+  }
+
+  .md\:top-16 {
+    top: 4rem;
   }
 
   .md\:top-\[12rem\] {
@@ -1725,6 +1740,10 @@ body {
 
   .md\:max-w-2xl {
     max-width: 42rem;
+  }
+
+  .md\:max-w-\[235px\] {
+    max-width: 235px;
   }
 
   .md\:max-w-\[335px\] {
