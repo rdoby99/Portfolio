@@ -5,9 +5,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-export default function Footer() {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
+export default function Footer() {
   useGSAP(() => {
     var footerTL = gsap.timeline();
 

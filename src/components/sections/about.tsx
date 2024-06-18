@@ -1,68 +1,64 @@
 import React, { useEffect } from "react";
-import logo from "/logo.png";
 import ShapeCollage from "./shapeCollage";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function About() {
-  useEffect(() => {
-    gsap.registerPlugin(SplitText);
-    gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
+    // const headSplit = new SplitText("#aboutHeading", {
+    //   type: "lines",
+    //   linesClass: "overflow-hidden",
+    // });
+    // const descSplit = new SplitText("#aboutDesc", {
+    //   type: "lines",
+    //   linesClass: "overflow-hidden",
+    // });
+    // const aboutTL = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: "#about",
+    //     start: "top 75%",
+    //     toggleActions: "play none none none",
+    //   },
+    // });
 
-    const headSplit = new SplitText("#aboutHeading", {
-      type: "lines",
-      linesClass: "overflow-hidden",
-    });
-    const descSplit = new SplitText("#aboutDesc", {
-      type: "lines",
-      linesClass: "overflow-hidden",
-    });
-    const aboutTL = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top 75%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    const statement = document.querySelector("#statement");
     const about = document.querySelector("#about-container");
-    let statementWidth = statement.offsetWidth;
     let aboutWidth = about.offsetWidth;
-    // console.log(statementWidth);
 
-    aboutTL.fromTo(
-      "#aboutSubhead",
-      {
-        y: 100,
-      },
-      {
-        y: 0,
-        duration: 1,
-        stagger: 0.05,
-      }
-    );
+    // aboutTL.fromTo(
+    //   "#aboutSubhead",
+    //   {
+    //     y: 100,
+    //   },
+    //   {
+    //     y: 0,
+    //     duration: 1,
+    //     stagger: 0.05,
+    //   }
+    // );
 
-    aboutTL.from(
-      headSplit.lines,
-      {
-        duration: 1,
-        y: 100,
-        stagger: 0.05,
-      },
-      "<0.25"
-    );
+    // aboutTL.from(
+    //   headSplit.lines,
+    //   {
+    //     duration: 1,
+    //     y: 100,
+    //     stagger: 0.05,
+    //   },
+    //   "<0.25"
+    // );
 
-    aboutTL.from(
-      descSplit.lines,
-      {
-        duration: 1,
-        y: 50,
-        stagger: 0.05,
-      },
-      "<0.25"
-    );
+    // aboutTL.from(
+    //   descSplit.lines,
+    //   {
+    //     duration: 1,
+    //     y: 50,
+    //     stagger: 0.05,
+    //   },
+    //   "<0.25"
+    // );
 
     gsap.fromTo(
       "#about-container",
@@ -86,8 +82,11 @@ export default function About() {
 
   return (
     <section id="about" className="h-screen">
-      <div id="about-container" className="relative flex w-fit">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 pb-28 min-w-[100vw]">
+      <div
+        id="about-container"
+        className="relative flex w-fit f-full items-center py-28"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 min-w-[100vw]">
           <div className="flex flex-col gap-8">
             <p className="h5 overflow-hidden">
               <span id="aboutSubhead" className="inline-block relative">

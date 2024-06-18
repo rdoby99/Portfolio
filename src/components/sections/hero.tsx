@@ -2,17 +2,17 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { useGSAP } from "@gsap/react";
 import spiral from "../../assets/3DShapes/spiral.webm";
 import spiralImg from "../../assets/3DShapes/spiral.png";
 import curve from "../../assets/3DShapes/curve.webm";
 import curveImg from "../../assets/3DShapes/curve.png";
 import arrow from "../../assets/arrow.svg";
 
-export default function Hero() {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
+export default function Hero() {
+  useGSAP(() => {
     var heroTL = gsap.timeline({
       delay: 4.5,
     });

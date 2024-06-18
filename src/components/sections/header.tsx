@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import logo from "/logo.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Header() {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
     gsap.fromTo(
       "nav",
       {

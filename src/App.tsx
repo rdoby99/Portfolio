@@ -10,12 +10,12 @@ import ScrollTrigger from "gsap/src/ScrollTrigger";
 import ScrollSmoother from "gsap/src/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+
 function App() {
   window.onbeforeunload = () => {
     window.scrollTo(0, 0);
   };
-
-  gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
   useGSAP(() => {
     let smoother = ScrollSmoother.create({
@@ -29,7 +29,6 @@ function App() {
   return (
     <div id="scroll-wrapper">
       <div id="scroll-content">
-        <div className="circle"></div>
         <Intro />
         <Header />
         <Hero />
