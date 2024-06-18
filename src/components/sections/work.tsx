@@ -13,6 +13,7 @@ export default function Work() {
   );
 
   useGSAP(() => {
+    if (!data) return;
     var featuredWorkTL = gsap.timeline();
 
     featuredWorkTL.fromTo(
