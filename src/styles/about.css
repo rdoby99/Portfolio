@@ -11,3 +11,11 @@
 .drawn-circle::after {
   @apply content-[''] inline-block absolute w-[140%] h-28 bg-drawnCircle left-1/2 -translate-x-1/2 -top-1/2 translate-y-1/2 bg-no-repeat bg-contain;
 }
+
+.aboutShape {
+  @apply scale-0;
+}
+
+.statementWord {
+  @apply opacity-0;
+}

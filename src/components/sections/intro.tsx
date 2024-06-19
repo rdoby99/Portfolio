@@ -11,7 +11,12 @@ export default function Intro() {
 
   useGSAP(
     () => {
-      var introTL = gsap.timeline();
+      var introTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#intro",
+          toggleActions: "play reset play play",
+        },
+      });
       var outroTL = gsap.timeline({
         scrollTrigger: {
           trigger: "#intro",

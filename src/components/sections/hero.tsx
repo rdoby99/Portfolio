@@ -20,7 +20,7 @@ export default function Hero() {
         scrollTrigger: {
           trigger: "#hero",
           start: "top center",
-          toggleActions: "play reverse play none",
+          toggleActions: "play reverse play reverse",
         },
       });
 

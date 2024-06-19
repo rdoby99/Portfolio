@@ -86,9 +86,13 @@ export default function Footer() {
               <li>CV</li>
             </ul>
           </div>
-          <button className="row-start-3 md:col-start-2 footerGrid__item h5 !rounded-full hover:bg-text hover:text-white cursor-pointer transition-colors duration-150">
+          <a
+            href="#"
+            role="button"
+            className="row-start-3 md:col-start-2 footerGrid__item h5 !rounded-full hover:bg-text hover:text-white cursor-pointer transition-colors duration-150"
+          >
             &#123; Back to Top &#125;
-          </button>
+          </a>
         </div>
         <img
           src={x}

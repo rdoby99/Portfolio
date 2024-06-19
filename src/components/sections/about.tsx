@@ -27,6 +27,10 @@ export default function About() {
         type: "lines",
         linesClass: "overflow-hidden",
       });
+      const statementSplit = new SplitText("#statement", {
+        type: "words",
+        wordsClass: "mx-2 statementWord",
+      });
       const aboutTL = gsap.timeline({
         scrollTrigger: {
           trigger: "#about",
@@ -75,7 +79,7 @@ export default function About() {
         "<0.25"
       );
 
-      gsap.fromTo(
+      let scrollTween = gsap.fromTo(
         "#about-container",
         {
           xPercent: 0,
@@ -96,18 +100,38 @@ export default function About() {
         }
       );
 
-      statementTL.fromTo(
+      gsap.fromTo(
         ".aboutShape",
         { scale: 0 },
         {
           scale: 1,
-          stagger: 0.5,
+          stagger: 1,
           ease: "back",
           scrollTrigger: {
-            trigger: "#statement",
-            start: "top 25%",
-            end: () => `+=${aboutWidth}`,
-            toggleActions: "play none none none",
+            containerAnimation: scrollTween,
+            trigger: "#statement-container",
+            start: "left center",
+            end: "right right",
+            toggleActions: "play none reverse none",
+            scrub: true,
+          },
+        },
+        "<"
+      );
+
+      gsap.fromTo(
+        statementSplit.words,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          stagger: 1,
+          ease: "back",
+          scrollTrigger: {
+            containerAnimation: scrollTween,
+            trigger: "#statement-container",
+            start: "left center",
+            end: "right right",
+            toggleActions: "play none reverse none",
             scrub: true,
           },
         },
@@ -151,7 +175,7 @@ export default function About() {
             </div>
           </div>
           <div
-            id="statement"
+            id="statement-container"
             className="h2 whitespace-nowrap pl-64 pr-12 relative h-full"
           >
             <img
@@ -194,12 +218,11 @@ export default function About() {
               alt=""
               className="aboutShape absolute left-[95%] bottom-8 w-[100px]"
             />
-            <div className="flex items-center h-full">
+            <div id="statement" className="flex items-center h-full">
               Let's build <span className="highlight">impactful</span> web
               experiences that{" "}
-              <span className="curveUnderline relative ml-4 mr-1">connect</span>
-              , empower, and{" "}
-              <span className="drawn-circle relative mx-12">inspire</span>
+              <span className="curveUnderline relative">connect</span>, empower,
+              and <span className="drawn-circle relative mx-12">inspire</span>
               our users.
             </div>
           </div>
