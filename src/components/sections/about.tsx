@@ -9,56 +9,56 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function About() {
   useGSAP(() => {
-    // const headSplit = new SplitText("#aboutHeading", {
-    //   type: "lines",
-    //   linesClass: "overflow-hidden",
-    // });
-    // const descSplit = new SplitText("#aboutDesc", {
-    //   type: "lines",
-    //   linesClass: "overflow-hidden",
-    // });
-    // const aboutTL = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: "#about",
-    //     start: "top 75%",
-    //     toggleActions: "play none none none",
-    //   },
-    // });
+    const headSplit = new SplitText("#aboutHeading", {
+      type: "lines",
+      linesClass: "overflow-hidden",
+    });
+    const descSplit = new SplitText("#aboutDesc", {
+      type: "lines",
+      linesClass: "overflow-hidden",
+    });
+    const aboutTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+    });
 
     const about = document.querySelector("#about-container");
     let aboutWidth = about.offsetWidth;
 
-    // aboutTL.fromTo(
-    //   "#aboutSubhead",
-    //   {
-    //     y: 100,
-    //   },
-    //   {
-    //     y: 0,
-    //     duration: 1,
-    //     stagger: 0.05,
-    //   }
-    // );
+    aboutTL.fromTo(
+      "#aboutSubhead",
+      {
+        y: 100,
+      },
+      {
+        y: 0,
+        duration: 1,
+        stagger: 0.05,
+      }
+    );
 
-    // aboutTL.from(
-    //   headSplit.lines,
-    //   {
-    //     duration: 1,
-    //     y: 100,
-    //     stagger: 0.05,
-    //   },
-    //   "<0.25"
-    // );
+    aboutTL.from(
+      headSplit.lines,
+      {
+        duration: 1,
+        y: 100,
+        stagger: 0.05,
+      },
+      "<0.25"
+    );
 
-    // aboutTL.from(
-    //   descSplit.lines,
-    //   {
-    //     duration: 1,
-    //     y: 50,
-    //     stagger: 0.05,
-    //   },
-    //   "<0.25"
-    // );
+    aboutTL.from(
+      descSplit.lines,
+      {
+        duration: 1,
+        y: 50,
+        stagger: 0.05,
+      },
+      "<0.25"
+    );
 
     gsap.fromTo(
       "#about-container",
