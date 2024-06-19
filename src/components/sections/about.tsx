@@ -35,8 +35,13 @@ export default function About() {
         },
       });
 
+      const statementTL = gsap.timeline();
+
       const about = document.querySelector("#about-container");
       let aboutWidth = about.offsetWidth;
+      const screenWidth = window.innerWidth;
+      let scrollWidth = aboutWidth - screenWidth;
+      const extraXPercent = 100 * (screenWidth / aboutWidth);
 
       aboutTL.fromTo(
         "#aboutSubhead",
@@ -76,7 +81,9 @@ export default function About() {
           xPercent: 0,
         },
         {
-          xPercent: -100,
+          xPercent: () => {
+            return -100 + extraXPercent;
+          },
           ease: "none",
           scrollTrigger: {
             trigger: "#about",
@@ -87,6 +94,24 @@ export default function About() {
             anticipatePin: 1,
           },
         }
+      );
+
+      statementTL.fromTo(
+        ".aboutShape",
+        { scale: 0 },
+        {
+          scale: 1,
+          stagger: 0.5,
+          ease: "back",
+          scrollTrigger: {
+            trigger: "#statement",
+            start: "top 25%",
+            end: () => `+=${aboutWidth}`,
+            toggleActions: "play none none none",
+            scrub: true,
+          },
+        },
+        "<"
       );
     },
     { scope: container }
@@ -99,73 +124,75 @@ export default function About() {
           id="about-container"
           className="relative flex w-fit h-full items-center py-28"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 min-w-[100vw]">
-            <div className="flex flex-col gap-8">
-              <p className="h5 overflow-hidden">
-                <span id="aboutSubhead" className="inline-block relative">
-                  &#123; I’m Ramona &#125;
-                </span>
-              </p>
-              <h2 id="aboutHeading" className="h2">
-                <span className="font-secHeader uppercase">Front-End</span>{" "}
-                <br /> Web Developer
-              </h2>
-              <p id="aboutDesc" className="max-w-sm">
-                For the past 3 years, I've specialized in crafting engaging web
-                experiences using platforms such as Shopify, Shopify Plus,
-                WordPress, and React. My expertise covers every part of the
-                process—from solution planning through development to
-                deployment. To ensure the highest quality outcomes, I lead my
-                projects with a commitment to delivering organized, reliable,
-                and user-focused solutions, always aiming to exceed expectations
-                and enhance user engagement.
-              </p>
+          <div className="min-w-[100vw]">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 max-w-7xl mx-auto">
+              <div className="flex flex-col gap-8">
+                <p className="h5 overflow-hidden">
+                  <span id="aboutSubhead" className="inline-block relative">
+                    &#123; I’m Ramona &#125;
+                  </span>
+                </p>
+                <h2 id="aboutHeading" className="h2">
+                  <span className="font-secHeader uppercase">Front-End</span>{" "}
+                  <br /> Web Developer
+                </h2>
+                <p id="aboutDesc" className="max-w-sm">
+                  For the past 3 years, I've specialized in crafting engaging
+                  web experiences using platforms such as Shopify, Shopify Plus,
+                  WordPress, and React. My expertise covers every part of the
+                  process—from solution planning through development to
+                  deployment. To ensure the highest quality outcomes, I lead my
+                  projects with a commitment to delivering organized, reliable,
+                  and user-focused solutions, always aiming to exceed
+                  expectations and enhance user engagement.
+                </p>
+              </div>
+              <ShapeCollage className="hidden md:block" />
             </div>
-            <ShapeCollage className="hidden md:block" />
           </div>
           <div
             id="statement"
-            className="h2 whitespace-nowrap pl-64 relative h-full"
+            className="h2 whitespace-nowrap pl-64 pr-12 relative h-full"
           >
             <img
               src={cylinder}
               alt=""
-              className="threedShape absolute left-[15%] top-8 w-[200px]"
+              className="aboutShape threedShape absolute left-[15%] top-8 w-[200px]"
             />
             <img
               src={circle}
               alt=""
-              className="absolute left-[15%] bottom-8 w-[100px]"
+              className="aboutShape absolute left-[15%] bottom-8 w-[100px]"
             />
             <img
               src={knot}
               alt=""
-              className="threedShape absolute left-1/3 bottom-8 w-[200px]"
+              className="aboutShape threedShape absolute left-1/3 bottom-8 w-[200px]"
             />
             <img
               src={torus}
               alt=""
-              className="threedShape absolute left-1/2 top-4 w-[200px]"
+              className="aboutShape threedShape absolute left-1/2 top-4 w-[200px]"
             />
             <img
               src={circle}
               alt=""
-              className="absolute left-[65%] top-32 w-[50px]"
+              className="aboutShape absolute left-[65%] top-32 w-[50px]"
             />
             <img
               src={icosphere}
               alt=""
-              className="threedShape absolute left-2/3 bottom-2 w-[200px]"
-            />
-            <img
-              src={blueCircle}
-              alt=""
-              className="absolute left-[95%] bottom-8 w-[100px]"
+              className="aboutShape threedShape absolute left-2/3 bottom-2 w-[200px]"
             />
             <img
               src={ball}
               alt=""
-              className="threedShape absolute left-[85%] top-4 w-[200px]"
+              className="aboutShape threedShape absolute left-[85%] top-4 w-[200px]"
+            />
+            <img
+              src={blueCircle}
+              alt=""
+              className="aboutShape absolute left-[95%] bottom-8 w-[100px]"
             />
             <div className="flex items-center h-full">
               Let's build <span className="highlight">impactful</span> web

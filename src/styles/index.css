@@ -734,6 +734,10 @@ video {
   margin-left: 3rem;
   margin-right: 3rem;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -864,6 +868,15 @@ video {
 }
 .max-w-sm {
   max-width: 24rem;
+}
+.max-w-3xl {
+  max-width: 48rem;
+}
+.max-w-5xl {
+  max-width: 64rem;
+}
+.max-w-7xl {
+  max-width: 80rem;
 }
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
@@ -1050,6 +1063,9 @@ video {
 }
 .pt-12 {
   padding-top: 3rem;
+}
+.pr-12 {
+  padding-right: 3rem;
 }
 .text-left {
   text-align: left;

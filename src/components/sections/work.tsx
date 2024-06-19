@@ -9,7 +9,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Work() {
   const { loading, error, data } = useFetchProjects(
-    "http://localhost:1337/api/projects"
+    "http://localhost:1337/api/projects?populate=featured_media"
   );
 
   const container = useRef(null);

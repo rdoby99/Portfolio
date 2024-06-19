@@ -9,7 +9,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function FeaturedWork() {
   const { loading, error, data } = useFetchProjects(
-    "http://localhost:1337/api/projects"
+    "http://localhost:1337/api/projects?populate=featured_media"
   );
 
   const container = useRef(null);
@@ -21,19 +21,16 @@ export default function FeaturedWork() {
 
       featuredWorkTL.fromTo(
         ".featured-work-headings",
-        { top: 200 },
+        { color: 200 },
         {
-          top: 0,
+          color: 0,
           duration: 5,
           ease: "power3",
           stagger: 1,
           scrollTrigger: {
             trigger: "#featuredWork",
             start: "top center",
-            toggleActions: "play reverse play none",
-          },
-          onComplete: () => {
-            console.log("Featured Work Animation Complete");
+            toggleActions: "play reverse play reverse",
           },
         }
       );
