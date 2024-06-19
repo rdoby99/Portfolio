@@ -40,6 +40,7 @@ export default function About() {
       });
 
       const statementTL = gsap.timeline();
+      let mm = gsap.matchMedia();
 
       const about = document.querySelector("#about-container");
       let aboutWidth = about.offsetWidth;
@@ -79,71 +80,77 @@ export default function About() {
         "<0.25"
       );
 
-      let scrollTween = gsap.fromTo(
-        "#about-container",
-        {
-          xPercent: 0,
-        },
-        {
-          xPercent: () => {
-            return -100 + extraXPercent;
+      mm.add("(min-width: 768px)", () => {
+        let scrollTween = gsap.fromTo(
+          "#about-container",
+          {
+            xPercent: 0,
           },
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#about",
-            end: () => `+=${aboutWidth}`,
-            scrub: true,
-            pin: true,
-            pinType: "transform",
-            anticipatePin: 1,
-          },
-        }
-      );
+          {
+            xPercent: () => {
+              return -100 + extraXPercent;
+            },
+            ease: "none",
+            scrollTrigger: {
+              trigger: "#about",
+              end: () => `+=${aboutWidth}`,
+              scrub: true,
+              pin: true,
+              pinType: "transform",
+              anticipatePin: 1,
+            },
+          }
+        );
 
-      gsap.fromTo(
-        ".aboutShape",
-        { scale: 0 },
-        {
-          scale: 1,
-          stagger: 1,
-          ease: "back",
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: "#statement-container",
-            start: "left center",
-            end: "right right",
-            toggleActions: "play none reverse none",
-            scrub: true,
+        gsap.fromTo(
+          ".aboutShape",
+          { scale: 0 },
+          {
+            scale: 1,
+            stagger: 1,
+            ease: "back",
+            scrollTrigger: {
+              containerAnimation: scrollTween,
+              trigger: "#statement-container",
+              start: "left center",
+              end: "right right",
+              toggleActions: "play none reverse none",
+              scrub: true,
+            },
           },
-        },
-        "<"
-      );
+          "<"
+        );
 
-      gsap.fromTo(
-        statementSplit.words,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          stagger: 1,
-          ease: "back",
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: "#statement-container",
-            start: "left center",
-            end: "right right",
-            toggleActions: "play none reverse none",
-            scrub: true,
+        gsap.fromTo(
+          statementSplit.words,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            stagger: 1,
+            ease: "back",
+            scrollTrigger: {
+              containerAnimation: scrollTween,
+              trigger: "#statement-container",
+              start: "left center",
+              end: "right right",
+              toggleActions: "play none reverse none",
+              scrub: true,
+            },
           },
-        },
-        "<"
-      );
+          "<"
+        );
+      });
+
+      // mm.add("(max-width: 768px)", () => {
+
+      // });
     },
     { scope: container }
   );
 
   return (
     <section id="section-about" ref={container}>
-      <div id="about" className="h-screen">
+      <div id="about" className="md:h-screen">
         <div
           id="about-container"
           className="relative flex w-fit h-full items-center py-28"
@@ -176,7 +183,7 @@ export default function About() {
           </div>
           <div
             id="statement-container"
-            className="h2 whitespace-nowrap pl-64 pr-12 relative h-full"
+            className="h2 whitespace-nowrap pl-64 pr-12 relative h-full hidden md:block"
           >
             <img
               src={cylinder}

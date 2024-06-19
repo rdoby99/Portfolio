@@ -104,7 +104,7 @@ export default function Hero() {
     <section id="section-hero" ref={container}>
       <div
         id="hero"
-        className="hero text-center flex flex-col gap-16 justify-center items-center min-h-[80vh] md:min-h-screen"
+        className="hero text-center flex flex-col gap-16 justify-center items-center min-h-[70vh] md:min-h-screen"
       >
         <div className="relative">
           <div className="overflow-hidden relative block mb-8">

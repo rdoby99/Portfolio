@@ -38,7 +38,10 @@ export default function Footer() {
 
   return (
     <footer id="section-contact" ref={container}>
-      <div id="contact" className="relative pb-48">
+      <div
+        id="contact"
+        className="relative pb-48 overflow-x-hidden md:overflow-visible"
+      >
         <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-16">
           {/* Col 1 */}
           <div className="row-start-1 col-start-1 footerGrid__item h5 text-center hidden md:flex md:items-center md:justify-center">
@@ -98,13 +101,13 @@ export default function Footer() {
           src={x}
           alt=""
           data-speed="0.75"
-          className="threedShape heroShape max-w-[125px] md:max-w-[235px] absolute right-[-4rem] md:right-48 top-32 md:top-16 z-10"
+          className="threedShape heroShape hidden md:inline-block max-w-[125px] md:max-w-[235px] absolute right-[-4rem] md:right-48 top-32 md:top-16 z-10"
         />
         <img
           src={torus}
           alt=""
           data-speed="0.55"
-          className="threedShape heroShape max-w-[125px] md:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%]"
+          className="threedShape heroShape hidden md:inline-block max-w-[125px] md:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%]"
         />
       </div>
     </footer>
