@@ -4,6 +4,13 @@ import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import torus from "../../assets/3DShapes/torus.png";
+import knot from "../../assets/3DShapes/torus-knot.png";
+import ball from "../../assets/3DShapes/sliced-ball.png";
+import icosphere from "../../assets/3DShapes/icosphere.png";
+import cylinder from "../../assets/3DShapes/cylinder.png";
+import circle from "../../assets/circle.svg";
+import blueCircle from "../../assets/blue-circle.svg";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -84,7 +91,7 @@ export default function About() {
     <section id="about" className="h-screen">
       <div
         id="about-container"
-        className="relative flex w-fit f-full items-center py-28"
+        className="relative flex w-fit h-full items-center py-28"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 min-w-[100vw]">
           <div className="flex flex-col gap-8">
@@ -110,9 +117,58 @@ export default function About() {
           </div>
           <ShapeCollage className="hidden md:block" />
         </div>
-        <div id="statement" className="h1 whitespace-nowrap pl-64">
-          Let's build impactful web experiences that connect, empower, and
-          inspire, our users.
+        <div
+          id="statement"
+          className="h2 whitespace-nowrap pl-64 relative h-full"
+        >
+          <img
+            src={cylinder}
+            alt=""
+            className="threedShape absolute left-[15%] top-8 w-[200px]"
+          />
+          <img
+            src={circle}
+            alt=""
+            className="absolute left-[15%] bottom-8 w-[100px]"
+          />
+          <img
+            src={knot}
+            alt=""
+            className="threedShape absolute left-1/3 bottom-8 w-[200px]"
+          />
+          <img
+            src={torus}
+            alt=""
+            className="threedShape absolute left-1/2 top-4 w-[200px]"
+          />
+          <img
+            src={circle}
+            alt=""
+            className="absolute left-[65%] top-32 w-[50px]"
+          />
+          <img
+            src={icosphere}
+            alt=""
+            className="threedShape absolute left-2/3 bottom-2 w-[200px]"
+          />
+          <img
+            src={blueCircle}
+            alt=""
+            className="absolute left-[95%] bottom-8 w-[100px]"
+          />
+          <img
+            src={ball}
+            alt=""
+            className="threedShape absolute left-[85%] top-4 w-[200px]"
+          />
+          <div className="flex items-center h-full">
+            Let's build <span className="highlight">impactful</span> web
+            experiences that{" "}
+            <span className="curveUnderline relative ml-4 mr-1">connect</span>,
+            empower, and{" "}
+            <span className="drawn-circle relative mx-12">inspire</span>
+            our users.
+          </div>
         </div>
       </div>
     </section>
