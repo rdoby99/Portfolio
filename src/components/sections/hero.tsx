@@ -14,7 +14,11 @@ gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 export default function Hero() {
   useGSAP(() => {
     var heroTL = gsap.timeline({
-      delay: 4.5,
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top center",
+        toggleActions: "play reverse play none",
+      },
     });
 
     heroTL.fromTo(
@@ -23,11 +27,6 @@ export default function Hero() {
       {
         top: 0,
         duration: 1,
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top center",
-          toggleActions: "play reverse play none",
-        },
       }
     );
 

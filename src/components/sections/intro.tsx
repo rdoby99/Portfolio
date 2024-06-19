@@ -9,6 +9,13 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 export default function Intro() {
   useGSAP(() => {
     var introTL = gsap.timeline();
+    var outroTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top 75%",
+        toggleActions: "play reverse play reverse",
+      },
+    });
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
@@ -72,14 +79,14 @@ export default function Intro() {
       "<0.25"
     );
 
-    introTL.to(".amona__letter", {
+    outroTL.to(".amona__letter", {
       top: -150,
       duration: 0.75,
       ease: "expo",
       stagger: 0.1,
     });
 
-    introTL.to(
+    outroTL.to(
       ".intro__subtext",
       {
         top: -50,
@@ -89,7 +96,7 @@ export default function Intro() {
       "<+=0"
     );
 
-    introTL.to(window, { duration: 1.25, scrollTo: "#header" }, "<+=0.1");
+    // introTL.to(window, { duration: 1.25, scrollTo: "#header" }, "<+=0.1");
 
     // introTL.to("#intro", {
     //   height: "0",
@@ -109,6 +116,7 @@ export default function Intro() {
       scrollTrigger: {
         trigger: "#intro",
         start: "center 45%",
+        scrub: true,
       },
     });
   }, []);
