@@ -733,6 +733,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -803,6 +807,9 @@ video {
 .h-full {
   height: 100%;
 }
+.h-screen {
+  height: 100vh;
+}
 .min-h-\[70vh\] {
   min-height: 70vh;
 }
@@ -848,6 +855,9 @@ video {
 }
 .w-\[125px\] {
   width: 125px;
+}
+.w-screen {
+  width: 100vw;
 }
 .min-w-\[100vw\] {
   min-width: 100vw;
@@ -994,6 +1004,16 @@ video {
 }
 .bg-text {
   background-color: var(--color-text);
+}
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-background {
+  background-color: hsl(var(--background));
+}
+.bg-tertiary {
+  background-color: var(--color-tertiary);
 }
 .bg-o {
   background-image: url('/o.svg');

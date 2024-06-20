@@ -1,43 +1,40 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import x from "../../assets/3DShapes/x.png";
 import torus from "../../assets/3DShapes/torus.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Intro from "./intro";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Footer() {
-  const container = useRef(null);
+export default function Footer({ onOverlayStateChange }) {
+  const changeState = () => {
+    onOverlayStateChange(true);
+  };
 
-  useGSAP(
-    () => {
-      var footerTL = gsap.timeline();
+  useGSAP(() => {
+    var footerTL = gsap.timeline();
 
-      footerTL.fromTo(
-        ".connect",
-        { top: 200 },
-        {
-          top: 0,
-          duration: 10,
-          ease: "power3",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: "#contact",
-            start: "top center",
-            toggleActions: "play reverse play none",
-          },
-          onComplete: () => {
-            console.log("Animation complete!");
-          },
-        }
-      );
-    },
-    { scope: container }
-  );
+    footerTL.fromTo(
+      ".connect",
+      { top: 200 },
+      {
+        top: 0,
+        duration: 10,
+        ease: "power3",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top center",
+          toggleActions: "play reverse play none",
+        },
+      }
+    );
+  });
 
   return (
-    <footer id="section-contact" ref={container}>
+    <footer id="section-contact">
       <div
         id="contact"
         className="relative pb-48 overflow-x-hidden md:overflow-visible"
@@ -91,8 +88,8 @@ export default function Footer() {
           </div>
           <a
             href="#"
-            role="button"
-            className="row-start-3 md:col-start-2 footerGrid__item h5 !rounded-full hover:bg-text hover:text-white cursor-pointer transition-colors duration-150"
+            onClick={changeState}
+            className="row-start-3 md:col-start-2 footerGrid__item h5 !rounded-full hover:bg-text hover:text-white cursor-pointer transition-colors duration-150 text-center my-auto"
           >
             &#123; Back to Top &#125;
           </a>
