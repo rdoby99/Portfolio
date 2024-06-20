@@ -77,7 +77,7 @@ function App() {
     <div id="scroll-wrapper">
       <div id="scroll-content">
         <Intro />
-        <Header />
+        <Header onOverlayStateChange={handleOverlayStateChange} />
         <Hero />
         <About />
         <FeaturedWork />

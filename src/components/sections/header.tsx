@@ -6,7 +6,22 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Header() {
+export default function Header({ onOverlayStateChange }) {
+  const aboutScroll = () => {
+    onOverlayStateChange(true);
+    gsap.to(window, { duration: 1, scrollTo: "#about" });
+  };
+
+  const workScroll = () => {
+    onOverlayStateChange(true);
+    gsap.to(window, { duration: 1, scrollTo: "#featuredWork" });
+  };
+
+  const contactScroll = () => {
+    onOverlayStateChange(true);
+    gsap.to(window, { duration: 1, scrollTo: "#contact" });
+  };
+
   useGSAP(() => {
     gsap.fromTo(
       "nav",
@@ -42,14 +57,14 @@ export default function Header() {
     >
       <nav>
         <ul className="flex gap-4 h6">
-          <li>
-            <a href="#about">About</a>
+          <li className="menu-link" onClick={aboutScroll}>
+            About
           </li>
-          <li>
-            <a href="#work">Work</a>
+          <li className="menu-link" onClick={workScroll}>
+            Work
           </li>
-          <li>
-            <a href="#contact">Contact</a>
+          <li className="menu-link" onClick={contactScroll}>
+            Contact
           </li>
         </ul>
       </nav>
