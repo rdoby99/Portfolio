@@ -31,10 +31,7 @@ export default function Work() {
           scrollTrigger: {
             trigger: containerInner.current,
             start: "top center",
-            toggleActions: "play reverse play none",
-          },
-          onComplete: () => {
-            console.log("Work Animation Complete");
+            toggleActions: "play reverse play reverse",
           },
         }
       );

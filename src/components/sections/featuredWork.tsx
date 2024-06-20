@@ -33,9 +33,6 @@ export default function FeaturedWork() {
             start: "top center",
             toggleActions: "play reverse play reverse",
           },
-          onComplete: () => {
-            console.log("Featured Work Animation Complete");
-          },
         }
       );
     },
