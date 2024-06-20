@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -7,19 +7,23 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 export default function Intro() {
-  const container = useRef(null);
+  const container = useRef<HTMLDivElement>(null);
+  const containerInner = useRef<HTMLDivElement>(null);
+  const floatingR = useRef<SVGElement>(null);
+  const amonaO = useRef<HTMLDivElement>(null);
+  const introSubtext = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       var introTL = gsap.timeline({
         scrollTrigger: {
-          trigger: "#intro",
+          trigger: containerInner.current,
           toggleActions: "play reset play play",
         },
       });
       var outroTL = gsap.timeline({
         scrollTrigger: {
-          trigger: "#intro",
+          trigger: containerInner.current,
           start: "bottom 75%",
           toggleActions: "play reverse play reverse",
         },
@@ -28,7 +32,7 @@ export default function Intro() {
 
       mm.add("(min-width: 768px)", () => {
         introTL.fromTo(
-          ".floatingR",
+          floatingR.current,
           {
             left: "50%",
             x: "-50%",
@@ -44,7 +48,7 @@ export default function Intro() {
 
       mm.add("(max-width: 768px)", () => {
         introTL.fromTo(
-          ".floatingR",
+          floatingR.current,
           {
             left: "50%",
             x: "-50%",
@@ -66,7 +70,7 @@ export default function Intro() {
       );
 
       introTL.fromTo(
-        ".amona__o",
+        amonaO.current,
         { backgroundPosition: "50% -200%" },
         {
           backgroundPosition: "50% 33%",
@@ -77,7 +81,7 @@ export default function Intro() {
       );
 
       introTL.fromTo(
-        ".intro__subtext",
+        introSubtext.current,
         { top: 50 },
         {
           top: 0,
@@ -95,7 +99,7 @@ export default function Intro() {
       });
 
       outroTL.to(
-        ".intro__subtext",
+        introSubtext.current,
         {
           top: -50,
           duration: 0.75,
@@ -104,16 +108,7 @@ export default function Intro() {
         "<+=0"
       );
 
-      // introTL.to(window, { duration: 1.25, scrollTo: "#header" }, "<+=0.1");
-
-      // introTL.to("#intro", {
-      //   height: "0",
-      //   onComplete: () => {
-      //     ScrollTrigger.refresh();
-      //   },
-      // });
-
-      gsap.to(".floatingR", {
+      gsap.to(floatingR.current, {
         bottom: "auto",
         top: "100%",
         y: "1rem",
@@ -122,7 +117,7 @@ export default function Intro() {
         fill: "#0061FE",
         immediateRender: false,
         scrollTrigger: {
-          trigger: "#intro",
+          trigger: containerInner.current,
           start: "center 45%",
           scrub: true,
         },
@@ -134,6 +129,7 @@ export default function Intro() {
   return (
     <section id="section-intro" ref={container}>
       <div
+        ref={containerInner}
         id="intro"
         className="relative inline-block bg-waves bg-cover w-full h-[100vh] text-bg z-20"
       >
@@ -144,6 +140,7 @@ export default function Intro() {
             viewBox="0 0 126 158"
             fill="white"
             xmlns="http://www.w3.org/2000/svg"
+            ref={floatingR}
             className="floatingR absolute bottom-1/2 h-fit w-[63px] md:w-[126px]"
             // style={mystyle}
           >
@@ -184,7 +181,10 @@ export default function Intro() {
                 />
               </svg>
               {/* o */}
-              <div className="amona__letter amona__o w-[50px] md:w-[100px] h-[47px] md:h-[94px] bg-o bg-repeat-y bg-cover bg-[50%_33%]"></div>
+              <div
+                ref={amonaO}
+                className="amona__letter amona__o w-[50px] md:w-[100px] h-[47px] md:h-[94px] bg-o bg-repeat-y bg-cover bg-[50%_33%]"
+              ></div>
               {/* n */}
               <svg
                 width="80"
@@ -217,7 +217,10 @@ export default function Intro() {
           </span>
         </div>
         <div className="overflow-hidden relative top-[52%] md:top-[54%] left-1/2 -translate-x-1/2 inline-block">
-          <div className="intro__subtext relative h5 text-white">
+          <div
+            ref={introSubtext}
+            className="intro__subtext relative h5 text-white"
+          >
             &#123; Front-End Web Developer &#125;
           </div>
         </div>

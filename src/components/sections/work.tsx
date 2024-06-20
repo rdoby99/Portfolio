@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import WorkDialog from "./workDialog";
 import useFetchProjects from "../../hooks/useFetchProjects";
 import gsap from "gsap";
@@ -12,23 +12,24 @@ export default function Work() {
     "http://localhost:1337/api/projects?populate=featured_media"
   );
 
-  const container = useRef(null);
+  const container = useRef<HTMLDivElement>(null);
+  const containerInner = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       if (!data) return;
-      var featuredWorkTL = gsap.timeline();
+      // var featuredWorkTL = gsap.timeline();
 
-      featuredWorkTL.fromTo(
+      gsap.fromTo(
         ".workRow",
         { opacity: 0 },
         {
           opacity: 1,
           duration: 2,
           ease: "power3",
-          stagger: 0.5,
+          stagger: 0.2,
           scrollTrigger: {
-            trigger: "#work",
+            trigger: containerInner.current,
             start: "top center",
             toggleActions: "play reverse play none",
           },
@@ -46,7 +47,7 @@ export default function Work() {
 
   return (
     <section id="section-work" ref={container}>
-      <div id="work">
+      <div ref={containerInner} id="work">
         <div className="px-4 md:px-16 py-16 flex flex-col gap-8">
           <h2 className="h5">&#123; More Select Work &#125;</h2>
           <ul>

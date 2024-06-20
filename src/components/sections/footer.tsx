@@ -1,10 +1,8 @@
-import React, { useState, useRef } from "react";
 import x from "../../assets/3DShapes/x.png";
 import torus from "../../assets/3DShapes/torus.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Intro from "./intro";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,16 +12,16 @@ export default function Footer({ onOverlayStateChange }) {
   };
 
   useGSAP(() => {
-    var footerTL = gsap.timeline();
+    // var footerTL = gsap.timeline();
 
-    footerTL.fromTo(
+    gsap.fromTo(
       ".connect",
       { top: 200 },
       {
         top: 0,
-        duration: 10,
-        ease: "power3",
+        duration: 2,
         stagger: 0.2,
+        ease: "power3",
         scrollTrigger: {
           trigger: "#contact",
           start: "top center",

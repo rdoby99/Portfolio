@@ -12,23 +12,24 @@ export default function FeaturedWork() {
     "http://localhost:1337/api/projects?populate=featured_media"
   );
 
-  const container = useRef(null);
+  const container = useRef<HTMLDivElement>(null);
+  const containerInner = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       if (!data) return;
-      var featuredWorkTL = gsap.timeline();
+      // var featuredWorkTL = gsap.timeline();
 
-      featuredWorkTL.fromTo(
+      gsap.fromTo(
         ".featured-work-headings",
         { top: 200 },
         {
           top: 0,
-          duration: 5,
+          duration: 2,
           ease: "power3",
-          stagger: 1,
+          stagger: 0.2,
           scrollTrigger: {
-            trigger: "#featuredWork",
+            trigger: containerInner.current,
             start: "top center",
             toggleActions: "play reverse play reverse",
           },
@@ -62,12 +63,18 @@ export default function FeaturedWork() {
 
   return (
     <section id="section-featuredWork" ref={container}>
-      <div id="featuredWork" className="relative overflow-hidden h-[90vh]">
+      <div
+        ref={containerInner}
+        id="featuredWork"
+        className="relative overflow-hidden h-[90vh]"
+      >
         <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] text-white relative h-[90vh] bg-waves bg-cover">
           {/* Col 1 */}
           <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-16 flex flex-col justify-center">
             <div className="overflow-hidden">
-              <p className="relative h5 mb-4">&#123; Featured &#125;</p>
+              <p className="featured-work-headings relative h5 mb-4">
+                &#123; Featured &#125;
+              </p>
             </div>
             <div className="overflow-hidden">
               <h2 className="featured-work-headings relative h1 uppercase md:!text-[9.5vw] xl:!text-9xl">

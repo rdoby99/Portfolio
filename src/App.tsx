@@ -9,7 +9,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
 import ScrollSmoother from "gsap/src/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
@@ -23,6 +23,29 @@ function App() {
   const handleOverlayStateChange = (newState) => {
     setShowOverlay(newState);
   };
+
+  // const xTo = useRef();
+  // const yTo = useRef();
+  // const app = useRef();
+
+  // const { context, contextSafe } = useGSAP(
+  //   () => {
+  //     (xTo.current = gsap.quickTo(".circle", "x", {
+  //       duration: 0.8,
+  //       ease: "power3",
+  //     })),
+  //       (yTo.current = gsap.quickTo(".circle", "y", {
+  //         duration: 0.8,
+  //         ease: "power3",
+  //       }));
+  //   },
+  //   { scope: app }
+  // );
+
+  // const moveShape = contextSafe((e) => {
+  //   xTo.current(e.clientX);
+  //   yTo.current(e.clientY);
+  // });
 
   useGSAP(() => {
     let smoother = ScrollSmoother.create({
@@ -74,6 +97,7 @@ function App() {
   return (
     <div id="scroll-wrapper">
       <div id="scroll-content">
+        {/* <div className="circle"></div> */}
         <Intro />
         <Header onOverlayStateChange={handleOverlayStateChange} />
         <Hero />
