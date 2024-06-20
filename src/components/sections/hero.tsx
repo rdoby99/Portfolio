@@ -142,8 +142,8 @@ export default function Hero() {
             muted={true}
             playsInline={true}
             data-speed="1.25"
-            className="threedShape heroShape max-w-[125px] md:max-w-[335px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
-            title="Curve Shape"
+            className="threedShape heroShape w-[125px] md:w-[335px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
+            title="Spiral Shape"
           >
             <source src={spiral} type="video/webm" />
             <img src={spiralImg} alt="No video support" />
@@ -154,8 +154,8 @@ export default function Hero() {
             loop={true}
             muted={true}
             playsInline={true}
-            data-speed="0.20"
-            className="threedShape heroShape max-w-[125px] md:max-w-[335px] absolute left-[-4rem] md:-left-[16rem] top-[7rem] md:top-[5.5rem]"
+            data-speed="0.25"
+            className="threedShape heroShape w-[125px] md:w-[335px] absolute left-[-4rem] md:-left-[16rem] top-[7rem] md:top-[5.5rem]"
             title="Curve Shape"
           >
             <source src={curve} type="video/webm" />

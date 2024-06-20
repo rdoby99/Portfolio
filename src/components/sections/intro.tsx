@@ -135,7 +135,7 @@ export default function Intro() {
     <section id="section-intro" ref={container}>
       <div
         id="intro"
-        className="relative inline-block bg-waves bg-cover w-full h-[100vh] text-bg"
+        className="relative inline-block bg-waves bg-cover w-full h-[100vh] text-bg z-20"
       >
         <div>
           <svg
