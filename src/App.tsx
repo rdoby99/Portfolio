@@ -24,8 +24,6 @@ function App() {
     setShowOverlay(newState);
   };
 
-  console.log(showOverlay);
-
   useGSAP(() => {
     let smoother = ScrollSmoother.create({
       wrapper: "#scroll-wrapper",

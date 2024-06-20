@@ -7,20 +7,22 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Header({ onOverlayStateChange }) {
-  const aboutScroll = () => {
+  const { contextSafe } = useGSAP();
+
+  const aboutScroll = contextSafe(() => {
     onOverlayStateChange(true);
     gsap.to(window, { duration: 1, scrollTo: "#about" });
-  };
+  });
 
-  const workScroll = () => {
+  const workScroll = contextSafe(() => {
     onOverlayStateChange(true);
     gsap.to(window, { duration: 1, scrollTo: "#featuredWork" });
-  };
+  });
 
-  const contactScroll = () => {
+  const contactScroll = contextSafe(() => {
     onOverlayStateChange(true);
     gsap.to(window, { duration: 1, scrollTo: "#contact" });
-  };
+  });
 
   useGSAP(() => {
     gsap.fromTo(

@@ -21,9 +21,9 @@ export default function FeaturedWork() {
 
       featuredWorkTL.fromTo(
         ".featured-work-headings",
-        { color: 200 },
+        { top: 200 },
         {
-          color: 0,
+          top: 0,
           duration: 5,
           ease: "power3",
           stagger: 1,
@@ -31,6 +31,9 @@ export default function FeaturedWork() {
             trigger: "#featuredWork",
             start: "top center",
             toggleActions: "play reverse play reverse",
+          },
+          onComplete: () => {
+            console.log("Featured Work Animation Complete");
           },
         }
       );
@@ -64,9 +67,7 @@ export default function FeaturedWork() {
           {/* Col 1 */}
           <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-16 flex flex-col justify-center">
             <div className="overflow-hidden">
-              <p className="featured-work-headings relative h5 mb-4">
-                &#123; Featured &#125;
-              </p>
+              <p className="relative h5 mb-4">&#123; Featured &#125;</p>
             </div>
             <div className="overflow-hidden">
               <h2 className="featured-work-headings relative h1 uppercase md:!text-[9.5vw] xl:!text-9xl">

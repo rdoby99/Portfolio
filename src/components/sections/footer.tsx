@@ -27,7 +27,7 @@ export default function Footer({ onOverlayStateChange }) {
         scrollTrigger: {
           trigger: "#contact",
           start: "top center",
-          toggleActions: "play reverse play none",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
