@@ -1112,11 +1112,17 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.\!opacity-50 {
+  opacity: 0.5 !important;
+}
 .opacity-0 {
   opacity: 0;
 }
 .opacity-70 {
   opacity: 0.7;
+}
+.\!opacity-60 {
+  opacity: 0.6 !important;
 }
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -1542,7 +1548,7 @@ body {
   transition: transform 0.8s;
 }
 .workCard__project:hover .workCard__project__inner {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) !important;
 }
 /* Position the front and back side */
 .workCard__project__front,
@@ -1580,7 +1586,7 @@ body {
   width: 100%;
 }
 .workRow__inner {
-  border-top-width: 1px;
+  border-bottom-width: 1px;
   border-color: var(--color-text);
   padding-top: 2rem;
   padding-bottom: 2rem;

@@ -12,24 +12,6 @@ export default function FeaturedWorkDialog({ project }) {
   project = project.attributes;
   const tech_stack = project.tech_stack.split(", ");
 
-  // useGSAP(() => {
-  //   var flipTL = gsap.timeline();
-
-  //   flipTL.to(".workCard__project__inner", {
-  //     rotateY: 180,
-  //     duration: 10,
-  //     ease: "power3",
-  //     yoyo: true,
-  //     repeat: 2,
-  //     stagger: 2,
-  //     scrollTrigger: {
-  //       trigger: "#featuredWork",
-  //       start: "top center",
-  //       toggleActions: "play reverse play none",
-  //     },
-  //   });
-  // });
-
   return (
     <Dialog>
       <DialogTrigger>

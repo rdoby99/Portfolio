@@ -14,27 +14,72 @@ export default function FeaturedWork() {
 
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
+  const projectCards = document.querySelectorAll(".workCard__project");
+  const { contextSafe } = useGSAP({ scope: container });
+
+  const animateFlips = contextSafe(() => {
+    const flips = document.querySelectorAll(".workCard__project__inner");
+    const totalDuration = flips.length * 8 + 0.2;
+
+    flips.forEach((flip, index) => {
+      let delay = index * 8;
+
+      gsap
+        .timeline({
+          delay: delay,
+          onComplete: function () {
+            if (index === flips.length - 1) {
+              setTimeout(animateFlips, totalDuration + 5000); // Adjust timing as needed
+            }
+          },
+        })
+        .to(flip, { rotateY: 180, duration: 0.1, ease: "none" })
+        .to(flip, { rotateY: 0, duration: 0.1, ease: "none", delay: 2.5 });
+    });
+  });
 
   useGSAP(
     () => {
       if (!data) return;
       // var featuredWorkTL = gsap.timeline();
+      let mm = gsap.matchMedia();
 
-      gsap.fromTo(
-        ".featured-work-headings",
-        { top: 200 },
-        {
-          top: 0,
-          duration: 2,
-          ease: "power3",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: containerInner.current,
-            start: "top center",
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
+      mm.add("(min-width: 768px)", () => {
+        gsap.fromTo(
+          ".featured-work-headings",
+          { top: 200 },
+          {
+            top: 0,
+            duration: 2,
+            ease: "power3",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: containerInner.current,
+              start: "top center",
+              toggleActions: "play reverse play reverse",
+            },
+            onComplete: animateFlips,
+          }
+        );
+      });
+
+      mm.add("(max-width: 768px)", () => {
+        gsap.fromTo(
+          ".featured-work-headings",
+          { top: 200 },
+          {
+            top: 0,
+            duration: 2,
+            ease: "power3",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: containerInner.current,
+              start: "top center",
+              toggleActions: "play reverse play reverse",
+            },
+          }
+        );
+      });
     },
     { scope: container, dependencies: [data] }
   );
