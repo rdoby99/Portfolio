@@ -682,6 +682,9 @@ video {
 .z-50 {
   z-index: 50;
 }
+.z-40 {
+  z-index: 40;
+}
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -806,6 +809,9 @@ video {
 }
 .h-full {
   height: 100%;
+}
+.h-auto {
+  height: auto;
 }
 .min-h-\[70vh\] {
   min-height: 70vh;
@@ -1406,6 +1412,9 @@ body {
 }
 .amona__letter {
   position: relative;
+}
+.floatingR {
+  left: calc(50% - 350px);
 }
 .menu-link {
   cursor: pointer;

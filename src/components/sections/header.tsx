@@ -26,17 +26,22 @@ export default function Header({ onOverlayStateChange }) {
 
   useGSAP(() => {
     gsap.fromTo(
-      "nav",
+      "header",
       {
         opacity: 0,
+        backgroundColor: "#FDF5ED",
+        color: "#0061fe",
       },
       {
         opacity: 1,
+        backgroundColor: "#FDF5ED",
+        color: "#0061fe",
         duration: 1,
         ease: "none",
         scrollTrigger: {
           trigger: "#intro",
           start: "bottom 50px",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -45,17 +50,45 @@ export default function Header({ onOverlayStateChange }) {
       scrollTrigger: {
         trigger: "#intro",
         start: "bottom 50px",
+        toggleActions: "play none none reverse",
       },
       width: "100%",
+      backgroundColor: "#0061fe",
       duration: 0.75,
       ease: "none",
+    });
+
+    // Change header to blue background at Featured Work section
+    gsap.to("header", {
+      backgroundColor: "#0061fe",
+      color: "#fff",
+      duration: 0.5,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#featuredWork",
+        start: "top 84px",
+        end: "bottom 84px",
+        toggleActions: "play reverse play reverse",
+      },
+    });
+
+    gsap.to("#header__border", {
+      backgroundColor: "#fff",
+      duration: 0.5,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#featuredWork",
+        start: "top 84px",
+        end: "bottom 84px",
+        toggleActions: "play reverse play reverse",
+      },
     });
   }, []);
 
   return (
     <header
       id="header"
-      className="header relative text-text top-0 flex justify-end items-center w-full px-4 md:px-8 py-8"
+      className="header text-text top-0 flex justify-end items-center w-full px-4 md:px-8 py-8 fixed z-40 bg-background"
     >
       <nav>
         <ul className="flex gap-4 h6">

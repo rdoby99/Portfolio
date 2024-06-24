@@ -95,22 +95,24 @@ function App() {
   }, [showOverlay]);
 
   return (
-    <div id="scroll-wrapper">
-      <div id="scroll-content">
-        {/* <div className="circle"></div> */}
-        <Intro />
-        <Header onOverlayStateChange={handleOverlayStateChange} />
-        <Hero />
-        <About />
-        <FeaturedWork />
-        <Work />
-        <Footer onOverlayStateChange={handleOverlayStateChange} />
-        <div
-          id="scrollOverlay__inner"
-          className="h-full w-0 bg-background absolute top-0 left-0 z-50"
-        ></div>
-        <div className="scrollOverlay h-full w-0 bg-text inline-block absolute top-0 left-0 z-50"></div>
-        <div className="scrollOverlay h-full w-0 bg-background inline-block absolute top-0 left-0 z-50"></div>
+    <div>
+      <Header onOverlayStateChange={handleOverlayStateChange} />
+      <div id="scroll-wrapper">
+        <div id="scroll-content">
+          {/* <div className="circle"></div> */}
+          <Intro />
+          <Hero />
+          <About />
+          <FeaturedWork />
+          <Work />
+          <Footer onOverlayStateChange={handleOverlayStateChange} />
+          <div
+            id="scrollOverlay__inner"
+            className="h-full w-0 bg-background absolute top-0 left-0 z-50"
+          ></div>
+          <div className="scrollOverlay h-full w-0 bg-text inline-block absolute top-0 left-0 z-50"></div>
+          <div className="scrollOverlay h-full w-0 bg-background inline-block absolute top-0 left-0 z-50"></div>
+        </div>
       </div>
     </div>
   );
