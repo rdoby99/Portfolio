@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import logo from "/logo.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Header({ onOverlayStateChange }) {
+export default function Header({ onOverlayStateChange, workLoaded }) {
   const { contextSafe } = useGSAP();
 
   const aboutScroll = contextSafe(() => {
@@ -57,7 +56,10 @@ export default function Header({ onOverlayStateChange }) {
       duration: 0.75,
       ease: "none",
     });
+  }, []);
 
+  useGSAP(() => {
+    if (!workLoaded) return;
     // Change header to blue background at Featured Work section
     gsap.to("header", {
       backgroundColor: "#0061fe",
@@ -83,7 +85,7 @@ export default function Header({ onOverlayStateChange }) {
         toggleActions: "play reverse play reverse",
       },
     });
-  }, []);
+  }, [workLoaded]);
 
   return (
     <header

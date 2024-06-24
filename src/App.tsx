@@ -19,33 +19,15 @@ function App() {
   };
 
   const [showOverlay, setShowOverlay] = useState(false);
+  const [workLoaded, setWorkLoaded] = useState(false);
 
   const handleOverlayStateChange = (newState) => {
     setShowOverlay(newState);
   };
 
-  // const xTo = useRef();
-  // const yTo = useRef();
-  // const app = useRef();
-
-  // const { context, contextSafe } = useGSAP(
-  //   () => {
-  //     (xTo.current = gsap.quickTo(".circle", "x", {
-  //       duration: 0.8,
-  //       ease: "power3",
-  //     })),
-  //       (yTo.current = gsap.quickTo(".circle", "y", {
-  //         duration: 0.8,
-  //         ease: "power3",
-  //       }));
-  //   },
-  //   { scope: app }
-  // );
-
-  // const moveShape = contextSafe((e) => {
-  //   xTo.current(e.clientX);
-  //   yTo.current(e.clientY);
-  // });
+  const handleWorkLoadChange = (newState) => {
+    setWorkLoaded(newState);
+  };
 
   useGSAP(() => {
     let smoother = ScrollSmoother.create({
@@ -96,14 +78,17 @@ function App() {
 
   return (
     <div>
-      <Header onOverlayStateChange={handleOverlayStateChange} />
+      <Header
+        onOverlayStateChange={handleOverlayStateChange}
+        workLoaded={workLoaded}
+      />
       <div id="scroll-wrapper">
         <div id="scroll-content">
           {/* <div className="circle"></div> */}
           <Intro />
           <Hero />
           <About />
-          <FeaturedWork />
+          <FeaturedWork onWorkLoadChange={handleWorkLoadChange} />
           <Work />
           <Footer onOverlayStateChange={handleOverlayStateChange} />
           <div

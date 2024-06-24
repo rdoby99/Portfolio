@@ -7,10 +7,14 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function FeaturedWork() {
+export default function FeaturedWork({ onWorkLoadChange }) {
   const { loading, error, data } = useFetchProjects(
     "http://localhost:1337/api/projects?populate=featured_media"
   );
+
+  // const changeState = () => {
+  //   onWorkLoadChange(true);
+  // };
 
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
@@ -41,7 +45,8 @@ export default function FeaturedWork() {
   useGSAP(
     () => {
       if (!data) return;
-      // var featuredWorkTL = gsap.timeline();
+
+      onWorkLoadChange(true);
       let mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
