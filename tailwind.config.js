@@ -67,6 +67,9 @@ module.exports = {
       },
       backgroundImage: {
         waves: "url('/background.png')",
+        o: "url('/o.svg')",
+        curveUnderline: "url('/src/assets/underline.svg')",
+        drawnCircle: "url('/src/assets/drawn-circle.svg')",
       },
       keyframes: {
         "accordion-down": {

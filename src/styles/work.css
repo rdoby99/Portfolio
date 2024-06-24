@@ -3,5 +3,5 @@
 }
 
 .workRow__inner {
-  @apply border-y border-text py-8;
+  @apply border-b border-text py-8;
 }

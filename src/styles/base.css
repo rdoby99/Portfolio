@@ -50,7 +50,7 @@ h6,
 }
 
 body {
-  @apply font-body;
+  @apply font-body overflow-x-hidden;
 }
 
 /* Buttons */
@@ -79,5 +79,32 @@ body {
 }
 
 .threedShape {
-  @apply hue-rotate-[315deg] brightness-150 saturate-150;
+  @apply hue-rotate-[345deg] brightness-100 saturate-[1.10];
 }
+
+.circle {
+  --circle-size: 20px;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+  background-color: #0061fe;
+  transition-property: height, width;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  z-index: 9999;
+}
+
+/* .scroll-container {
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  height: 100vh;
+} */

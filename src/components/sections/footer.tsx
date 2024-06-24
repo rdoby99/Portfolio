@@ -1,49 +1,211 @@
-import React from "react";
+import x from "../../assets/3DShapes/x.png";
+import torus from "../../assets/3DShapes/torus.png";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+import { SplitText } from "gsap/src/SplitText";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
-export default function Footer() {
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+export default function Footer({ onOverlayStateChange }) {
+  const changeState = () => {
+    onOverlayStateChange(true);
+  };
+
+  useGSAP(() => {
+    const connectDescSplit = new SplitText(".connectDesc", {
+      type: "lines",
+      linesClass: "overflow-hidden",
+    });
+
+    const footerTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#contact",
+        start: "top 75%",
+        toggleActions: "play reverse play reverse",
+      },
+    });
+
+    let mm = gsap.matchMedia();
+
+    footerTL.fromTo(
+      ".connectSub",
+      { top: 200 },
+      {
+        top: 0,
+        duration: 1.75,
+        ease: "power3",
+      },
+      "<0.2"
+    );
+
+    mm.add("(min-width: 768px)", () => {
+      footerTL.fromTo(
+        ".follow",
+        { top: 200 },
+        {
+          top: 0,
+          duration: 1.75,
+          stagger: 0.2,
+          ease: "power3",
+        },
+        "<"
+      );
+    });
+
+    mm.add("(max-width: 768px)", () => {
+      footerTL.fromTo(
+        ".followMob",
+        { top: 200 },
+        {
+          top: 0,
+          duration: 1.75,
+          stagger: 0.2,
+          ease: "power3",
+        },
+        "<"
+      );
+    });
+
+    footerTL.fromTo(
+      ".connectHeading",
+      { top: 200 },
+      {
+        top: 0,
+        duration: 1.75,
+        ease: "power3",
+      },
+      "<0.2"
+    );
+    footerTL.fromTo(
+      connectDescSplit.lines,
+      { top: 200 },
+      {
+        top: 0,
+        duration: 1.75,
+        stagger: 0.2,
+        ease: "power3",
+      },
+      "<0.2"
+    );
+
+    footerTL.fromTo(
+      ".connectEmailHeading",
+      { top: 200 },
+      {
+        top: 0,
+        duration: 1.75,
+        ease: "power3",
+      },
+      "<0.2"
+    );
+
+    footerTL.fromTo(
+      ".connectEmail",
+      { top: 200 },
+      {
+        top: 0,
+        duration: 1.75,
+        ease: "power3",
+      },
+      "<0.2"
+    );
+  });
+
   return (
-    <footer className="pb-24">
-      <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-16">
-        {/* Col 1 */}
-        <div className="row-start-1 col-start-1 footerGrid__item h5 text-center hidden md:flex md:items-center md:justify-center">
-          &#123; Follow &#125;
-        </div>
-        <ul className="row-start-2 col-start-1 footerGrid__item h4 text-center justify-around hidden md:flex md:flex-col">
-          <li>LinkedIn</li>
-          <li>Github</li>
-          <li>CV</li>
-        </ul>
-        <p className="row-start-3 col-start-1 footerGrid__item text-center p2 hidden md:flex md:items-center md:justify-center">
-          &copy; 2024 Ramona Doby
-        </p>
-
-        {/* Col 2 */}
-        <div className="md:col-start-2 md:row-span-2 footerGrid__item w-full">
-          <div className="h5 mb-16">&#123; Contact &#125;</div>
-          <h3 className="h2 mb-4">
-            <span className="h2__italic">Let's</span> Connect!
-          </h3>
-          <p className="mb-12 p1 md:max-w-[60%]">
-            Interested in working together? Reach out to discuss how we can turn
-            your vision into a digital reality.
-          </p>
-
-          <h4 className="p1__medium">Email</h4>
-          <p className="p1 mb-16">ramonadoby@gmail.com</p>
-        </div>
-
-        {/* Mobile Social */}
-        <div className="md:hidden footerGrid__item flex flex-col gap-4">
-          <h3 className="h5">&#123; Follow &#125;</h3>
-          <ul className="h4 flex justify-between">
-            <li>LinkedIn</li>
-            <li>Github</li>
-            <li>CV</li>
+    <footer id="section-contact">
+      <div
+        id="contact"
+        className="relative pb-48 overflow-x-hidden md:overflow-visible"
+      >
+        <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-16">
+          {/* Col 1 */}
+          <div className="row-start-1 col-start-1 footerGrid__item h5 text-center hidden md:flex md:items-center md:justify-center overflow-hidden">
+            <div className="follow">&#123; Follow &#125;</div>
+          </div>
+          <ul className="row-start-2 col-start-1 footerGrid__item h4 text-center justify-around hidden md:flex md:flex-col">
+            <li className="overflow-hidden">
+              <div className="follow">LinkedIn</div>
+            </li>
+            <li className="overflow-hidden">
+              <div className="follow">Github</div>
+            </li>
+            <li className="overflow-hidden">
+              <div className="follow">CV</div>
+            </li>
           </ul>
+          <div className="row-start-3 col-start-1 footerGrid__item text-center hidden md:flex md:items-center md:justify-center overflow-hidden">
+            <p className="follow followMob p2">&copy; 2024 Ramona Doby</p>
+          </div>
+
+          {/* Col 2 */}
+          <div className="md:col-start-2 md:row-span-2 footerGrid__item w-full">
+            <div className="mb-16">
+              <div className="overflow-hidden">
+                <div className="h5 mb-16 connect connectSub">
+                  &#123; Contact &#125;
+                </div>
+              </div>
+              <div className="overflow-hidden">
+                <h3 className="h2 mb-4 connect connectHeading">
+                  <span className="h2__italic">Let's</span> Connect!
+                </h3>
+              </div>
+              <div>
+                <p className="mb-12 p1 md:max-w-[60%] overflow-hidden connect connectDesc">
+                  Interested in working together? Reach out to discuss how we
+                  can turn your vision into a digital reality.
+                </p>
+              </div>
+              <div className="overflow-hidden">
+                <h4 className="p1__medium connect connectEmailHeading">
+                  Email
+                </h4>
+              </div>
+              <div className="overflow-hidden">
+                <p className="p1 connect connectEmail">ramonadoby@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Social */}
+          <div className="md:hidden footerGrid__item flex flex-col gap-4">
+            <div className="overflow-hidden">
+              <h3 className="h5 followMob">&#123; Follow &#125;</h3>
+            </div>
+            <ul className="h4 flex justify-between">
+              <li className="overflow-hidden">
+                <div className="followMob">LinkedIn</div>
+              </li>
+              <li className="overflow-hidden">
+                <div className="followMob">Github</div>
+              </li>
+              <li className="overflow-hidden">
+                <div className="followMob">CV</div>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="#"
+            onClick={changeState}
+            className="row-start-3 md:col-start-2 footerGrid__item h5 !rounded-full hover:bg-text hover:text-white cursor-pointer transition-colors duration-150 text-center my-auto"
+          >
+            &#123; Back to Top &#125;
+          </a>
         </div>
-        <button className="row-start-3 md:col-start-2 footerGrid__item h5 !rounded-full hover:bg-text hover:text-white cursor-pointer transition-colors duration-150">
-          &#123; Back to Top &#125;
-        </button>
+        <img
+          src={x}
+          alt=""
+          data-speed="0.75"
+          className="threedShape heroShape hidden md:inline-block max-w-[125px] md:max-w-[235px] absolute right-[-4rem] md:right-48 top-32 md:top-16 z-10"
+        />
+        <img
+          src={torus}
+          alt=""
+          data-speed="0.55"
+          className="threedShape heroShape hidden md:inline-block max-w-[125px] md:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%]"
+        />
       </div>
     </footer>
   );

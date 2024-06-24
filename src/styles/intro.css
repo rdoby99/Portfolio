@@ -1,22 +1,14 @@
-/* .amona {
-  left: calc(50%);
-  transform: translateX(-50%);
-}
-
-.floatingR {
-  left: calc(50% - 292px);
-  transform: translateX(-50%);
-} */
-
 .amona {
-  left: calc(50% + 146px);
-  transform: translateX(calc(-50% - 73px));
+  left: calc(50% + 73px);
+  transform: translateX(calc(-50% - 36.5px));
 }
 
-/* .floatingR {
-  left: calc(50% - 292px);
-  transform: translateX(-50%);
-} */
+@media screen and (min-width: 768px) {
+  .amona {
+    left: calc(50% + 146px);
+    transform: translateX(calc(-50% - 73px));
+  }
+}
 
 .amona__letter {
   @apply relative;
