@@ -1112,17 +1112,14 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.\!opacity-50 {
-  opacity: 0.5 !important;
+.\!opacity-60 {
+  opacity: 0.6 !important;
 }
 .opacity-0 {
   opacity: 0;
 }
 .opacity-70 {
   opacity: 0.7;
-}
-.\!opacity-60 {
-  opacity: 0.6 !important;
 }
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -1609,6 +1606,11 @@ body {
   }
 }
 .connect {
+  position: relative;
+  z-index: 30;
+}
+.follow,
+.followMob {
   position: relative;
 }
 .hover\:bg-text:hover {

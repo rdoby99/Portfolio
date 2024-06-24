@@ -3,5 +3,10 @@
 }
 
 .connect {
+  @apply relative z-30;
+}
+
+.follow,
+.followMob {
   @apply relative;
 }
