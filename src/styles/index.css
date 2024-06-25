@@ -990,6 +990,9 @@ video {
 .overflow-x-hidden {
   overflow-x: hidden;
 }
+.overflow-x-clip {
+  overflow-x: clip;
+}
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1071,6 +1074,18 @@ video {
 }
 .pt-12 {
   padding-top: 3rem;
+}
+.pb-28 {
+  padding-bottom: 7rem;
+}
+.pt-14 {
+  padding-top: 3.5rem;
+}
+.pb-14 {
+  padding-bottom: 3.5rem;
+}
+.pt-28 {
+  padding-top: 7rem;
 }
 .text-left {
   text-align: left;
@@ -1427,6 +1442,7 @@ body {
 .menu-link {
   cursor: pointer;
 }
+/* @import "/hero.css"; */
 .highlight {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1995,6 +2011,10 @@ body {
     gap: 1.25rem;
   }
 
+  .md\:gap-16 {
+    gap: 4rem;
+  }
+
   .md\:overflow-visible {
     overflow: visible;
   }
@@ -2012,6 +2032,10 @@ body {
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:\!text-\[9\.5vw\] {

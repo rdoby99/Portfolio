@@ -58,20 +58,6 @@ export default function Intro() {
         "<0.25"
       );
 
-      // gsap.to(containerInner.current, {
-      //   scrollTrigger: {
-      //     trigger: containerInner.current,
-      //     start: "top 1px",
-      //     end: "bottom top",
-      //     snap: {
-      //       snapTo: "bottom top",
-      //       duration: 0.5,
-      //       delay: 0,
-      //       ease: "power1.inOut",
-      //     },
-      //   },
-      // });
-
       gsap.to(".floatingR", {
         left: "2rem",
         width: "3rem",

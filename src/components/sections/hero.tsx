@@ -13,6 +13,8 @@ gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
 export default function Hero() {
   const container = useRef(null);
+  const threeDCurve = useRef(null);
+  let mm = gsap.matchMedia();
 
   useGSAP(
     () => {
@@ -20,6 +22,7 @@ export default function Hero() {
         scrollTrigger: {
           trigger: "#hero",
           start: "top center",
+          end: "bottom top",
           toggleActions: "play reverse play reverse",
         },
       });
@@ -41,11 +44,6 @@ export default function Hero() {
           duration: 1.75,
           ease: "power3",
           stagger: 0.2,
-          scrollTrigger: {
-            trigger: "#hero",
-            start: "top center",
-            toggleActions: "play reverse play none",
-          },
         },
         ">-0.85"
       );
@@ -94,8 +92,36 @@ export default function Hero() {
             end: "bottom top",
             toggleActions: "play pause resume pause",
           },
-        }
+        },
+        "<0.5"
       );
+
+      mm.add("(min-width: 768px)", () => {
+        gsap.to(threeDCurve.current, {
+          left: "-8rem",
+          width: "175px",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "bottom center",
+            end: "bottom top",
+            scrub: true,
+            toggleActions: "play none reverse reverse",
+          },
+        });
+      });
+
+      mm.add("(max-width: 768px)", () => {
+        gsap.to(threeDCurve.current, {
+          left: "70%",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "bottom center",
+            end: "bottom top",
+            scrub: true,
+            toggleActions: "play none reverse reverse",
+          },
+        });
+      });
     },
     { scope: container }
   );
@@ -104,7 +130,7 @@ export default function Hero() {
     <section id="section-hero" ref={container}>
       <div
         id="hero"
-        className="hero text-center flex flex-col gap-16 justify-center items-center min-h-[70vh] md:min-h-screen"
+        className="hero text-center flex flex-col pt-28 md:pt-0 md:gap-16 justify-center items-center min-h-[70vh] md:min-h-screen w-full overflow-x-clip"
       >
         <div className="relative">
           <div className="overflow-hidden relative block mb-8">
@@ -154,7 +180,8 @@ export default function Hero() {
             loop={true}
             muted={true}
             playsInline={true}
-            data-speed="0.25"
+            ref={threeDCurve}
+            data-speed="0.18"
             className="threedShape heroShape w-[125px] md:w-[335px] absolute left-[-4rem] md:-left-[16rem] top-[7rem] md:top-[5.5rem]"
             title="Curve Shape"
           >

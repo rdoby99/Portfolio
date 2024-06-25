@@ -42,7 +42,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
         ease: "none",
         scrollTrigger: {
           trigger: "#intro",
-          start: "bottom 50px",
+          start: "bottom 82px",
           toggleActions: "play none none reverse",
         },
       }
@@ -51,7 +51,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
     gsap.to(border.current, {
       scrollTrigger: {
         trigger: "#intro",
-        start: "bottom 50px",
+        start: "bottom 82px",
         toggleActions: "play none none reverse",
       },
       width: "100%",
@@ -87,7 +87,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
         duration: 0.1,
         scrollTrigger: {
           trigger: "#section-hero",
-          start: "top 40px",
+          start: "top 82px",
           end: "top top",
           toggleActions: "play none reverse none",
         },

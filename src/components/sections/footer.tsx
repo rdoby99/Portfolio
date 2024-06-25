@@ -22,7 +22,7 @@ export default function Footer({ onOverlayStateChange }) {
     const footerTL = gsap.timeline({
       scrollTrigger: {
         trigger: "#contact",
-        start: "top 75%",
+        start: "top 85%",
         toggleActions: "play reverse play reverse",
       },
     });

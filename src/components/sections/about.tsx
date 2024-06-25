@@ -140,10 +140,6 @@ export default function About() {
           "<"
         );
       });
-
-      // mm.add("(max-width: 768px)", () => {
-
-      // });
     },
     { scope: container }
   );
@@ -153,7 +149,7 @@ export default function About() {
       <div id="about" className="md:h-screen">
         <div
           id="about-container"
-          className="relative flex w-fit h-full items-center py-28"
+          className="relative flex w-fit h-full items-center pb-14 pt-28"
         >
           <div className="min-w-[100vw]">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 max-w-7xl mx-auto">
