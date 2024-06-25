@@ -73,9 +73,6 @@ export default function Intro() {
       // });
 
       gsap.to(".floatingR", {
-        bottom: "auto",
-        top: "100%",
-        y: "1rem",
         left: "2rem",
         width: "3rem",
         fill: "#0061FE",
@@ -83,6 +80,17 @@ export default function Intro() {
         scrollTrigger: {
           trigger: containerInner.current,
           start: "center 45%",
+          end: "center 10%",
+          onLeave: () => {
+            document.querySelectorAll(".floatingR").forEach((el) => {
+              el.classList.add("hidden");
+            });
+          },
+          onEnterBack: () => {
+            document.querySelectorAll(".floatingR").forEach((el) => {
+              el.classList.remove("hidden");
+            });
+          },
           scrub: true,
         },
       });

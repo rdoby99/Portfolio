@@ -12,10 +12,6 @@ export default function FeaturedWork({ onWorkLoadChange }) {
     "http://localhost:1337/api/projects?populate=featured_media"
   );
 
-  // const changeState = () => {
-  //   onWorkLoadChange(true);
-  // };
-
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
   const projectCards = document.querySelectorAll(".workCard__project");
