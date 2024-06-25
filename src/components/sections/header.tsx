@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import logo from "/logo.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -11,6 +10,8 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
   const floatingR = useRef<SVGSVGElement>(null);
+  const border = useRef<HTMLDivElement>(null);
+  const floatingRContainer = useRef<HTMLDivElement>(null);
 
   const aboutScroll = contextSafe(() => {
     onOverlayStateChange(true);
@@ -37,7 +38,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
       {
         backgroundColor: "#FDF5ED",
         color: "#0061fe",
-        duration: 1,
+        duration: 0.5,
         ease: "none",
         scrollTrigger: {
           trigger: "#intro",
@@ -47,7 +48,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
       }
     );
 
-    gsap.to("#header__border", {
+    gsap.to(border.current, {
       scrollTrigger: {
         trigger: "#intro",
         start: "bottom 50px",
@@ -60,7 +61,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
     });
 
     gsap.fromTo(
-      ".header-floatingR",
+      floatingRContainer.current,
       {
         opacity: 0,
       },
@@ -94,23 +95,32 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
     );
   }, []);
 
+  // Change header to blue background at Featured Work section
   useGSAP(() => {
     if (!workLoaded) return;
-    // Change header to blue background at Featured Work section
-    gsap.to("header", {
-      backgroundColor: "#0061fe",
-      color: "#fff",
-      duration: 0.5,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#featuredWork",
-        start: "top 84px",
-        end: "bottom 84px",
-        toggleActions: "play reverse play reverse",
-      },
-    });
 
-    gsap.to("#header__border", {
+    gsap.fromTo(
+      containerInner.current,
+      {
+        backgroundColor: "#FDF5ED",
+        color: "#0061fe",
+      },
+      {
+        backgroundColor: "#0061fe",
+        color: "#fff",
+        duration: 0.5,
+        ease: "none",
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: "#featuredWork",
+          start: "top 84px",
+          end: "bottom 84px",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+
+    gsap.to(border.current, {
       backgroundColor: "#fff",
       duration: 0.5,
       ease: "none",
@@ -121,6 +131,24 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
         toggleActions: "play reverse play reverse",
       },
     });
+
+    gsap.fromTo(
+      floatingR.current,
+      {
+        fill: "#0061FE",
+      },
+      {
+        fill: "#fff",
+        duration: 0.5,
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: "#featuredWork",
+          start: "top 84px",
+          end: "bottom 84px",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
   }, [workLoaded]);
 
   return (
@@ -129,7 +157,10 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
         className="header text-text top-0 flex justify-between items-center w-full px-4 md:px-8 py-4 fixed z-40 bg-background"
         ref={containerInner}
       >
-        <div className="header-floatingR w-10 md:w-12 h-fit z-30">
+        <div
+          ref={floatingRContainer}
+          className="header-floatingR w-10 md:w-12 h-fit z-30"
+        >
           <svg
             width="126"
             height="158"
@@ -161,6 +192,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
         </nav>
         <div
           id="header__border"
+          ref={border}
           className="absolute bottom-0 left-0 inline-block w-0 h-[1px] bg-text"
         ></div>
       </div>
