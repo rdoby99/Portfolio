@@ -59,12 +59,6 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
       ease: "none",
     });
 
-    // gsap.fromTo(
-    //   floatingR.current,
-    //   { top: 200 },
-    //   { top: 0, duration: 1, delay: 0.25, ease: "expo" }
-    // );
-
     gsap.fromTo(
       ".header-floatingR",
       {
@@ -135,7 +129,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
         className="header text-text top-0 flex justify-between items-center w-full px-4 md:px-8 py-4 fixed z-40 bg-background"
         ref={containerInner}
       >
-        <div className="header-floatingR w-[63px] md:w-12 h-fit z-30">
+        <div className="header-floatingR w-10 md:w-12 h-fit z-30">
           <svg
             width="126"
             height="158"
