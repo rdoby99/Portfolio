@@ -23,7 +23,7 @@ export default function Hero() {
           trigger: "#hero",
           start: "top center",
           end: "bottom top",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none reverse",
         },
       });
 
@@ -61,9 +61,9 @@ export default function Hero() {
       );
 
       heroTL.fromTo(
-        "#curve",
+        "#drawn-underline",
         { drawSVG: "0%" },
-        { duration: 3, drawSVG: "100%" },
+        { duration: 2, drawSVG: "100%" },
         "<1"
       );
 
@@ -156,12 +156,6 @@ export default function Hero() {
               </span>
             </span>
           </h1>
-          {/* <img
-          src={spiral}
-          alt=""
-          data-speed="1.15"
-          className="threedShape heroShape max-w-[125px] md:max-w-[335px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
-        /> */}
           <video
             autoPlay={true}
             loop={true}
@@ -196,13 +190,15 @@ export default function Hero() {
             viewBox="0 0 224 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute bottom-6 -right-8 w-24 md:w-52"
+            className="absolute bottom-6 -right-8 w-24 md:w-52 overflow-visible"
           >
             <path
-              id="curve"
+              id="drawn-underline"
               strokeWidth="4px"
               stroke="#0061FE"
-              d="M2.63405 19.349C16.6065 15.8724 30.7186 12.9837 44.9293 10.6995C59.0249 8.43219 73.211 6.76108 87.4381 5.6862C101.78 4.59452 116.163 4.10746 130.547 4.21663C144.93 4.3258 159.305 5.03119 173.63 6.3412C187.956 7.65122 201.994 9.53227 216.057 12.0347C217.848 12.3538 219.63 12.6813 221.421 13.0172C222.513 13.2188 223.639 12.7149 223.951 11.5477C224.222 10.5232 223.614 9.17117 222.513 8.96123C208.262 6.27402 193.895 4.19144 179.479 2.70507C165.079 1.22711 150.647 0.353764 136.198 0.0934401C121.683 -0.175281 107.152 0.169018 92.6623 1.11794C78.1724 2.06686 63.7728 3.6372 49.4307 5.78697C35.1297 7.92834 20.919 10.6743 6.84796 14.0165C5.0819 14.4364 3.31583 14.8647 1.54976 15.3098C-1.0213 15.948 0.0711977 19.9956 2.64226 19.3574L2.63405 19.349Z"
+              strokeLinecap="round"
+              d="M2.63405 19.349C16.6065 15.8724 30.7186 12.9837 44.9293 10.6995C59.0249 8.43219 73.211 6.76108 87.4381 5.6862C101.78 4.59452 116.163 4.10746 130.547 4.21663C144.93 4.3258 159.305 5.03119 173.63 6.3412C187.956 7.65122 201.994 9.53227 216.057 12.0347C217.848 12.3538 219.63 12.6813 221.421 13.0172"
+              fill="none"
             />
           </svg>
         </div>

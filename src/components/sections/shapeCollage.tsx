@@ -1,6 +1,30 @@
 import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ShapeCollage(props) {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".shape-circle",
+      { scale: 0 },
+      {
+        scale: 1,
+        stagger: { each: 0.3, from: "end" },
+        duration: 1,
+        ease: "back",
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top center",
+          toggleActions: "play reverse play reverse",
+        },
+      },
+      "<"
+    );
+  });
+
   return (
     <div className={props.className}>
       <div className="grid grid-cols-3 grid-rows-3 justify-items-start items-start">
@@ -37,7 +61,7 @@ export default function ShapeCollage(props) {
           viewBox="0 0 117 117"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="col-span-1 row-span-1 col-start-3 p-12"
+          className="shape-circle col-span-1 row-span-1 col-start-3 p-12"
         >
           <circle cx="58.5" cy="58.5" r="58.5" fill="#0061FE" />
         </svg>
@@ -48,7 +72,7 @@ export default function ShapeCollage(props) {
           viewBox="0 0 117 117"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="col-span-1 row-span-1 col-start-1 row-start-2 p-12"
+          className="shape-circle col-span-1 row-span-1 col-start-1 row-start-2 p-12"
         >
           <circle cx="58.5" cy="58.5" r="58.5" fill="#A8B6F5" />
         </svg>
