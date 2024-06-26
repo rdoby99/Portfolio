@@ -13,76 +13,75 @@ export default function Intro() {
   const amonaO = useRef<HTMLDivElement>(null);
   const introSubtext = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      var introTL = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerInner.current,
-          end: "bottom 85%",
-          toggleActions: "play reverse play none",
+  useGSAP(() => {
+    var introTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerInner.current,
+        end: "bottom 85%",
+        toggleActions: "play reverse play none",
+      },
+    });
+
+    introTL.fromTo(
+      floatingR.current,
+      { top: 200 },
+      { top: 0, duration: 1, delay: 0.25, ease: "expo", stagger: 0.1 }
+    );
+
+    introTL.fromTo(
+      ".amona__letter",
+      { top: 150 },
+      { top: 0, duration: 0.75, ease: "expo", stagger: 0.1 },
+      ">-0.85"
+    );
+
+    introTL.fromTo(
+      amonaO.current,
+      { backgroundPosition: "50% -200%" },
+      {
+        backgroundPosition: "50% 33%",
+        duration: 2.75,
+        ease: "expo.out",
+      },
+      ">-0.90"
+    );
+
+    introTL.fromTo(
+      introSubtext.current,
+      { top: 50 },
+      {
+        top: 0,
+        duration: 1.5,
+        ease: "power3",
+      },
+      "<0.25"
+    );
+
+    // introTL.to(window, { duration: 1, scrollTo: "#hero" });
+
+    gsap.to(".floatingR", {
+      left: "2rem",
+      width: "3rem",
+      fill: "#0061FE",
+      immediateRender: false,
+      scrollTrigger: {
+        trigger: containerInner.current,
+        start: "center 45%",
+        end: "center 10%",
+        onLeave: () => {
+          document.querySelectorAll(".floatingR").forEach((el) => {
+            el.classList.add("hidden");
+          });
         },
-      });
-
-      introTL.fromTo(
-        floatingR.current,
-        { top: 200 },
-        { top: 0, duration: 1, delay: 0.25, ease: "expo", stagger: 0.1 }
-      );
-
-      introTL.fromTo(
-        ".amona__letter",
-        { top: 150 },
-        { top: 0, duration: 0.75, ease: "expo", stagger: 0.1 },
-        ">-0.85"
-      );
-
-      introTL.fromTo(
-        amonaO.current,
-        { backgroundPosition: "50% -200%" },
-        {
-          backgroundPosition: "50% 33%",
-          duration: 2.75,
-          ease: "expo.out",
+        onEnterBack: () => {
+          document.querySelectorAll(".floatingR").forEach((el) => {
+            el.classList.remove("hidden");
+          });
         },
-        ">-0.90"
-      );
-
-      introTL.fromTo(
-        introSubtext.current,
-        { top: 50 },
-        {
-          top: 0,
-          duration: 1.5,
-          ease: "power3",
-        },
-        "<0.25"
-      );
-
-      gsap.to(".floatingR", {
-        left: "2rem",
-        width: "3rem",
-        fill: "#0061FE",
-        immediateRender: false,
-        scrollTrigger: {
-          trigger: containerInner.current,
-          start: "center 45%",
-          end: "center 10%",
-          onLeave: () => {
-            document.querySelectorAll(".floatingR").forEach((el) => {
-              el.classList.add("hidden");
-            });
-          },
-          onEnterBack: () => {
-            document.querySelectorAll(".floatingR").forEach((el) => {
-              el.classList.remove("hidden");
-            });
-          },
-          scrub: true,
-        },
-      });
-    },
-    { scope: container }
-  );
+        scrub: true,
+      },
+    });
+  }, []);
 
   return (
     <section id="section-intro" ref={container}>
