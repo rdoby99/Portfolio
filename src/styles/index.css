@@ -571,6 +571,9 @@ video {
   white-space: nowrap;
   border-width: 0;
 }
+.pointer-events-none {
+  pointer-events: none;
+}
 .fixed {
   position: fixed;
 }
@@ -949,9 +952,6 @@ video {
 .gap-1 {
   gap: 0.25rem;
 }
-.gap-16 {
-  gap: 4rem;
-}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1043,16 +1043,15 @@ video {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-.py-28 {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+.pb-14 {
+  padding-bottom: 3.5rem;
 }
 .pb-48 {
   padding-bottom: 12rem;
@@ -1074,15 +1073,6 @@ video {
 }
 .pt-12 {
   padding-top: 3rem;
-}
-.pb-28 {
-  padding-bottom: 7rem;
-}
-.pt-14 {
-  padding-top: 3.5rem;
-}
-.pb-14 {
-  padding-bottom: 3.5rem;
 }
 .pt-28 {
   padding-top: 7rem;
@@ -1442,7 +1432,6 @@ body {
 .menu-link {
   cursor: pointer;
 }
-/* @import "/hero.css"; */
 .highlight {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -2007,12 +1996,12 @@ body {
     gap: 3rem;
   }
 
-  .md\:gap-5 {
-    gap: 1.25rem;
-  }
-
   .md\:gap-16 {
     gap: 4rem;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:overflow-visible {

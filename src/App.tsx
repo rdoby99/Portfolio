@@ -18,6 +18,8 @@ function App() {
     window.scrollTo(0, 0);
   };
 
+  const headerContainer = useRef(null);
+
   const [showOverlay, setShowOverlay] = useState(false);
   const [workLoaded, setWorkLoaded] = useState(false);
 
@@ -46,9 +48,8 @@ function App() {
         },
       });
 
-      tl.to("#scrollOverlay__inner", {
+      tl.set("#scrollOverlay__inner", {
         width: "100vw",
-        duration: 0,
       });
 
       tl.to(".scrollOverlay", {
@@ -58,10 +59,9 @@ function App() {
         ease: "expo.out",
       });
 
-      tl.to("#scrollOverlay__inner", {
+      tl.set("#scrollOverlay__inner", {
         width: "0vw",
         delay: 0.75,
-        duration: 0,
       });
 
       tl.to(".scrollOverlay", {
@@ -77,27 +77,28 @@ function App() {
   }, [showOverlay]);
 
   return (
-    <div>
+    <div className="relative">
       <Header
         onOverlayStateChange={handleOverlayStateChange}
         workLoaded={workLoaded}
       />
       <div id="scroll-wrapper">
         <div id="scroll-content">
-          {/* <div className="circle"></div> */}
           <Intro />
           <Hero />
           <About />
           <FeaturedWork onWorkLoadChange={handleWorkLoadChange} />
           <Work />
           <Footer onOverlayStateChange={handleOverlayStateChange} />
-          <div
-            id="scrollOverlay__inner"
-            className="h-full w-0 bg-background absolute top-0 left-0 z-50"
-          ></div>
-          <div className="scrollOverlay h-full w-0 bg-text inline-block absolute top-0 left-0 z-50"></div>
-          <div className="scrollOverlay h-full w-0 bg-background inline-block absolute top-0 left-0 z-50"></div>
         </div>
+      </div>
+      <div className="fixed z-50 w-full h-full pointer-events-none">
+        <div
+          id="scrollOverlay__inner"
+          className="h-full w-0 bg-background absolute top-0 left-0"
+        ></div>
+        <div className="scrollOverlay h-full w-0 bg-text inline-block absolute top-0 left-0"></div>
+        <div className="scrollOverlay h-full w-0 bg-background inline-block absolute top-0 left-0"></div>
       </div>
     </div>
   );
