@@ -86,6 +86,7 @@ function App() {
         <div id="scroll-content">
           <Intro />
           <Hero />
+          <div id="about-scroll"></div>
           <About />
           <FeaturedWork onWorkLoadChange={handleWorkLoadChange} />
           <Work />

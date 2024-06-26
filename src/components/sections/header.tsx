@@ -15,7 +15,7 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
 
   const aboutScroll = contextSafe(() => {
     onOverlayStateChange(true);
-    gsap.to(window, { duration: 1, scrollTo: "#about" });
+    gsap.to(window, { duration: 1, scrollTo: "#about-scroll" });
   });
 
   const workScroll = contextSafe(() => {

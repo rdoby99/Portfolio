@@ -151,7 +151,7 @@ export default function About() {
           id="about-container"
           className="relative flex w-fit h-full items-center pb-14 pt-28"
         >
-          <div className="min-w-[100vw]">
+          <div id="about__summary" className="min-w-[100vw]">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 max-w-7xl mx-auto">
               <div className="flex flex-col gap-8">
                 <p className="h5 overflow-hidden">
