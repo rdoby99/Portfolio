@@ -220,9 +220,8 @@ export default function About() {
                   web experiences using platforms such as Shopify, Shopify Plus,
                   WordPress, and React. My expertise covers every part of the
                   process—from solution planning through development to
-                  deployment. I lead my projects with a commitment to delivering
-                  organized, reliable, and user-focused solutions, always aiming
-                  to exceed expectations and enhance user engagement.
+                  deployment. I lead every project with a commitment to
+                  delivering organized, reliable, and user-focused solutions.
                 </p>
               </div>
               <ShapeCollage className="hidden md:block" />
