@@ -117,3 +117,20 @@ body {
 ::-webkit-scrollbar {
   @apply w-2 h-2;
 }
+
+a:not(.button)::after,
+.menu-link::after {
+  @apply left-0 bottom-0 absolute bg-text w-0 h-0.5 transition-all duration-150 rounded-sm;
+  content: "";
+}
+
+a:hover::after,
+.menu-link:hover::after {
+  @apply w-full;
+  transition: width 0.3s;
+}
+
+a,
+.menu-link {
+  @apply relative;
+}

@@ -667,8 +667,8 @@ video {
 .top-8 {
   top: 2rem;
 }
-.top-\[35\%\] {
-  top: 35%;
+.top-\[30\%\] {
+  top: 30%;
 }
 .top-\[50\%\] {
   top: 50%;
@@ -886,8 +886,8 @@ video {
 .max-w-7xl {
   max-width: 80rem;
 }
-.max-w-\[125px\] {
-  max-width: 125px;
+.max-w-\[14vw\] {
+  max-width: 14vw;
 }
 .max-w-\[95vw\] {
   max-width: 95vw;
@@ -1447,6 +1447,30 @@ body {
   height: 0.5rem;
   width: 0.5rem;
 }
+a:not(.button)::after,
+.menu-link::after {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: 0.125rem;
+  width: 0px;
+  border-radius: calc(var(--radius) - 4px);
+  background-color: var(--color-text);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  animation-duration: 150ms;
+  content: "";
+}
+a:hover::after,
+.menu-link:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+a,
+.menu-link {
+  position: relative;
+}
 .amona {
   left: calc(50% + 73px);
   transform: translateX(calc(-50% - 36.5px));
@@ -1651,8 +1675,15 @@ body {
 
   .footerGrid__item {
     border-radius: 0.75rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+}
+@media (min-width: 1024px) {
+
+  .footerGrid__item {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 }
 .connect {
@@ -1662,6 +1693,9 @@ body {
 .follow,
 .followMob {
   position: relative;
+}
+.footerGrid__item li {
+  padding-bottom: 0.5rem;
 }
 .hover\:scale-\[1\.025\]:hover {
   --tw-scale-x: 1.025;
@@ -1795,10 +1829,6 @@ body {
 
   .md\:right-\[-11rem\] {
     right: -11rem;
-  }
-
-  .md\:top-16 {
-    top: 4rem;
   }
 
   .md\:top-\[12rem\] {
@@ -1969,14 +1999,6 @@ body {
     max-width: 42rem;
   }
 
-  .md\:max-w-\[235px\] {
-    max-width: 235px;
-  }
-
-  .md\:max-w-\[60\%\] {
-    max-width: 60%;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2071,6 +2093,10 @@ body {
     width: 1rem;
   }
 
+  .lg\:max-w-\[60\%\] {
+    max-width: 60%;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -2101,5 +2127,19 @@ body {
 
   .xl\:\!leading-tight {
     line-height: 1.25 !important;
+  }
+}
+@media (min-width: 1536px) {
+
+  .\32xl\:top-16 {
+    top: 4rem;
+  }
+
+  .\32xl\:top-\[35\%\] {
+    top: 35%;
+  }
+
+  .\32xl\:max-w-\[235px\] {
+    max-width: 235px;
   }
 }

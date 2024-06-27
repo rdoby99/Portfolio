@@ -126,17 +126,35 @@ export default function Footer({ onOverlayStateChange }) {
           </div>
           <ul className="row-start-2 col-start-1 footerGrid__item h4 text-center justify-around hidden md:flex md:flex-col">
             <li className="overflow-hidden">
-              <div className="follow">LinkedIn</div>
+              <a
+                href="https://www.linkedin.com/in/ramona-doby-b04058192"
+                className="follow"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
             </li>
             <li className="overflow-hidden">
-              <div className="follow">Github</div>
+              <a
+                href="https://github.com/rdoby99"
+                className="follow"
+                target="_blank"
+              >
+                Github
+              </a>
             </li>
             <li className="overflow-hidden">
-              <div className="follow">CV</div>
+              <a
+                href="https://docs.google.com/document/d/1EnUSEAnyrV-Ypsir6s9TwFO2AVUl2UHb/edit?usp=sharing&ouid=113413018208409401866&rtpof=true&sd=true"
+                className="follow"
+                target="_blank"
+              >
+                Resume
+              </a>
             </li>
           </ul>
           <div className="row-start-3 col-start-1 footerGrid__item text-center hidden md:flex md:items-center md:justify-center overflow-hidden">
-            <p className="follow followMob p2">&copy; 2024 Ramona Doby</p>
+            <p className="p2">&copy; 2024 Ramona Doby</p>
           </div>
 
           {/* Col 2 */}
@@ -153,7 +171,7 @@ export default function Footer({ onOverlayStateChange }) {
                 </h3>
               </div>
               <div>
-                <p className="mb-12 p1 md:max-w-[60%] overflow-hidden connect connectDesc">
+                <p className="mb-12 p1 lg:max-w-[60%] overflow-hidden connect connectDesc">
                   Interested in working together? Reach out to discuss how we
                   can turn your vision into a digital reality.
                 </p>
@@ -176,13 +194,31 @@ export default function Footer({ onOverlayStateChange }) {
             </div>
             <ul className="h4 flex justify-between">
               <li className="overflow-hidden">
-                <div className="followMob">LinkedIn</div>
+                <a
+                  href="https://www.linkedin.com/in/ramona-doby-b04058192"
+                  className="followMob"
+                  target="_blank"
+                >
+                  LinkedIn
+                </a>
               </li>
               <li className="overflow-hidden">
-                <div className="followMob">Github</div>
+                <a
+                  href="https://github.com/rdoby99"
+                  className="followMob"
+                  target="_blank"
+                >
+                  Github
+                </a>
               </li>
               <li className="overflow-hidden">
-                <div className="followMob">CV</div>
+                <a
+                  href="https://docs.google.com/document/d/1EnUSEAnyrV-Ypsir6s9TwFO2AVUl2UHb/edit?usp=sharing&ouid=113413018208409401866&rtpof=true&sd=true"
+                  className="followMob"
+                  target="_blank"
+                >
+                  Resume
+                </a>
               </li>
             </ul>
           </div>
@@ -193,18 +229,21 @@ export default function Footer({ onOverlayStateChange }) {
           >
             &#123; Back to Top &#125;
           </a>
+          <div className="md:hidden text-center">
+            <p className="p2">&copy; 2024 Ramona Doby</p>
+          </div>
         </div>
         <img
           src={x}
           alt=""
           data-speed="0.75"
-          className="threedShape heroShape hidden md:inline-block max-w-[125px] md:max-w-[235px] absolute right-[-4rem] md:right-48 top-32 md:top-16 z-10"
+          className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-4rem] md:right-48 top-[30%] 2xl:top-16 z-10"
         />
         <img
           src={torus}
           alt=""
           data-speed="0.55"
-          className="threedShape heroShape hidden md:inline-block max-w-[125px] md:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%]"
+          className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-2rem] md:right-24 top-[50%] 2xl:top-[35%]"
         />
       </div>
     </footer>
