@@ -1096,6 +1096,9 @@ video {
 .pt-28 {
   padding-top: 7rem;
 }
+.pl-4 {
+  padding-left: 1rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1122,6 +1125,9 @@ video {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.\!leading-tight {
+  line-height: 1.25 !important;
 }
 .leading-\[1\.10\] {
   line-height: 1.10;
@@ -1209,6 +1215,9 @@ video {
 }
 .duration-200 {
   animation-duration: 200ms;
+}
+.paused {
+  animation-play-state: paused;
 }
 @font-face {
   font-family: "TheSilverEditorialRegular";
@@ -2031,6 +2040,10 @@ body {
     padding-top: 0px;
   }
 
+  .md\:pl-16 {
+    padding-left: 4rem;
+  }
+
   .md\:\!text-\[9\.5vw\] {
     font-size: 9.5vw !important;
   }
@@ -2040,5 +2053,18 @@ body {
   .xl\:\!text-9xl {
     font-size: 8rem !important;
     line-height: 1 !important;
+  }
+
+  .xl\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
+  }
+
+  .xl\:text-\[8rem\] {
+    font-size: 8rem;
+  }
+
+  .xl\:\!leading-tight {
+    line-height: 1.25 !important;
   }
 }

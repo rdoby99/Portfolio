@@ -23,8 +23,11 @@ function App() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [workLoaded, setWorkLoaded] = useState(false);
 
+  // let smootherRef = ScrollSmoother.get();
+
   const handleOverlayStateChange = (newState) => {
     setShowOverlay(newState);
+    // smootherRef.paused(!smootherRef.paused());
   };
 
   const handleWorkLoadChange = (newState) => {
