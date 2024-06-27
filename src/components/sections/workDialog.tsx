@@ -29,12 +29,12 @@ export default function WorkDialog({ project, loopIndex }) {
               Your browser does not support the video tag.
             </video>
           )}
-          <div className="flex flex-col md:flex-row items-start md:items-center md:justify-start gap-4 md:gap-12">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center lg:justify-start gap-4 lg:gap-12">
             <div className="flex gap-1 md:w-96">
               <div className="p1__medium">0{loopIndex + 1}.</div>
               <h3 className="h3 text-left">{project.title}</h3>
             </div>
-            <ul className="ml-8 md:ml-0 flex gap-4">
+            <ul className="ml-8 lg:ml-0 flex gap-4">
               {tech_stack.map((tool, index) => (
                 <li key={index}>{tool}</li>
               ))}
@@ -45,7 +45,7 @@ export default function WorkDialog({ project, loopIndex }) {
             <img
               src={diagonalArrow}
               alt=""
-              className="md:w-4 group-hover:rotate-45 transition-all duration-200"
+              className="lg:w-4 group-hover:rotate-45 transition-all duration-200"
             />
           </div>
         </div>
