@@ -98,13 +98,22 @@ body {
   z-index: 9999;
 }
 
-/* .scroll-container {
-  overflow-y: scroll;
-  height: 100vh;
-  scroll-snap-type: y mandatory;
+/* Targets the scrollbar track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+  @apply bg-background shadow-inner shadow-tertiary;
 }
 
-.snap-section {
-  scroll-snap-align: start;
-  height: 100vh;
-} */
+/* Targets the draggable part of the scrollbar */
+::-webkit-scrollbar-thumb {
+  @apply rounded-[10px] border border-text;
+  background: linear-gradient(0deg, #a8b6f5 0%, #0061fe 100%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0061fe;
+}
+
+/* Targets the main scrollbar container */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
