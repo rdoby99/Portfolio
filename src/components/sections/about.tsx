@@ -6,7 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useGSAP } from "@gsap/react";
 import torus from "../../assets/3DShapes/torus.png";
-import knot from "../../assets/3DShapes/torus-knot.png";
+import knot from "../../assets/3DShapes/knot.webm";
+import knotImg from "../../assets/3DShapes/torus-knot.png";
 import ball from "../../assets/3DShapes/sliced-ball.png";
 import icosphere from "../../assets/3DShapes/icosphere.png";
 import cylinder from "../../assets/3DShapes/cylinder.webm";
@@ -249,11 +250,18 @@ export default function About() {
               alt=""
               className="aboutShape absolute left-[15%] bottom-8 w-[100px]"
             />
-            <img
-              src={knot}
-              alt=""
+            <video
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              playsInline={true}
               className="aboutShape threedShape absolute left-1/3 bottom-8 w-[200px]"
-            />
+              title="Knot Shape"
+            >
+              <source src={knot} type="video/webm" />
+              <img src={knotImg} alt="No video support" />
+              Your browser does not support the video tag.
+            </video>
             <img
               src={torus}
               alt=""
