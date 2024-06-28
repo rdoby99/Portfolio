@@ -12,6 +12,8 @@
   font-display: swap;
 }
 
+/* #A8CAFF */
+
 @layer base {
   :root {
     --background: 30 80% 96%;

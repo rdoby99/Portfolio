@@ -9,7 +9,8 @@ import torus from "../../assets/3DShapes/torus.png";
 import knot from "../../assets/3DShapes/torus-knot.png";
 import ball from "../../assets/3DShapes/sliced-ball.png";
 import icosphere from "../../assets/3DShapes/icosphere.png";
-import cylinder from "../../assets/3DShapes/cylinder.png";
+import cylinder from "../../assets/3DShapes/cylinder.webm";
+import cylinderImg from "../../assets/3DShapes/cylinder.png";
 import circle from "../../assets/circle.svg";
 import blueCircle from "../../assets/blue-circle.svg";
 
@@ -231,11 +232,18 @@ export default function About() {
             id="statement-container"
             className="h2 whitespace-nowrap pl-64 pr-12 relative h-full hidden md:block"
           >
-            <img
-              src={cylinder}
-              alt=""
+            <video
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              playsInline={true}
               className="aboutShape threedShape absolute left-[15%] top-8 w-[200px]"
-            />
+              title="Cylinder Shape"
+            >
+              <source src={cylinder} type="video/webm" />
+              <img src={cylinderImg} alt="No video support" />
+              Your browser does not support the video tag.
+            </video>
             <img
               src={circle}
               alt=""

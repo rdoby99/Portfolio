@@ -182,7 +182,12 @@ export default function Footer({ onOverlayStateChange }) {
                 </h4>
               </div>
               <div className="overflow-hidden">
-                <p className="p1 connect connectEmail">ramonadoby@gmail.com</p>
+                <a
+                  href="mailto:ramonadoby@gmail.com"
+                  className="p1 connect connectEmail"
+                >
+                  ramonadoby@gmail.com
+                </a>
               </div>
             </div>
           </div>

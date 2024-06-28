@@ -828,9 +828,6 @@ video {
 .h-full {
   height: 100%;
 }
-.h-\[115\%\] {
-  height: 115%;
-}
 .min-h-\[70vh\] {
   min-height: 70vh;
 }
@@ -1051,10 +1048,6 @@ video {
 .bg-repeat-y {
   background-repeat: repeat-y;
 }
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .p-12 {
   padding: 3rem;
 }
@@ -1235,6 +1228,7 @@ video {
     url("../assets/fonts/thesilvereditorial-italic.woff") format("woff");
   font-display: swap;
 }
+/* #A8CAFF */
 #root {
   background-color: hsl(var(--background));
   color: var(--color-text);
