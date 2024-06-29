@@ -1,5 +1,7 @@
-import x from "../../assets/3DShapes/x.png";
-import torus from "../../assets/3DShapes/torus.png";
+import x from "../../assets/3DShapes/x.webm";
+import xImg from "../../assets/3DShapes/x.png";
+import torus from "../../assets/3DShapes/torus.webm";
+import torusImg from "../../assets/3DShapes/torus.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { SplitText } from "gsap/src/SplitText";
@@ -238,18 +240,32 @@ export default function Footer({ onOverlayStateChange }) {
             <p className="p2">&copy; 2024 Ramona Doby</p>
           </div>
         </div>
-        <img
-          src={x}
-          alt=""
+        <video
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          playsInline={true}
           data-speed="0.75"
           className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-4rem] md:right-48 top-[30%] 2xl:top-16 z-10"
-        />
-        <img
-          src={torus}
-          alt=""
+          title="Knot Shape"
+        >
+          <source src={x} type="video/webm" />
+          <img src={xImg} alt="No video support" />
+          Your browser does not support the video tag.
+        </video>
+        <video
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          playsInline={true}
           data-speed="0.55"
           className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-2rem] md:right-24 top-[50%] 2xl:top-[35%]"
-        />
+          title="Knot Shape"
+        >
+          <source src={torus} type="video/webm" />
+          <img src={torusImg} alt="No video support" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </footer>
   );

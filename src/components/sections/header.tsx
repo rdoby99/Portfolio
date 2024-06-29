@@ -149,6 +149,25 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
         },
       }
     );
+
+    gsap.fromTo(
+      ".menu-underline",
+      {
+        backgroundColor: "#0061fe",
+      },
+      {
+        backgroundColor: "#FDF5ED",
+        duration: 0.5,
+        ease: "none",
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: "#featuredWork",
+          start: "top 84px",
+          end: "bottom 84px",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
   }, [workLoaded]);
 
   return (
@@ -181,12 +200,15 @@ export default function Header({ onOverlayStateChange, workLoaded }) {
           <ul className="flex gap-4 h6">
             <li className="menu-link" onClick={aboutScroll}>
               About
+              <div className="menu-underline inline-block bg-text w-0 h-0.5 transition-all duration-150 rounded-sm"></div>
             </li>
             <li className="menu-link" onClick={workScroll}>
               Work
+              <div className="menu-underline inline-block bg-text w-0 h-0.5 transition-all duration-150 rounded-sm"></div>
             </li>
             <li className="menu-link" onClick={contactScroll}>
               Contact
+              <div className="menu-underline inline-block bg-text w-0 h-0.5 transition-all duration-150 rounded-sm"></div>
             </li>
           </ul>
         </nav>

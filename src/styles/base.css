@@ -118,19 +118,17 @@ body {
   @apply w-2 h-2;
 }
 
-a:not(.button)::after,
-.menu-link::after {
+a:not(.button)::after {
   @apply left-0 bottom-0 absolute bg-text w-0 h-0.5 transition-all duration-150 rounded-sm;
   content: "";
 }
 
 a:hover::after,
-.menu-link:hover::after {
+.menu-link:hover .menu-underline {
   @apply w-full;
   transition: width 0.3s;
 }
 
-a,
-.menu-link {
+a {
   @apply relative;
 }
