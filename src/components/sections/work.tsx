@@ -20,21 +20,21 @@ export default function Work() {
   const handleMouseEnter = (index) => {
     setHoveredRowIndex(index);
 
-    gsap.to(refs.current[index], {
-      scale: 1.025,
-      duration: 0.3,
-      ease: "power1.out",
-    });
+    // gsap.to(refs.current[index], {
+    //   scale: 1.025,
+    //   duration: 0.3,
+    //   ease: "power1.out",
+    // });
   };
 
   const handleMouseLeave = (index) => {
     setHoveredRowIndex(null);
 
-    gsap.to(refs.current[index], {
-      scale: 1,
-      duration: 0.3,
-      ease: "power1.in",
-    });
+    // gsap.to(refs.current[index], {
+    //   scale: 1,
+    //   duration: 0.3,
+    //   ease: "power1.in",
+    // });
   };
 
   useGSAP(
@@ -43,16 +43,17 @@ export default function Work() {
 
       gsap.fromTo(
         ".workRow",
-        { opacity: 0 },
+        { top: 50, opacity: 0 },
         {
+          top: 0,
           opacity: 1,
           duration: 2,
           ease: "power3",
-          stagger: 0.5,
+          stagger: 0.3,
           scrollTrigger: {
             trigger: containerInner.current,
             start: "top center",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none none",
           },
         }
       );
@@ -66,7 +67,7 @@ export default function Work() {
   return (
     <section id="section-work" ref={container}>
       <div ref={containerInner} id="work">
-        <div className="px-4 md:px-16 py-16 flex flex-col gap-8">
+        <div className="px-4 md:px-10 lg:px-16 py-16 flex flex-col gap-8">
           <h2 className="h5">&#123; More Select Work &#125;</h2>
           <ul onMouseLeave={() => setHoveredRowIndex(null)}>
             {data
@@ -74,17 +75,18 @@ export default function Work() {
               .map((project, index) => (
                 <li
                   key={project.id}
-                  data-index={index}
-                  className={`workRow relative ${
-                    hoveredRowIndex !== null && hoveredRowIndex !== index
-                      ? "!opacity-60"
-                      : ""
-                  }`}
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={() => handleMouseLeave(index)}
                   ref={(el) => (refs.current[index] = el)}
+                  className={`relative hover:scale-[1.025] hover:duration-[600ms] transition-all ease-in ${
+                    hoveredRowIndex !== null && hoveredRowIndex !== index
+                      ? "md:!opacity-60"
+                      : ""
+                  }`}
                 >
-                  <WorkDialog project={project} loopIndex={index} />
+                  <div data-index={index} className="workRow relative">
+                    <WorkDialog project={project} loopIndex={index} />
+                  </div>
                 </li>
               ))}
           </ul>

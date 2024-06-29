@@ -13,3 +13,13 @@
 .amona__letter {
   @apply relative;
 }
+
+.floatingR {
+  left: calc(50% - 170px);
+}
+
+@media screen and (min-width: 768px) {
+  .floatingR {
+    left: calc(50% - 350px);
+  }
+}

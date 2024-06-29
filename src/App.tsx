@@ -18,34 +18,21 @@ function App() {
     window.scrollTo(0, 0);
   };
 
+  const headerContainer = useRef(null);
+
   const [showOverlay, setShowOverlay] = useState(false);
+  const [workLoaded, setWorkLoaded] = useState(false);
+
+  // let smootherRef = ScrollSmoother.get();
 
   const handleOverlayStateChange = (newState) => {
     setShowOverlay(newState);
+    // smootherRef.paused(!smootherRef.paused());
   };
 
-  // const xTo = useRef();
-  // const yTo = useRef();
-  // const app = useRef();
-
-  // const { context, contextSafe } = useGSAP(
-  //   () => {
-  //     (xTo.current = gsap.quickTo(".circle", "x", {
-  //       duration: 0.8,
-  //       ease: "power3",
-  //     })),
-  //       (yTo.current = gsap.quickTo(".circle", "y", {
-  //         duration: 0.8,
-  //         ease: "power3",
-  //       }));
-  //   },
-  //   { scope: app }
-  // );
-
-  // const moveShape = contextSafe((e) => {
-  //   xTo.current(e.clientX);
-  //   yTo.current(e.clientY);
-  // });
+  const handleWorkLoadChange = (newState) => {
+    setWorkLoaded(newState);
+  };
 
   useGSAP(() => {
     let smoother = ScrollSmoother.create({
@@ -64,9 +51,8 @@ function App() {
         },
       });
 
-      tl.to("#scrollOverlay__inner", {
+      tl.set("#scrollOverlay__inner", {
         width: "100vw",
-        duration: 0,
       });
 
       tl.to(".scrollOverlay", {
@@ -76,10 +62,9 @@ function App() {
         ease: "expo.out",
       });
 
-      tl.to("#scrollOverlay__inner", {
+      tl.set("#scrollOverlay__inner", {
         width: "0vw",
         delay: 0.75,
-        duration: 0,
       });
 
       tl.to(".scrollOverlay", {
@@ -95,22 +80,29 @@ function App() {
   }, [showOverlay]);
 
   return (
-    <div id="scroll-wrapper">
-      <div id="scroll-content">
-        {/* <div className="circle"></div> */}
-        <Intro />
-        <Header onOverlayStateChange={handleOverlayStateChange} />
-        <Hero />
-        <About />
-        <FeaturedWork />
-        <Work />
-        <Footer onOverlayStateChange={handleOverlayStateChange} />
+    <div className="relative">
+      <Header
+        onOverlayStateChange={handleOverlayStateChange}
+        workLoaded={workLoaded}
+      />
+      <div id="scroll-wrapper">
+        <div id="scroll-content">
+          <Intro />
+          <Hero />
+          <div id="about-scroll"></div>
+          <About />
+          <FeaturedWork onWorkLoadChange={handleWorkLoadChange} />
+          <Work />
+          <Footer onOverlayStateChange={handleOverlayStateChange} />
+        </div>
+      </div>
+      <div className="fixed z-50 w-full h-full pointer-events-none">
         <div
           id="scrollOverlay__inner"
-          className="h-full w-0 bg-background absolute top-0 left-0 z-50"
+          className="h-full w-0 bg-background absolute top-0 left-0"
         ></div>
-        <div className="scrollOverlay h-full w-0 bg-text inline-block absolute top-0 left-0 z-50"></div>
-        <div className="scrollOverlay h-full w-0 bg-background inline-block absolute top-0 left-0 z-50"></div>
+        <div className="scrollOverlay h-full w-0 bg-text inline-block absolute top-0 left-0"></div>
+        <div className="scrollOverlay h-full w-0 bg-background inline-block absolute top-0 left-0"></div>
       </div>
     </div>
   );
