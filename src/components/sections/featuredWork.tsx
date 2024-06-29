@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function FeaturedWork() {
+export default function FeaturedWork({ onWorkLoadChange }) {
   const { loading, error, data } = useFetchProjects(
     "http://localhost:1337/api/projects?populate=featured_media"
   );
@@ -16,32 +16,40 @@ export default function FeaturedWork() {
   const containerInner = useRef<HTMLDivElement>(null);
   const projectCards = document.querySelectorAll(".workCard__project");
   const { contextSafe } = useGSAP({ scope: container });
+  let firstTrigger = false;
 
-  const animateFlips = contextSafe(() => {
+  const animateFlips = contextSafe((completeCall) => {
     const flips = document.querySelectorAll(".workCard__project__inner");
-    const totalDuration = flips.length * 8 + 0.2;
+    const totalDuration = flips.length * 6 + 0.2;
 
-    flips.forEach((flip, index) => {
-      let delay = index * 8;
+    if (firstTrigger && !completeCall) {
+      return;
+    }
 
-      gsap
-        .timeline({
-          delay: delay,
-          onComplete: function () {
-            if (index === flips.length - 1) {
-              setTimeout(animateFlips, totalDuration + 5000); // Adjust timing as needed
-            }
-          },
-        })
-        .to(flip, { rotateY: 180, duration: 0.1, ease: "none" })
-        .to(flip, { rotateY: 0, duration: 0.1, ease: "none", delay: 2.5 });
-    });
+    Array.from(flips)
+      .reverse()
+      .forEach((flip, index) => {
+        let delay = index * 6;
+
+        gsap
+          .timeline({
+            delay: delay,
+            onComplete: function () {
+              if (index === flips.length - 1) {
+                setTimeout(animateFlips, totalDuration + 3000, true); // Adjust timing as needed
+              }
+            },
+          })
+          .to(flip, { rotateY: 180, duration: 0.1, ease: "none" })
+          .to(flip, { rotateY: 0, duration: 0.1, ease: "none", delay: 2.5 });
+      });
   });
 
   useGSAP(
     () => {
       if (!data) return;
-      // var featuredWorkTL = gsap.timeline();
+
+      onWorkLoadChange(true);
       let mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
@@ -58,7 +66,10 @@ export default function FeaturedWork() {
               start: "top center",
               toggleActions: "play reverse play reverse",
             },
-            onComplete: animateFlips,
+            onComplete: () => {
+              animateFlips();
+              firstTrigger = true;
+            },
           }
         );
       });
@@ -112,14 +123,14 @@ export default function FeaturedWork() {
       >
         <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] text-white relative h-[90vh] bg-waves bg-cover">
           {/* Col 1 */}
-          <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-16 flex flex-col justify-center">
+          <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-4 md:pl-16 flex flex-col justify-center">
             <div className="overflow-hidden">
               <p className="featured-work-headings relative h5 mb-4">
                 &#123; Featured &#125;
               </p>
             </div>
             <div className="overflow-hidden">
-              <h2 className="featured-work-headings relative h1 uppercase md:!text-[9.5vw] xl:!text-9xl">
+              <h2 className="featured-work-headings xl:!leading-tight relative h1 uppercase md:!text-[9.5vw] xl:!text-9xl">
                 Work
               </h2>
             </div>

@@ -10,9 +10,27 @@
       name="keywords"
       content="HTML, CSS, JavaScript, React, Web, Web Developer, Female Developers"
     />
+    <noscript>
+      <link rel="stylesheet" href="src/styles/noscript.css" />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div class="noscript-container">
+        <img src="logo.png" alt="Ramona Logo" class="noscript-logo" />
+        <h1>Whoops! Looks like Javascript is disabled.</h1>
+        <p style="margin-bottom: 2rem">
+          Please enable Javascript to view this page.
+        </p>
+        <a
+          role="button"
+          href="www.linkedin.com/in/ramona-doby-b04058192"
+          class="button button--primary"
+          >Or view my LinkedIn instead</a
+        >
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
     <!-- <script type="module" src="/src/lib/cursor.ts"></script> -->
   </body>

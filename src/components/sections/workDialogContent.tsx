@@ -3,9 +3,9 @@ import sitePic from "/src/assets/site.png";
 import diagonalArrow from "../../assets/diagonalArrow.svg";
 
 export default function WorkDialogContent({ project, tech }) {
-  let videoUrl = "";
+  let mediaUrl = "";
   if (project.featured_media.data) {
-    videoUrl = `http://localhost:1337${project.featured_media.data.attributes.url}`;
+    mediaUrl = `http://localhost:1337${project.featured_media.data.attributes.url}`;
   }
 
   return (
@@ -13,19 +13,25 @@ export default function WorkDialogContent({ project, tech }) {
       {/* Description */}
       <div className="flex flex-col gap-6 pb-8">
         {/* Image */}
-        {project.featured_media.data && (
-          <video
-            width="320"
-            height="240"
-            autoPlay
-            loop
-            muted
-            className="w-full"
-          >
-            <source src={videoUrl} type="video/mp4"></source>
-            Your browser does not support the video tag.
-          </video>
-        )}
+        {project.featured_media.data &&
+          project.featured_media.data.attributes.mime == "video/mp4" && (
+            <video
+              width="320"
+              height="240"
+              autoPlay
+              loop
+              muted
+              className="w-full"
+            >
+              <source src={mediaUrl} type="video/mp4"></source>
+              Your browser does not support the video tag.
+            </video>
+          )}
+
+        {project.featured_media.data &&
+          project.featured_media.data.attributes.mime == "image/png" && (
+            <img src={mediaUrl} className="w-full"></img>
+          )}
         <div>
           <h5 className="h2 mb-2">{project.title}</h5>
           {project.agency && (
