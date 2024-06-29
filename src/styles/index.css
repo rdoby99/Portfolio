@@ -1054,14 +1054,8 @@ video {
 .bg-repeat-y {
   background-repeat: repeat-y;
 }
-.p-12 {
-  padding: 3rem;
-}
 .p-6 {
   padding: 1.5rem;
-}
-.p-4 {
-  padding: 1rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1995,6 +1989,10 @@ a {
     width: 138px;
   }
 
+  .md\:w-\[320px\] {
+    width: 320px;
+  }
+
   .md\:w-\[335px\] {
     width: 335px;
   }
@@ -2005,18 +2003,6 @@ a {
 
   .md\:w-\[84px\] {
     width: 84px;
-  }
-
-  .md\:w-\[300px\] {
-    width: 300px;
-  }
-
-  .md\:w-\[310px\] {
-    width: 310px;
-  }
-
-  .md\:w-\[320px\] {
-    width: 320px;
   }
 
   .md\:max-w-2xl {
