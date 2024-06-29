@@ -162,7 +162,7 @@ export default function Hero() {
             muted={true}
             playsInline={true}
             data-speed="1.25"
-            className="threedShape heroShape w-[125px] md:w-[335px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
+            className="threedShape heroShape w-[125px] md:w-[320px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
             title="Spiral Shape"
           >
             <source src={spiral} type="video/webm" />

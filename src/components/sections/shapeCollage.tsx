@@ -61,7 +61,7 @@ export default function ShapeCollage(props) {
           viewBox="0 0 117 117"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="shape-circle col-span-1 row-span-1 col-start-3 p-12"
+          className="shape-circle col-span-1 row-span-1 col-start-3 p-6 lg:p-12"
         >
           <circle cx="58.5" cy="58.5" r="58.5" fill="#0061FE" />
         </svg>
@@ -72,7 +72,7 @@ export default function ShapeCollage(props) {
           viewBox="0 0 117 117"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="shape-circle col-span-1 row-span-1 col-start-1 row-start-2 p-12"
+          className="shape-circle col-span-1 row-span-1 col-start-1 row-start-2 p-6 lg:p-12"
         >
           <circle cx="58.5" cy="58.5" r="58.5" fill="#A8B6F5" />
         </svg>

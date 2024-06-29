@@ -1060,6 +1060,9 @@ video {
 .p-6 {
   padding: 1.5rem;
 }
+.p-4 {
+  padding: 1rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -2004,6 +2007,18 @@ a {
     width: 84px;
   }
 
+  .md\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .md\:w-\[310px\] {
+    width: 310px;
+  }
+
+  .md\:w-\[320px\] {
+    width: 320px;
+  }
+
   .md\:max-w-2xl {
     max-width: 42rem;
   }
@@ -2120,6 +2135,10 @@ a {
 
   .lg\:gap-12 {
     gap: 3rem;
+  }
+
+  .lg\:p-12 {
+    padding: 3rem;
   }
 
   .lg\:px-16 {
