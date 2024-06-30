@@ -8,8 +8,10 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Work() {
+  const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
+
   const { loading, error, data } = useFetchProjects(
-    "http://localhost:1337/api/projects?populate=featured_media"
+    `${apiUrl}/api/projects?populate=featured_media`
   );
 
   const container = useRef<HTMLDivElement>(null);

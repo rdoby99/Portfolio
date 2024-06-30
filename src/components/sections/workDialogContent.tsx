@@ -3,9 +3,11 @@ import sitePic from "/src/assets/site.png";
 import diagonalArrow from "../../assets/diagonalArrow.svg";
 
 export default function WorkDialogContent({ project, tech }) {
+  // const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
+
   let mediaUrl = "";
   if (project.featured_media.data) {
-    mediaUrl = `http://localhost:1337${project.featured_media.data.attributes.url}`;
+    mediaUrl = `${project.featured_media.data.attributes.url}`;
   }
 
   return (

@@ -5,11 +5,13 @@ import sitePic from "/src/assets/site.png";
 import WorkDialogContent from "./workDialogContent";
 
 export default function WorkDialog({ project, loopIndex }) {
+  // const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
+
   project = project.attributes;
   const tech_stack = project.tech_stack.split(", ");
   let mediaUrl = "";
   if (project.featured_media.data) {
-    mediaUrl = `http://localhost:1337${project.featured_media.data.attributes.url}`;
+    mediaUrl = `${project.featured_media.data.attributes.url}`;
   }
 
   return (
