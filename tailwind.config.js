@@ -67,6 +67,7 @@ module.exports = {
       },
       backgroundImage: {
         waves: "url('/background.png')",
+        wavesMobile: "url('/backgroundMobile.png')",
         o: "url('/o.svg')",
         curveUnderline: "url('/src/assets/underline.svg')",
         drawnCircle: "url('/src/assets/drawn-circle.svg')",

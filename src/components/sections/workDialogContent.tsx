@@ -39,13 +39,13 @@ export default function WorkDialogContent({
             <img src={mediaUrl} className="w-full"></img>
           )}
         <div>
-          <h5 className="h2 mb-2">{project.title}</h5>
+          <h5 className="h3 mb-2">{project.title}</h5>
           {project.agency && (
             <h6 className="text-xs mb-4">Agency: {project.agency}</h6>
           )}
           <p className="p1 mb-4">{project.description}</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_2fr] mb-6 gap-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_2fr] gap-y-4">
           <h6>Tech Stack:</h6>
           <ul className="flex gap-x-4 gap-y-2 p2 flex-wrap">
             {tech.map((tool: string, index: number) => (
@@ -60,18 +60,20 @@ export default function WorkDialogContent({
             ))}
           </ul>
         </div>
-        <a
-          href={project.url}
-          target="_blank"
-          className="flex gap-2 p1__medium items-center button button--primary group"
-        >
-          <span className="uppercase">Visit Site</span>
-          <img
-            src={diagonalArrow}
-            alt=""
-            className="md:w-4 group-hover:rotate-45 transition-all duration-200"
-          />
-        </a>
+        {project.url && (
+          <a
+            href={project.url}
+            target="_blank"
+            className="flex gap-2 p1__medium items-center button button--primary group mt-6"
+          >
+            <span className="uppercase">Visit Site</span>
+            <img
+              src={diagonalArrow}
+              alt=""
+              className="md:w-4 group-hover:rotate-45 transition-all duration-200"
+            />
+          </a>
+        )}
       </div>
     </div>
   );

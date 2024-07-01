@@ -127,7 +127,7 @@ export default function FeaturedWork({ onWorkLoadChange }: FeaturedWorkProps) {
         id="featuredWork"
         className="relative overflow-hidden h-[90vh]"
       >
-        <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] text-white relative h-[90vh] bg-waves bg-cover">
+        <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] text-white relative h-[90vh] bg-wavesMobile md:bg-waves bg-cover bg-bottom md:bg-center">
           {/* Col 1 */}
           <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-4 md:pl-16 flex flex-col justify-center">
             <div className="overflow-hidden">

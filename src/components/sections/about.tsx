@@ -60,7 +60,7 @@ export default function About() {
       let mm = gsap.matchMedia();
 
       const about = document.querySelector<HTMLElement>("#about-container");
-      let aboutWidth = about!.offsetWidth;
+      let aboutWidth = about!.offsetWidth + 200;
       const screenWidth = window.innerWidth;
       const extraXPercent = 100 * (screenWidth / aboutWidth);
 

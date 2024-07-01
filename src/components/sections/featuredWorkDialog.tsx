@@ -20,7 +20,7 @@ export default function FeaturedWorkDialog({ project }: { project: any }) {
           </div>
           <div className="workCard__project__back">
             <ul className="text-left flex flex-col gap-2">
-              {tech_stack.map((tool: string, index: number) => (
+              {tech_stack.slice(0, 4).map((tool: string, index: number) => (
                 <li key={index}>{tool}</li>
               ))}
             </ul>

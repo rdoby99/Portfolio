@@ -30,7 +30,7 @@ export default function WorkDialog({
                 autoPlay
                 loop
                 muted
-                className="w-[15rem] absolute right-[15%] -bottom-4 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-200"
+                className="w-[15rem] hidden md:inline-block absolute right-[15%] -bottom-4 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-200"
               >
                 <source src={mediaUrl} type="video/mp4"></source>
                 Your browser does not support the video tag.
@@ -41,7 +41,7 @@ export default function WorkDialog({
             project.featured_media.data.attributes.mime == "image/png" && (
               <img
                 src={mediaUrl}
-                className="w-[15rem] absolute right-[15%] -bottom-4 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-200"
+                className="w-[15rem] absolute hidden md:inline-block right-[15%] -bottom-4 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-200"
               ></img>
             )}
           <div className="flex flex-col lg:flex-row items-start lg:items-center lg:justify-start gap-4 lg:gap-12">
