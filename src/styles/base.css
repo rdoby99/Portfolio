@@ -78,9 +78,9 @@ body {
   @apply underline uppercase text-tertiary underline-offset-2;
 }
 
-.threedShape {
+/* .threedShape {
   @apply hue-rotate-[345deg] brightness-100 saturate-[1.10];
-}
+} */
 
 .circle {
   --circle-size: 20px;
@@ -131,4 +131,22 @@ a:hover::after,
 
 a {
   @apply relative;
+}
+
+.threedShape video {
+  display: block; /* Removes bottom space/gap */
+  width: 100%;
+  height: auto;
+}
+
+.threedShape::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  /* box-shadow: 0 0 5px 5px #fdf5ed inset; */
+  box-shadow: 0 0 10px 10px #fdf5ed inset;
 }

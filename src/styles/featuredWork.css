@@ -20,7 +20,7 @@
 }
 
 .dialog-content {
-  @apply flex flex-col w-full md:gap-x-12 gap-y-4 md:gap-y-8 px-4 md:px-12 py-4 md:py-8;
+  @apply flex flex-col w-full md:gap-x-12 gap-y-4 md:gap-y-8 px-4 md:px-12 py-4 md:py-8 max-h-[80vh] md:max-h-[90vh] overflow-y-scroll md:overflow-y-auto;
 }
 
 .workCard__project__inner {
