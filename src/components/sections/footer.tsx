@@ -1,8 +1,6 @@
 import x from "../../assets/3DShapes/x.webm";
 import xMp4 from "../../assets/3DShapes/x.mp4";
 import xImg from "../../assets/3DShapes/x.png";
-import torus from "../../assets/3DShapes/torus.webm";
-import torusImg from "../../assets/3DShapes/torus.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { SplitText } from "gsap/src/SplitText";

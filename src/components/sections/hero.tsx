@@ -9,7 +9,6 @@ import spiralImg from "../../assets/3DShapes/spiral.png";
 import curve from "../../assets/3DShapes/curve.webm";
 import curveMp4 from "../../assets/3DShapes/curve.mp4";
 import curveImg from "../../assets/3DShapes/curve.png";
-import arrow from "../../assets/arrow.svg";
 
 gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
