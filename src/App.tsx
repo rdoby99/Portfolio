@@ -9,7 +9,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
 import ScrollSmoother from "gsap/src/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
@@ -21,11 +21,8 @@ function App() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [workLoaded, setWorkLoaded] = useState(false);
 
-  // let smootherRef = ScrollSmoother.get();
-
   const handleOverlayStateChange = (newState: boolean) => {
     setShowOverlay(newState);
-    // smootherRef.paused(!smootherRef.paused());
   };
 
   const handleWorkLoadChange = (newState: boolean) => {

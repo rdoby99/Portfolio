@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import diagonalArrow from "../../assets/diagonalArrow.svg";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import WorkDialogContent from "./workDialogContent";
@@ -9,7 +10,20 @@ export default function WorkDialog({
   project: any;
   loopIndex: number;
 }) {
-  // const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
 
   project = project.attributes;
   const tech_stack = project.tech_stack.split(", ");
@@ -21,13 +35,17 @@ export default function WorkDialog({
   return (
     <Dialog>
       <DialogTrigger>
-        <div className="workRow__inner group flex md:items-center flex-row gap-4 items-start justify-between">
+        <div
+          className="workRow__inner group flex md:items-center flex-row gap-4 items-start justify-between"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {project.featured_media.data &&
             project.featured_media.data.attributes.mime == "video/mp4" && (
               <video
                 width="320"
                 height="240"
-                autoPlay
+                ref={videoRef}
                 loop
                 muted
                 className="w-[15rem] hidden md:inline-block absolute right-[15%] -bottom-4 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-200"

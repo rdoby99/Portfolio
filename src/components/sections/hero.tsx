@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useGSAP } from "@gsap/react";
 import spiral from "../../assets/3DShapes/spiral.webm";
+import spiralMp4 from "../../assets/3DShapes/spiral.mp4";
 import spiralImg from "../../assets/3DShapes/spiral.png";
 import curve from "../../assets/3DShapes/curve.webm";
 import curveMp4 from "../../assets/3DShapes/curve.mp4";
@@ -128,34 +129,41 @@ export default function Hero() {
               </span>
             </span>
           </h1>
-          <video
-            autoPlay={true}
-            loop={true}
-            muted={true}
-            playsInline={true}
+          <div
             data-speed="1.25"
             className="threedShape heroShape w-[125px] md:w-[320px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
-            title="Spiral Shape"
           >
-            <source src={spiral} type="video/webm" />
-            <img src={spiralImg} alt="No video support" />
-            Your browser does not support the video tag.
-          </video>
-          <video
-            autoPlay={true}
-            loop={true}
-            muted={true}
-            playsInline={true}
+            <video
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              playsInline={true}
+              title="Spiral Shape"
+            >
+              <source src={spiralMp4} type="video/mp4" />
+              <source src={spiral} type="video/webm" />
+              <img src={spiralImg} alt="No video support" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div
+            className="absolute left-[-4rem] md:-left-[16rem] top-[7rem] md:top-[5.5rem] inline-block w-[125px] md:w-[335px] threedShape heroShape"
             ref={threeDCurve}
             data-speed="0.18"
-            className="threedShape heroShape w-[125px] md:w-[335px] absolute left-[-4rem] md:-left-[16rem] top-[7rem] md:top-[5.5rem]"
-            title="Curve Shape"
           >
-            {/* <source src={curve} type="video/webm" /> */}
-            <source src={curveMp4} type="video/mp4" />
-            <img src={curveImg} alt="No video support" />
-            Your browser does not support the video tag.
-          </video>
+            <video
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              playsInline={true}
+              title="Curve Shape"
+            >
+              <source src={curveMp4} type="video/mp4" />
+              <source src={curve} type="video/webm" />
+              <img src={curveImg} alt="No video support" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
           <svg
             width="224"
