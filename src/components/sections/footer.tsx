@@ -1,4 +1,5 @@
 import x from "../../assets/3DShapes/x.webm";
+import xMp4 from "../../assets/3DShapes/x.mp4";
 import xImg from "../../assets/3DShapes/x.png";
 import torus from "../../assets/3DShapes/torus.webm";
 import torusImg from "../../assets/3DShapes/torus.png";
@@ -243,20 +244,23 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             <p className="p2">&copy; 2024 Ramona Doby</p>
           </div>
         </div>
-        <video
-          autoPlay={true}
-          loop={true}
-          muted={true}
-          playsInline={true}
-          data-speed="0.75"
-          className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-4rem] md:right-48 top-[30%] 2xl:top-16 z-10"
-          title="Knot Shape"
-        >
-          <source src={x} type="video/webm" />
-          <img src={xImg} alt="No video support" />
-          Your browser does not support the video tag.
-        </video>
-        <video
+        <div className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-4rem] md:right-48 top-[30%] 2xl:top-[20%] z-10">
+          <video
+            autoPlay={true}
+            loop={true}
+            muted={true}
+            playsInline={true}
+            data-speed="0.75"
+            title="Knot Shape"
+          >
+            <source src={xMp4} type="video/mp4" />
+            <source src={x} type="video/webm" />
+            <img src={xImg} alt="No video support" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* <video
           autoPlay={true}
           loop={true}
           muted={true}
@@ -268,7 +272,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           <source src={torus} type="video/webm" />
           <img src={torusImg} alt="No video support" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
       </div>
     </footer>
   );

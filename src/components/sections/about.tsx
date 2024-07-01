@@ -6,14 +6,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useGSAP } from "@gsap/react";
 import torus from "../../assets/3DShapes/torus.webm";
+import torusMp4 from "../../assets/3DShapes/torus.mp4";
 import torusImg from "../../assets/3DShapes/torus.png";
+import knotMp4 from "../../assets/3DShapes/knot.mp4";
 import knot from "../../assets/3DShapes/knot.webm";
 import knotImg from "../../assets/3DShapes/torus-knot.png";
 import ball from "../../assets/3DShapes/sliced-ball.webm";
+import ballMp4 from "../../assets/3DShapes/sliced-ball.mp4";
 import ballImg from "../../assets/3DShapes/sliced-ball.png";
 import icosphere from "../../assets/3DShapes/icosphere.webm";
+import icosphereMp4 from "../../assets/3DShapes/icosphere.mp4";
 import icosphereImg from "../../assets/3DShapes/icosphere.png";
 import cylinder from "../../assets/3DShapes/cylinder.webm";
+import cylinderMp4 from "../../assets/3DShapes/cylinder.mp4";
 import cylinderImg from "../../assets/3DShapes/cylinder.png";
 import circle from "../../assets/circle.svg";
 import blueCircle from "../../assets/blue-circle.svg";
@@ -234,76 +239,88 @@ export default function About() {
             id="statement-container"
             className="h2 whitespace-nowrap pl-64 pr-12 relative h-full hidden md:block"
           >
-            <video
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
-              className="aboutShape threedShape absolute left-[15%] top-8 w-[200px]"
-              title="Cylinder Shape"
-            >
-              <source src={cylinder} type="video/webm" />
-              <img src={cylinderImg} alt="No video support" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="aboutShape threedShape absolute left-[15%] top-8 w-[200px]">
+              <video
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline={true}
+                title="Cylinder Shape"
+              >
+                <source src={cylinderMp4} type="video/mp4" />
+                <source src={cylinder} type="video/webm" />
+                <img src={cylinderImg} alt="No video support" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <img
               src={circle}
               alt=""
               className="aboutShape absolute left-[15%] bottom-8 w-[100px]"
             />
-            <video
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
-              className="aboutShape threedShape absolute left-1/3 bottom-8 w-[200px]"
-              title="Knot Shape"
-            >
-              <source src={knot} type="video/webm" />
-              <img src={knotImg} alt="No video support" />
-              Your browser does not support the video tag.
-            </video>
-            <video
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
-              className="aboutShape threedShape absolute left-1/2 top-4 w-[200px]"
-              title="Knot Shape"
-            >
-              <source src={torus} type="video/webm" />
-              <img src={torusImg} alt="No video support" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="aboutShape threedShape absolute left-1/3 bottom-8 w-[200px]">
+              <video
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline={true}
+                title="Knot Shape"
+              >
+                <source src={knotMp4} type="video/mp4" />
+                <source src={knot} type="video/webm" />
+                <img src={knotImg} alt="No video support" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="aboutShape threedShape absolute left-1/2 top-4 w-[200px]">
+              <video
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline={true}
+                title="Knot Shape"
+              >
+                <source src={torusMp4} type="video/mp4" />
+                <source src={torus} type="video/webm" />
+                <img src={torusImg} alt="No video support" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
             <img
               src={circle}
               alt=""
               className="aboutShape absolute left-[65%] top-32 w-[50px]"
             />
-            <video
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
-              className="aboutShape threedShape absolute left-2/3 bottom-2 w-[200px]"
-              title="Knot Shape"
-            >
-              <source src={icosphere} type="video/webm" />
-              <img src={icosphereImg} alt="No video support" />
-              Your browser does not support the video tag.
-            </video>
-            <video
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
-              className="aboutShape threedShape absolute left-[85%] top-4 w-[200px]"
-              title="Knot Shape"
-            >
-              <source src={ball} type="video/webm" />
-              <img src={ballImg} alt="No video support" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="aboutShape threedShape absolute left-2/3 bottom-2 w-[200px]">
+              <video
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline={true}
+                title="Knot Shape"
+              >
+                <source src={icosphereMp4} type="video/mp4" />
+                <source src={icosphere} type="video/webm" />
+                <img src={icosphereImg} alt="No video support" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="aboutShape threedShape absolute left-[85%] top-4 w-[200px]">
+              <video
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline={true}
+                title="Knot Shape"
+              >
+                <source src={ballMp4} type="video/mp4" />
+                <source src={ball} type="video/webm" />
+                <img src={ballImg} alt="No video support" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
             <img
               src={blueCircle}
               alt=""
