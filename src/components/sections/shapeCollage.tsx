@@ -1,11 +1,10 @@
-import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ShapeCollage(props) {
+export default function ShapeCollage(props: any) {
   useGSAP(() => {
     gsap.fromTo(
       ".shape-circle",
@@ -20,8 +19,7 @@ export default function ShapeCollage(props) {
           start: "top center",
           toggleActions: "play reverse play reverse",
         },
-      },
-      "<"
+      }
     );
   });
 

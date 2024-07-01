@@ -5,7 +5,15 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Header({ onOverlayStateChange, workLoaded }) {
+type HeaderProps = {
+  onOverlayStateChange: (newState: boolean) => void;
+  workLoaded: any;
+};
+
+export default function Header({
+  onOverlayStateChange,
+  workLoaded,
+}: HeaderProps) {
   const { contextSafe } = useGSAP();
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);

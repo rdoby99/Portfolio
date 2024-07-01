@@ -1,10 +1,14 @@
-import React from "react";
 import diagonalArrow from "../../assets/diagonalArrow.svg";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import sitePic from "/src/assets/site.png";
 import WorkDialogContent from "./workDialogContent";
 
-export default function WorkDialog({ project, loopIndex }) {
+export default function WorkDialog({
+  project,
+  loopIndex,
+}: {
+  project: any;
+  loopIndex: number;
+}) {
   // const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
 
   project = project.attributes;
@@ -46,7 +50,7 @@ export default function WorkDialog({ project, loopIndex }) {
               <h3 className="h3 text-left">{project.title}</h3>
             </div>
             <ul className="ml-8 lg:ml-0 flex gap-4">
-              {tech_stack.map((tool, index) => (
+              {tech_stack.map((tool: string, index: number) => (
                 <li key={index}>{tool}</li>
               ))}
             </ul>

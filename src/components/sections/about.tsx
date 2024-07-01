@@ -59,8 +59,8 @@ export default function About() {
 
       let mm = gsap.matchMedia();
 
-      const about = document.querySelector("#about-container");
-      let aboutWidth = about.offsetWidth;
+      const about = document.querySelector<HTMLElement>("#about-container");
+      let aboutWidth = about!.offsetWidth;
       const screenWidth = window.innerWidth;
       const extraXPercent = 100 * (screenWidth / aboutWidth);
 
@@ -138,8 +138,7 @@ export default function About() {
               toggleActions: "play none reverse none",
               scrub: true,
             },
-          },
-          "<"
+          }
         );
 
         gsap.from("#drawn-circle", {
@@ -193,8 +192,7 @@ export default function About() {
               toggleActions: "play none reverse none",
               scrub: true,
             },
-          },
-          "<"
+          }
         );
       });
     },

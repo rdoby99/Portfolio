@@ -6,11 +6,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { SplitText } from "gsap/src/SplitText";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-export default function Footer({ onOverlayStateChange }) {
+type FooterProps = {
+  onOverlayStateChange: (newState: boolean) => void;
+};
+
+export default function Footer({ onOverlayStateChange }: FooterProps) {
   const changeState = () => {
     onOverlayStateChange(true);
   };

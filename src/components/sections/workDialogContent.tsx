@@ -1,8 +1,12 @@
-import React from "react";
-import sitePic from "/src/assets/site.png";
 import diagonalArrow from "../../assets/diagonalArrow.svg";
 
-export default function WorkDialogContent({ project, tech }) {
+export default function WorkDialogContent({
+  project,
+  tech,
+}: {
+  project: any;
+  tech: string[];
+}) {
   // const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
 
   let mediaUrl = "";
@@ -44,14 +48,14 @@ export default function WorkDialogContent({ project, tech }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_2fr] mb-6 gap-y-4">
           <h6>Tech Stack:</h6>
           <ul className="flex gap-x-4 gap-y-2 p2 flex-wrap">
-            {tech.map((tool, index) => (
+            {tech.map((tool: string, index: number) => (
               <li key={index}>{tool}</li>
             ))}
           </ul>
           {/* Contributions */}
           <h6>My&nbsp;Contributions:</h6>
           <ul className="p2 flex gap-x-4 gap-y-2 flex-wrap">
-            {project.contributions.map((cont, index) => (
+            {project.contributions.map((cont: string, index: number) => (
               <li key={index}>{cont}</li>
             ))}
           </ul>

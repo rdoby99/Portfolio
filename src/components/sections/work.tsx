@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import WorkDialog from "./workDialog";
+// @ts-ignore
 import useFetchProjects from "../../hooks/useFetchProjects";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,26 +18,13 @@ export default function Work() {
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
   const [hoveredRowIndex, setHoveredRowIndex] = useState(null);
-  const refs = useRef([]);
 
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = (index: any) => {
     setHoveredRowIndex(index);
-
-    // gsap.to(refs.current[index], {
-    //   scale: 1.025,
-    //   duration: 0.3,
-    //   ease: "power1.out",
-    // });
   };
 
-  const handleMouseLeave = (index) => {
+  const handleMouseLeave = () => {
     setHoveredRowIndex(null);
-
-    // gsap.to(refs.current[index], {
-    //   scale: 1,
-    //   duration: 0.3,
-    //   ease: "power1.in",
-    // });
   };
 
   useGSAP(
@@ -73,13 +61,12 @@ export default function Work() {
           <h2 className="h5">&#123; More Select Work &#125;</h2>
           <ul onMouseLeave={() => setHoveredRowIndex(null)}>
             {data
-              .filter((project) => !project.attributes.featured_order)
-              .map((project, index) => (
+              .filter((project: any) => !project.attributes.featured_order)
+              .map((project: any, index: number) => (
                 <li
                   key={project.id}
                   onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={() => handleMouseLeave(index)}
-                  ref={(el) => (refs.current[index] = el)}
+                  onMouseLeave={() => handleMouseLeave()}
                   className={`relative hover:scale-[1.025] hover:duration-[600ms] transition-all ease-in ${
                     hoveredRowIndex !== null && hoveredRowIndex !== index
                       ? "md:!opacity-60"

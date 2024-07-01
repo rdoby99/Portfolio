@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 export default function Intro() {
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
-  const floatingR = useRef<SVGElement>(null);
+  const floatingR = useRef<SVGSVGElement>(null);
   const amonaO = useRef<HTMLDivElement>(null);
   const introSubtext = useRef<HTMLDivElement>(null);
 

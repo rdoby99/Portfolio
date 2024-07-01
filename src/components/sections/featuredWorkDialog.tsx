@@ -1,4 +1,3 @@
-import React from "react";
 import diagonalArrow from "../../assets/diagonalArrow.svg";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import WorkDialogContent from "./workDialogContent";
@@ -8,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function FeaturedWorkDialog({ project }) {
+export default function FeaturedWorkDialog({ project }: { project: any }) {
   project = project.attributes;
   const tech_stack = project.tech_stack.split(", ");
 
@@ -21,7 +20,7 @@ export default function FeaturedWorkDialog({ project }) {
           </div>
           <div className="workCard__project__back">
             <ul className="text-left flex flex-col gap-2">
-              {tech_stack.map((tool, index) => (
+              {tech_stack.map((tool: string, index: number) => (
                 <li key={index}>{tool}</li>
               ))}
             </ul>

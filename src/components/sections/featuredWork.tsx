@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import { useRef } from "react";
 import FeaturedWorkDialog from "./featuredWorkDialog";
+// @ts-ignore
 import useFetchProjects from "../../hooks/useFetchProjects";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
@@ -7,7 +8,11 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function FeaturedWork({ onWorkLoadChange }) {
+type FeaturedWorkProps = {
+  onWorkLoadChange: (newState: boolean) => void;
+};
+
+export default function FeaturedWork({ onWorkLoadChange }: FeaturedWorkProps) {
   const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
 
   const { loading, error, data } = useFetchProjects(
@@ -16,11 +21,10 @@ export default function FeaturedWork({ onWorkLoadChange }) {
 
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
-  const projectCards = document.querySelectorAll(".workCard__project");
   const { contextSafe } = useGSAP({ scope: container });
   let firstTrigger = false;
 
-  const animateFlips = contextSafe((completeCall) => {
+  const animateFlips = contextSafe((completeCall: boolean) => {
     const flips = document.querySelectorAll(".workCard__project__inner");
     const totalDuration = flips.length * 6 + 0.2;
 
@@ -69,7 +73,7 @@ export default function FeaturedWork({ onWorkLoadChange }) {
               toggleActions: "play reverse play reverse",
             },
             onComplete: () => {
-              animateFlips();
+              animateFlips(false);
               firstTrigger = true;
             },
           }
@@ -101,19 +105,19 @@ export default function FeaturedWork({ onWorkLoadChange }) {
   if (error) return <p>Error: {error.message}</p>;
 
   const featuredProject1 = data.find(
-    (project) => project.attributes.featured_order === 1
+    (project: any) => project.attributes.featured_order === 1
   );
   const featuredProject2 = data.find(
-    (project) => project.attributes.featured_order === 2
+    (project: any) => project.attributes.featured_order === 2
   );
   const featuredProject3 = data.find(
-    (project) => project.attributes.featured_order === 3
+    (project: any) => project.attributes.featured_order === 3
   );
   const featuredProject4 = data.find(
-    (project) => project.attributes.featured_order === 4
+    (project: any) => project.attributes.featured_order === 4
   );
   const featuredProject5 = data.find(
-    (project) => project.attributes.featured_order === 5
+    (project: any) => project.attributes.featured_order === 5
   );
 
   return (
