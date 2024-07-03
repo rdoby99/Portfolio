@@ -9,6 +9,7 @@ import spiralImg from "../../assets/3DShapes/spiral.png";
 import curve from "../../assets/3DShapes/curve.webm";
 import curveMp4 from "../../assets/3DShapes/curve.mp4";
 import curveImg from "../../assets/3DShapes/curve.png";
+import arrow from "../../assets/arrow.svg";
 
 gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
@@ -66,6 +67,35 @@ export default function Hero() {
         { drawSVG: "0%" },
         { duration: 2, drawSVG: "100%" },
         "<1"
+      );
+
+      heroTL.fromTo(
+        "#hero-arrow",
+        { top: 0, opacity: 0 },
+        {
+          top: 25,
+          opacity: 1,
+          duration: 0.75,
+        },
+        "<0.5"
+      );
+
+      heroTL.fromTo(
+        "#hero-arrow",
+        { top: 25 },
+        {
+          top: 0,
+          duration: 1.5,
+          repeat: -1,
+          ease: "power1.inOut",
+          yoyo: true,
+          scrollTrigger: {
+            trigger: "#hero",
+            end: "bottom top",
+            toggleActions: "play pause resume pause",
+          },
+        },
+        "<0.5"
       );
 
       mm.add("(min-width: 768px)", () => {
@@ -182,7 +212,7 @@ export default function Hero() {
             />
           </svg>
         </div>
-        {/* <img id="hero-arrow" className="relative" src={arrow} alt="Arrow" /> */}
+        <img id="hero-arrow" className="relative" src={arrow} alt="Arrow" />
       </div>
     </section>
   );
