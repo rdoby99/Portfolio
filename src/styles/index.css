@@ -758,6 +758,9 @@ video {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.mb-14 {
+  margin-bottom: 3.5rem;
+}
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -781,9 +784,6 @@ video {
 }
 .mt-6 {
   margin-top: 1.5rem;
-}
-.mb-14 {
-  margin-bottom: 3.5rem;
 }
 .block {
   display: block;
@@ -1108,17 +1108,14 @@ video {
 .pt-12 {
   padding-top: 3rem;
 }
+.pt-2 {
+  padding-top: 0.5rem;
+}
 .pt-28 {
   padding-top: 7rem;
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pt-4 {
-  padding-top: 1rem;
-}
-.pt-2 {
-  padding-top: 0.5rem;
 }
 .text-left {
   text-align: left;
@@ -1595,7 +1592,8 @@ a {
 }
 .workCard__accent {
   display: none;
-  background-color: var(--color-tertiary);
+  --tw-bg-opacity: 1;
+  background-color: rgb(179 219 255 / var(--tw-bg-opacity));
 }
 @media (min-width: 768px) {
 
