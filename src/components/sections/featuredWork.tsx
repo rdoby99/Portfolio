@@ -5,6 +5,7 @@ import useFetchProjects from "../../hooks/useFetchProjects";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Image from "../image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -127,7 +128,14 @@ export default function FeaturedWork({ onWorkLoadChange }: FeaturedWorkProps) {
         id="featuredWork"
         className="relative overflow-hidden h-[90vh]"
       >
-        <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] text-white relative h-[90vh] bg-wavesMobile md:bg-waves bg-cover bg-bottom md:bg-center">
+        <Image
+          classes="absolute top-0 left-0 object-cover w-full h-full object-bottom md:object-center"
+          image="/background-1000w.png"
+          loading="eager"
+          srcSet="/background-500w.png 500w, /background-1000w.png 1000w, /background-1500w.png 1500w, /background-3000w.png 3000w"
+          sizes="100vw"
+        />
+        <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] text-white relative h-[90vh]">
           {/* Col 1 */}
           <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-4 md:pl-16 flex flex-col justify-center">
             <div className="overflow-hidden">
