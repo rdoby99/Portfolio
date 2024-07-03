@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useGSAP } from "@gsap/react";
-import arrow from "../../assets/arrow.svg";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -13,6 +12,7 @@ export default function Intro() {
   const floatingR = useRef<SVGSVGElement>(null);
   const amonaO = useRef<HTMLDivElement>(null);
   const introSubtext = useRef<HTMLDivElement>(null);
+  let trigger = 0;
 
   useGSAP(() => {
     var introTL = gsap.timeline({
@@ -54,40 +54,16 @@ export default function Intro() {
         top: 0,
         duration: 1.5,
         ease: "power3",
+        onComplete: heroScroll,
       },
       "<0.25"
     );
 
-    introTL.fromTo(
-      "#hero-arrow",
-      { top: 0, opacity: 0 },
-      {
-        top: 25,
-        opacity: 1,
-        duration: 0.75,
-      },
-      "<0.5"
-    );
-
-    introTL.fromTo(
-      "#hero-arrow",
-      { top: 25 },
-      {
-        top: 0,
-        duration: 1.5,
-        repeat: -1,
-        ease: "power1.inOut",
-        yoyo: true,
-        scrollTrigger: {
-          trigger: "#hero",
-          end: "bottom top",
-          toggleActions: "play pause resume pause",
-        },
-      },
-      "<0.5"
-    );
-
-    // introTL.to(window, { duration: 1, scrollTo: "#hero" });
+    function heroScroll() {
+      if (trigger == 1) return;
+      trigger = 1;
+      gsap.to(window, { duration: 1, scrollTo: "#hero" });
+    }
 
     // Define the animation as a function so it can be called or re-called
     function createAnimation() {
@@ -223,9 +199,6 @@ export default function Intro() {
           >
             &#123;&nbsp;Front&#8209;End&nbsp;Developer&nbsp;&#125;
           </div>
-        </div>
-        <div className="absolute top-[65%] md:top-[70%] left-1/2 -translate-x-1/2">
-          <img id="hero-arrow" className="relative" src={arrow} alt="Arrow" />
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@
 }
 
 .workCard__accent {
-  @apply hidden md:inline-block bg-tertiary;
+  @apply hidden md:inline-block bg-[#B3DBFF];
 }
 
 .workCard__empty {
