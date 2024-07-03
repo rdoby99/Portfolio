@@ -3,10 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useGSAP } from "@gsap/react";
-import spiral from "../../assets/3DShapes/spiral.webm";
 import spiralMp4 from "../../assets/3DShapes/spiral.mp4";
 import spiralImg from "../../assets/3DShapes/spiral.png";
-import curve from "../../assets/3DShapes/curve.webm";
 import curveMp4 from "../../assets/3DShapes/curve.mp4";
 import curveImg from "../../assets/3DShapes/curve.png";
 import arrow from "../../assets/arrow.svg";
@@ -170,7 +168,6 @@ export default function Hero() {
               title="Spiral Shape"
             >
               <source src={spiralMp4} type="video/mp4" />
-              <source src={spiral} type="video/webm" />
               <img src={spiralImg} alt="No video support" />
               Your browser does not support the video tag.
             </video>
@@ -188,7 +185,6 @@ export default function Hero() {
               title="Curve Shape"
             >
               <source src={curveMp4} type="video/mp4" />
-              <source src={curve} type="video/webm" />
               <img src={curveImg} alt="No video support" />
               Your browser does not support the video tag.
             </video>

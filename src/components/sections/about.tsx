@@ -5,19 +5,14 @@ import SplitText from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useGSAP } from "@gsap/react";
-import torus from "../../assets/3DShapes/torus.webm";
 import torusMp4 from "../../assets/3DShapes/torus.mp4";
 import torusImg from "../../assets/3DShapes/torus.png";
 import knotMp4 from "../../assets/3DShapes/knot.mp4";
-import knot from "../../assets/3DShapes/knot.webm";
 import knotImg from "../../assets/3DShapes/torus-knot.png";
-import ball from "../../assets/3DShapes/sliced-ball.webm";
 import ballMp4 from "../../assets/3DShapes/sliced-ball.mp4";
 import ballImg from "../../assets/3DShapes/sliced-ball.png";
-import icosphere from "../../assets/3DShapes/icosphere.webm";
 import icosphereMp4 from "../../assets/3DShapes/icosphere.mp4";
 import icosphereImg from "../../assets/3DShapes/icosphere.png";
-import cylinder from "../../assets/3DShapes/cylinder.webm";
 import cylinderMp4 from "../../assets/3DShapes/cylinder.mp4";
 import cylinderImg from "../../assets/3DShapes/cylinder.png";
 import circle from "../../assets/circle.svg";
@@ -248,7 +243,6 @@ export default function About() {
                 title="Cylinder Shape"
               >
                 <source src={cylinderMp4} type="video/mp4" />
-                <source src={cylinder} type="video/webm" />
                 <img src={cylinderImg} alt="No video support" />
                 Your browser does not support the video tag.
               </video>
@@ -267,7 +261,6 @@ export default function About() {
                 title="Knot Shape"
               >
                 <source src={knotMp4} type="video/mp4" />
-                <source src={knot} type="video/webm" />
                 <img src={knotImg} alt="No video support" />
                 Your browser does not support the video tag.
               </video>
@@ -281,7 +274,6 @@ export default function About() {
                 title="Knot Shape"
               >
                 <source src={torusMp4} type="video/mp4" />
-                <source src={torus} type="video/webm" />
                 <img src={torusImg} alt="No video support" />
                 Your browser does not support the video tag.
               </video>
@@ -301,7 +293,6 @@ export default function About() {
                 title="Knot Shape"
               >
                 <source src={icosphereMp4} type="video/mp4" />
-                <source src={icosphere} type="video/webm" />
                 <img src={icosphereImg} alt="No video support" />
                 Your browser does not support the video tag.
               </video>
@@ -315,7 +306,6 @@ export default function About() {
                 title="Knot Shape"
               >
                 <source src={ballMp4} type="video/mp4" />
-                <source src={ball} type="video/webm" />
                 <img src={ballImg} alt="No video support" />
                 Your browser does not support the video tag.
               </video>

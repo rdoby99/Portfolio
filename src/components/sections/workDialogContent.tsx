@@ -36,7 +36,7 @@ export default function WorkDialogContent({
 
         {project.featured_media.data &&
           project.featured_media.data.attributes.mime == "image/png" && (
-            <img src={mediaUrl} className="w-full"></img>
+            <img src={mediaUrl} className="w-full" loading="lazy"></img>
           )}
         <div>
           <h5 className="h3 mb-2">{project.title}</h5>

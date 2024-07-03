@@ -1,4 +1,3 @@
-import x from "../../assets/3DShapes/x.webm";
 import xMp4 from "../../assets/3DShapes/x.mp4";
 import xImg from "../../assets/3DShapes/x.png";
 import { gsap } from "gsap";
@@ -254,7 +253,6 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             title="Knot Shape"
           >
             <source src={xMp4} type="video/mp4" />
-            <source src={x} type="video/webm" />
             <img src={xImg} alt="No video support" />
             Your browser does not support the video tag.
           </video>
