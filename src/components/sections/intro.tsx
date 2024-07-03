@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useGSAP } from "@gsap/react";
+import arrow from "../../assets/arrow.svg";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -17,8 +18,8 @@ export default function Intro() {
     var introTL = gsap.timeline({
       scrollTrigger: {
         trigger: containerInner.current,
-        end: "bottom 85%",
-        toggleActions: "play reverse play none",
+        end: "bottom 20%",
+        toggleActions: "play reset play none",
       },
     });
 
@@ -57,29 +58,70 @@ export default function Intro() {
       "<0.25"
     );
 
+    introTL.fromTo(
+      "#hero-arrow",
+      { top: 0, opacity: 0 },
+      {
+        top: 25,
+        opacity: 1,
+        duration: 0.75,
+      },
+      "<0.5"
+    );
+
+    introTL.fromTo(
+      "#hero-arrow",
+      { top: 25 },
+      {
+        top: 0,
+        duration: 1.5,
+        repeat: -1,
+        ease: "power1.inOut",
+        yoyo: true,
+        scrollTrigger: {
+          trigger: "#hero",
+          end: "bottom top",
+          toggleActions: "play pause resume pause",
+        },
+      },
+      "<0.5"
+    );
+
     // introTL.to(window, { duration: 1, scrollTo: "#hero" });
 
-    gsap.to(".floatingR", {
-      left: "2rem",
-      width: "3rem",
-      fill: "#0061FE",
-      immediateRender: false,
-      scrollTrigger: {
-        trigger: containerInner.current,
-        start: "center 45%",
-        end: "center 10%",
-        onLeave: () => {
-          document.querySelectorAll(".floatingR").forEach((el) => {
-            el.classList.add("hidden");
-          });
+    // Define the animation as a function so it can be called or re-called
+    function createAnimation() {
+      gsap.to(".floatingR", {
+        left: "2rem", // This can be made dynamic based on the size or condition
+        width: "3rem",
+        fill: "#0061FE",
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: containerInner.current,
+          start: "center 45%",
+          end: "center 10%",
+          invalidateOnRefresh: true,
+          onLeave: () => {
+            document.querySelectorAll(".floatingR").forEach((el) => {
+              el.classList.add("hidden");
+            });
+          },
+          onEnterBack: () => {
+            document.querySelectorAll(".floatingR").forEach((el) => {
+              el.classList.remove("hidden");
+            });
+          },
+          scrub: true,
         },
-        onEnterBack: () => {
-          document.querySelectorAll(".floatingR").forEach((el) => {
-            el.classList.remove("hidden");
-          });
-        },
-        scrub: true,
-      },
+      });
+    }
+
+    // Initial call to the function
+    createAnimation();
+
+    // Add a resize event listener to the window to refresh ScrollTrigger
+    window.addEventListener("resize", () => {
+      ScrollTrigger.refresh();
     });
   }, []);
 
@@ -88,7 +130,7 @@ export default function Intro() {
       <div
         ref={containerInner}
         id="intro"
-        className="relative inline-block bg-waves bg-cover w-full h-[100vh] text-bg z-20"
+        className="relative inline-block bg-wavesMobile md:bg-waves bg-cover bg-bottom md:bg-center w-full h-[95vh] text-bg z-20"
       >
         <div>
           <div className="absolute bottom-1/2 floatingR overflow-hidden inline-block w-[63px] md:w-[126px] h-fit">
@@ -174,13 +216,16 @@ export default function Intro() {
             </span>
           </span>
         </div>
-        <div className="overflow-hidden relative top-[52%] md:top-[54%] left-1/2 -translate-x-1/2 inline-block">
+        <div className="overflow-hidden absolute top-[52%] md:top-[54%] left-1/2 -translate-x-1/2 inline-block">
           <div
             ref={introSubtext}
             className="intro__subtext relative h5 text-white"
           >
-            &#123; Front-End Web Developer &#125;
+            &#123;&nbsp;Front&#8209;End&nbsp;Developer&nbsp;&#125;
           </div>
+        </div>
+        <div className="absolute top-[65%] md:top-[70%] left-1/2 -translate-x-1/2">
+          <img id="hero-arrow" className="relative" src={arrow} alt="Arrow" />
         </div>
       </div>
     </section>
