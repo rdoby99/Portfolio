@@ -226,7 +226,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                   className="followMob"
                   target="_blank"
                 >
-                  Resume
+                  Resumes
                 </a>
               </li>
             </ul>
