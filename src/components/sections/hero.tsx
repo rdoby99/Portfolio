@@ -111,17 +111,17 @@ export default function Hero() {
             </div>
           </div>
           <h1 className="h1 relative z-10">
-            <span className="overflow-hidden inline-block leading-[1.10] mb-4">
+            <span className="overflow-hidden inline-block mb-4">
               <span className="hi-there inline-block relative">Hi THERE</span>
             </span>
             <br />
-            <span className="overflow-hidden inline-block leading-[1] mb-4">
+            <span className="overflow-hidden inline-block mb-4">
               <span className="hi-there inline-block relative">
                 <span className="font-secHeader mr-4">NICE</span> to
               </span>
             </span>
             <br />
-            <span className="overflow-hidden inline-block leading-[1.10] pb-10">
+            <span className="overflow-hidden inline-block pb-10">
               <span className="hi-there inline-block relative">
                 MEET
                 <span className="ml-6">you</span>

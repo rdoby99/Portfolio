@@ -782,6 +782,9 @@ video {
 .mt-6 {
   margin-top: 1.5rem;
 }
+.mb-14 {
+  margin-bottom: 3.5rem;
+}
 .block {
   display: block;
 }
@@ -1108,6 +1111,15 @@ video {
 .pt-28 {
   padding-top: 7rem;
 }
+.pt-8 {
+  padding-top: 2rem;
+}
+.pt-4 {
+  padding-top: 1rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1135,12 +1147,6 @@ video {
 .uppercase {
   text-transform: uppercase;
 }
-.leading-\[1\.10\] {
-  line-height: 1.10;
-}
-.leading-\[1\] {
-  line-height: 1;
-}
 .leading-none {
   line-height: 1;
 }
@@ -1156,6 +1162,9 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.no-underline {
+  text-decoration-line: none;
 }
 .opacity-0 {
   opacity: 0;
@@ -1199,9 +1208,6 @@ video {
 .duration-200 {
   transition-duration: 200ms;
 }
-.duration-100 {
-  transition-duration: 100ms;
-}
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -1224,9 +1230,6 @@ video {
 }
 .duration-200 {
   animation-duration: 200ms;
-}
-.duration-100 {
-  animation-duration: 100ms;
 }
 .ease-in {
   animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
@@ -1253,7 +1256,7 @@ h1,
 .h1 {
   font-family: var(--font-heading-family);
   font-size: 3.75rem;
-  line-height: 1.375 !important;
+  line-height: 1.10 !important;
 }
 @media (min-width: 768px) {
 
@@ -1460,7 +1463,7 @@ body {
   height: 0.5rem;
   width: 0.5rem;
 }
-a:not(.button)::after {
+a:not(.button):not(.no-underline)::after {
   position: absolute;
   left: 0px;
   bottom: 0px;
@@ -1518,6 +1521,9 @@ a {
   .floatingR {
     left: calc(50% - 350px);
   }
+}
+.hi-there {
+  padding-top: 2rem;
 }
 .menu-link {
   display: flex;
@@ -2186,24 +2192,12 @@ a {
 }
 @media (min-width: 1536px) {
 
-  .\32xl\:top-16 {
-    top: 4rem;
+  .\32xl\:top-\[20\%\] {
+    top: 20%;
   }
 
   .\32xl\:top-\[35\%\] {
     top: 35%;
-  }
-
-  .\32xl\:top-28 {
-    top: 7rem;
-  }
-
-  .\32xl\:top-\[40\%\] {
-    top: 40%;
-  }
-
-  .\32xl\:top-\[20\%\] {
-    top: 20%;
   }
 
   .\32xl\:max-w-\[235px\] {

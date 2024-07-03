@@ -33,7 +33,7 @@ export default function About() {
       // Heading split
       new SplitText("#aboutHeading", {
         type: "lines",
-        linesClass: "aboutHeading-lines relative line++",
+        linesClass: "aboutHeading-lines pt-2 relative line++",
       });
       new SplitText("#aboutHeading", {
         type: "lines",
@@ -226,10 +226,10 @@ export default function About() {
                 <p id="aboutDesc" className="max-w-sm">
                   For the past 3 years, I've specialized in crafting engaging
                   web experiences using platforms such as Shopify, Shopify Plus,
-                  WordPress, and React. My expertise covers every part of the
-                  process—from solution planning through development to
-                  deployment. I lead every project with a commitment to
-                  delivering organized, reliable, and user-focused solutions.
+                  and React. My expertise covers every part of the process—from
+                  solution planning through development to deployment. I lead
+                  every project with a commitment to delivering organized,
+                  reliable, and user-focused solutions.
                 </p>
               </div>
               <ShapeCollage className="hidden md:block" />
@@ -366,7 +366,7 @@ export default function About() {
                   height="72"
                   viewBox="0 0 237 72"
                   fill="none"
-                  className="absolute left-1/2 -translate-x-1/2 top-0 w-[140%] h-28 overflow-visible"
+                  className="absolute left-1/2 -translate-x-1/2 -bottom-4 w-[140%] h-28 overflow-visible"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <g clipPath="url(#clip0_232_433)">

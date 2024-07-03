@@ -5,7 +5,7 @@
 /* Basic Typography */
 h1,
 .h1 {
-  @apply md:text-9xl text-6xl font-header !leading-snug;
+  @apply md:text-9xl text-6xl font-header !leading-[1.10];
 }
 
 h2,
@@ -118,7 +118,7 @@ body {
   @apply w-2 h-2;
 }
 
-a:not(.button)::after {
+a:not(.button):not(.no-underline)::after {
   @apply left-0 bottom-0 absolute bg-text w-0 h-0.5 transition-all duration-150 rounded-sm;
   content: "";
 }

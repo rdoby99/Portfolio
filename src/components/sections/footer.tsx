@@ -149,7 +149,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             </li>
             <li className="overflow-hidden">
               <a
-                href="https://docs.google.com/document/d/1EnUSEAnyrV-Ypsir6s9TwFO2AVUl2UHb/edit?usp=sharing&ouid=113413018208409401866&rtpof=true&sd=true"
+                href="https://drive.google.com/file/d/12PSSnOK4a6qG6elCOXyUBzqre6eqKYDZ/view?usp=sharing"
                 className="follow"
                 target="_blank"
               >
@@ -165,12 +165,12 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           <div className="md:col-start-2 md:row-span-2 footerGrid__item w-full">
             <div className="mb-16">
               <div className="overflow-hidden">
-                <div className="h5 mb-16 connect connectSub">
+                <div className="h5 mb-14 connect connectSub">
                   &#123; Contact &#125;
                 </div>
               </div>
               <div className="overflow-hidden">
-                <h3 className="h2 mb-4 connect connectHeading">
+                <h3 className="h2 mb-4 connect connectHeading pt-2">
                   <span className="h2__italic">Let's</span> Connect!
                 </h3>
               </div>
@@ -234,7 +234,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           <a
             href="#"
             onClick={changeState}
-            className="row-start-3 md:col-start-2 footerGrid__item h5 !rounded-full hover:bg-text hover:text-white cursor-pointer transition-colors duration-150 text-center my-auto"
+            className="no-underline row-start-3 md:col-start-2 footerGrid__item h5 !rounded-full hover:bg-text hover:text-white cursor-pointer transition-colors duration-150 text-center my-auto"
           >
             &#123; Back to Top &#125;
           </a>

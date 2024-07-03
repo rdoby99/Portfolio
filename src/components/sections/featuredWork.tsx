@@ -131,12 +131,12 @@ export default function FeaturedWork({ onWorkLoadChange }: FeaturedWorkProps) {
           {/* Col 1 */}
           <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-4 md:pl-16 flex flex-col justify-center">
             <div className="overflow-hidden">
-              <p className="featured-work-headings relative h5 mb-4">
+              <p className="featured-work-headings relative h5">
                 &#123; Featured &#125;
               </p>
             </div>
             <div className="overflow-hidden">
-              <h2 className="featured-work-headings xl:!leading-tight relative h1 uppercase md:!text-[9.5vw] xl:!text-9xl">
+              <h2 className="featured-work-headings pt-8 xl:!leading-tight relative h1 uppercase md:!text-[9.5vw] xl:!text-9xl">
                 Work
               </h2>
             </div>
