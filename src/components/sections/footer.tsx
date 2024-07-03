@@ -223,7 +223,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
               </li>
               <li className="overflow-hidden">
                 <a
-                  href="https://docs.google.com/document/d/1EnUSEAnyrV-Ypsir6s9TwFO2AVUl2UHb/edit?usp=sharing&ouid=113413018208409401866&rtpof=true&sd=true"
+                  href="https://drive.google.com/file/d/12PSSnOK4a6qG6elCOXyUBzqre6eqKYDZ/view?usp=sharing"
                   className="followMob"
                   target="_blank"
                 >
