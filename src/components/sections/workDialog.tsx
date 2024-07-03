@@ -60,6 +60,7 @@ export default function WorkDialog({
               <img
                 src={mediaUrl}
                 className="w-[15rem] absolute hidden md:inline-block right-[15%] -bottom-4 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-200"
+                loading="lazy"
               ></img>
             )}
           <div className="flex flex-col lg:flex-row items-start lg:items-center lg:justify-start gap-4 lg:gap-12">

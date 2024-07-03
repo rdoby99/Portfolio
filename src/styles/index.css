@@ -1060,8 +1060,15 @@ video {
 .bg-bottom {
   background-position: bottom;
 }
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
 .bg-repeat-y {
   background-repeat: repeat-y;
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .p-6 {
   padding: 1.5rem;
