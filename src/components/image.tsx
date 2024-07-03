@@ -4,7 +4,7 @@ Image.defaultProps = {
   alt: "",
 };
 
-export default function Image(props) {
+export default function Image(props: any) {
   return (
     <img
       srcSet={props.srcSet}
