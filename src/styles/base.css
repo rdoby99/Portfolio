@@ -29,7 +29,7 @@ h4,
 
 h5,
 .h5 {
-  @apply md:text-[25px] text-base font-body uppercase;
+  @apply md:text-[25px] text-base font-body uppercase font-medium;
 }
 
 h6,

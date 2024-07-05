@@ -52,7 +52,7 @@
 
     --font-heading-family: "TheSilverEditorialRegular", serif;
     --font-secondary-heading: "TheSilverEditorialItalic", serif;
-    --font-body-family: sans-serif;
+    --font-body-family: Arial, sans-serif;
   }
 
   .dark {
