@@ -1,5 +1,5 @@
 import xMp4 from "../../assets/3DShapes/x.mp4";
-import xImg from "../../assets/3DShapes/x.png";
+import xImg from "../../assets/3DShapes/x.webp";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { SplitText } from "gsap/src/SplitText";
