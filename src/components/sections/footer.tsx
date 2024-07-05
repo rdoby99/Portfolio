@@ -148,7 +148,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             </li>
             <li className="overflow-hidden">
               <a
-                href="https://drive.google.com/file/d/12PSSnOK4a6qG6elCOXyUBzqre6eqKYDZ/view?usp=sharing"
+                href="https://drive.google.com/file/d/1ECtw-lkjCXg4naQYjy8MbPqWZCh7Lx1B/view?usp=sharing"
                 className="follow"
                 target="_blank"
               >
@@ -221,7 +221,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
               </li>
               <li className="overflow-hidden">
                 <a
-                  href="https://drive.google.com/file/d/12PSSnOK4a6qG6elCOXyUBzqre6eqKYDZ/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1ECtw-lkjCXg4naQYjy8MbPqWZCh7Lx1B/view?usp=sharing"
                   className="followMob"
                   target="_blank"
                 >
