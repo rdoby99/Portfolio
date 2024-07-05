@@ -33,9 +33,26 @@ export default function ShapeCollage(props: any) {
           xmlns="http://www.w3.org/2000/svg"
           className="col-span-1 row-span-1 col-start-1 pr-8"
         >
+          <defs>
+            <pattern
+              id="img1"
+              patternUnits="userSpaceOnUse"
+              width="221"
+              height="221"
+            >
+              <image
+                xlinkHref="/background-500w.png"
+                x="0"
+                y="0"
+                width="221"
+                height="221"
+                preserveAspectRatio="none"
+              />
+            </pattern>
+          </defs>
           <path
             d="M-1.11971e-05 221C-8.65995e-06 191.978 5.71633 163.24 16.8226 136.427C27.9289 109.614 44.2077 85.2511 64.7294 64.7294C85.2512 44.2076 109.614 27.9289 136.427 16.8226C163.24 5.71635 191.978 8.65995e-06 221 1.11971e-05L221 221L-1.11971e-05 221Z"
-            fill="#0061FE"
+            fill="url(#img1)"
           />
         </svg>
 
