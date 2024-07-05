@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { SplitText } from "gsap/src/SplitText";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -12,19 +13,26 @@ type FooterProps = {
 };
 
 export default function Footer({ onOverlayStateChange }: FooterProps) {
+  const connectDesc = useRef(null);
+  const contact = useRef(null);
+  const connectSub = useRef(null);
+  const connectHeading = useRef(null);
+  const connectEmailHeading = useRef(null);
+  const connectEmail = useRef(null);
+
   const changeState = () => {
     onOverlayStateChange(true);
   };
 
   useGSAP(() => {
-    const connectDescSplit = new SplitText(".connectDesc", {
+    const connectDescSplit = new SplitText(connectDesc.current, {
       type: "lines",
       linesClass: "overflow-hidden",
     });
 
     const footerTL = gsap.timeline({
       scrollTrigger: {
-        trigger: "#contact",
+        trigger: contact.current,
         start: "top 85%",
         toggleActions: "play reverse play reverse",
       },
@@ -33,7 +41,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
     let mm = gsap.matchMedia();
 
     footerTL.fromTo(
-      ".connectSub",
+      connectSub.current,
       { top: 200 },
       {
         top: 0,
@@ -72,7 +80,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
     });
 
     footerTL.fromTo(
-      ".connectHeading",
+      connectHeading.current,
       { top: 200 },
       {
         top: 0,
@@ -94,7 +102,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
     );
 
     footerTL.fromTo(
-      ".connectEmailHeading",
+      connectEmailHeading.current,
       { top: 200 },
       {
         top: 0,
@@ -105,7 +113,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
     );
 
     footerTL.fromTo(
-      ".connectEmail",
+      connectEmail.current,
       { top: 200 },
       {
         top: 0,
@@ -121,6 +129,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
       <div
         id="contact"
         className="relative pb-48 overflow-x-hidden md:overflow-visible"
+        ref={contact}
       >
         <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-16">
           {/* Col 1 */}
@@ -164,23 +173,32 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           <div className="md:col-start-2 md:row-span-2 footerGrid__item w-full">
             <div className="mb-16">
               <div className="overflow-hidden">
-                <div className="h5 mb-14 connect connectSub">
+                <div className="h5 mb-14 connect connectSub" ref={connectSub}>
                   &#123; Contact &#125;
                 </div>
               </div>
               <div className="overflow-hidden">
-                <h3 className="h2 mb-4 connect connectHeading pt-2">
+                <h3
+                  className="h2 mb-4 connect connectHeading pt-2"
+                  ref={connectHeading}
+                >
                   <span className="h2__italic">Let's</span> Connect!
                 </h3>
               </div>
               <div>
-                <p className="mb-12 p1 lg:max-w-[60%] overflow-hidden connect connectDesc">
+                <p
+                  className="mb-12 p1 lg:max-w-[60%] overflow-hidden connect connectDesc"
+                  ref={connectDesc}
+                >
                   Interested in working together? Reach out to discuss how we
                   can turn your vision into a digital reality.
                 </p>
               </div>
               <div className="overflow-hidden">
-                <h4 className="p1__medium connect connectEmailHeading">
+                <h4
+                  className="p1__medium connect connectEmailHeading"
+                  ref={connectEmailHeading}
+                >
                   Email
                 </h4>
               </div>
@@ -188,6 +206,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                 <a
                   href="mailto:ramonadoby@gmail.com"
                   className="p1 connect connectEmail"
+                  ref={connectEmail}
                 >
                   ramonadoby@gmail.com
                 </a>
