@@ -11,6 +11,7 @@ export default function Intro() {
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
   const floatingR = useRef<SVGSVGElement>(null);
+  const floatingRContainer = useRef<HTMLDivElement>(null);
   const amonaO = useRef<HTMLDivElement>(null);
   const introSubtext = useRef<HTMLDivElement>(null);
   let trigger = 0;
@@ -68,7 +69,7 @@ export default function Intro() {
 
     // Define the animation as a function so it can be called or re-called
     function createAnimation() {
-      gsap.to(".floatingR", {
+      gsap.to(floatingRContainer.current, {
         left: "2rem", // This can be made dynamic based on the size or condition
         width: "3rem",
         fill: "#0061FE",
@@ -117,7 +118,10 @@ export default function Intro() {
           sizes="100vw"
         />
         <div>
-          <div className="absolute bottom-1/2 floatingR overflow-hidden inline-block w-[63px] md:w-[126px] h-fit">
+          <div
+            className="absolute bottom-1/2 floatingR overflow-hidden inline-block w-[63px] md:w-[126px] h-fit"
+            ref={floatingRContainer}
+          >
             <svg
               width="126"
               height="158"
