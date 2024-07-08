@@ -108,13 +108,13 @@ export default function Intro() {
       <div
         ref={containerInner}
         id="intro"
-        className="relative inline-block bg-bottom md:bg-center w-full h-[95vh] text-bg z-20"
+        className="relative inline-block w-full h-[95vh] text-bg z-20"
       >
         <Image
-          classes="absolute top-0 left-0 object-cover w-full h-full"
-          image="/background-1000w.webp"
+          classes="absolute top-0 left-0 object-cover w-full h-full object-bottom md:object-center"
+          image="/background-1000w.png"
           loading="eager"
-          srcSet="/background-500w.webp 500w, /background-1000w.webp 1000w, /background-1500w.webp 1500w, /background-3000w.webp 3000w"
+          srcSet="/background-500w.png 500w, /background-1000w.png 1000w, /background-1500w.png 1500w, /background-3000w.png 3000w"
           sizes="100vw"
         />
         <div>

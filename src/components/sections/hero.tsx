@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import spiralMp4 from "../../assets/3DShapes/spiral.mp4";
 import spiralImg from "../../assets/3DShapes/spiral.webp";
 import curveMp4 from "../../assets/3DShapes/curve.mp4";
-import curveImg from "../../assets/3DShapes/curve.png";
+import curveImg from "../../assets/3DShapes/curve.webp";
 import arrow from "../../assets/arrow.svg";
 
 gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
