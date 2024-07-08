@@ -11,6 +11,7 @@ export default function Intro() {
   const container = useRef<HTMLDivElement>(null);
   const containerInner = useRef<HTMLDivElement>(null);
   const floatingR = useRef<SVGSVGElement>(null);
+  const floatingRContainer = useRef<HTMLDivElement>(null);
   const amonaO = useRef<HTMLDivElement>(null);
   const introSubtext = useRef<HTMLDivElement>(null);
   let trigger = 0;
@@ -68,7 +69,7 @@ export default function Intro() {
 
     // Define the animation as a function so it can be called or re-called
     function createAnimation() {
-      gsap.to(".floatingR", {
+      gsap.to(floatingRContainer.current, {
         left: "2rem", // This can be made dynamic based on the size or condition
         width: "3rem",
         fill: "#0061FE",
@@ -111,13 +112,16 @@ export default function Intro() {
       >
         <Image
           classes="absolute top-0 left-0 object-cover w-full h-full"
-          image="/background-1000w.png"
+          image="/background-1000w.webp"
           loading="eager"
-          srcSet="/background-500w.png 500w, /background-1000w.png 1000w, /background-1500w.png 1500w, /background-3000w.png 3000w"
+          srcSet="/background-500w.webp 500w, /background-1000w.webp 1000w, /background-1500w.webp 1500w, /background-3000w.webp 3000w"
           sizes="100vw"
         />
         <div>
-          <div className="absolute bottom-1/2 floatingR overflow-hidden inline-block w-[63px] md:w-[126px] h-fit">
+          <div
+            className="absolute bottom-1/2 floatingR overflow-hidden inline-block w-[63px] md:w-[126px] h-fit"
+            ref={floatingRContainer}
+          >
             <svg
               width="126"
               height="158"
@@ -205,7 +209,7 @@ export default function Intro() {
             ref={introSubtext}
             className="intro__subtext relative h5 text-white"
           >
-            &#123;&nbsp;Front&#8209;End&nbsp;Developer&nbsp;&#125;
+            &#123;&nbsp;Front&#8209;End&nbsp;Engineer&nbsp;&#125;
           </div>
         </div>
       </div>

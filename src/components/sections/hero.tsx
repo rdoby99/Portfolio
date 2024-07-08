@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useGSAP } from "@gsap/react";
 import spiralMp4 from "../../assets/3DShapes/spiral.mp4";
-import spiralImg from "../../assets/3DShapes/spiral.png";
+import spiralImg from "../../assets/3DShapes/spiral.webp";
 import curveMp4 from "../../assets/3DShapes/curve.mp4";
 import curveImg from "../../assets/3DShapes/curve.png";
 import arrow from "../../assets/arrow.svg";
@@ -14,13 +14,17 @@ gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 export default function Hero() {
   const container = useRef(null);
   const threeDCurve = useRef(null);
+  const hero = useRef(null);
+  const heroSubtext = useRef(null);
+  const drawnUnderline = useRef(null);
+  const heroArrow = useRef(null);
   let mm = gsap.matchMedia();
 
   useGSAP(
     () => {
       var heroTL = gsap.timeline({
         scrollTrigger: {
-          trigger: "#hero",
+          trigger: hero.current,
           start: "top center",
           end: "bottom top",
           toggleActions: "play none none reverse",
@@ -28,7 +32,7 @@ export default function Hero() {
       });
 
       heroTL.fromTo(
-        ".hero__subtext",
+        heroSubtext.current,
         { top: 50 },
         {
           top: 0,
@@ -61,14 +65,14 @@ export default function Hero() {
       );
 
       heroTL.fromTo(
-        "#drawn-underline",
+        drawnUnderline.current,
         { drawSVG: "0%" },
         { duration: 2, drawSVG: "100%" },
         "<1"
       );
 
       heroTL.fromTo(
-        "#hero-arrow",
+        heroArrow.current,
         { top: 0, opacity: 0 },
         {
           top: 25,
@@ -79,7 +83,7 @@ export default function Hero() {
       );
 
       heroTL.fromTo(
-        "#hero-arrow",
+        heroArrow.current,
         { top: 25 },
         {
           top: 0,
@@ -88,7 +92,7 @@ export default function Hero() {
           ease: "power1.inOut",
           yoyo: true,
           scrollTrigger: {
-            trigger: "#hero",
+            trigger: hero.current,
             end: "bottom top",
             toggleActions: "play pause resume pause",
           },
@@ -101,7 +105,7 @@ export default function Hero() {
           left: "-8rem",
           width: "175px",
           scrollTrigger: {
-            trigger: "#hero",
+            trigger: hero.current,
             start: "bottom center",
             end: "bottom top",
             scrub: true,
@@ -114,7 +118,7 @@ export default function Hero() {
         gsap.to(threeDCurve.current, {
           left: "70%",
           scrollTrigger: {
-            trigger: "#hero",
+            trigger: hero.current,
             start: "bottom center",
             end: "bottom top",
             scrub: true,
@@ -131,10 +135,11 @@ export default function Hero() {
       <div
         id="hero"
         className="hero text-center flex flex-col pt-28 md:pt-0 md:gap-16 justify-center items-center min-h-[70vh] md:min-h-screen w-full overflow-x-clip"
+        ref={hero}
       >
         <div className="relative">
           <div className="overflow-hidden relative block mb-8">
-            <div className="hero__subtext relative h5">
+            <div className="hero__subtext relative h5" ref={heroSubtext}>
               &#123; Welcome &#125;
             </div>
           </div>
@@ -205,10 +210,17 @@ export default function Hero() {
               strokeLinecap="round"
               d="M2.63405 19.349C16.6065 15.8724 30.7186 12.9837 44.9293 10.6995C59.0249 8.43219 73.211 6.76108 87.4381 5.6862C101.78 4.59452 116.163 4.10746 130.547 4.21663C144.93 4.3258 159.305 5.03119 173.63 6.3412C187.956 7.65122 201.994 9.53227 216.057 12.0347C217.848 12.3538 219.63 12.6813 221.421 13.0172"
               fill="none"
+              ref={drawnUnderline}
             />
           </svg>
         </div>
-        <img id="hero-arrow" className="relative" src={arrow} alt="Arrow" />
+        <img
+          id="hero-arrow"
+          className="relative"
+          src={arrow}
+          alt="Arrow"
+          ref={heroArrow}
+        />
       </div>
     </section>
   );
