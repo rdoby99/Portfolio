@@ -112,9 +112,9 @@ export default function Intro() {
       >
         <Image
           classes="absolute top-0 left-0 object-cover w-full h-full object-bottom md:object-center"
-          image="/background-1000w.png"
+          image="/background-1000w.webp"
           loading="eager"
-          srcSet="/background-500w.png 500w, /background-1000w.png 1000w, /background-1500w.png 1500w, /background-3000w.png 3000w"
+          srcSet="/background-500w.webp 500w, /background-1000w.webp 1000w, /background-1500w.webp 1500w, /background-3000w.webp 3000w"
           sizes="100vw"
         />
         <div>
