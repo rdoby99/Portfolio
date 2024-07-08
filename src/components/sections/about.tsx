@@ -230,7 +230,7 @@ export default function About() {
                 </p>
                 <h2 id="aboutHeading" className="h2" ref={aboutHeading}>
                   Front-End
-                  <br /> Web Developer
+                  <br /> Engineer
                 </h2>
                 <p id="aboutDesc" className="max-w-sm" ref={aboutDesc}>
                   For the past 3 years, I've specialized in crafting engaging

@@ -18,3 +18,7 @@
 .aboutHeading-lines.line1 {
   @apply font-secHeader uppercase;
 }
+
+.aboutHeading-lines.line2 {
+  @apply pb-3;
+}

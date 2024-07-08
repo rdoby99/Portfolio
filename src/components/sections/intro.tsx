@@ -209,7 +209,7 @@ export default function Intro() {
             ref={introSubtext}
             className="intro__subtext relative h5 text-white"
           >
-            &#123;&nbsp;Front&#8209;End&nbsp;Developer&nbsp;&#125;
+            &#123;&nbsp;Front&#8209;End&nbsp;Engineer&nbsp;&#125;
           </div>
         </div>
       </div>
