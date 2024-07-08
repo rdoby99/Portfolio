@@ -10,11 +10,11 @@ import torusImg from "../../assets/3DShapes/torus.webp";
 import knotMp4 from "../../assets/3DShapes/knot.mp4";
 import knotImg from "../../assets/3DShapes/torus-knot.webp";
 import ballMp4 from "../../assets/3DShapes/sliced-ball.mp4";
-import ballImg from "../../assets/3DShapes/sliced-ball.png";
+import ballImg from "../../assets/3DShapes/sliced-ball.webp";
 import icosphereMp4 from "../../assets/3DShapes/icosphere.mp4";
-import icosphereImg from "../../assets/3DShapes/icosphere.png";
+import icosphereImg from "../../assets/3DShapes/icosphere.webp";
 import cylinderMp4 from "../../assets/3DShapes/cylinder.mp4";
-import cylinderImg from "../../assets/3DShapes/cylinder.png";
+import cylinderImg from "../../assets/3DShapes/cylinder.webp";
 import circle from "../../assets/circle.svg";
 import blueCircle from "../../assets/blue-circle.svg";
 

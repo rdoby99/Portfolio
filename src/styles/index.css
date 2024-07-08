@@ -1676,7 +1676,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url('/background-500w.png');
+  background-image: url('/background-500w.webp');
   background-size: cover;
   background-position: bottom;
   padding: 1rem;
