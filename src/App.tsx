@@ -6,8 +6,8 @@ import Footer from "./components/sections/footer";
 import Intro from "./components/sections/intro";
 import Work from "./components/sections/work";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/src/ScrollTrigger";
-import ScrollSmoother from "gsap/src/ScrollSmoother";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollSmoother from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 import { useState } from "react";
 
