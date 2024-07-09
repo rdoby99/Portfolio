@@ -117,6 +117,7 @@ export default function Intro() {
           srcSet="/background-500w.webp 500w, /background-1000w.webp 1000w, /background-1500w.webp 1500w, /background-3000w.webp 3000w"
           sizes="100vw"
         />
+
         <div>
           <div
             className="absolute bottom-1/2 floatingR overflow-hidden inline-block w-[63px] md:w-[126px] h-fit"
