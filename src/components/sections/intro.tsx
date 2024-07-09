@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useGSAP } from "@gsap/react";
-import Image from "../image";
+// import Image from "../image";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -108,15 +108,15 @@ export default function Intro() {
       <div
         ref={containerInner}
         id="intro"
-        className="relative inline-block w-full h-[95vh] text-bg z-20"
+        className="relative inline-block w-full h-[95vh] text-bg z-20 bg-waves500 sm:bg-waves1000 lg:bg-waves1500 2xl:bg-waves3000  bg-bottom md:bg-center bg-cover"
       >
-        <Image
+        {/* <Image
           classes="absolute top-0 left-0 object-cover w-full h-full object-bottom md:object-center"
           image="/background-1000w.webp"
           loading="eager"
           srcSet="/background-500w.webp 500w, /background-1000w.webp 1000w, /background-1500w.webp 1500w, /background-3000w.webp 3000w"
           sizes="100vw"
-        />
+        /> */}
 
         <div>
           <div

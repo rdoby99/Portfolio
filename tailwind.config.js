@@ -66,7 +66,10 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        waves: "url('/background-500w.webp')",
+        waves500: "url('/background-500w.webp')",
+        waves1000: "url('/background-1000w.webp')",
+        waves1500: "url('/background-1500w.webp')",
+        waves3000: "url('/background-3000w.webp')",
         wavesMobile: "url('/background-500w.webp')",
         o: "url('/o.svg')",
         curveUnderline: "url('/src/assets/underline.svg')",
