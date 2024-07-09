@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 import { SplitText } from "gsap/src/SplitText";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import LazyVideo from "../LazyVideo";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -264,17 +265,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-4rem] md:right-48 top-[30%] 2xl:top-[20%] z-10"
           data-speed="0.75"
         >
-          <video
-            autoPlay={true}
-            loop={true}
-            muted={true}
-            playsInline={true}
-            title="Knot Shape"
-          >
-            <source src={xMp4} type="video/mp4" />
-            <img src={xImg} alt="No video support" />
-            Your browser does not support the video tag.
-          </video>
+          <LazyVideo videoSrc={xMp4} imgSrc={xImg} title="X Shape" />
         </div>
 
         {/* <video

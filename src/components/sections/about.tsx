@@ -17,6 +17,7 @@ import cylinderMp4 from "../../assets/3DShapes/cylinder.mp4";
 import cylinderImg from "../../assets/3DShapes/cylinder.webp";
 import circle from "../../assets/circle.svg";
 import blueCircle from "../../assets/blue-circle.svg";
+import LazyVideo from "../LazyVideo";
 
 gsap.registerPlugin(SplitText, ScrollTrigger, DrawSVGPlugin);
 
@@ -250,17 +251,11 @@ export default function About() {
             ref={statementContainer}
           >
             <div className="aboutShape threedShape absolute left-[15%] top-8 w-[200px]">
-              <video
-                autoPlay={true}
-                loop={true}
-                muted={true}
-                playsInline={true}
+              <LazyVideo
+                videoSrc={cylinderMp4}
+                imgSrc={cylinderImg}
                 title="Cylinder Shape"
-              >
-                <source src={cylinderMp4} type="video/mp4" />
-                <img src={cylinderImg} alt="No video support" />
-                Your browser does not support the video tag.
-              </video>
+              />
             </div>
             <img
               src={circle}
@@ -268,30 +263,18 @@ export default function About() {
               className="aboutShape absolute left-[15%] bottom-8 w-[100px]"
             />
             <div className="aboutShape threedShape absolute left-1/3 bottom-8 w-[200px]">
-              <video
-                autoPlay={true}
-                loop={true}
-                muted={true}
-                playsInline={true}
+              <LazyVideo
+                videoSrc={knotMp4}
+                imgSrc={knotImg}
                 title="Knot Shape"
-              >
-                <source src={knotMp4} type="video/mp4" />
-                <img src={knotImg} alt="No video support" />
-                Your browser does not support the video tag.
-              </video>
+              />
             </div>
             <div className="aboutShape threedShape absolute left-1/2 top-4 w-[200px]">
-              <video
-                autoPlay={true}
-                loop={true}
-                muted={true}
-                playsInline={true}
-                title="Knot Shape"
-              >
-                <source src={torusMp4} type="video/mp4" />
-                <img src={torusImg} alt="No video support" />
-                Your browser does not support the video tag.
-              </video>
+              <LazyVideo
+                videoSrc={torusMp4}
+                imgSrc={torusImg}
+                title="Torus Shape"
+              />
             </div>
 
             <img
@@ -300,30 +283,18 @@ export default function About() {
               className="aboutShape absolute left-[65%] top-32 w-[50px]"
             />
             <div className="aboutShape threedShape absolute left-2/3 bottom-2 w-[200px]">
-              <video
-                autoPlay={true}
-                loop={true}
-                muted={true}
-                playsInline={true}
-                title="Knot Shape"
-              >
-                <source src={icosphereMp4} type="video/mp4" />
-                <img src={icosphereImg} alt="No video support" />
-                Your browser does not support the video tag.
-              </video>
+              <LazyVideo
+                videoSrc={icosphereMp4}
+                imgSrc={icosphereImg}
+                title="Icosphere Shape"
+              />
             </div>
             <div className="aboutShape threedShape absolute left-[85%] top-4 w-[200px]">
-              <video
-                autoPlay={true}
-                loop={true}
-                muted={true}
-                playsInline={true}
-                title="Knot Shape"
-              >
-                <source src={ballMp4} type="video/mp4" />
-                <img src={ballImg} alt="No video support" />
-                Your browser does not support the video tag.
-              </video>
+              <LazyVideo
+                videoSrc={ballMp4}
+                imgSrc={ballImg}
+                title="Ball Shape"
+              />
             </div>
 
             <img

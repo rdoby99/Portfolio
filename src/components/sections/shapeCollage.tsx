@@ -41,7 +41,7 @@ export default function ShapeCollage(props: any) {
               height="221"
             >
               <image
-                xlinkHref="/background-500w.png"
+                xlinkHref="/background-500w.webp"
                 x="0"
                 y="0"
                 width="221"
