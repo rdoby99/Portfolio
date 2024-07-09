@@ -48,6 +48,7 @@ export default function WorkDialog({
                 ref={videoRef}
                 loop
                 muted
+                preload="none"
                 className="w-[15rem] hidden md:inline-block absolute right-[15%] -bottom-4 opacity-0 group-hover:opacity-100 z-10 transition-opacity duration-200"
               >
                 <source src={mediaUrl} type="video/mp4"></source>

@@ -1,18 +1,26 @@
-Image.defaultProps = {
-  sizes: "(min-width: 768px) 50vw, 100vw",
-  loading: "lazy",
-  alt: "",
-};
-
-export default function Image(props: any) {
+export default function Image({
+  srcSet = "",
+  sizes = "(min-width: 768px) 50vw, 100vw",
+  image = "",
+  alt = "",
+  loading = "lazy",
+  classes = "",
+}: {
+  srcSet?: string;
+  sizes?: string;
+  image: string;
+  alt?: string;
+  loading?: "lazy" | "eager";
+  classes?: string;
+}) {
   return (
     <img
-      srcSet={props.srcSet}
-      sizes={props.sizes}
-      src={props.image}
-      alt={props.alt}
-      loading={props.loading}
-      className={props.classes}
+      srcSet={srcSet}
+      sizes={sizes}
+      src={image}
+      alt={alt}
+      loading={loading}
+      className={classes}
     />
   );
 }

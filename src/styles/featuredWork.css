@@ -48,6 +48,6 @@
 
 /* Style the back side */
 .workCard__project__back {
-  @apply bg-waves bg-cover bg-bottom p-4 flex flex-col justify-between;
+  @apply p-4 flex flex-col justify-between;
   transform: rotateY(180deg);
 }

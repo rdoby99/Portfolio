@@ -8,6 +8,7 @@ import spiralImg from "../../assets/3DShapes/spiral.webp";
 import curveMp4 from "../../assets/3DShapes/curve.mp4";
 import curveImg from "../../assets/3DShapes/curve.webp";
 import arrow from "../../assets/arrow.svg";
+import LazyVideo from "../LazyVideo";
 
 gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
@@ -165,34 +166,22 @@ export default function Hero() {
             data-speed="1.25"
             className="threedShape heroShape w-[125px] md:w-[320px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
           >
-            <video
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
+            <LazyVideo
+              videoSrc={spiralMp4}
+              imgSrc={spiralImg}
               title="Spiral Shape"
-            >
-              <source src={spiralMp4} type="video/mp4" />
-              <img src={spiralImg} alt="No video support" />
-              Your browser does not support the video tag.
-            </video>
+            />
           </div>
           <div
             className="absolute left-[-4rem] md:-left-[16rem] top-[7rem] md:top-[5.5rem] inline-block w-[125px] md:w-[335px] threedShape heroShape"
             ref={threeDCurve}
             data-speed="0.18"
           >
-            <video
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              playsInline={true}
-              title="Curve Shape"
-            >
-              <source src={curveMp4} type="video/mp4" />
-              <img src={curveImg} alt="No video support" />
-              Your browser does not support the video tag.
-            </video>
+            <LazyVideo
+              videoSrc={curveMp4}
+              imgSrc={curveImg}
+              title="Cylinder Shape"
+            />
           </div>
 
           <svg

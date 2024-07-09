@@ -1,4 +1,5 @@
 import diagonalArrow from "../../assets/diagonalArrow.svg";
+import LazyVideo from "../LazyVideo";
 
 export default function WorkDialogContent({
   project,
@@ -21,17 +22,7 @@ export default function WorkDialogContent({
         {/* Image */}
         {project.featured_media.data &&
           project.featured_media.data.attributes.mime == "video/mp4" && (
-            <video
-              width="320"
-              height="240"
-              autoPlay
-              loop
-              muted
-              className="w-full"
-            >
-              <source src={mediaUrl} type="video/mp4"></source>
-              Your browser does not support the video tag.
-            </video>
+            <LazyVideo videoSrc={mediaUrl} classes="w-full" />
           )}
 
         {project.featured_media.data &&
