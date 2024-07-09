@@ -56,10 +56,6 @@ export default function About() {
         linesClass: "overflow-hidden",
       });
 
-      const statementSplit = new SplitText(statement.current, {
-        type: "words",
-        wordsClass: "mx-2 statementWord",
-      });
       const aboutTL = gsap.timeline({
         scrollTrigger: {
           trigger: about.current,
@@ -112,6 +108,11 @@ export default function About() {
       );
 
       mm.add("(min-width: 768px)", () => {
+        const statementSplit = new SplitText(statement.current, {
+          type: "words",
+          wordsClass: "mx-2 statementWord",
+        });
+
         let scrollTween = gsap.fromTo(
           aboutContainer.current,
           {

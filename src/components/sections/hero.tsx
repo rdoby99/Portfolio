@@ -4,7 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useGSAP } from "@gsap/react";
 import spiralMp4 from "../../assets/3DShapes/spiral.mp4";
+import spiralMp4_mobile from "../../assets/3DShapes/mobileSpiral.mp4";
 import spiralImg from "../../assets/3DShapes/spiral.webp";
+import curveMp4_mobile from "../../assets/3DShapes/mobileCurve.mp4";
 import curveMp4 from "../../assets/3DShapes/curve.mp4";
 import curveImg from "../../assets/3DShapes/curve.webp";
 import arrow from "../../assets/arrow.svg";
@@ -170,6 +172,13 @@ export default function Hero() {
               videoSrc={spiralMp4}
               imgSrc={spiralImg}
               title="Spiral Shape"
+              classes="!hidden md:!block"
+            />
+            <LazyVideo
+              videoSrc={spiralMp4_mobile}
+              imgSrc={spiralImg}
+              title="Spiral Shape"
+              classes="md:!hidden"
             />
           </div>
           <div
@@ -180,7 +189,14 @@ export default function Hero() {
             <LazyVideo
               videoSrc={curveMp4}
               imgSrc={curveImg}
-              title="Cylinder Shape"
+              title="Curve Shape"
+              classes="!hidden md:!block"
+            />
+            <LazyVideo
+              videoSrc={curveMp4_mobile}
+              imgSrc={curveImg}
+              title="Curve Shape"
+              classes="md:!hidden"
             />
           </div>
 
