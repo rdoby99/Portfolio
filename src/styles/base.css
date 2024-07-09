@@ -78,26 +78,6 @@ body {
   @apply underline uppercase text-tertiary underline-offset-2;
 }
 
-/* .threedShape {
-  @apply hue-rotate-[345deg] brightness-100 saturate-[1.10];
-} */
-
-.circle {
-  --circle-size: 20px;
-  position: fixed;
-  height: var(--circle-size);
-  width: var(--circle-size);
-  border-radius: 100%;
-  top: calc(var(--circle-size) / 2 * -1);
-  left: calc(var(--circle-size) / 2 * -1);
-  pointer-events: none;
-  background-color: #0061fe;
-  transition-property: height, width;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
-  z-index: 9999;
-}
-
 /* Targets the scrollbar track (part the thumb slides within) */
 ::-webkit-scrollbar-track {
   @apply bg-background shadow-inner shadow-tertiary;
@@ -125,7 +105,7 @@ a:not(.button):not(.no-underline)::after {
 
 a:hover::after,
 .menu-link:hover .menu-underline {
-  @apply w-full;
+  @apply !w-full;
   transition: width 0.3s;
 }
 
@@ -147,6 +127,5 @@ a {
   bottom: 0;
   left: 0;
   pointer-events: none;
-  /* box-shadow: 0 0 5px 5px #fdf5ed inset; */
   box-shadow: 0 0 10px 10px #fdf5ed inset;
 }

@@ -241,7 +241,7 @@ export default function About() {
                     className="inline-block relative"
                     ref={aboutSubhead}
                   >
-                    &#123; I’m Ramona &#125;
+                    &#123; I’m Ramona Doby &#125;
                   </span>
                 </p>
                 <h2 id="aboutHeading" className="h2" ref={aboutHeading}>
