@@ -1,8 +1,8 @@
 import xMp4 from "../../assets/3DShapes/x.mp4";
 import xImg from "../../assets/3DShapes/x.webp";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/src/ScrollTrigger";
-import { SplitText } from "gsap/src/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import LazyVideo from "../LazyVideo";
