@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -15,22 +15,6 @@ export default function Intro() {
   const amonaO = useRef<HTMLDivElement>(null);
   const introSubtext = useRef<HTMLDivElement>(null);
   let trigger = 0;
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 500);
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-
-    // Clean up
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useGSAP(() => {
     var introTL = gsap.timeline({
@@ -126,21 +110,14 @@ export default function Intro() {
         id="intro"
         className="relative inline-block w-full h-[95vh] text-bg z-20"
       >
-        {isDesktop ? (
-          <Image
-            classes="absolute top-0 left-0 object-cover w-full h-full object-bottom md:object-center"
-            image="/background-1000w.webp"
-            loading="eager"
-            srcSet="/background-500w.webp 500w, /background-1000w.webp 1000w, /background-1500w.webp 1500w, /background-3000w.webp 3000w"
-            sizes="100vw"
-          />
-        ) : (
-          <img
-            src="/background-500w.webp"
-            alt=""
-            className="absolute top-0 left-0 object-cover w-full h-full object-bottom md:object-center"
-          />
-        )}
+        <Image
+          classes="absolute top-0 left-0 object-cover w-full h-full object-bottom md:object-center"
+          image="/background-1000w.webp"
+          loading="eager"
+          srcSet="/background-500w.webp 500w, /background-1000w.webp 1000w, /background-1500w.webp 1500w, /background-3000w.webp 3000w"
+          sizes="100vw"
+        />
+
         <div>
           <div
             className="absolute bottom-1/2 floatingR overflow-hidden inline-block w-[63px] md:w-[126px] h-fit"
