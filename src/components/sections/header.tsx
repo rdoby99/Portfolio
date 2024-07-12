@@ -21,19 +21,40 @@ export default function Header({
   const border = useRef<HTMLDivElement>(null);
   const floatingRContainer = useRef<HTMLDivElement>(null);
 
-  const aboutScroll = contextSafe(() => {
+  const handleAboutClick = contextSafe(() => {
     onOverlayStateChange(true);
     gsap.to(window, { duration: 1, scrollTo: "#about-scroll" });
   });
 
-  const workScroll = contextSafe(() => {
+  const handleWorkClick = contextSafe(() => {
     onOverlayStateChange(true);
     gsap.to(window, { duration: 1, scrollTo: "#featuredWork" });
   });
 
-  const contactScroll = contextSafe(() => {
+  const handleContactClick = contextSafe(() => {
     onOverlayStateChange(true);
     gsap.to(window, { duration: 1, scrollTo: "#contact" });
+  });
+
+  const handleAboutPress = contextSafe((event) => {
+    if (event.key === "Enter") {
+      onOverlayStateChange(true);
+      gsap.to(window, { duration: 1, scrollTo: "#about-scroll" });
+    }
+  });
+
+  const handleWorkPress = contextSafe((event) => {
+    if (event.key === "Enter") {
+      onOverlayStateChange(true);
+      gsap.to(window, { duration: 1, scrollTo: "#featuredWork" });
+    }
+  });
+
+  const handleContactPress = contextSafe((event) => {
+    if (event.key === "Enter") {
+      onOverlayStateChange(true);
+      gsap.to(window, { duration: 1, scrollTo: "#contact" });
+    }
   });
 
   useGSAP(() => {
@@ -206,15 +227,30 @@ export default function Header({
         </div>
         <nav>
           <ul className="flex gap-4 h6">
-            <li className="menu-link" onClick={aboutScroll}>
+            <li
+              className="menu-link"
+              onClick={handleAboutClick}
+              onKeyDown={handleAboutPress}
+              tabIndex={0}
+            >
               About
               <div className="menu-underline inline-block bg-text w-0 h-0.5 transition-all duration-150 rounded-sm"></div>
             </li>
-            <li className="menu-link" onClick={workScroll}>
+            <li
+              className="menu-link"
+              onClick={handleWorkClick}
+              onKeyDown={handleWorkPress}
+              tabIndex={0}
+            >
               Work
               <div className="menu-underline inline-block bg-text w-0 h-0.5 transition-all duration-150 rounded-sm"></div>
             </li>
-            <li className="menu-link" onClick={contactScroll}>
+            <li
+              className="menu-link"
+              onClick={handleContactClick}
+              onKeyDown={handleContactPress}
+              tabIndex={0}
+            >
               Contact
               <div className="menu-underline inline-block bg-text w-0 h-0.5 transition-all duration-150 rounded-sm"></div>
             </li>

@@ -135,7 +135,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
         <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-16">
           {/* Col 1 */}
           <div className="row-start-1 col-start-1 footerGrid__item h5 text-center hidden md:flex md:items-center md:justify-center overflow-hidden">
-            <div className="follow">&#123; Follow &#125;</div>
+            <h2 className="follow h5">&#123; Follow &#125;</h2>
           </div>
           <ul className="row-start-2 col-start-1 footerGrid__item h4 text-center justify-around hidden md:flex md:flex-col">
             <li className="overflow-hidden">
@@ -143,6 +143,8 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                 href="https://www.linkedin.com/in/ramona-doby-b04058192"
                 className="follow"
                 target="_blank"
+                aria-label="Resume (Opens in a new window)"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
@@ -152,6 +154,8 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                 href="https://github.com/rdoby99"
                 className="follow"
                 target="_blank"
+                aria-label="Resume (Opens in a new window)"
+                rel="noopener noreferrer"
               >
                 Github
               </a>
@@ -161,6 +165,8 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                 href="https://drive.google.com/file/d/1ECtw-lkjCXg4naQYjy8MbPqWZCh7Lx1B/view?usp=sharing"
                 className="follow"
                 target="_blank"
+                aria-label="Resume (Opens in a new window)"
+                rel="noopener noreferrer"
               >
                 Resume
               </a>
@@ -174,9 +180,9 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           <div className="md:col-start-2 md:row-span-2 footerGrid__item w-full">
             <div className="mb-16">
               <div className="overflow-hidden">
-                <div className="h5 mb-14 connect connectSub" ref={connectSub}>
+                <h2 className="h5 mb-14 connect connectSub" ref={connectSub}>
                   &#123; Contact &#125;
-                </div>
+                </h2>
               </div>
               <div className="overflow-hidden">
                 <h3
@@ -226,6 +232,8 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                   href="https://www.linkedin.com/in/ramona-doby-b04058192"
                   className="followMob"
                   target="_blank"
+                  aria-label="Resume (Opens in a new window)"
+                  rel="noopener noreferrer"
                 >
                   LinkedIn
                 </a>
@@ -235,6 +243,8 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                   href="https://github.com/rdoby99"
                   className="followMob"
                   target="_blank"
+                  aria-label="Resume (Opens in a new window)"
+                  rel="noopener noreferrer"
                 >
                   Github
                 </a>
@@ -244,6 +254,8 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                   href="https://drive.google.com/file/d/1ECtw-lkjCXg4naQYjy8MbPqWZCh7Lx1B/view?usp=sharing"
                   className="followMob"
                   target="_blank"
+                  aria-label="Resume (Opens in a new window)"
+                  rel="noopener noreferrer"
                 >
                   Resume
                 </a>

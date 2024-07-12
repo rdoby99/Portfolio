@@ -27,10 +27,15 @@ export default function WorkDialogContent({
 
         {project.featured_media.data &&
           project.featured_media.data.attributes.mime == "image/png" && (
-            <img src={mediaUrl} className="w-full" loading="lazy"></img>
+            <img
+              src={mediaUrl}
+              className="w-full"
+              loading="lazy"
+              alt={`${project.title} featured image`}
+            ></img>
           )}
         <div>
-          <h5 className="h3 mb-2">{project.title}</h5>
+          <h4 className="h3 mb-2">{project.title}</h4>
           {project.agency && (
             <h6 className="text-xs mb-4">Agency: {project.agency}</h6>
           )}
@@ -56,6 +61,8 @@ export default function WorkDialogContent({
             href={project.url}
             target="_blank"
             className="flex gap-2 p1__medium items-center button button--primary group mt-6"
+            aria-label={`Visit ${project.title}'s website (opens in a new window)`}
+            rel="noopener noreferrer"
           >
             <span className="uppercase">Visit Site</span>
             <img
