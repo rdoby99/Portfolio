@@ -119,10 +119,6 @@ export default function About() {
 
       if (!isDesktop) return;
 
-      let aboutWidth = aboutContainer.current!.offsetWidth + 200;
-      const screenWidth = window.innerWidth;
-      const extraXPercent = 100 * (screenWidth / aboutWidth);
-
       const statementSplit = new SplitText(statement.current, {
         type: "words",
         wordsClass: "mx-2 statementWord",
@@ -135,12 +131,18 @@ export default function About() {
         },
         {
           xPercent: () => {
+            let calculatedWidth = aboutContainer.current!.offsetWidth + 200;
+            let screenWidth = window.innerWidth;
+            let extraXPercent = 100 * (screenWidth / calculatedWidth);
             return -100 + extraXPercent;
           },
           ease: "none",
           scrollTrigger: {
             trigger: about.current,
-            end: () => `+=${aboutWidth}`,
+            end: () => {
+              let calculatedWidth = aboutContainer.current!.offsetWidth + 200;
+              return "+=" + calculatedWidth;
+            },
             scrub: true,
             pin: true,
             pinType: "transform",

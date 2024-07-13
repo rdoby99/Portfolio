@@ -166,7 +166,7 @@ export default function Hero() {
           </h1>
           <div
             data-speed="1.25"
-            className="threedShape heroShape w-[125px] md:w-[320px] absolute right-[-4rem] md:right-[-11rem] top-[8rem] md:top-[12rem]"
+            className="threedShape heroShape w-[125px] md:w-[320px] absolute right-[-4rem] md:right-[-11rem] top-[20rem] md:top-[22rem]"
           >
             <LazyVideo
               videoSrc={spiralMp4}
