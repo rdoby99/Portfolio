@@ -25,6 +25,7 @@ export default function About() {
   const container = useRef(null);
   const aboutHeading = useRef(null);
   const aboutDesc = useRef(null);
+  const aboutSummary = useRef<HTMLDivElement>(null);
   const about = useRef(null);
   const aboutContainer = useRef<HTMLDivElement>(null);
   const aboutSubhead = useRef(null);
@@ -119,10 +120,6 @@ export default function About() {
 
       if (!isDesktop) return;
 
-      let aboutWidth = aboutContainer.current!.offsetWidth + 200;
-      const screenWidth = window.innerWidth;
-      const extraXPercent = 100 * (screenWidth / aboutWidth);
-
       const statementSplit = new SplitText(statement.current, {
         type: "words",
         wordsClass: "mx-2 statementWord",
@@ -131,16 +128,18 @@ export default function About() {
       let scrollTween = gsap.fromTo(
         aboutContainer.current,
         {
-          xPercent: 0,
+          x: 0,
         },
         {
-          xPercent: () => {
-            return -100 + extraXPercent;
+          x: () => {
+            let containerWidth = aboutContainer.current!.offsetWidth;
+            let aboutWidth = aboutSummary.current!.offsetWidth;
+            return -(containerWidth - aboutWidth);
           },
           ease: "none",
           scrollTrigger: {
             trigger: about.current,
-            end: () => `+=${aboutWidth}`,
+            end: () => "+=" + aboutContainer.current!.offsetWidth,
             scrub: true,
             pin: true,
             pinType: "transform",
@@ -232,7 +231,7 @@ export default function About() {
           className="relative flex w-fit h-full items-center pb-14 pt-28"
           ref={aboutContainer}
         >
-          <div id="about__summary" className="min-w-[100vw]">
+          <div id="about__summary" className="min-w-[100vw]" ref={aboutSummary}>
             <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 max-w-7xl mx-auto">
               <div className="flex flex-col gap-8">
                 <p className="h5 overflow-hidden">
@@ -250,11 +249,11 @@ export default function About() {
                 </h2>
                 <p id="aboutDesc" className="max-w-sm" ref={aboutDesc}>
                   For the past 3 years, I've specialized in crafting engaging
-                  web experiences using platforms such as Shopify, Shopify Plus,
-                  and React. My expertise covers every part of the process—from
-                  solution planning through development to deployment. I lead
-                  every project with a commitment to delivering organized,
-                  reliable, and user-focused solutions.
+                  web experiences using technologies and platforms such as
+                  Shopify, Shopify Plus, and React. My expertise covers every
+                  part of the process—from solution planning through development
+                  to deployment. I lead every project with a commitment to
+                  delivering organized, reliable, and user-focused solutions.
                 </p>
               </div>
               <ShapeCollage className="hidden md:block" />
@@ -320,7 +319,7 @@ export default function About() {
               />
               <div
                 id="statement"
-                className="flex items-center h-full"
+                className="flex items-center h-full pr-24"
                 ref={statement}
               >
                 Let's build

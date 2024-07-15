@@ -48,7 +48,7 @@ export default function LazyVideo({
       className={classes}
     >
       <source src={videoSrc} type="video/mp4" />
-      {imgSrc && <img src={imgSrc} alt="No video support" />}
+      {imgSrc && <img src={imgSrc} alt={title} />}
       Your browser does not support the video tag.
     </video>
   );

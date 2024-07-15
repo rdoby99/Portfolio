@@ -1,5 +1,5 @@
 .workCard__project button[aria-haspopup="dialog"] {
-  @apply w-full h-full flex items-end;
+  @apply w-full h-full flex items-end focus-visible:border-white focus-visible:border-4;
 }
 
 .workCard {
@@ -29,7 +29,8 @@
   transition: transform 0.8s;
 }
 
-.workCard__project:hover .workCard__project__inner {
+.workCard__project:hover .workCard__project__inner,
+.workCard__project button:focus-visible .workCard__project__inner {
   transform: rotateY(180deg) !important;
 }
 
