@@ -131,18 +131,16 @@ export default function About() {
         },
         {
           xPercent: () => {
-            let calculatedWidth = aboutContainer.current!.offsetWidth + 200;
+            let containerWidth = aboutContainer.current!.offsetWidth;
             let screenWidth = window.innerWidth;
-            let extraXPercent = 100 * (screenWidth / calculatedWidth);
-            return -100 + extraXPercent;
+            let extraXPercent =
+              -100 * ((containerWidth - screenWidth) / containerWidth);
+            return extraXPercent;
           },
           ease: "none",
           scrollTrigger: {
             trigger: about.current,
-            end: () => {
-              let calculatedWidth = aboutContainer.current!.offsetWidth + 200;
-              return "+=" + calculatedWidth;
-            },
+            end: () => "+=" + aboutContainer.current!.offsetWidth,
             scrub: true,
             pin: true,
             pinType: "transform",
@@ -322,7 +320,7 @@ export default function About() {
               />
               <div
                 id="statement"
-                className="flex items-center h-full"
+                className="flex items-center h-full pr-24"
                 ref={statement}
               >
                 Let's build
