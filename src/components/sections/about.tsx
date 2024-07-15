@@ -25,6 +25,7 @@ export default function About() {
   const container = useRef(null);
   const aboutHeading = useRef(null);
   const aboutDesc = useRef(null);
+  const aboutSummary = useRef<HTMLDivElement>(null);
   const about = useRef(null);
   const aboutContainer = useRef<HTMLDivElement>(null);
   const aboutSubhead = useRef(null);
@@ -127,15 +128,13 @@ export default function About() {
       let scrollTween = gsap.fromTo(
         aboutContainer.current,
         {
-          xPercent: 0,
+          x: 0,
         },
         {
-          xPercent: () => {
+          x: () => {
             let containerWidth = aboutContainer.current!.offsetWidth;
-            let screenWidth = window.innerWidth;
-            let extraXPercent =
-              -100 * ((containerWidth - screenWidth) / containerWidth);
-            return extraXPercent;
+            let aboutWidth = aboutSummary.current!.offsetWidth;
+            return -(containerWidth - aboutWidth);
           },
           ease: "none",
           scrollTrigger: {
@@ -232,7 +231,7 @@ export default function About() {
           className="relative flex w-fit h-full items-center pb-14 pt-28"
           ref={aboutContainer}
         >
-          <div id="about__summary" className="min-w-[100vw]">
+          <div id="about__summary" className="min-w-[100vw]" ref={aboutSummary}>
             <div className="grid grid-cols-1 md:grid-cols-2 items-center px-4 md:px-12 max-w-7xl mx-auto">
               <div className="flex flex-col gap-8">
                 <p className="h5 overflow-hidden">
