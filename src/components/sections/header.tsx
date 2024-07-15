@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, KeyboardEventHandler } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -36,26 +36,32 @@ export default function Header({
     gsap.to(window, { duration: 1, scrollTo: "#contact" });
   });
 
-  const handleAboutPress = contextSafe((event) => {
-    if (event.key === "Enter") {
-      onOverlayStateChange(true);
-      gsap.to(window, { duration: 1, scrollTo: "#about-scroll" });
+  const handleAboutPress: KeyboardEventHandler<HTMLLIElement> = contextSafe(
+    (event) => {
+      if (event.key === "Enter") {
+        onOverlayStateChange(true);
+        gsap.to(window, { duration: 1, scrollTo: "#about-scroll" });
+      }
     }
-  });
+  );
 
-  const handleWorkPress = contextSafe((event) => {
-    if (event.key === "Enter") {
-      onOverlayStateChange(true);
-      gsap.to(window, { duration: 1, scrollTo: "#featuredWork" });
+  const handleWorkPress: KeyboardEventHandler<HTMLLIElement> = contextSafe(
+    (event) => {
+      if (event.key === "Enter") {
+        onOverlayStateChange(true);
+        gsap.to(window, { duration: 1, scrollTo: "#featuredWork" });
+      }
     }
-  });
+  );
 
-  const handleContactPress = contextSafe((event) => {
-    if (event.key === "Enter") {
-      onOverlayStateChange(true);
-      gsap.to(window, { duration: 1, scrollTo: "#contact" });
+  const handleContactPress: KeyboardEventHandler<HTMLLIElement> = contextSafe(
+    (event) => {
+      if (event.key === "Enter") {
+        onOverlayStateChange(true);
+        gsap.to(window, { duration: 1, scrollTo: "#contact" });
+      }
     }
-  });
+  );
 
   useGSAP(() => {
     gsap.fromTo(
