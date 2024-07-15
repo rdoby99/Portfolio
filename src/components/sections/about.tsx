@@ -249,11 +249,11 @@ export default function About() {
                 </h2>
                 <p id="aboutDesc" className="max-w-sm" ref={aboutDesc}>
                   For the past 3 years, I've specialized in crafting engaging
-                  web experiences using platforms such as Shopify, Shopify Plus,
-                  and React. My expertise covers every part of the process—from
-                  solution planning through development to deployment. I lead
-                  every project with a commitment to delivering organized,
-                  reliable, and user-focused solutions.
+                  web experiences using technologies and platforms such as
+                  Shopify, Shopify Plus, and React. My expertise covers every
+                  part of the process—from solution planning through development
+                  to deployment. I lead every project with a commitment to
+                  delivering organized, reliable, and user-focused solutions.
                 </p>
               </div>
               <ShapeCollage className="hidden md:block" />
