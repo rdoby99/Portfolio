@@ -137,10 +137,10 @@ export default function Hero() {
     <section id="section-hero" ref={container}>
       <div
         id="hero"
-        className="hero text-center flex flex-col pt-28 md:pt-0 md:gap-16 justify-center items-center min-h-[70vh] md:min-h-screen w-full overflow-x-clip"
+        className="hero text-center flex flex-col md:gap-16 justify-center items-center min-h-[70vh] md:min-h-screen w-full overflow-x-clip"
         ref={hero}
       >
-        <div className="relative pt-28">
+        <div className="relative pt-24 md:pt-28">
           <div className="overflow-hidden relative block mb-8">
             <div className="hero__subtext relative h5" ref={heroSubtext}>
               &#123; Welcome &#125;
