@@ -69,7 +69,10 @@ export default function Intro() {
     // Define the animation as a function so it can be called or re-called
     function createAnimation() {
       gsap.to(floatingRContainer.current, {
-        left: "2rem", // This can be made dynamic based on the size or condition
+        x: () => {
+          const rect = floatingRContainer.current!.getBoundingClientRect();
+          return -(rect.left - 32);
+        },
         width: "3rem",
         fill: "#0061FE",
         immediateRender: false,
