@@ -162,7 +162,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             </li>
             <li className="overflow-hidden">
               <a
-                href="https://drive.google.com/file/d/1ECtw-lkjCXg4naQYjy8MbPqWZCh7Lx1B/view?usp=sharing"
+                href="https://drive.google.com/file/d/1Qz6QDg4uDGSlRGVp0uv7PD12I9KCQIWd/view?usp=sharing"
                 className="follow"
                 target="_blank"
                 aria-label="Resume (Opens in a new window)"
@@ -251,7 +251,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
               </li>
               <li className="overflow-hidden">
                 <a
-                  href="https://drive.google.com/file/d/1ECtw-lkjCXg4naQYjy8MbPqWZCh7Lx1B/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1Qz6QDg4uDGSlRGVp0uv7PD12I9KCQIWd/view?usp=sharing"
                   className="followMob"
                   target="_blank"
                   aria-label="Resume (Opens in a new window)"
