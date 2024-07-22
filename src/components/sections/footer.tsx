@@ -1,5 +1,7 @@
-import xMp4 from "../../assets/3DShapes/x.mp4";
-import xImg from "../../assets/3DShapes/x.webp";
+// import xMp4 from "../../assets/3DShapes/x.mp4";
+// import xImg from "../../assets/3DShapes/x.webp";
+import torusMp4 from "../../assets/3DShapes/torus.mp4";
+import torusImg from "../../assets/3DShapes/torus.webp";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -276,26 +278,23 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             <p className="p2">&copy; 2024 Ramona Doby</p>
           </div>
         </div>
-        <div
+        {/* <div
           className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-4rem] md:right-48 top-[30%] 2xl:top-[20%] z-10"
           data-speed="0.75"
         >
           <LazyVideo videoSrc={xMp4} imgSrc={xImg} title="X Shape" />
-        </div>
+        </div> */}
 
-        {/* <video
-          autoPlay={true}
-          loop={true}
-          muted={true}
-          playsInline={true}
-          data-speed="0.55"
+        <div
           className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-2rem] md:right-24 top-[50%] 2xl:top-[35%]"
-          title="Knot Shape"
+          data-speed="0.55"
         >
-          <source src={torus} type="video/webm" />
-          <img src={torusImg} alt="No video support" />
-          Your browser does not support the video tag.
-        </video> */}
+          <LazyVideo
+            videoSrc={torusMp4}
+            imgSrc={torusImg}
+            title="Torus Shape"
+          />
+        </div>
       </div>
     </footer>
   );
