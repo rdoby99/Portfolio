@@ -129,7 +129,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
     <footer id="section-contact">
       <div
         id="contact"
-        className="relative pb-48 overflow-x-hidden md:overflow-visible"
+        className="relative pb-24 md:pb-48 overflow-x-hidden md:overflow-visible"
         ref={contact}
       >
         <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-16">
@@ -178,9 +178,12 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
 
           {/* Col 2 */}
           <div className="md:col-start-2 md:row-span-2 footerGrid__item w-full">
-            <div className="mb-16">
+            <div className="mb-8 md:mb-16">
               <div className="overflow-hidden">
-                <h2 className="h5 mb-14 connect connectSub" ref={connectSub}>
+                <h2
+                  className="h5 mb-6 md:mb-14 connect connectSub"
+                  ref={connectSub}
+                >
                   &#123; Contact &#125;
                 </h2>
               </div>
@@ -194,7 +197,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
               </div>
               <div>
                 <p
-                  className="mb-12 p1 lg:max-w-[60%] overflow-hidden connect connectDesc"
+                  className="mb-6 md:mb-12 p1 lg:max-w-[60%] overflow-hidden connect connectDesc"
                   ref={connectDesc}
                 >
                   Interested in working together? Reach out to discuss how we
