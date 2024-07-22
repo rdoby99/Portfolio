@@ -129,14 +129,14 @@ export default function FeaturedWork({ onWorkLoadChange }: FeaturedWorkProps) {
       >
         <div className="grid grid-cols-2 md:grid-cols-[2fr_3fr_2fr_2fr_3fr_1fr] grid-rows-[3fr_2fr_3fr_3fr_2fr_3fr] md:grid-rows-[repeat(16,_minmax(0,_1fr))] text-white relative h-[90vh]">
           {/* Col 1 */}
-          <div className="workCard col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-4 md:pl-16 flex flex-col justify-center">
+          <div className="workCard py-6 md:py-0 col-start-1 md:row-start-1 col-span-2 md:row-span-7 pl-4 md:pl-16 flex flex-col justify-center">
             <div className="overflow-hidden">
               <p className="featured-work-headings relative h5">
                 &#123; Featured &#125;
               </p>
             </div>
             <div className="overflow-hidden">
-              <h2 className="featured-work-headings pt-8 xl:!leading-tight relative h1 uppercase md:!text-[9.5vw] xl:!text-9xl">
+              <h2 className="featured-work-headings pt-2 md:pt-8 xl:!leading-tight relative h1 uppercase md:!text-[9.5vw] xl:!text-9xl">
                 Work
               </h2>
             </div>
