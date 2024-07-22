@@ -8,6 +8,8 @@ import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import LazyVideo from "../LazyVideo";
+// @ts-ignore
+import useFetchProjects from "../../hooks/useFetchProjects";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -16,6 +18,12 @@ type FooterProps = {
 };
 
 export default function Footer({ onOverlayStateChange }: FooterProps) {
+  const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
+
+  const { loading, error, data } = useFetchProjects(
+    `${apiUrl}/api/social?populate=*`
+  );
+
   const connectDesc = useRef(null);
   const contact = useRef(null);
   const connectSub = useRef(null);
@@ -27,36 +35,75 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
     onOverlayStateChange(true);
   };
 
-  useGSAP(() => {
-    const connectDescSplit = new SplitText(connectDesc.current, {
-      type: "lines",
-      linesClass: "overflow-hidden",
-    });
+  useGSAP(
+    () => {
+      if (!data) return;
+      const connectDescSplit = new SplitText(connectDesc.current, {
+        type: "lines",
+        linesClass: "overflow-hidden",
+      });
 
-    const footerTL = gsap.timeline({
-      scrollTrigger: {
-        trigger: contact.current,
-        start: "top 85%",
-        toggleActions: "play reverse play reverse",
-      },
-    });
+      const footerTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: contact.current,
+          start: "top 85%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
 
-    let mm = gsap.matchMedia();
+      let mm = gsap.matchMedia();
 
-    footerTL.fromTo(
-      connectSub.current,
-      { top: 200 },
-      {
-        top: 0,
-        duration: 1.75,
-        ease: "power3",
-      },
-      "<0.2"
-    );
-
-    mm.add("(min-width: 768px)", () => {
       footerTL.fromTo(
-        ".follow",
+        connectSub.current,
+        { top: 200 },
+        {
+          top: 0,
+          duration: 1.75,
+          ease: "power3",
+        },
+        "<0.2"
+      );
+
+      mm.add("(min-width: 768px)", () => {
+        footerTL.fromTo(
+          ".follow",
+          { top: 200 },
+          {
+            top: 0,
+            duration: 1.75,
+            stagger: 0.2,
+            ease: "power3",
+          },
+          "<"
+        );
+      });
+
+      mm.add("(max-width: 768px)", () => {
+        footerTL.fromTo(
+          ".followMob",
+          { top: 200 },
+          {
+            top: 0,
+            duration: 1.75,
+            stagger: 0.2,
+            ease: "power3",
+          },
+          "<"
+        );
+      });
+
+      footerTL.fromTo(
+        connectHeading.current,
+        { top: 200 },
+        {
+          top: 0,
+          duration: 1.75,
+          ease: "power3",
+        },
+        "<0.2"
+      );
+      footerTL.fromTo(
+        connectDescSplit.lines,
         { top: 200 },
         {
           top: 0,
@@ -64,68 +111,38 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           stagger: 0.2,
           ease: "power3",
         },
-        "<"
+        "<0.2"
       );
-    });
 
-    mm.add("(max-width: 768px)", () => {
       footerTL.fromTo(
-        ".followMob",
+        connectEmailHeading.current,
         { top: 200 },
         {
           top: 0,
           duration: 1.75,
-          stagger: 0.2,
           ease: "power3",
         },
-        "<"
+        "<0.2"
       );
-    });
 
-    footerTL.fromTo(
-      connectHeading.current,
-      { top: 200 },
-      {
-        top: 0,
-        duration: 1.75,
-        ease: "power3",
-      },
-      "<0.2"
-    );
-    footerTL.fromTo(
-      connectDescSplit.lines,
-      { top: 200 },
-      {
-        top: 0,
-        duration: 1.75,
-        stagger: 0.2,
-        ease: "power3",
-      },
-      "<0.2"
-    );
+      footerTL.fromTo(
+        connectEmail.current,
+        { top: 200 },
+        {
+          top: 0,
+          duration: 1.75,
+          ease: "power3",
+        },
+        "<0.2"
+      );
+    },
+    { dependencies: [data] }
+  );
 
-    footerTL.fromTo(
-      connectEmailHeading.current,
-      { top: 200 },
-      {
-        top: 0,
-        duration: 1.75,
-        ease: "power3",
-      },
-      "<0.2"
-    );
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error</p>;
 
-    footerTL.fromTo(
-      connectEmail.current,
-      { top: 200 },
-      {
-        top: 0,
-        duration: 1.75,
-        ease: "power3",
-      },
-      "<0.2"
-    );
-  });
+  let social = data.attributes.social;
 
   return (
     <footer id="section-contact">
@@ -140,39 +157,19 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             <h2 className="follow h5">&#123; Follow &#125;</h2>
           </div>
           <ul className="row-start-2 col-start-1 footerGrid__item h4 text-center justify-around hidden md:flex md:flex-col">
-            <li className="overflow-hidden">
-              <a
-                href="https://www.linkedin.com/in/ramona-doby-b04058192"
-                className="follow"
-                target="_blank"
-                aria-label="Resume (Opens in a new window)"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li className="overflow-hidden">
-              <a
-                href="https://github.com/rdoby99"
-                className="follow"
-                target="_blank"
-                aria-label="Resume (Opens in a new window)"
-                rel="noopener noreferrer"
-              >
-                Github
-              </a>
-            </li>
-            <li className="overflow-hidden">
-              <a
-                href="https://drive.google.com/file/d/1Qz6QDg4uDGSlRGVp0uv7PD12I9KCQIWd/view?usp=sharing"
-                className="follow"
-                target="_blank"
-                aria-label="Resume (Opens in a new window)"
-                rel="noopener noreferrer"
-              >
-                Resume
-              </a>
-            </li>
+            {social.map((socialItem: any) => (
+              <li className="overflow-hidden" key={socialItem.id}>
+                <a
+                  href={socialItem.url}
+                  className="follow"
+                  target="_blank"
+                  aria-label={socialItem.ariaLabel}
+                  rel="noopener noreferrer"
+                >
+                  {socialItem.title}
+                </a>
+              </li>
+            ))}
           </ul>
           <div className="row-start-3 col-start-1 footerGrid__item text-center hidden md:flex md:items-center md:justify-center overflow-hidden">
             <p className="p2">&copy; 2024 Ramona Doby</p>
@@ -232,39 +229,19 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
               <h3 className="h5 followMob">&#123; Follow &#125;</h3>
             </div>
             <ul className="h4 flex justify-between">
-              <li className="overflow-hidden">
-                <a
-                  href="https://www.linkedin.com/in/ramona-doby-b04058192"
-                  className="followMob"
-                  target="_blank"
-                  aria-label="Resume (Opens in a new window)"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li className="overflow-hidden">
-                <a
-                  href="https://github.com/rdoby99"
-                  className="followMob"
-                  target="_blank"
-                  aria-label="Resume (Opens in a new window)"
-                  rel="noopener noreferrer"
-                >
-                  Github
-                </a>
-              </li>
-              <li className="overflow-hidden">
-                <a
-                  href="https://drive.google.com/file/d/1Qz6QDg4uDGSlRGVp0uv7PD12I9KCQIWd/view?usp=sharing"
-                  className="followMob"
-                  target="_blank"
-                  aria-label="Resume (Opens in a new window)"
-                  rel="noopener noreferrer"
-                >
-                  Resume
-                </a>
-              </li>
+              {social.map((socialItem: any) => (
+                <li className="overflow-hidden" key={socialItem.id}>
+                  <a
+                    href={socialItem.url}
+                    className="followMob"
+                    target="_blank"
+                    aria-label={socialItem.ariaLabel}
+                    rel="noopener noreferrer"
+                  >
+                    {socialItem.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <a
@@ -286,7 +263,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
         </div> */}
 
         <div
-          className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-2rem] md:right-24 top-[50%] 2xl:top-[35%]"
+          className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%] 2xl:top-[30%]"
           data-speed="0.55"
         >
           <LazyVideo
