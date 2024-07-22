@@ -42,7 +42,7 @@ h6,
 }
 
 .p1__medium {
-  @apply text-[18px] font-medium font-body;
+  @apply text-[18px] font-semibold font-body;
 }
 
 .p2 {

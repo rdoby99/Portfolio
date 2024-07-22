@@ -29,9 +29,11 @@
   transition: transform 0.8s;
 }
 
-.workCard__project:hover .workCard__project__inner,
-.workCard__project button:focus-visible .workCard__project__inner {
-  transform: rotateY(180deg) !important;
+@media screen and (min-width: 768px) {
+  .workCard__project:hover .workCard__project__inner,
+  .workCard__project button:focus-visible .workCard__project__inner {
+    transform: rotateY(180deg) !important;
+  }
 }
 
 /* Position the front and back side */

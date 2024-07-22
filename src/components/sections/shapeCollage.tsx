@@ -28,10 +28,11 @@ export default function ShapeCollage(props: any) {
       <div className="grid grid-cols-3 grid-rows-3 justify-items-start items-start">
         <svg
           width="100%"
+          height="100%"
           viewBox="0 0 221 221"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="col-span-1 row-span-1 col-start-1 pr-8"
+          className="col-span-1 row-span-1 col-start-1 pr-4 pb-4"
         >
           <defs>
             <pattern
@@ -135,7 +136,7 @@ export default function ShapeCollage(props: any) {
 
         <svg
           width="100%"
-          height="auto"
+          height="100%"
           viewBox="0 0 659 221"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
