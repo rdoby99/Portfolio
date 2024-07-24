@@ -194,7 +194,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
               </div>
               <div className="lg:max-w-[60%]">
                 <p
-                  className="mb-6 md:mb-12 p1 w-full overflow-y-clip overflow-x-visible connect connectDesc"
+                  className="mb-6 md:mb-12 p1 w-full overflow-y-clip overflow-x-visible connect connectDesc inline-block"
                   ref={connectDesc}
                 >
                   Interested in working together? Reach out to discuss how we
