@@ -1,5 +1,3 @@
-// import xMp4 from "../../assets/3DShapes/x.mp4";
-// import xImg from "../../assets/3DShapes/x.webp";
 import torusMp4 from "../../assets/3DShapes/torus.mp4";
 import torusImg from "../../assets/3DShapes/torus.webp";
 import { gsap } from "gsap";
@@ -47,7 +45,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
         scrollTrigger: {
           trigger: contact.current,
           start: "top 85%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none play none",
         },
       });
 
@@ -255,13 +253,6 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             <p className="p2">&copy; 2024 Ramona Doby</p>
           </div>
         </div>
-        {/* <div
-          className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-4rem] md:right-48 top-[30%] 2xl:top-[20%] z-10"
-          data-speed="0.75"
-        >
-          <LazyVideo videoSrc={xMp4} imgSrc={xImg} title="X Shape" />
-        </div> */}
-
         <div
           className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%] 2xl:top-[30%]"
           data-speed="0.55"
