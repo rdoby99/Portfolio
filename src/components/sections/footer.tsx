@@ -38,7 +38,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
       if (!data) return;
       const connectDescSplit = new SplitText(connectDesc.current, {
         type: "lines",
-        linesClass: "overflow-hidden",
+        linesClass: "overflow-y-clip overflow-x-visible",
       });
 
       const footerTL = gsap.timeline({
@@ -149,7 +149,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
         className="relative pb-24 md:pb-48 overflow-x-hidden md:overflow-visible"
         ref={contact}
       >
-        <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-16">
+        <div className="md:grid md:-cols-[1fr_3fr] md:grid-rows-[1fr_4fr_1fr] flex flex-col gap-4 px-4 md:px-8 lg:px-16">
           {/* Col 1 */}
           <div className="row-start-1 col-start-1 footerGrid__item h5 text-center hidden md:flex md:items-center md:justify-center overflow-hidden">
             <h2 className="follow h5">&#123; Follow &#125;</h2>
@@ -192,9 +192,9 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                   <span className="h2__italic">Let's</span> Connect!
                 </h3>
               </div>
-              <div>
+              <div className="lg:max-w-[60%]">
                 <p
-                  className="mb-6 md:mb-12 p1 lg:max-w-[60%] overflow-hidden connect connectDesc"
+                  className="mb-6 md:mb-12 p1 w-full overflow-y-clip overflow-x-visible connect connectDesc"
                   ref={connectDesc}
                 >
                   Interested in working together? Reach out to discuss how we
@@ -254,7 +254,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           </div>
         </div>
         <div
-          className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%] 2xl:top-[30%]"
+          className="threedShape heroShape hidden lg:inline-block max-w-[14vw] 2xl:max-w-[235px] absolute right-[-2rem] md:right-24 top-[35%] xl:top-[30%]"
           data-speed="0.55"
         >
           <LazyVideo
