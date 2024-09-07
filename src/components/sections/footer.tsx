@@ -154,7 +154,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           <div className="row-start-1 col-start-1 footerGrid__item h5 text-center hidden md:flex md:items-center md:justify-center overflow-hidden">
             <h2 className="follow h5">&#123; Follow &#125;</h2>
           </div>
-          <ul className="row-start-2 col-start-1 footerGrid__item h4 text-center justify-around hidden md:flex md:flex-col">
+          <ul className="row-start-2 col-start-1 footerGrid__item h4 text-center justify-center gap-8 hidden md:flex md:flex-col">
             {social.map((socialItem: any) => (
               <li className="overflow-hidden" key={socialItem.id}>
                 <a
@@ -226,7 +226,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             <div className="overflow-hidden">
               <h3 className="h5 followMob">&#123; Follow &#125;</h3>
             </div>
-            <ul className="h4 flex justify-between">
+            <ul className="h4 flex justify-start gap-8">
               {social.map((socialItem: any) => (
                 <li className="overflow-hidden" key={socialItem.id}>
                   <a
