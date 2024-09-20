@@ -137,7 +137,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
     { dependencies: [data] }
   );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading Footer...</p>;
   if (error) return <p>Error</p>;
 
   let social = data.attributes.social;

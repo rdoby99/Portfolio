@@ -51,7 +51,7 @@ export default function Work() {
     { scope: container, dependencies: [data] }
   );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading Work...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
