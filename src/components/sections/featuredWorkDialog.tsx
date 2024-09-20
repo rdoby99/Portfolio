@@ -10,7 +10,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 export default function FeaturedWorkDialog({ project }: { project: any }) {
   project = project.attributes;
   const tech_stack = project.tech_stack.split(", ");
-
   return (
     <Dialog>
       <DialogTrigger>

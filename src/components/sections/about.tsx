@@ -37,6 +37,7 @@ export default function About() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    // Set state so on mobile, horizontal scroll is off
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 768);
     };
@@ -44,10 +45,8 @@ export default function About() {
     // Set initial value
     handleResize();
 
-    // Add event listener
     window.addEventListener("resize", handleResize);
 
-    // Clean up
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -172,7 +171,7 @@ export default function About() {
         scrollTrigger: {
           containerAnimation: scrollTween,
           trigger: statementContainer.current,
-          start: "center 30%",
+          start: "center 40%",
           end: "right right",
           toggleActions: "play none none reverse",
         },
@@ -248,7 +247,7 @@ export default function About() {
                   <br /> Engineer
                 </h2>
                 <p id="aboutDesc" className="max-w-sm" ref={aboutDesc}>
-                  For the past 3 years, I've specialized in crafting engaging
+                  For the past 3.5 years, I've specialized in crafting engaging
                   web experiences using Liquid and Javascript, with a growing
                   focus on React projects. My expertise covers every part of the
                   process—from solution planning through development to
@@ -319,7 +318,7 @@ export default function About() {
               />
               <div
                 id="statement"
-                className="flex items-center h-full pr-24"
+                className="flex items-center h-full pr-32"
                 ref={statement}
               >
                 Let's build
