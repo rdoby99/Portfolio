@@ -17,6 +17,7 @@ export default function Intro() {
 
   useGSAP(() => {
     var introTL = gsap.timeline({
+      delay: 0.25,
       scrollTrigger: {
         trigger: containerInner.current,
         end: "bottom 20%",

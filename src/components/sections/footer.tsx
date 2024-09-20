@@ -137,7 +137,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
     { dependencies: [data] }
   );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading Footer...</p>;
   if (error) return <p>Error</p>;
 
   let social = data.attributes.social;
@@ -192,7 +192,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
                   <span className="h2__italic">Let's</span> Connect!
                 </h3>
               </div>
-              <div className="lg:max-w-[60%]">
+              <div className="lg:max-w-[400px]">
                 <p
                   className="mb-6 md:mb-12 p1 w-full overflow-y-clip overflow-x-visible connect connectDesc inline-block"
                   ref={connectDesc}

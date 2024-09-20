@@ -122,9 +122,9 @@ export default function Header({
         duration: 0.1,
         scrollTrigger: {
           trigger: "#section-hero",
-          start: "top 82px",
+          start: "top 92.19px",
           end: "top top",
-          toggleActions: "play none reverse none",
+          toggleActions: "play none none reverse",
         },
       }
     );

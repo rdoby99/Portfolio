@@ -101,7 +101,7 @@ export default function FeaturedWork({ onWorkLoadChange }: FeaturedWorkProps) {
     { scope: container, dependencies: [data] }
   );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading Featured Work...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   const featuredProject1 = data.find(
