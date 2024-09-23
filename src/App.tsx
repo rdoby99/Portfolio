@@ -10,6 +10,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollSmoother from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 import { useState } from "react";
+import { setSmootherInstance } from "./components/smootherInstance";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
@@ -30,12 +31,14 @@ function App() {
   };
 
   useGSAP(() => {
-    ScrollSmoother.create({
+    const smoother = ScrollSmoother.create({
       wrapper: "#scroll-wrapper",
       content: "#scroll-content",
       smooth: 2,
       effects: true,
     });
+
+    setSmootherInstance(smoother);
   });
 
   useGSAP(() => {

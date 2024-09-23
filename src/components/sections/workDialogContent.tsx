@@ -1,5 +1,6 @@
 import diagonalArrow from "../../assets/diagonalArrow.svg";
 import LazyVideo from "../LazyVideo";
+import { DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
 
 export default function WorkDialogContent({
   project,
@@ -35,11 +36,13 @@ export default function WorkDialogContent({
             ></img>
           )}
         <div>
-          <h4 className="h3 mb-2">{project.title}</h4>
+          <DialogTitle className="h3 mb-2">{project.title}</DialogTitle>
           {project.agency && (
             <h6 className="text-xs mb-4">Agency: {project.agency}</h6>
           )}
-          <p className="p1 mb-4">{project.description}</p>
+          <DialogDescription className="p1 mb-4">
+            {project.description}
+          </DialogDescription>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_2fr] gap-y-4">
           <h6>Tech Stack:</h6>
