@@ -47,7 +47,17 @@ export default function About() {
 
     window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    // Add the window load event listener
+    const handleLoad = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
 
   useGSAP(
@@ -218,10 +228,6 @@ export default function About() {
           },
         }
       );
-
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 150);
     },
     { scope: container, dependencies: [isDesktop] }
   );
