@@ -133,6 +133,8 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
         },
         "<0.2"
       );
+
+      ScrollTrigger.refresh();
     },
     { dependencies: [data] }
   );
