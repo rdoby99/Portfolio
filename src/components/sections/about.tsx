@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import ShapeCollage from "./shapeCollage";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
@@ -50,7 +50,6 @@ export default function About() {
     // Add the window load event listener
     const handleLoad = () => {
       console.log("Window loaded");
-      ScrollTrigger.refresh();
     };
 
     window.addEventListener("load", handleLoad);
@@ -59,6 +58,11 @@ export default function About() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("load", handleLoad);
     };
+  }, []);
+
+  useLayoutEffect(() => {
+    console.log("Layout Ran");
+    ScrollTrigger.refresh();
   }, []);
 
   useGSAP(

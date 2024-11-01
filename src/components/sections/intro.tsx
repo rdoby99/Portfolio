@@ -99,11 +99,6 @@ export default function Intro() {
 
     // Initial call to the function
     createAnimation();
-
-    // Add a resize event listener to the window to refresh ScrollTrigger
-    window.addEventListener("resize", () => {
-      ScrollTrigger.refresh();
-    });
   }, []);
 
   return (
