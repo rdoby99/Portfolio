@@ -218,6 +218,8 @@ export default function About() {
           },
         }
       );
+
+      ScrollTrigger.refresh();
     },
     { scope: container, dependencies: [isDesktop] }
   );
