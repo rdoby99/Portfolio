@@ -49,6 +49,7 @@ export default function About() {
 
     // Add the window load event listener
     const handleLoad = () => {
+      console.log("Window loaded");
       ScrollTrigger.refresh();
     };
 
@@ -156,6 +157,8 @@ export default function About() {
           },
         }
       );
+
+      console.log(aboutContainer.current!.offsetWidth);
 
       gsap.fromTo(
         ".aboutShape",
