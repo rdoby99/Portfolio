@@ -219,7 +219,9 @@ export default function About() {
         }
       );
 
-      ScrollTrigger.refresh();
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 150);
     },
     { scope: container, dependencies: [isDesktop] }
   );
