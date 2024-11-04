@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useLayoutEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import ShapeCollage from "./shapeCollage";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
@@ -35,6 +35,7 @@ export default function About() {
   const drawnUnderline = useRef<SVGPathElement>(null);
   const drawnCircle = useRef<SVGPathElement>(null);
   const [isDesktop, setIsDesktop] = useState(false);
+  // const [windowLoaded, setWindowLoaded] = useState(false);
 
   useEffect(() => {
     // Set state so on mobile, horizontal scroll is off
@@ -50,6 +51,8 @@ export default function About() {
     // Add the window load event listener
     const handleLoad = () => {
       console.log("Window loaded");
+      ScrollTrigger.refresh();
+      // setWindowLoaded(true);
     };
 
     window.addEventListener("load", handleLoad);
@@ -58,11 +61,6 @@ export default function About() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("load", handleLoad);
     };
-  }, []);
-
-  useLayoutEffect(() => {
-    console.log("Layout Ran");
-    ScrollTrigger.refresh();
   }, []);
 
   useGSAP(
@@ -134,107 +132,109 @@ export default function About() {
 
       if (!isDesktop) return;
 
-      const statementSplit = new SplitText(statement.current, {
-        type: "words",
-        wordsClass: "mx-2 statementWord",
-      });
+      setTimeout(() => {
+        const statementSplit = new SplitText(statement.current, {
+          type: "words",
+          wordsClass: "mx-2 statementWord",
+        });
 
-      let scrollTween = gsap.fromTo(
-        aboutContainer.current,
-        {
-          x: 0,
-        },
-        {
-          x: () => {
-            let containerWidth = aboutContainer.current!.offsetWidth;
-            let aboutWidth = aboutSummary.current!.offsetWidth;
-            return -(containerWidth - aboutWidth);
+        let scrollTween = gsap.fromTo(
+          aboutContainer.current,
+          {
+            x: 0,
           },
-          ease: "none",
-          scrollTrigger: {
-            trigger: about.current,
-            end: () => "+=" + aboutContainer.current!.offsetWidth,
-            scrub: true,
-            pin: true,
-            pinType: "transform",
-            anticipatePin: 1,
-          },
-        }
-      );
+          {
+            x: () => {
+              let containerWidth = aboutContainer.current!.offsetWidth;
+              let aboutWidth = aboutSummary.current!.offsetWidth;
+              return -(containerWidth - aboutWidth);
+            },
+            ease: "none",
+            scrollTrigger: {
+              trigger: about.current,
+              end: () => "+=" + aboutContainer.current!.offsetWidth,
+              scrub: true,
+              pin: true,
+              pinType: "transform",
+              anticipatePin: 1,
+            },
+          }
+        );
 
-      console.log(aboutContainer.current!.offsetWidth);
+        console.log(aboutContainer.current!.offsetWidth);
 
-      gsap.fromTo(
-        ".aboutShape",
-        { scale: 0 },
-        {
-          scale: 1,
-          stagger: 1,
-          ease: "back",
-          scrollTrigger: {
-            containerAnimation: scrollTween,
-            trigger: statementContainer.current,
-            start: "left center",
-            end: "right right",
-            toggleActions: "play none reverse none",
-            scrub: true,
-          },
-        }
-      );
+        gsap.fromTo(
+          ".aboutShape",
+          { scale: 0 },
+          {
+            scale: 1,
+            stagger: 1,
+            ease: "back",
+            scrollTrigger: {
+              containerAnimation: scrollTween,
+              trigger: statementContainer.current,
+              start: "left center",
+              end: "right right",
+              toggleActions: "play none reverse none",
+              scrub: true,
+            },
+          }
+        );
 
-      gsap.from(drawnCircle.current, {
-        duration: 2,
-        drawSVG: 0,
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: statementContainer.current,
-          start: "center 40%",
-          end: "right right",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      gsap.from(drawnUnderline.current, {
-        duration: 2,
-        drawSVG: 0,
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: statementContainer.current,
-          start: "center 70%",
-          end: "right right",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      gsap.from(highlightBackground.current, {
-        width: 0,
-        duration: 0.5,
-        scrollTrigger: {
-          containerAnimation: scrollTween,
-          trigger: statementContainer.current,
-          start: "center 125%",
-          end: "right right",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      gsap.fromTo(
-        statementSplit.words,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          stagger: 1,
-          ease: "back",
+        gsap.from(drawnCircle.current, {
+          duration: 2,
+          drawSVG: 0,
           scrollTrigger: {
             containerAnimation: scrollTween,
             trigger: statementContainer.current,
-            start: "left center",
+            start: "center 40%",
             end: "right right",
-            toggleActions: "play none reverse none",
-            scrub: true,
+            toggleActions: "play none none reverse",
           },
-        }
-      );
+        });
+
+        gsap.from(drawnUnderline.current, {
+          duration: 2,
+          drawSVG: 0,
+          scrollTrigger: {
+            containerAnimation: scrollTween,
+            trigger: statementContainer.current,
+            start: "center 70%",
+            end: "right right",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        gsap.from(highlightBackground.current, {
+          width: 0,
+          duration: 0.5,
+          scrollTrigger: {
+            containerAnimation: scrollTween,
+            trigger: statementContainer.current,
+            start: "center 125%",
+            end: "right right",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        gsap.fromTo(
+          statementSplit.words,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            stagger: 1,
+            ease: "back",
+            scrollTrigger: {
+              containerAnimation: scrollTween,
+              trigger: statementContainer.current,
+              start: "left center",
+              end: "right right",
+              toggleActions: "play none reverse none",
+              scrub: true,
+            },
+          }
+        );
+      }, 2000);
     },
     { scope: container, dependencies: [isDesktop] }
   );
