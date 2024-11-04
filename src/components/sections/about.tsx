@@ -47,17 +47,8 @@ export default function About() {
 
     window.addEventListener("resize", handleResize);
 
-    // Add the window load event listener
-    // const handleLoad = () => {
-    //   console.log("Window loaded");
-    //   ScrollTrigger.refresh();
-    // };
-
-    // window.addEventListener("load", handleLoad);
-
     return () => {
       window.removeEventListener("resize", handleResize);
-      // window.removeEventListener("load", handleLoad);
     };
   }, []);
 
@@ -239,6 +230,10 @@ export default function About() {
       };
 
       window.addEventListener("load", updateScrollTween);
+
+      return () => {
+        window.removeEventListener("load", updateScrollTween);
+      };
     },
     { scope: container, dependencies: [isDesktop] }
   );
