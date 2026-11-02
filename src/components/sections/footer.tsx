@@ -19,7 +19,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
   const apiUrl = import.meta.env.VITE_STRAPI_API_URL;
 
   const { loading, error, data } = useFetchProjects(
-    `${apiUrl}/api/social?populate=*`
+    `${apiUrl}/api/social?populate=*`,
   );
 
   const connectDesc = useRef(null);
@@ -59,7 +59,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           duration: 1.75,
           ease: "power3",
         },
-        "<0.2"
+        "<0.2",
       );
 
       mm.add("(min-width: 768px)", () => {
@@ -72,7 +72,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             stagger: 0.2,
             ease: "power3",
           },
-          "<"
+          "<",
         );
       });
 
@@ -86,7 +86,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             stagger: 0.2,
             ease: "power3",
           },
-          "<"
+          "<",
         );
       });
 
@@ -98,7 +98,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           duration: 1.75,
           ease: "power3",
         },
-        "<0.2"
+        "<0.2",
       );
       footerTL.fromTo(
         connectDescSplit.lines,
@@ -109,7 +109,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           stagger: 0.2,
           ease: "power3",
         },
-        "<0.2"
+        "<0.2",
       );
 
       footerTL.fromTo(
@@ -120,7 +120,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           duration: 1.75,
           ease: "power3",
         },
-        "<0.2"
+        "<0.2",
       );
 
       footerTL.fromTo(
@@ -131,10 +131,10 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
           duration: 1.75,
           ease: "power3",
         },
-        "<0.2"
+        "<0.2",
       );
     },
-    { dependencies: [data] }
+    { dependencies: [data] },
   );
 
   if (loading) return <p>Loading Footer...</p>;
@@ -170,7 +170,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             ))}
           </ul>
           <div className="row-start-3 col-start-1 footerGrid__item text-center hidden md:flex md:items-center md:justify-center overflow-hidden">
-            <p className="p2">&copy; 2024 Ramona Doby</p>
+            <p className="p2">&copy; 2026 Ramona Doby</p>
           </div>
 
           {/* Col 2 */}
@@ -250,7 +250,7 @@ export default function Footer({ onOverlayStateChange }: FooterProps) {
             &#123; Back to Top &#125;
           </a>
           <div className="md:hidden text-center">
-            <p className="p2">&copy; 2024 Ramona Doby</p>
+            <p className="p2">&copy; 2026 Ramona Doby</p>
           </div>
         </div>
         <div
