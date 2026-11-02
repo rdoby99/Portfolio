@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "style": "postcss src/styles/main.css --output src/styles/index.css --watch",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -24,22 +24,23 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@types/node": "^20.14.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.7.0",
     "cssnano": "^7.0.4",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.14.0",
     "postcss": "^8.4.39",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^12.1.2",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "typescript-eslint": "^8.72.1",
+    "vite": "^6.4.5"
   }
 }
