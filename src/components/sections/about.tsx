@@ -54,24 +54,13 @@ export default function About() {
 
   useGSAP(
     () => {
-      // Heading split
-      new SplitText(aboutHeading.current, {
+      // Description split. `mask` wraps each line in an overflow-clipped
+      // wrapper. (Splitting the same element twice no longer works: since
+      // GSAP 3.13 a second SplitText reverts the first.)
+      const descSplit = new SplitText(aboutDesc.current, {
         type: "lines",
-        linesClass: "aboutHeading-lines pt-2 relative line++",
-      });
-      new SplitText(aboutHeading.current, {
-        type: "lines",
-        linesClass: "overflow-hidden",
-      });
-
-      // Description split
-      new SplitText(aboutDesc.current, {
-        type: "lines",
-        linesClass: "aboutDesc-lines relative",
-      });
-      new SplitText(aboutDesc.current, {
-        type: "lines",
-        linesClass: "overflow-hidden",
+        linesClass: "relative aboutDesc-lines",
+        mask: "lines",
       });
 
       const aboutTL = gsap.timeline({
@@ -107,7 +96,7 @@ export default function About() {
       );
 
       aboutTL.fromTo(
-        ".aboutDesc-lines",
+        descSplit.lines,
         {
           top: 50,
         },
@@ -259,8 +248,16 @@ export default function About() {
                   </span>
                 </p>
                 <h2 id="aboutHeading" className="h2" ref={aboutHeading}>
-                  Front-End
-                  <br /> Engineer
+                  <div className="overflow-hidden">
+                    <div className="aboutHeading-lines pt-2 relative line1">
+                      Front-End
+                    </div>
+                  </div>
+                  <div className="overflow-hidden">
+                    <div className="aboutHeading-lines pt-2 relative line2">
+                      Engineer
+                    </div>
+                  </div>
                 </h2>
                 <p id="aboutDesc" className="max-w-sm" ref={aboutDesc}>
                   For the past 5 years, I've specialized in crafting engaging

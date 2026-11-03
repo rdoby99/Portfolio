@@ -49,9 +49,8 @@ export default function Intro() {
       ">-0.90"
     );
 
-    introTL.fromTo(
+    introTL.to(
       introSubtext.current,
-      { top: 50 },
       {
         top: 0,
         duration: 1.5,
@@ -198,7 +197,7 @@ export default function Intro() {
         <div className="overflow-hidden absolute top-[52%] md:top-[54%] left-1/2 -translate-x-1/2 inline-block">
           <div
             ref={introSubtext}
-            className="intro__subtext relative h5 text-white"
+            className="intro__subtext top-14 relative h5 text-white"
           >
             &#123;&nbsp;Front&#8209;End&nbsp;Engineer&nbsp;&#125;
           </div>

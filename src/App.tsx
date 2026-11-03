@@ -7,12 +7,11 @@ import Intro from "./components/sections/intro";
 import Work from "./components/sections/work";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import ScrollSmoother from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 import { useState } from "react";
-import { setSmootherInstance } from "./components/smootherInstance";
+import SmoothScroller from "./components/SmoothScroller";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function App() {
   window.onbeforeunload = () => {
@@ -29,17 +28,6 @@ function App() {
   const handleWorkLoadChange = (newState: boolean) => {
     setWorkLoaded(newState);
   };
-
-  useGSAP(() => {
-    const smoother = ScrollSmoother.create({
-      wrapper: "#scroll-wrapper",
-      content: "#scroll-content",
-      smooth: 2,
-      effects: true,
-    });
-
-    setSmootherInstance(smoother);
-  });
 
   useGSAP(() => {
     if (showOverlay) {
@@ -79,6 +67,8 @@ function App() {
 
   return (
     <div className="relative">
+      {/* Must stay first so the smoother exists before any ScrollTriggers */}
+      <SmoothScroller />
       <Header
         onOverlayStateChange={handleOverlayStateChange}
         workLoaded={workLoaded}
